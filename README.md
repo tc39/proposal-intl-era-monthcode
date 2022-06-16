@@ -1,6 +1,10 @@
-# template-for-proposals
+# Intl Temporal Proposal
 
-A repository template for ECMAScript proposals.
+To specify necessary details of using Temporal in internationalization setting (such as calendar other than "iso8601").
+
+## Scope
+
+Ref: [Temporal Internationalization Calendars Design Doc](https://notes.igalia.com/o7MT_yQJTV2Ka06sjyuJ5g#).
 
 ## Before creating a proposal
 
