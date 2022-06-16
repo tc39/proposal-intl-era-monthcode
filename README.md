@@ -6,19 +6,49 @@ To specify necessary details of using Temporal in internationalization setting (
 This proposal is currently Stage 0 for ECMA402
 
 ## Scope
+[Temporal proposal](https://tc39.es/proposal-temporal/) is a ECMA262 Stage proposal to “provide standard objects and functions for working with dates and times.” The Temporal proposal specification text clearly specified how the “iso8601” Calendar and “UTC” TimeZone should behave as well as define name and some basic aspect of Calenders other than “iso8601” and TimeZone other than “UTC”. However, there are additional requirements needed for implementation purposes. This proposal aims to define these details which should be eventually merged into ECMA402 specification.
 
 Ref: [Temporal Internationalization Calendars Design Doc](https://notes.igalia.com/o7MT_yQJTV2Ka06sjyuJ5g#).
 
 ### Calendars
 
 ### Values of Era for Calendars
+Related spec text in [Temporal proposal](https://tc39.es/proposal-temporal/):
+* [15.6.2.6 Temporal.Calendar.prototype.era ( temporalDateLike )](https://tc39.es/proposal-temporal/#sec-temporal.calendar.prototype.era)
+* [15.6.5.2 get Temporal.PlainDate.prototype.era](https://tc39.es/proposal-temporal/#sec-get-temporal.plaindate.prototype.era)
+* [15.6.6.2 get Temporal.PlainDateTime.prototype.era](https://tc39.es/proposal-temporal/#sec-get-temporal.plaindatetime.prototype.era)
+* [15.6.9.2 get Temporal.PlainYearMonth.prototype.era](https://tc39.es/proposal-temporal/#sec-get-temporal.plainyearmonth.prototype.era)
+* [15.6.10.2 get Temporal.ZonedDateTime.prototype.era](https://tc39.es/proposal-temporal/#sec-get-temporal.zoneddatetime.prototype.era)
+* [15.6.1.3 CalendarDateToISO ( calendar, fields, overflow )](https://tc39.es/ecma262/#implementation-defined)
 
+For Calendar:
+* 'gregory': TBW
 ### Values of EraYear for Calendars
+Related spec text in [Temporal proposal](https://tc39.es/proposal-temporal/):
+* [15.6.2.7 Temporal.Calendar.prototype.eraYear ( temporalDateLike )](https://tc39.es/proposal-temporal/#sec-temporal.calendar.prototype.erayear)
+* [15.6.5.3 get Temporal.PlainDate.prototype.eraYear](https://tc39.es/proposal-temporal/#sec-get-temporal.plaindate.prototype.erayear)
+* [15.6.6.3 get Temporal.PlainDateTime.prototype.eraYear](https://tc39.es/proposal-temporal/#sec-get-temporal.plaindatetime.prototype.erayear)
+* [15.6.9.3 get Temporal.PlainYearMonth.prototype.eraYear](https://tc39.es/proposal-temporal/#sec-get-temporal.plainyearmonth.prototype.erayear)
+* [15.6.10.3 get Temporal.ZonedDateTime.prototype.eraYear](https://tc39.es/proposal-temporal/#sec-get-temporal.zoneddatetime.prototype.erayear)
+* [15.6.1.3 CalendarDateToISO ( calendar, fields, overflow )](https://tc39.es/ecma262/#implementation-defined)
+
+For Calendar:
+* 'gregory': TBW
 
 ### Values of Month for Calendars
+Related spec text in [Temporal proposal](https://tc39.es/proposal-temporal/):
+*
 
+For Calendar:
+* 'gregory': TBW
+* 
 ### Values of MonthCode for Calendars
+Related spec text in [Temporal proposal](https://tc39.es/proposal-temporal/):
+*
 
+For Calendar:
+* 'gregory': TBW
+* 
 ## Before creating a proposal
 
 Please ensure the following:
