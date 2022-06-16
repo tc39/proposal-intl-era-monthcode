@@ -9,6 +9,16 @@ This proposal is currently Stage 0 for ECMA402
 
 Ref: [Temporal Internationalization Calendars Design Doc](https://notes.igalia.com/o7MT_yQJTV2Ka06sjyuJ5g#).
 
+### Calendars
+
+### Values of Era for Calendars
+
+### Values of EraYear for Calendars
+
+### Values of Month for Calendars
+
+### Values of MonthCode for Calendars
+
 ## Before creating a proposal
 
 Please ensure the following:
