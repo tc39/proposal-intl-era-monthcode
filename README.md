@@ -22,6 +22,32 @@ Related spec text in [Temporal proposal](https://tc39.es/proposal-temporal/):
 * [15.6.1.3 CalendarDateToISO ( calendar, fields, overflow )](https://tc39.es/ecma262/#implementation-defined)
 
 For Calendar:
+* List of 'calendar':
+CLDR and ICU support the following calendars beside "iso8601" and currently supported by Intl.DateTimeFormat API in different browsers.
+  * "gregory""
+  * "roc" (same as "gregory" except handling of era and year)
+  * "buddhist" (same as "gregory" except handling of era and year)
+  * "japanese" (same as "gregory" except handling of era and year)
+  * "persian"
+  * "coptic"
+  * "ethiopic"
+  * "ethiopic-ameta-alem"  (same as "ethiopic" except handling of era and year)
+  * "indian""
+  * "hebrew"
+  * "chinese"
+  * "dangi" (same as "chinese" except the referencing timeZone)
+  * "islamic"
+  * "islamic-tbla"
+  * "islamic-umalqura"
+  * "islamic-civil"
+
+* Requirement for era and eraYear:
+  * The combination of *era* and *eraYear* in a calendar need to be able to uniquely identify a particular year in the timeline.
+  * *era* need to be a String (per [15.6.1.1 CalendarEra](https://tc39.es/proposal-temporal/#sec-temporal-calendarera) in Temporal).
+  * *eraYear* need to be an Integer (per [15.6.1.2 CalendarEraYear](https://tc39.es/proposal-temporal/#sec-temporal-calendarerayear) in Temporal).
+  * If there is only one era in a calendar, we do not need to and should avoid using the era/eraYear in that calendar (e.g. "hebrew", "persian")
+  * If we define era, we need to also define the behavior if the field(s) is/are absent. (fallback to use year or fallback to a default value and what is the default value)
+  
 * 'gregory': TBW
 ### Values of EraYear for Calendars
 Related spec text in [Temporal proposal](https://tc39.es/proposal-temporal/):
