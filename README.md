@@ -5,10 +5,14 @@ To specify necessary details of using Temporal in internationalization setting (
 ## Stage
 This proposal is currently Stage 0 for ECMA402
 
+## References:
+* [Draft Spec](https://frankyftang.github.io/proposal-intl-temporal/)
+* [Study of modles of year and era in ICU Calendar](https://docs.google.com/presentation/d/1WFRajsWR2Nh_SPQPzEe7yXpjj-EDvUweUrikNV_jzI4/edit#slide=id.g153d52938b6_0_619)
+* [Temporal Internationalization Calendars Design Doc](https://notes.igalia.com/o7MT_yQJTV2Ka06sjyuJ5g#).
+
 ## Scope
 [Temporal proposal](https://tc39.es/proposal-temporal/) is a ECMA262 Stage proposal to “provide standard objects and functions for working with dates and times.” The Temporal proposal specification text clearly specified how the “iso8601” Calendar and “UTC” TimeZone should behave as well as define name and some basic aspect of Calenders other than “iso8601” and TimeZone other than “UTC”. However, there are additional requirements needed for implementation purposes. This proposal aims to define these details which should be eventually merged into ECMA402 specification.
 
-Ref: [Temporal Internationalization Calendars Design Doc](https://notes.igalia.com/o7MT_yQJTV2Ka06sjyuJ5g#).
 
 ### Calendars
 
