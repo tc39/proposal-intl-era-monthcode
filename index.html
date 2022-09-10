@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/base16/solarized-light.min.css"><link rel="stylesheet" href="./spec.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
 <script src="./spec.js"></script>
-<title>Proposal Title Goes Here</title><script>'use strict';
+<title>Intl Temporal Proposal</title><script>'use strict';
 let sdoBox = {
   init() {
     this.$alternativeId = null;
@@ -1259,7 +1259,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 let sdoMap = JSON.parse(`{}`);
-let biblio = JSON.parse(`{"refsByClause":{},"entries":[{"type":"clause","id":"sec-demo-clause","titleHTML":"This is an emu-clause","number":"1"},{"type":"clause","id":"sec-copyright-and-software-license","title":"Copyright & Software License","titleHTML":"Copyright &amp; Software License","number":"A"}]}`);
+let biblio = JSON.parse(`{"refsByClause":{"sec-temporal-iscalendarsupportera":["_ref_0","_ref_1"],"sec-temporal-isvalideraforcalendar":["_ref_2","_ref_7"],"sec-temporal-isvalidmonthecodeforcalendar":["_ref_3","_ref_4"],"sec-temporal-isvaliderayearforcalendar":["_ref_5","_ref_6","_ref_8"],"sec-temporal-calendardateera":["_ref_9"],"sec-temporal-calendardateerayear":["_ref_10"],"sec-temporal-calendardatefields":["_ref_11"]},"entries":[{"type":"op","aoid":"IsCalendarSupportEra","refId":"sec-temporal-iscalendarsupportera"},{"type":"clause","id":"sec-temporal-iscalendarsupportera","title":"IsCalendarSupportEra ( calendar )","titleHTML":"IsCalendarSupportEra ( <var>calendar</var> )","number":"1.1","referencingIds":["_ref_7","_ref_9","_ref_10","_ref_11"]},{"type":"table","id":"table-supported-eras-and-months","number":1,"caption":"Table 1: Supported Era CodeS and Additional Month Codes in Calendars","referencingIds":["_ref_0","_ref_1","_ref_2","_ref_3","_ref_4"]},{"type":"op","aoid":"IsValidEraForCalendar","refId":"sec-temporal-isvalideraforcalendar"},{"type":"clause","id":"sec-temporal-isvalideraforcalendar","title":"IsValidEraForCalendar ( calendar, era )","titleHTML":"IsValidEraForCalendar ( <var>calendar</var>, <var>era</var> )","number":"1.2","referencingIds":["_ref_8"]},{"type":"op","aoid":"IsValidMonthCodeForCalendar","refId":"sec-temporal-isvalidmonthecodeforcalendar"},{"type":"clause","id":"sec-temporal-isvalidmonthecodeforcalendar","title":"IsValidMonthCodeForCalendar ( calendar, monthCode )","titleHTML":"IsValidMonthCodeForCalendar ( <var>calendar</var>, <var>monthCode</var> )","number":"1.3"},{"type":"op","aoid":"IsValidEraYearForCalendar","refId":"sec-temporal-isvaliderayearforcalendar"},{"type":"clause","id":"sec-temporal-isvaliderayearforcalendar","title":"IsValidEraYearForCalendar ( calendar, era, eraYear )","titleHTML":"IsValidEraYearForCalendar ( <var>calendar</var>, <var>era</var>, <var>eraYear</var> )","number":"1.4"},{"type":"table","id":"table-erayear-range","number":2,"caption":"Table 2: Range of eraYear","referencingIds":["_ref_5","_ref_6"]},{"type":"op","aoid":"CalendarDateEra","refId":"sec-temporal-calendardateera"},{"type":"clause","id":"sec-temporal-calendardateera","title":"CalendarDateEra ( calendar, date )","titleHTML":"CalendarDateEra ( <var>calendar</var>, <var>date</var> )","number":"1.5"},{"type":"op","aoid":"CalendarDateEraYear","refId":"sec-temporal-calendardateerayear"},{"type":"clause","id":"sec-temporal-calendardateerayear","title":"CalendarDateEraYear ( calendar, date )","titleHTML":"CalendarDateEraYear ( <var>calendar</var>, <var>date</var> )","number":"1.6"},{"type":"op","aoid":"CalendarDateFields","refId":"sec-temporal-calendardatefields"},{"type":"clause","id":"sec-temporal-calendardatefields","title":"CalendarDateFields ( calendar, fields )","titleHTML":"CalendarDateFields ( <var>calendar</var>, <var>fields</var> )","number":"1.7"},{"type":"clause","id":"sup-temporal-calendar-abstract-ops","titleHTML":"Abstract Operations for Temporal.Calendar Objects","number":"1"},{"type":"clause","id":"sec-copyright-and-software-license","title":"Copyright & Software License","titleHTML":"Copyright &amp; Software License","number":"A"}]}`);
 ;let usesMultipage = false</script><style>body {
   display: flex;
   font-size: 18px;
@@ -2524,17 +2524,224 @@ li.menu-search-result-term:before {
 </ul></div><div id="menu-toggle"><svg xmlns="http://www.w3.org/2000/svg" style="width:100%; height:100%; stroke:currentColor" viewBox="0 0 120 120">
       <title>Menu</title>
       <path stroke-width="10" stroke-linecap="round" d="M30,60 h60  M30,30 m0,5 h60  M30,90 m0,-5 h60"></path>
-    </svg></div><div id="menu-spacer"></div><div id="menu"><div id="menu-search"><input type="text" id="menu-search-box" placeholder="Search..."><div id="menu-search-results" class="inactive"></div></div><div id="menu-pins"><div class="menu-pane-header">Pins</div><ul id="menu-pins-list"></ul></div><div class="menu-pane-header">Table of Contents</div><div id="menu-toc"><ol class="toc"><li><span class="item-toggle-none"></span><a href="#sec-demo-clause" title="This is an emu-clause"><span class="secnum">1</span> This is an emu-clause</a></li><li><span class="item-toggle-none"></span><a href="#sec-copyright-and-software-license" title="Copyright &amp; Software License"><span class="secnum">A</span> Copyright &amp; Software License</a></li></ol></div></div><div id="spec-container"><h1 class="version">Stage -1 Draft / June 16, 2022</h1><h1 class="title">Proposal Title Goes Here</h1>
+    </svg></div><div id="menu-spacer"></div><div id="menu"><div id="menu-search"><input type="text" id="menu-search-box" placeholder="Search..."><div id="menu-search-results" class="inactive"></div></div><div id="menu-pins"><div class="menu-pane-header">Pins</div><ul id="menu-pins-list"></ul></div><div class="menu-pane-header">Table of Contents</div><div id="menu-toc"><ol class="toc"><li><span class="item-toggle">◢</span><a href="#sup-temporal-calendar-abstract-ops" title="Abstract Operations for Temporal.Calendar Objects"><span class="secnum">1</span> Abstract Operations for Temporal.Calendar Objects</a><ol class="toc"><li><span class="item-toggle-none"></span><a href="#sec-temporal-iscalendarsupportera" title="IsCalendarSupportEra ( calendar )"><span class="secnum">1.1</span> IsCalendarSupportEra ( <var>calendar</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sec-temporal-isvalideraforcalendar" title="IsValidEraForCalendar ( calendar, era )"><span class="secnum">1.2</span> IsValidEraForCalendar ( <var>calendar</var>, <var>era</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sec-temporal-isvalidmonthecodeforcalendar" title="IsValidMonthCodeForCalendar ( calendar, monthCode )"><span class="secnum">1.3</span> IsValidMonthCodeForCalendar ( <var>calendar</var>, <var>monthCode</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sec-temporal-isvaliderayearforcalendar" title="IsValidEraYearForCalendar ( calendar, era, eraYear )"><span class="secnum">1.4</span> IsValidEraYearForCalendar ( <var>calendar</var>, <var>era</var>, <var>eraYear</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sec-temporal-calendardateera" title="CalendarDateEra ( calendar, date )"><span class="secnum">1.5</span> CalendarDateEra ( <var>calendar</var>, <var>date</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sec-temporal-calendardateerayear" title="CalendarDateEraYear ( calendar, date )"><span class="secnum">1.6</span> CalendarDateEraYear ( <var>calendar</var>, <var>date</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sec-temporal-calendardatefields" title="CalendarDateFields ( calendar, fields )"><span class="secnum">1.7</span> CalendarDateFields ( <var>calendar</var>, <var>fields</var> )</a></li></ol></li><li><span class="item-toggle-none"></span><a href="#sec-copyright-and-software-license" title="Copyright &amp; Software License"><span class="secnum">A</span> Copyright &amp; Software License</a></li></ol></div></div><div id="spec-container"><h1 class="version">Stage 0 Draft / September 10, 2022</h1><h1 class="title">Intl Temporal Proposal</h1>
 
-<emu-clause id="sec-demo-clause">
-  <h1><span class="secnum">1</span> This is an emu-clause</h1>
-  <p>This is an algorithm:</p>
-  <emu-alg><ol><li>Let <var>proposal</var> be <emu-val>undefined</emu-val>.</li><li>If IsAccepted(<var>proposal</var>), then<ol><li>Let <var>stage</var> be <emu-val>0</emu-val><sub>ℤ</sub>.</li></ol></li><li>Else,<ol><li>Let <var>stage</var> be <emu-val>-1</emu-val><sub>ℤ</sub>.</li></ol></li><li>Return ?&nbsp;<emu-xref aoid="ToString"><a href="https://tc39.es/ecma262/#sec-tostring">ToString</a></emu-xref>(<var>proposal</var>).</li></ol></emu-alg>
+<emu-clause id="sup-temporal-calendar-abstract-ops">
+  <h1><span class="secnum">1</span> Abstract Operations for Temporal.Calendar Objects</h1>
+  <emu-clause id="sec-temporal-iscalendarsupportera" type="abstract operation" aoid="IsCalendarSupportEra">
+    <h1><span class="secnum">1.1</span> IsCalendarSupportEra ( <var>calendar</var> )</h1>
+    <p>The abstract operation IsCalendarSupportEra takes argument <var>calendar</var> (a String) and returns a Boolean. It performs the following steps when called:</p>
+    <emu-alg><ol><li>If <var>calendar</var> is not listed in the <emu-val>"Calendar"</emu-val> column of <emu-xref href="#table-supported-eras-and-months" id="_ref_0"><a href="#table-supported-eras-and-months">Table 1</a></emu-xref>, return <emu-val>false</emu-val>.</li><li>Let <var>r</var> be the row in <emu-xref href="#table-supported-eras-and-months" id="_ref_1"><a href="#table-supported-eras-and-months">Table 1</a></emu-xref> which the <var>clendar</var> is in the <emu-val>"Calendar"</emu-val> column.</li><li>Let <var>values</var> be a <emu-xref href="#sec-list-and-record-specification-type"><a href="https://tc39.es/ecma262/#sec-list-and-record-specification-type">List</a></emu-xref> whose elements are the strings given in the <emu-val>"Supported Eras"</emu-val> column of <var>r</var>.</li><li>If <var>values</var> is an empty list, return <emu-val>false</emu-val>.</li><li>Return <emu-val>true</emu-val>.</li></ol></emu-alg>
+  </emu-clause>
+  <emu-table id="table-supported-eras-and-months"><figure><figcaption>Table 1: Supported Era CodeS and Additional Month Codes in Calendars</figcaption>
+    
+    <table class="real-table">
+      <thead>
+        <tr>
+          <th>Calendar</th>
+          <th>Supported Eras</th>
+          <th>Additional Month Codes</th>
+        </tr>
+      </thead>
+      <tbody><tr>
+        <td><emu-val>"buddhist"</emu-val></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><emu-val>"chinese"</emu-val></td>
+        <td></td>
+        <td><emu-val>"M01L"</emu-val>, <emu-val>"M02L"</emu-val>, <emu-val>"M03L"</emu-val>, <emu-val>"M04L"</emu-val>, <emu-val>"M05L"</emu-val>, <emu-val>"M06L"</emu-val>, <emu-val>"M07L"</emu-val>, <emu-val>"M08L"</emu-val>, <emu-val>"M09L"</emu-val>, <emu-val>"M10L"</emu-val>, <emu-val>"M11L"</emu-val>, <emu-val>"M12L"</emu-val></td>
+      </tr>
+      <tr>
+        <td><emu-val>"coptic"</emu-val></td>
+        <td><emu-val>"pre-coptic"</emu-val>, <emu-val>"coptic"</emu-val></td>
+        <td><emu-val>"M13"</emu-val></td>
+      </tr>
+      <tr>
+        <td><emu-val>"dangi"</emu-val></td>
+        <td></td>
+        <td><emu-val>"M01L"</emu-val>, <emu-val>"M02L"</emu-val>, <emu-val>"M03L"</emu-val>, <emu-val>"M04L"</emu-val>, <emu-val>"M05L"</emu-val>, <emu-val>"M06L"</emu-val>, <emu-val>"M07L"</emu-val>, <emu-val>"M08L"</emu-val>, <emu-val>"M09L"</emu-val>, <emu-val>"M10L"</emu-val>, <emu-val>"M11L"</emu-val>, <emu-val>"M12L"</emu-val></td>
+      </tr>
+      <tr>
+        <td><emu-val>"ethiopic-amete-alem"</emu-val></td>
+        <td></td>
+        <td><emu-val>"M13"</emu-val></td>
+      </tr>
+      <tr>
+        <td><emu-val>"ethiopic"</emu-val></td>
+        <td> ???? </td>
+        <td><emu-val>"M13"</emu-val></td>
+      </tr>
+      <tr>
+        <td><emu-val>"gregory"</emu-val></td>
+        <td><emu-val>"bce"</emu-val>, <emu-val>"ce"</emu-val></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><emu-val>"hebrew"</emu-val></td>
+        <td></td>
+        <td><emu-val>"M05L"</emu-val></td>
+      </tr>
+      <tr>
+        <td><emu-val>"indian"</emu-val></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><emu-val>"islamic-civil"</emu-val></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><emu-val>"islamic-rgsa"</emu-val></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><emu-val>"islamic-tbla"</emu-val></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><emu-val>"islamic-umalqura"</emu-val></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><emu-val>"islamic"</emu-val></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><emu-val>"japanese"</emu-val></td>
+        <td><emu-val>"bce"</emu-val>, <emu-val>"ce"</emu-val>, <emu-val>"meiji"</emu-val>, <emu-val>"taisho"</emu-val>, <emu-val>"showa"</emu-val>, <emu-val>"heisei"</emu-val>, <emu-val>"reiwa"</emu-val></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><emu-val>"persian"</emu-val></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><emu-val>"roc"</emu-val></td>
+        <td><emu-val>"pre-minguo"</emu-val>, <emu-val>"minguo"</emu-val></td>
+        <td></td>
+      </tr>
+    </tbody></table>
+  </figure></emu-table>
+
+  <emu-clause id="sec-temporal-isvalideraforcalendar" type="abstract operation" aoid="IsValidEraForCalendar">
+    <h1><span class="secnum">1.2</span> IsValidEraForCalendar ( <var>calendar</var>, <var>era</var> )</h1>
+    <p>The abstract operation IsValidEraForCalendar takes arguments <var>calendar</var> (a String) and <var>era</var> (a String) and returns a Boolean. It performs the following steps when called:</p>
+    <emu-alg><ol><li><emu-xref href="#assert"><a href="https://tc39.es/ecma262/#assert">Assert</a></emu-xref>: <emu-xref aoid="IsCalendarSupportEra" id="_ref_7"><a href="#sec-temporal-iscalendarsupportera">IsCalendarSupportEra</a></emu-xref>( <var>calendar</var> ) is <emu-val>true</emu-val>.</li><li>Let <var>r</var> be the row in <emu-xref href="#table-supported-eras-and-months" id="_ref_2"><a href="#table-supported-eras-and-months">Table 1</a></emu-xref> which the <var>clendar</var> is in the <emu-val>"Calendar"</emu-val> column.</li><li>Let <var>valid</var> be a <emu-xref href="#sec-list-and-record-specification-type"><a href="https://tc39.es/ecma262/#sec-list-and-record-specification-type">List</a></emu-xref> whose elements are the strings given in the <emu-val>"Supported Eras"</emu-val> column of <var>r</var>.</li><li>If <var>valid</var> contains <var>era</var>, return <emu-val>true</emu-val>.</li><li>Return <emu-val>false</emu-val>.</li></ol></emu-alg>
+  </emu-clause>
+
+  <emu-clause id="sec-temporal-isvalidmonthecodeforcalendar" type="abstract operation" aoid="IsValidMonthCodeForCalendar">
+    <h1><span class="secnum">1.3</span> IsValidMonthCodeForCalendar ( <var>calendar</var>, <var>monthCode</var> )</h1>
+    <p>The abstract operation IsValidMonthCodeForCalendar takes arguments <var>calendar</var> (a String) and <var>monthCode</var> (a String) and returns a Boolean. It performs the following steps when called:</p>
+    <emu-alg><ol><li>Let <var>commonMonthCodes</var> be « <emu-val>"M01"</emu-val>, <emu-val>"M02"</emu-val>, <emu-val>"M03"</emu-val>, <emu-val>"M04"</emu-val>, <emu-val>"M05"</emu-val>, <emu-val>"M06"</emu-val>, <emu-val>"M07"</emu-val>, <emu-val>"M08"</emu-val>, <emu-val>"M09"</emu-val>, <emu-val>"M10"</emu-val>, <emu-val>"M11"</emu-val>, <emu-val>"M12"</emu-val> ».</li><li>If <var>commonMonthCodes</var> contains <var>monthCode</var>, return <emu-val>true</emu-val>.</li><li>If <var>calendar</var> is not listed in the <emu-val>"Calendar"</emu-val> column of <emu-xref href="#table-supported-eras-and-months" id="_ref_3"><a href="#table-supported-eras-and-months">Table 1</a></emu-xref>, return <emu-val>false</emu-val>.</li><li>Let <var>r</var> be the row in <emu-xref href="#table-supported-eras-and-months" id="_ref_4"><a href="#table-supported-eras-and-months">Table 1</a></emu-xref> which the <var>clendar</var> is in the <emu-val>"Calendar"</emu-val> column.</li><li>Let <var>specialMonthCodes</var> be a <emu-xref href="#sec-list-and-record-specification-type"><a href="https://tc39.es/ecma262/#sec-list-and-record-specification-type">List</a></emu-xref> whose elements are the strings given in the <emu-val>"Additional Month Codes"</emu-val> column of <var>r</var>.</li><li>If <var>specialMonthCodes</var> contains <var>monthCode</var>, return <emu-val>true</emu-val>.</li><li>Return <emu-val>false</emu-val>.</li></ol></emu-alg>
+  </emu-clause>
+
+  <emu-clause id="sec-temporal-isvaliderayearforcalendar" type="abstract operation" aoid="IsValidEraYearForCalendar">
+    <h1><span class="secnum">1.4</span> IsValidEraYearForCalendar ( <var>calendar</var>, <var>era</var>, <var>eraYear</var> )</h1>
+    <p>The abstract operation IsValidEraYearForCalendar takes arguments <var>calendar</var> (a String), <var>era</var> (a String), and <var>eraYear</var> (a <emu-xref href="#integer"><a href="https://tc39.es/ecma262/#integer">integer</a></emu-xref>) and returns a Boolean. It performs the following steps when called:</p>
+    <emu-alg><ol><li><emu-xref href="#assert"><a href="https://tc39.es/ecma262/#assert">Assert</a></emu-xref>: <emu-xref aoid="IsValidEraForCalendar" id="_ref_8"><a href="#sec-temporal-isvalideraforcalendar">IsValidEraForCalendar</a></emu-xref>( <var>calendar</var> , <var>era</var>) is <emu-val>true</emu-val>.</li><li><emu-xref href="#assert"><a href="https://tc39.es/ecma262/#assert">Assert</a></emu-xref>: <var>era</var> is listed in the <emu-val>"Era"</emu-val> column of <emu-xref href="#table-erayear-range" id="_ref_5"><a href="#table-erayear-range">Table 2</a></emu-xref>.</li><li>Let <var>r</var> be the row in <emu-xref href="#table-erayear-range" id="_ref_6"><a href="#table-erayear-range">Table 2</a></emu-xref> which the <var>era</var> is in the <emu-val>"Era"</emu-val> column.</li><li>Let <var>min</var> be the value given in the <emu-val>"Minimum eraYear"</emu-val> column of <var>r</var>.</li><li>Let <var>max</var> be the value given in the <emu-val>"Maximum eraYear"</emu-val> column of <var>r</var>.</li><li>If <var>eraYear</var> &lt; <var>min</var>, return <emu-val>false</emu-val>.</li><li>If <var>eraYear</var> &gt; <var>max</var>, return <emu-val>false</emu-val>.</li><li>Return <emu-val>true</emu-val>.</li></ol></emu-alg>
+  </emu-clause>
+
+  <emu-table id="table-erayear-range"><figure><figcaption>Table 2: <emu-xref href="#sec-notation"><a href="https://tc39.es/ecma262/#sec-notation">Range</a></emu-xref> of eraYear</figcaption>
+    
+    <table class="real-table">
+      <thead>
+        <tr>
+          <th>Era</th>
+          <th>Minimum eraYear</th>
+          <th>Maximum eraYear</th>
+        </tr>
+      </thead>
+      <tbody><tr>
+        <td><emu-val>"bce"</emu-val></td>
+        <td>1</td>
+        <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
+      </tr>
+      <tr>
+        <td><emu-val>"ce"</emu-val></td>
+        <td>1</td>
+        <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
+      </tr>
+      <tr>
+        <td><emu-val>"coptic"</emu-val></td>
+        <td>1</td>
+        <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
+      </tr>
+      <tr>
+        <td><emu-val>"heisei"</emu-val></td>
+        <td>1</td>
+        <td>31</td>
+      </tr>
+      <tr>
+        <td><emu-val>"meiji"</emu-val></td>
+        <td>1</td>
+        <td>45</td>
+      </tr>
+      <tr>
+        <td><emu-val>"minguo"</emu-val></td>
+        <td>1</td>
+        <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
+      </tr>
+      <tr>
+        <td><emu-val>"pre-coptic"</emu-val></td>
+        <td>1</td>
+        <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
+      </tr>
+      <tr>
+        <td><emu-val>"pre-minguo"</emu-val></td>
+        <td>1</td>
+        <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
+      </tr>
+      <tr>
+        <td><emu-val>"reiwa"</emu-val></td>
+        <td>1</td>
+        <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
+      </tr>
+      <tr>
+        <td><emu-val>"showa"</emu-val></td>
+        <td>1</td>
+        <td>64</td>
+      </tr>
+      <tr>
+        <td><emu-val>"taisho"</emu-val></td>
+        <td>1</td>
+        <td>15</td>
+      </tr>
+    </tbody></table>
+  </figure></emu-table>
+
+  <emu-clause id="sec-temporal-calendardateera" type="abstract operation" aoid="CalendarDateEra">
+    <h1><span class="secnum">1.5</span> CalendarDateEra ( <var>calendar</var>, <var>date</var> )</h1>
+    <p>The abstract operation CalendarDateEra takes arguments <var>calendar</var> (a String) and <var>date</var> (a Temporal.PlainDateTime, Temporal.PlainDate, or Temporal.PlainYearMonth) and returns a String or <emu-val>undefined</emu-val>. It performs <emu-xref href="#implementation-defined"><a href="https://tc39.es/ecma262/#implementation-defined">implementation-defined</a></emu-xref> processing to find the era for the date corresponding to <var>date</var> in the context of the calendar represented by <var>calendar</var> and returns a lowercase String value representing that era, or <emu-val>undefined</emu-val> for calendars that do not have eras. It performs the following steps when called:</p>
+    <emu-alg><ol><li>If <emu-xref aoid="IsCalendarSupportEra" id="_ref_9"><a href="#sec-temporal-iscalendarsupportera">IsCalendarSupportEra</a></emu-xref>(<var>calendar</var>) is <emu-val>false</emu-val>, return <emu-val>undefined</emu-val>.</li><li>Performs <emu-xref href="#implementation-defined"><a href="https://tc39.es/ecma262/#implementation-defined">implementation-defined</a></emu-xref> processing to find the era for the date corresponding to <var>date</var> in the context of the calendar represented by <var>calendar</var> and returns the corresponding value in <var>values</var>.</li></ol></emu-alg>
+  </emu-clause>
+
+  <emu-clause id="sec-temporal-calendardateerayear" type="abstract operation" aoid="CalendarDateEraYear">
+    <h1><span class="secnum">1.6</span> CalendarDateEraYear ( <var>calendar</var>, <var>date</var> )</h1>
+    <p>The abstract operation CalendarDateEraYear takes arguments <var>calendar</var> (a String) and <var>date</var> (a Temporal.PlainDateTime, Temporal.PlainDate, or Temporal.PlainYearMonth) and returns an <emu-xref href="#integer"><a href="https://tc39.es/ecma262/#integer">integer</a></emu-xref> or <emu-val>undefined</emu-val>. It performs <emu-xref href="#implementation-defined"><a href="https://tc39.es/ecma262/#implementation-defined">implementation-defined</a></emu-xref> processing to find the era for the date corresponding to <var>date</var> in the context of the calendar represented by <var>calendar</var> and returns an <emu-xref href="#integer"><a href="https://tc39.es/ecma262/#integer">integer</a></emu-xref> representing the ordinal position of the year of <var>date</var> in that era, or <emu-val>undefined</emu-val> for calendars that do not have eras. It performs the following steps when called:</p>
+    <emu-alg><ol><li>If <emu-xref aoid="IsCalendarSupportEra" id="_ref_10"><a href="#sec-temporal-iscalendarsupportera">IsCalendarSupportEra</a></emu-xref>(<var>calendar</var>) is <emu-val>false</emu-val>, return <emu-val>undefined</emu-val>.</li><li>Performs <emu-xref href="#implementation-defined"><a href="https://tc39.es/ecma262/#implementation-defined">implementation-defined</a></emu-xref> processing to find the era for the date corresponding to <var>date</var> in the context of the calendar represented by <var>calendar</var> and returns an <emu-xref href="#integer"><a href="https://tc39.es/ecma262/#integer">integer</a></emu-xref> representing the ordinal position of the year of <var>date</var> in that era.</li></ol></emu-alg>
+    <emu-note><span class="note">Note</span><div class="note-contents">
+      Era years are 1-indexed for many calendars, but not all (e.g., the eras of the Burmese calendar each start with a year 0). Years can also advance opposite the flow of time (as for BCE years in the Gregorian calendar).
+    </div></emu-note>
+  </emu-clause>
+
+  <emu-clause id="sec-temporal-calendardatefields" type="abstract operation" aoid="CalendarDateFields">
+    <h1><span class="secnum">1.7</span> CalendarDateFields ( <var>calendar</var>, <var>fields</var> )</h1>
+    <p>The abstract operation CalendarDateFields takes arguments <var>calendar</var> (a String) and <var>fields</var> (a <emu-xref href="#sec-list-and-record-specification-type"><a href="https://tc39.es/ecma262/#sec-list-and-record-specification-type">List</a></emu-xref> of Strings) and returns a <emu-xref href="#sec-list-and-record-specification-type"><a href="https://tc39.es/ecma262/#sec-list-and-record-specification-type">List</a></emu-xref> of Strings. It takes a list of standard fields in <var>fields</var> that are necessary for a given operation and returns a new list by adding relevant calendar-specific fields for the calendar represented by <var>calendar</var>. This is relevant for calendars which accept fields other than the standard set of built-in calendar fields. It performs the following steps when called:</p>
+    <emu-alg><ol><li>If <var>fields</var> contains an element equal to <emu-val>"year"</emu-val>, then<ol><li>If <emu-xref aoid="IsCalendarSupportEra" id="_ref_11"><a href="#sec-temporal-iscalendarsupportera">IsCalendarSupportEra</a></emu-xref>(<var>calendar</var>) is <emu-val>true</emu-val>, then<ol><li>Append <emu-val>"era"</emu-val> to <var>fields</var>.</li><li>Append <emu-val>"eraYear"</emu-val> to <var>fields</var>.</li></ol></li></ol></li><li>Performan additional check and add relevant calendar-specific fields for the calendar represented by <var>calendar</var>.</li><li>Return <var>fields</var>.</li></ol></emu-alg>
+  </emu-clause>
 </emu-clause><emu-annex id="sec-copyright-and-software-license">
       <h1><span class="secnum">A</span> Copyright &amp; Software License</h1>
       
       <h2>Copyright Notice</h2>
-      <p>© 2022 Your Name(s) Here</p>
+      <p>© 2022 Google, Ecma International</p>
 
       <h2>Software License</h2>
       <p>All Software contained in this document ("Software") is protected by copyright and is being made available under the "BSD License", included below. This Software may be subject to third party rights (rights from parties other than Ecma International), including patent rights, and no licenses under such third party rights are granted under this license even if the third party concerned is a member of Ecma International. SEE THE ECMA CODE OF CONDUCT IN PATENT MATTERS AVAILABLE AT https://ecma-international.org/memento/codeofconduct.htm FOR INFORMATION REGARDING THE LICENSING OF PATENT CLAIMS THAT ARE REQUIRED TO IMPLEMENT ECMA INTERNATIONAL STANDARDS.</p>

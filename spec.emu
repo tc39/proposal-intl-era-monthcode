@@ -4,20 +4,312 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
 <script src="./spec.js"></script>
 <pre class="metadata">
-title: Proposal Title Goes Here
-stage: -1
-contributors: Your Name(s) Here
+title: Intl Temporal Proposal
+stage: 0
+location: https://tc39.github.io/proposal-intl-temporal
+copyright: true
+contributors: Google, Ecma International
 </pre>
 
-<emu-clause id="sec-demo-clause">
-  <h1>This is an emu-clause</h1>
-  <p>This is an algorithm:</p>
-  <emu-alg>
-    1. Let _proposal_ be *undefined*.
-    1. If IsAccepted(_proposal_), then
-      1. Let _stage_ be *0*<sub>ℤ</sub>.
-    1. Else,
-      1. Let _stage_ be *-1*<sub>ℤ</sub>.
-    1. Return ? ToString(_proposal_).
-  </emu-alg>
+<emu-clause id="sup-temporal-calendar-abstract-ops">
+  <h1>Abstract Operations for Temporal.Calendar Objects</h1>
+  <emu-clause id="sec-temporal-iscalendarsupportera" type="abstract operation">
+    <h1>
+      IsCalendarSupportEra (
+        _calendar_: a String,
+      ): a Boolean
+    </h1>
+    <dl class="header">
+    </dl>
+    <emu-alg>
+      1. If _calendar_ is not listed in the *"Calendar"* column of <emu-xref href="#table-supported-eras-and-months"></emu-xref>, return *false*.
+      1. Let _r_ be the row in <emu-xref href="#table-supported-eras-and-months"></emu-xref> which the _clendar_ is in the *"Calendar"* column.
+      1. Let _values_ be a List whose elements are the strings given in the *"Supported Eras"* column of _r_.
+      1. If _values_ is an empty list, return *false*.
+      1. Return *true*.
+    </emu-alg>
+  </emu-clause>
+  <emu-table id="table-supported-eras-and-months">
+    <emu-caption>Supported Era CodeS and Additional Month Codes in Calendars</emu-caption>
+    <table class="real-table">
+      <thead>
+        <tr>
+          <th>Calendar</th>
+          <th>Supported Eras</th>
+          <th>Additional Month Codes</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>*"buddhist"*</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>*"chinese"*</td>
+        <td></td>
+        <td>*"M01L"*, *"M02L"*, *"M03L"*, *"M04L"*, *"M05L"*, *"M06L"*, *"M07L"*, *"M08L"*, *"M09L"*, *"M10L"*, *"M11L"*, *"M12L"*</td>
+      </tr>
+      <tr>
+        <td>*"coptic"*</td>
+        <td>*"pre-coptic"*, *"coptic"*</td>
+        <td>*"M13"*</td>
+      </tr>
+      <tr>
+        <td>*"dangi"*</td>
+        <td></td>
+        <td>*"M01L"*, *"M02L"*, *"M03L"*, *"M04L"*, *"M05L"*, *"M06L"*, *"M07L"*, *"M08L"*, *"M09L"*, *"M10L"*, *"M11L"*, *"M12L"*</td>
+      </tr>
+      <tr>
+        <td>*"ethiopic-amete-alem"*</td>
+        <td></td>
+        <td>*"M13"*</td>
+      </tr>
+      <tr>
+        <td>*"ethiopic"*</td>
+        <td> ???? </td>
+        <td>*"M13"*</td>
+      </tr>
+      <tr>
+        <td>*"gregory"*</td>
+        <td>*"bce"*, *"ce"*</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>*"hebrew"*</td>
+        <td></td>
+        <td>*"M05L"*</td>
+      </tr>
+      <tr>
+        <td>*"indian"*</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>*"islamic-civil"*</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>*"islamic-rgsa"*</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>*"islamic-tbla"*</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>*"islamic-umalqura"*</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>*"islamic"*</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>*"japanese"*</td>
+        <td>*"bce"*, *"ce"*, *"meiji"*, *"taisho"*, *"showa"*, *"heisei"*, *"reiwa"*</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>*"persian"*</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>*"roc"*</td>
+        <td>*"pre-minguo"*, *"minguo"*</td>
+        <td></td>
+      </tr>
+    </table>
+  </emu-table>
+
+  <emu-clause id="sec-temporal-isvalideraforcalendar" type="abstract operation">
+    <h1>
+      IsValidEraForCalendar (
+        _calendar_: a String,
+        _era_: a String,
+      ): a Boolean
+    </h1>
+    <dl class="header">
+    </dl>
+    <emu-alg>
+      1. Assert: IsCalendarSupportEra( _calendar_ ) is *true*.
+      1. Let _r_ be the row in <emu-xref href="#table-supported-eras-and-months"></emu-xref> which the _clendar_ is in the *"Calendar"* column.
+      1. Let _valid_ be a List whose elements are the strings given in the *"Supported Eras"* column of _r_.
+      1. If _valid_ contains _era_, return *true*.
+      1. Return *false*.
+    </emu-alg>
+  </emu-clause>
+
+  <emu-clause id="sec-temporal-isvalidmonthecodeforcalendar" type="abstract operation">
+    <h1>
+      IsValidMonthCodeForCalendar (
+        _calendar_: a String,
+        _monthCode_: a String,
+      ): a Boolean
+    </h1>
+    <dl class="header">
+    </dl>
+    <emu-alg>
+      1. Let _commonMonthCodes_ be « *"M01"*, *"M02"*, *"M03"*, *"M04"*, *"M05"*, *"M06"*, *"M07"*, *"M08"*, *"M09"*, *"M10"*, *"M11"*, *"M12"* ».
+      1. If _commonMonthCodes_ contains _monthCode_, return *true*.
+      1. If _calendar_ is not listed in the *"Calendar"* column of <emu-xref href="#table-supported-eras-and-months"></emu-xref>, return *false*.
+      1. Let _r_ be the row in <emu-xref href="#table-supported-eras-and-months"></emu-xref> which the _clendar_ is in the *"Calendar"* column.
+      1. Let _specialMonthCodes_ be a List whose elements are the strings given in the *"Additional Month Codes"* column of _r_.
+      1. If _specialMonthCodes_ contains _monthCode_, return *true*.
+      1. Return *false*.
+    </emu-alg>
+  </emu-clause>
+
+  <emu-clause id="sec-temporal-isvaliderayearforcalendar" type="abstract operation">
+    <h1>
+      IsValidEraYearForCalendar (
+        _calendar_: a String,
+        _era_: a String,
+        _eraYear_: a integer,
+      ): a Boolean
+    </h1>
+    <dl class="header">
+    </dl>
+    <emu-alg>
+      1. Assert: IsValidEraForCalendar( _calendar_ , _era_) is *true*.
+      1. Assert: _era_ is listed in the *"Era"* column of <emu-xref href="#table-erayear-range"></emu-xref>.
+      1. Let _r_ be the row in <emu-xref href="#table-erayear-range"></emu-xref> which the _era_ is in the *"Era"* column.
+      1. Let _min_ be the value given in the *"Minimum eraYear"* column of _r_.
+      1. Let _max_ be the value given in the *"Maximum eraYear"* column of _r_.
+      1. If _eraYear_ &lt; _min_, return *false*.
+      1. If _eraYear_ &gt; _max_, return *false*.
+      1. Return *true*.
+    </emu-alg>
+  </emu-clause>
+
+  <emu-table id="table-erayear-range">
+    <emu-caption>Range of eraYear</emu-caption>
+    <table class="real-table">
+      <thead>
+        <tr>
+          <th>Era</th>
+          <th>Minimum eraYear</th>
+          <th>Maximum eraYear</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>*"bce"*</td>
+        <td>1</td>
+        <td>*+&infin;*<sub>𝔽</sub></td>
+      </tr>
+      <tr>
+        <td>*"ce"*</td>
+        <td>1</td>
+        <td>*+&infin;*<sub>𝔽</sub></td>
+      </tr>
+      <tr>
+        <td>*"coptic"*</td>
+        <td>1</td>
+        <td>*+&infin;*<sub>𝔽</sub></td>
+      </tr>
+      <tr>
+        <td>*"heisei"*</td>
+        <td>1</td>
+        <td>31</td>
+      </tr>
+      <tr>
+        <td>*"meiji"*</td>
+        <td>1</td>
+        <td>45</td>
+      </tr>
+      <tr>
+        <td>*"minguo"*</td>
+        <td>1</td>
+        <td>*+&infin;*<sub>𝔽</sub></td>
+      </tr>
+      <tr>
+        <td>*"pre-coptic"*</td>
+        <td>1</td>
+        <td>*+&infin;*<sub>𝔽</sub></td>
+      </tr>
+      <tr>
+        <td>*"pre-minguo"*</td>
+        <td>1</td>
+        <td>*+&infin;*<sub>𝔽</sub></td>
+      </tr>
+      <tr>
+        <td>*"reiwa"*</td>
+        <td>1</td>
+        <td>*+&infin;*<sub>𝔽</sub></td>
+      </tr>
+      <tr>
+        <td>*"showa"*</td>
+        <td>1</td>
+        <td>64</td>
+      </tr>
+      <tr>
+        <td>*"taisho"*</td>
+        <td>1</td>
+        <td>15</td>
+      </tr>
+    </table>
+  </emu-table>
+
+  <emu-clause id="sec-temporal-calendardateera" type="abstract operation">
+    <h1>
+      CalendarDateEra (
+        _calendar_: a String,
+        _date_: a Temporal.PlainDateTime, Temporal.PlainDate, or Temporal.PlainYearMonth,
+      ): a String or *undefined*
+    </h1>
+    <dl class="header">
+      <dt>description</dt>
+      <dd>It performs implementation-defined processing to find the era for the date corresponding to _date_ in the context of the calendar represented by _calendar_ and returns a lowercase String value representing that era, or *undefined* for calendars that do not have eras.</dd>
+    </dl>
+    <emu-alg>
+      1. If IsCalendarSupportEra(_calendar_) is *false*, return *undefined*.
+      1. Performs implementation-defined processing to find the era for the date corresponding to _date_ in the context of the calendar represented by _calendar_ and returns the corresponding value in _values_.
+    </emu-alg>
+  </emu-clause>
+
+  <emu-clause id="sec-temporal-calendardateerayear" type="abstract operation">
+    <h1>
+      CalendarDateEraYear (
+        _calendar_: a String,
+        _date_: a Temporal.PlainDateTime, Temporal.PlainDate, or Temporal.PlainYearMonth,
+      ): an integer or *undefined*
+    </h1>
+    <dl class="header">
+      <dt>description</dt>
+      <dd>It performs implementation-defined processing to find the era for the date corresponding to _date_ in the context of the calendar represented by _calendar_ and returns an integer representing the ordinal position of the year of _date_ in that era, or *undefined* for calendars that do not have eras.</dd>
+    </dl>
+    <emu-alg>
+      1. If IsCalendarSupportEra(_calendar_) is *false*, return *undefined*.
+      1. Performs implementation-defined processing to find the era for the date corresponding to _date_ in the context of the calendar represented by _calendar_ and returns an integer representing the ordinal position of the year of _date_ in that era.
+    </emu-alg>
+    <emu-note>
+      Era years are 1-indexed for many calendars, but not all (e.g., the eras of the Burmese calendar each start with a year 0). Years can also advance opposite the flow of time (as for BCE years in the Gregorian calendar).
+    </emu-note>
+  </emu-clause>
+
+  <emu-clause id="sec-temporal-calendardatefields" type="abstract operation">
+    <h1>
+      CalendarDateFields (
+        _calendar_: a String,
+        _fields_: a List of Strings,
+      ): a List of Strings
+    </h1>
+    <dl class="header">
+      <dt>description</dt>
+      <dd>It takes a list of standard fields in _fields_ that are necessary for a given operation and returns a new list by adding relevant calendar-specific fields for the calendar represented by _calendar_. This is relevant for calendars which accept fields other than the standard set of built-in calendar fields.</dd>
+    </dl>
+    <emu-alg>
+      1. If _fields_ contains an element equal to *"year"*, then
+        1. If IsCalendarSupportEra(_calendar_) is *true*, then
+          1. Append *"era"* to _fields_.
+          1. Append *"eraYear"* to _fields_.
+      1. Performan additional check and add relevant calendar-specific fields for the calendar represented by _calendar_.
+      1. Return _fields_.
+    </emu-alg>
+  </emu-clause>
 </emu-clause>
