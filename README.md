@@ -14,6 +14,41 @@ This proposal is currently Stage 0 for ECMA402
 [Temporal proposal](https://tc39.es/proposal-temporal/) is a ECMA262 Stage proposal to “provide standard objects and functions for working with dates and times.” The Temporal proposal specification text clearly specified how the “iso8601” Calendar and “UTC” TimeZone should behave as well as define name and some basic aspect of Calenders other than “iso8601” and TimeZone other than “UTC”. However, there are additional requirements needed for implementation purposes. This proposal aims to define these details which should be eventually merged into ECMA402 specification.
 
 
+### Abstract Operations in Temporal proposal to be specified
+We believe the following Abstract Opertaions defined in the [Temporal proposa] need to be defined in more details in this proposal:
+* [15.6.1.3 CalendarDateToISO ( calendar, fields, overflow )](https://tc39.es/proposal-temporal/#sec-temporal-calendardatetoiso)
+  * Need to specify the condition of throwing RangeError exception
+* [15.6.1.4 CalendarDateAddition ( calendar, date, duration, overflow )](https://tc39.es/proposal-temporal/#sec-temporal-calendardateaddition)
+  * Need to specify the condition of throwing RangeError exception
+* [15.6.1.5 CalendarDateDifference ( calendar, one, two, largestUnit )](https://tc39.es/proposal-temporal/#sec-temporal-calendardatedifference)
+  * Need to specify the condition of throwing RangeError exception
+* [15.6.1.6 CalendarDateEra ( calendar, date )](https://tc39.es/proposal-temporal/#sec-temporal-calendardateera)
+  * Need to define the possible era codes for each calendar and which calnedar will return undefined.
+* [15.6.1.7 CalendarDateEraYear ( calendar, date() )](https://tc39.es/proposal-temporal/#sec-temporal-calendardateerayear)
+  * Need to define which calnedar will return undefined.
+* [15.6.1.9 CalendarDateMonth ( calendar, date )](https://tc39.es/proposal-temporal/#sec-temporal-calendardatemonth)
+  * Need to define the meaning of month for some calendars.
+* [15.6.1.10 CalendarDateMonthCode ( calendar, date )](https://tc39.es/proposal-temporal/#sec-temporal-calendardatemonthcode)
+  * Need to define the valid set of monthCodes for each calendar.
+* [15.6.1.20 CalendarDateFields ( calendar, fields )]()
+  * Need to define which calendar will add "era" and "eraYear".
+* [15.6.1.21 CalendarDateMergeFields ( calendar, fields, additionalFields )]()
+  * Need to define which calendar will merge "era" and "eraYear" and how it merge "era" and "eraYear" .
+
+We may choose to specify certain calendar arithmetic for some calendars if they are very simple to conver from/to "iso8601" calendar- For example, for "gregory", "roc", "buddhist", "japanese" calendar, but leave the arithmetic in vague language for others.
+
+We are NOT aiming to specify the calendar arithmetic for the following part of Temporal proposal:
+* 15.6.1.8 CalendarDateYear ( calendar, date )
+* 15.6.1.11 CalendarDateDay ( calendar, date )
+* 15.6.1.12 CalendarDateDayOfWeek ( calendar, date )
+* 15.6.1.13 CalendarDateDayOfYear ( calendar, date )
+* 15.6.1.14 CalendarDateWeekOfYear ( calendar, date )
+* 15.6.1.15 CalendarDateDaysInWeek ( calendar, date )
+* 15.6.1.16 CalendarDateDaysInMonth ( calendar, date )
+* 15.6.1.17 CalendarDateDaysInYear ( calendar, date )
+* 15.6.1.18 CalendarDateMonthsInYear ( calendar, date )
+* 15.6.1.19 CalendarDateInLeapYear ( calendar, date )
+
 ### Calendars
 
 ### Values of Era for Calendars
