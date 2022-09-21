@@ -15,7 +15,7 @@ This proposal is currently Stage 0 for ECMA402
 
 
 ### Abstract Operations in Temporal proposal to be specified
-We believe the following Abstract Opertaions defined in the [Temporal proposa] need to be defined in more details in this proposal:
+We believe the following Abstract Opertaions defined in the [Temporal proposal](https://tc39.es/proposal-temporal) need to be defined in more details in this proposal:
 * [15.6.1.3 CalendarDateToISO ( calendar, fields, overflow )](https://tc39.es/proposal-temporal/#sec-temporal-calendardatetoiso)
   * Need to specify the condition of throwing RangeError exception
 * [15.6.1.4 CalendarDateAddition ( calendar, date, duration, overflow )](https://tc39.es/proposal-temporal/#sec-temporal-calendardateaddition)
