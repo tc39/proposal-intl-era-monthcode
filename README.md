@@ -1,6 +1,7 @@
-# Intl Temporal Proposal
+# Intl Era and MonthCode Proposal
+(old name "Intl Temporal Proposal")
 
-To specify necessary details of using Temporal in internationalization setting (such as calendar other than "iso8601").
+To specify necessary details about era, eraYear and monthCode usage with Temporal in internationalization setting (for calendars other than "iso8601").
 
 ## Stage
 This proposal is currently Stage 0 for ECMA402
