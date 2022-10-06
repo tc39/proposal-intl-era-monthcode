@@ -4,9 +4,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
 <script src="./spec.js"></script>
 <pre class="metadata">
-title: Intl Temporal Proposal
+title: Intl era and monthCode Proposal
 stage: 0
-location: https://frankyftang.github.io/proposal-intl-temporal/
+location: https://frankyftang.github.io/proposal-intl-era-monthcode/
 copyright: true
 contributors: Google, Ecma International
 </pre>
