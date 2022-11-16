@@ -10,7 +10,6 @@ location: https://frankyftang.github.io/proposal-intl-era-monthcode/
 copyright: true
 contributors: Google, Ecma International
 </pre>
-
 <emu-clause id="sup-temporal-calendar-abstract-ops">
   <h1>Abstract Operations for Temporal.Calendar Objects</h1>
   <emu-clause id="sec-temporal-iscalendarsupportera" type="abstract operation">
@@ -198,6 +197,11 @@ contributors: Google, Ecma International
         </tr>
       </thead>
       <tr>
+        <td>*"anno-mundi"*</td>
+        <td>*-&infin;*<sub>𝔽</sub></td>
+        <td>*+&infin;*<sub>𝔽</sub></td>
+      </tr>
+      <tr>
         <td>*"bce"*</td>
         <td>1</td>
         <td>*+&infin;*<sub>𝔽</sub></td>
@@ -209,6 +213,11 @@ contributors: Google, Ecma International
       </tr>
       <tr>
         <td>*"coptic"*</td>
+        <td>1</td>
+        <td>*+&infin;*<sub>𝔽</sub></td>
+      </tr>
+      <tr>
+        <td>*"ethiopic"*</td>
         <td>1</td>
         <td>*+&infin;*<sub>𝔽</sub></td>
       </tr>
@@ -255,7 +264,7 @@ contributors: Google, Ecma International
     </table>
   </emu-table>
 
-  <emu-clause id="sec-temporal-calendardateera" type="abstract operation">
+  <emu-clause id="sup-temporal-calendardateera" type="abstract operation">
     <h1>
       CalendarDateEra (
         _calendar_: a String,
@@ -266,13 +275,18 @@ contributors: Google, Ecma International
       <dt>description</dt>
       <dd>It performs implementation-defined processing to find the era for the date corresponding to _date_ in the context of the calendar represented by _calendar_ and returns a lowercase String value representing that era, or *undefined* for calendars that do not have eras.</dd>
     </dl>
+    <p>
+        This definition supersedes the definition provided in "Temporal proposal", #sec-temporal-calendardateera.
+    </p>
     <emu-alg>
       1. If IsCalendarSupportEra(_calendar_) is *false*, return *undefined*.
-      1. Performs implementation-defined processing to find the era for the date corresponding to _date_ in the context of the calendar represented by _calendar_ and returns the corresponding value in _values_.
+      1. Let _era_ be the String to indicate the era corresponding to _date_ in the context of the calendar represented by _calendar_ from an implementation-defined processing.
+      1. Assert: IsValidEraForCalendar(_calendar_, _era_).
+      1. Return _era_.
     </emu-alg>
   </emu-clause>
 
-  <emu-clause id="sec-temporal-calendardateerayear" type="abstract operation">
+  <emu-clause id="sup-temporal-calendardateerayear" type="abstract operation">
     <h1>
       CalendarDateEraYear (
         _calendar_: a String,
@@ -283,16 +297,21 @@ contributors: Google, Ecma International
       <dt>description</dt>
       <dd>It performs implementation-defined processing to find the era for the date corresponding to _date_ in the context of the calendar represented by _calendar_ and returns an integer representing the ordinal position of the year of _date_ in that era, or *undefined* for calendars that do not have eras.</dd>
     </dl>
+    <p>
+        This definition supersedes the definition provided in "Temporal proposal", #sec-temporal-calendardateerayear.
+    </p>
     <emu-alg>
       1. If IsCalendarSupportEra(_calendar_) is *false*, return *undefined*.
-      1. Performs implementation-defined processing to find the era for the date corresponding to _date_ in the context of the calendar represented by _calendar_ and returns an integer representing the ordinal position of the year of _date_ in that era.
+      1. Let _eraYear_ be the integer to indicate the era year corresponding to _date_ in the context of the calendar represented by _calendar_ from an implementation-defined processing.
+      1. Assert: _eraYear_ is an integer.
+      1. Return _eraYear_.
     </emu-alg>
     <emu-note>
       Era years are 1-indexed for many calendars, but not all (e.g., the eras of the Burmese calendar each start with a year 0). Years can also advance opposite the flow of time (as for BCE years in the Gregorian calendar).
     </emu-note>
   </emu-clause>
 
-  <emu-clause id="sec-temporal-calendardatefields" type="abstract operation">
+  <emu-clause id="sup-temporal-calendardatefields" type="abstract operation">
     <h1>
       CalendarDateFields (
         _calendar_: a String,
@@ -303,13 +322,64 @@ contributors: Google, Ecma International
       <dt>description</dt>
       <dd>It takes a list of standard fields in _fields_ that are necessary for a given operation and returns a new list by adding relevant calendar-specific fields for the calendar represented by _calendar_. This is relevant for calendars which accept fields other than the standard set of built-in calendar fields.</dd>
     </dl>
+    <p>
+        This definition supersedes the definition provided in "Temporal proposal", #sec-temporal-calendardatefields.
+    </p>
     <emu-alg>
       1. If _fields_ contains an element equal to *"year"*, then
         1. If IsCalendarSupportEra(_calendar_) is *true*, then
           1. Append *"era"* to _fields_.
           1. Append *"eraYear"* to _fields_.
-      1. Performan additional check and add relevant calendar-specific fields for the calendar represented by _calendar_.
       1. Return _fields_.
+    </emu-alg>
+  </emu-clause>
+
+  <emu-clause id="sup-temporal-calendardatemergefields" type="abstract operation">
+    <h1>
+      CalendarDateMergeFields (
+        _calendar_: a String,
+        _fields_: an Object,
+        _additionalFields_: an Object,
+      ): either a normal completion containing an Object or an abrupt completion
+    </h1>
+    <dl class="header">
+      <dt>description</dt>
+      <dd>It takes two Objects of calendar-specific fields for the calendar represented by _calendar_ in _fields_ and _additionalFields_ and returns a new Object that includes both sets of fields. The values in _additionalFields_ should supersede the values in _fields_. Also, the returned Object must be free of ambiguity or conflicts. This is relevant for calendars which accept fields other than the standard set of built-in calendar fields.</dd>
+    </dl>
+    <p>
+        This definition supersedes the definition provided in "Temporal proposal", #sec-temporal-calendardatemergefields.
+    </p>
+    <emu-note>
+      For example, if _fields_ contains *"year"* but _additionalFields_ contains *"era"* and *"eraYear"*, then the returned list must not include *"year"* in order to avoid ambiguity or conflict between different ways of specifying the year.
+    </emu-note>
+    <emu-alg>
+      1. Let _handleEra_ be IsCalendarSupportEra(_calendar).
+      1. Let _merged_ be OrdinaryObjectCreate(%Object.prototype%).
+      1. Let _fieldsKeys_ be ? EnumerableOwnPropertyNames(_fields_, ~key~).
+      1. For each element _key_ of _fieldsKeys_, do
+        1. If _key_ is not *"month"* or *"monthCode"*, then
+          1. If _handlEra_ is *false* or _key_ is not *"era"*, *"eraYear"* or *"year"*, then
+            1. Let _propValue_ be ? Get(_fields_, _key_).
+            1. If _propValue_ is not *undefined*, then
+              1. Perform ! CreateDataPropertyOrThrow(_merged_, _key_, _propValue_).
+      1. Let _additionalFieldsKeys_ be ? EnumerableOwnPropertyNames(_additionalFields_, ~key~).
+      1. For each element _key_ of _additionalFieldsKeys_, do
+        1. Let _propValue_ be ? Get(_additionalFields_, _key_).
+        1. If _propValue_ is not *undefined*, then
+          1. Perform ! CreateDataPropertyOrThrow(_merged_, _key_, _propValue_).
+      1. If _additionalFieldsKeys_ does not contain either *"month"* or *"monthCode"*, then
+        1. Let _month_ be ? Get(_fields_, *"month"*).
+        1. If _month_ is not *undefined*, then
+          1. Perform ! CreateDataPropertyOrThrow(_merged_, *"month"*, _month_).
+        1. Let _monthCode_ be ? Get(_fields_, *"monthCode"*).
+        1. If _monthCode_ is not *undefined*, then
+            1. Perform ! CreateDataPropertyOrThrow(_merged_, *"monthCode"*, _monthCode_).
+      1. If _handleEra_ is *true*, then
+        1. If _additionalFieldsKeys_ does not contain *"era"*, *"eraYear"*, or *"year"*, then
+          1. Let _year_ be ? Get(_fields_, *"year"*).
+          1. If _year_ is not *undefined*, then
+            1. Perform ! CreateDataPropertyOrThrow(_merged_, *"year"*, _year_).
+      1. Return _merged_.
     </emu-alg>
   </emu-clause>
 </emu-clause>
