@@ -194,72 +194,100 @@ contributors: Google, Ecma International
           <th>Era</th>
           <th>Minimum eraYear</th>
           <th>Maximum eraYear</th>
+          <th>Type of &lt;calendar&gt; in CLDR</th>
+          <th>Type of &lt;eras&gt; in CLDR</th>
         </tr>
       </thead>
       <tr>
         <td>*"anno-mundi"*</td>
         <td>*-&infin;*<sub>𝔽</sub></td>
         <td>*+&infin;*<sub>𝔽</sub></td>
+        <td>*"ethiopic"*</td>
+        <td>*"0"*</td>
       </tr>
       <tr>
         <td>*"bce"*</td>
         <td>1</td>
         <td>*+&infin;*<sub>𝔽</sub></td>
+        <td>*"gregorian"*</td>
+        <td>*"0"*</td>
       </tr>
       <tr>
         <td>*"ce"*</td>
         <td>1</td>
         <td>*+&infin;*<sub>𝔽</sub></td>
+        <td>*"gregorian"*</td>
+        <td>*"1"*</td>
       </tr>
       <tr>
         <td>*"coptic"*</td>
         <td>1</td>
         <td>*+&infin;*<sub>𝔽</sub></td>
+        <td>*"coptic"*</td>
+        <td>*"1"*</td>
       </tr>
       <tr>
         <td>*"ethiopic"*</td>
         <td>1</td>
         <td>*+&infin;*<sub>𝔽</sub></td>
+        <td>*"ethioptic"*</td>
+        <td>*"1"*</td>
       </tr>
       <tr>
         <td>*"heisei"*</td>
         <td>1</td>
         <td>31</td>
+        <td>*"japanese"*</td>
+        <td>*"235"*</td>
       </tr>
       <tr>
         <td>*"meiji"*</td>
         <td>1</td>
         <td>45</td>
+        <td>*"japanese"*</td>
+        <td>*"232"*</td>
       </tr>
       <tr>
         <td>*"minguo"*</td>
         <td>1</td>
         <td>*+&infin;*<sub>𝔽</sub></td>
+        <td>*"roc"*</td>
+        <td>*"1"*</td>
       </tr>
       <tr>
         <td>*"pre-coptic"*</td>
         <td>1</td>
         <td>*+&infin;*<sub>𝔽</sub></td>
+        <td>*"coptic"*</td>
+        <td>*"0"*</td>
       </tr>
       <tr>
         <td>*"pre-minguo"*</td>
         <td>1</td>
         <td>*+&infin;*<sub>𝔽</sub></td>
+        <td>*"roc"*</td>
+        <td>*"0"*</td>
       </tr>
       <tr>
         <td>*"reiwa"*</td>
         <td>1</td>
         <td>*+&infin;*<sub>𝔽</sub></td>
+        <td>*"japanese"*</td>
+        <td>*"236"*</td>
       </tr>
       <tr>
         <td>*"showa"*</td>
         <td>1</td>
         <td>64</td>
+        <td>*"japanese"*</td>
+        <td>*"234"*</td>
       </tr>
       <tr>
         <td>*"taisho"*</td>
         <td>1</td>
         <td>15</td>
+        <td>*"japanese"*</td>
+        <td>*"233"*</td>
       </tr>
     </table>
   </emu-table>
