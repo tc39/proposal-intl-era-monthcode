@@ -1,4 +1,4 @@
-# Intl Era and MonthCode Proposal
+# Intl era and monthCode Proposal
 (old name "Intl Temporal Proposal")
 
 To specify necessary details about era, eraYear and monthCode usage with Temporal in internationalization setting (for calendars other than "iso8601").
