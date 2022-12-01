@@ -4,8 +4,11 @@
 To specify necessary details about era, eraYear and monthCode usage with Temporal in internationalization setting (for calendars other than "iso8601").
 
 ## Stage
-This proposal is currently Stage 0 for ECMA402
+This proposal is advanced to Stage 1 for ECMA402 during the TC39 meeting, Dec 1 2022.
 
+## Presentation:
+* [Intl era and monthCode proposal for Stage 1, TC39 Nov 2022 Meeting, Nov 29-Dec 1, 2022](https://docs.google.com/presentation/d/1hoQUYL_mfdLXMHRsNcG27aJirukuDGsVbqntd_tcR0A/edit#slide=id.p)
+* Intl era and monthCode proposal for Stage 2, TC39 Jan 2023 Meeting, Jan 23-Jan 26, 2023 TBW
 ## References:
 * [Draft Spec](https://frankyftang.github.io/proposal-intl-temporal/)
 * [Study of modles of year and era in ICU Calendar](https://docs.google.com/presentation/d/1WFRajsWR2Nh_SPQPzEe7yXpjj-EDvUweUrikNV_jzI4/edit#slide=id.g153d52938b6_0_619)
