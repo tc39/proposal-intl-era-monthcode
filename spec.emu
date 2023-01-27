@@ -432,7 +432,7 @@ contributors: Google, Ecma International
       For example, if _fields_ contains *"year"* but _additionalFields_ contains *"era"* and *"eraYear"*, then the returned list must not include *"year"* in order to avoid ambiguity or conflict between different ways of specifying the year.
     </emu-note>
     <emu-alg>
-      1. Let _handleEra_ be IsCalendarSupportEra(_calendar).
+      1. Let _handleEra_ be IsCalendarSupportEra(_calendar_).
       1. Let _merged_ be OrdinaryObjectCreate(%Object.prototype%).
       1. Let _fieldsKeys_ be ? EnumerableOwnPropertyNames(_fields_, ~key~).
       1. For each element _key_ of _fieldsKeys_, do
