@@ -19,128 +19,245 @@ contributors: Google, Ecma International
       ): a Boolean
     </h1>
     <dl class="header">
+      <dt>description</dt>
+      <dd>
+        The following algorithm refers to the era data from <a href="https://unicode.org/reports/tr35/tr35-dates.html#Calendar_Data">UTS 35's Supplemental Calendar Data</a>.
+      </dd>
     </dl>
     <emu-alg>
-      1. If _calendar_ is not listed in the *"Calendar"* column of <emu-xref href="#table-supported-eras-and-months"></emu-xref>, return *false*.
-      1. Let _r_ be the row in <emu-xref href="#table-supported-eras-and-months"></emu-xref> which the _clendar_ is in the *"Calendar"* column.
-      1. Let _values_ be a List whose elements are the strings given in the *"Supported Eras"* column of _r_.
-      1. If _values_ is an empty list, return *false*.
-      1. Return *true*.
+      1. If _calendar_ is listed in the Calendar column of <emu-xref href="#table-eras"></emu-xref>, return *true*.
+      1. Return *false*.
     </emu-alg>
-  </emu-clause>
-  <emu-table id="table-supported-eras-and-months">
-    <emu-caption>Supported Era CodeS and Additional Month Codes in Calendars</emu-caption>
-    <table class="real-table">
-      <thead>
+    <emu-table id="table-eras">
+      <emu-caption>era aliases and range of eraYear</emu-caption>
+      <table class="real-table">
+        <thead>
+          <tr>
+            <th>Calendar</th>
+            <th>Era</th>
+            <th>Aliases</th>
+            <th>Minimum eraYear</th>
+            <th>Maximum eraYear</th>
+          </tr>
+        </thead>
         <tr>
-          <th>Calendar</th>
-          <th>Supported Eras</th>
-          <th>Additional Month Codes</th>
+          <td>*"buddhist"*</td>
+          <td>*"buddhist"*</td>
+          <td>*"be"*</td>
+          <td>*-&infin;*<sub>𝔽</sub></td>
+          <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
-      </thead>
-      <tr>
-        <td>*"buddhist"*</td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>*"chinese"*</td>
-        <td></td>
-        <td>*"M01L"*, *"M02L"*, *"M03L"*, *"M04L"*, *"M05L"*, *"M06L"*, *"M07L"*, *"M08L"*, *"M09L"*, *"M10L"*, *"M11L"*, *"M12L"*</td>
-      </tr>
-      <tr>
-        <td>*"coptic"*</td>
-        <td>*"pre-coptic"*, *"coptic"*</td>
-        <td>*"M13"*</td>
-      </tr>
-      <tr>
-        <td>*"dangi"*</td>
-        <td></td>
-        <td>*"M01L"*, *"M02L"*, *"M03L"*, *"M04L"*, *"M05L"*, *"M06L"*, *"M07L"*, *"M08L"*, *"M09L"*, *"M10L"*, *"M11L"*, *"M12L"*</td>
-      </tr>
-      <tr>
-        <td>*"ethiopic-amete-alem"*</td>
-        <td></td>
-        <td>*"M13"*</td>
-      </tr>
-      <tr>
-        <td>*"ethiopic"*</td>
-        <td>*"anno-mundi"*, *"ethiopic"*</td>
-        <td>*"M13"*</td>
-      </tr>
-      <tr>
-        <td>*"gregory"*</td>
-        <td>*"bce"*, *"ce"*</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>*"hebrew"*</td>
-        <td></td>
-        <td>*"M05L"*</td>
-      </tr>
-      <tr>
-        <td>*"indian"*</td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>*"islamic-civil"*</td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>*"islamic-rgsa"*</td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>*"islamic-tbla"*</td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>*"islamic-umalqura"*</td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>*"islamic"*</td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>*"japanese"*</td>
-        <td>*"bce"*, *"ce"*, *"meiji"*, *"taisho"*, *"showa"*, *"heisei"*, *"reiwa"*</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>*"persian"*</td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>*"roc"*</td>
-        <td>*"pre-minguo"*, *"minguo"*</td>
-        <td></td>
-      </tr>
-    </table>
-  </emu-table>
+        <tr>
+          <td>*"chinese"*</td>
+          <td>*"chinese"*</td>
+          <td></td>
+          <td>*-&infin;*<sub>𝔽</sub></td>
+          <td>*+&infin;*<sub>𝔽</sub></td>
+        </tr>
+        <tr>
+          <td>*"coptic"*</td>
+          <td>*"pre-coptic"*</td>
+          <td></td>
+          <td>1</td>
+          <td>*+&infin;*<sub>𝔽</sub></td>
+        </tr>
+        <tr>
+          <td>*"coptic"*</td>
+          <td>*"coptic"*</td>
+          <td></td>
+          <td>1</td>
+          <td>*+&infin;*<sub>𝔽</sub></td>
+        </tr>
+        <tr>
+          <td>*"dangi"*</td>
+          <td>*"dangi"*</td>
+          <td></td>
+          <td>*-&infin;*<sub>𝔽</sub></td>
+          <td>*+&infin;*<sub>𝔽</sub></td>
+        </tr>
+        <tr>
+          <td>*"ethiopic"*</td>
+          <td>*"ethiopicaa"*</td>
+          <td>*"ethiopic-amete-alem"*, *"mundi"*</td>
+          <td>*-&infin;*<sub>𝔽</sub></td>
+          <td>*5500*<sub>𝔽</sub></td>
+        </tr>
+        <tr>
+          <td>*"ethiopic"*</td>
+          <td>*"ethiopic"*</td>
+          <td>*"incar"*</td>
+          <td>1</td>
+          <td>*+&infin;*<sub>𝔽</sub></td>
+        </tr>
+        <tr>
+          <td>*"ethiopicaa"*</td>
+          <td>*"ethiopicaa"*</td>
+          <td>*"ethiopic-amete-alem"*, *"mundi"*</td>
+          <td>*-&infin;*<sub>𝔽</sub></td>
+          <td>*+&infin;*<sub>𝔽</sub></td>
+        </tr>
+        <tr>
+          <td>*"gregory"*</td>
+          <td>*"pre-gregory"*</td>
+          <td>*"bc"*, *"bce"*</td>
+          <td>1</td>
+          <td>*+&infin;*<sub>𝔽</sub></td>
+        </tr>
+        <tr>
+          <td>*"gregory"*</td>
+          <td>*"gregory"*</td>
+          <td>*"ce"*, *"ad"*</td>
+          <td>1</td>
+          <td>*+&infin;*<sub>𝔽</sub></td>
+        </tr>
+        <tr>
+          <td>*"hebrew"*</td>
+          <td>*"hebrew"*</td>
+          <td>*"am"*</td>
+          <td>*-&infin;*<sub>𝔽</sub></td>
+          <td>*+&infin;*<sub>𝔽</sub></td>
+        </tr>
+        <tr>
+          <td>*"indian"*</td>
+          <td>*"indian"*</td>
+          <td>*"saka"*</td>
+          <td>*-&infin;*<sub>𝔽</sub></td>
+          <td>*+&infin;*<sub>𝔽</sub></td>
+        </tr>
+        <tr>
+          <td>*"islamic"*</td>
+          <td>*"islamic"*</td>
+          <td>*"ah"*</td>
+          <td>*-&infin;*<sub>𝔽</sub></td>
+          <td>*+&infin;*<sub>𝔽</sub></td>
+        </tr>
+        <tr>
+          <td>*"islamic-civil"*</td>
+          <td>*"islamic-civil"*</td>
+          <td>*"islamicc"*, *"ah"*</td>
+          <td>*-&infin;*<sub>𝔽</sub></td>
+          <td>*+&infin;*<sub>𝔽</sub></td>
+        </tr>
+        <tr>
+          <td>*"islamic-rgsa"*</td>
+          <td>*"islamic-rgsa"*</td>
+          <td>*"ah"*</td>
+          <td>*-&infin;*<sub>𝔽</sub></td>
+          <td>*+&infin;*<sub>𝔽</sub></td>
+        </tr>
+        <tr>
+          <td>*"islamic-tbla"*</td>
+          <td>*"islamic-tbla"*</td>
+          <td>*"ah"*</td>
+          <td>*-&infin;*<sub>𝔽</sub></td>
+          <td>*+&infin;*<sub>𝔽</sub></td>
+        </tr>
+        <tr>
+          <td>*"islamic-umalqura"*</td>
+          <td>*"islamic-umalqura"*</td>
+          <td>*"ah"*</td>
+          <td>*-&infin;*<sub>𝔽</sub></td>
+          <td>*+&infin;*<sub>𝔽</sub></td>
+        </tr>
+        <tr>
+          <td>*"japanese"*</td>
+          <td>*"bce"*</td>
+          <td></td>
+          <td>1</td>
+          <td>*+&infin;*<sub>𝔽</sub></td>
+        </tr>
+        <tr>
+          <td>*"japanese"*</td>
+          <td>*"ce"*</td>
+          <td></td>
+          <td>1</td>
+          <td>TBD</td>
+        </tr>
+        <tr>
+          <td>*"japanese"*</td>
+          <td>*"heisei"*</td>
+          <td>*"h"*</td>
+          <td>1</td>
+          <td>31</td>
+        </tr>
+        <tr>
+          <td>*"japanese"*</td>
+          <td>*"meiji"*</td>
+          <td>*"m"*</td>
+          <td>1</td>
+          <td>45</td>
+        </tr>
+        <tr>
+          <td>*"japanese"*</td>
+          <td>*"reiwa"*</td>
+          <td>*"r"*</td>
+          <td>1</td>
+          <td>*+&infin;*<sub>𝔽</sub></td>
+        </tr>
+        <tr>
+          <td>*"japanese"*</td>
+          <td>*"showa"*</td>
+          <td>*"s"*</td>
+          <td>1</td>
+          <td>64</td>
+        </tr>
+        <tr>
+          <td>*"japanese"*</td>
+          <td>*"taisho"*</td>
+          <td>*"t"*</td>
+          <td>1</td>
+          <td>15</td>
+        </tr>
+        <tr>
+          <td>*"persian"*</td>
+          <td>*"persian"*</td>
+          <td>*"ap"*</td>
+          <td>*-&infin;*<sub>𝔽</sub></td>
+          <td>*+&infin;*<sub>𝔽</sub></td>
+        </tr>
+        <tr>
+          <td>*"roc"*</td>
+          <td>*"pre-roc"*</td>
+          <td>*"broc"*</td>
+          <td>1</td>
+          <td>*+&infin;*<sub>𝔽</sub></td>
+        </tr>
+        <tr>
+          <td>*"roc"*</td>
+          <td>*"roc"*</td>
+          <td>*"minguo"**</td>
+          <td>1</td>
+          <td>*+&infin;*<sub>𝔽</sub></td>
+        </tr>
+      </table>
+    </emu-table>
+    <emu-note>
+      The content in this table is proposed by Era Code WG to CLDR TC in <a href="https://github.com/unicode-org/cldr/pull/2665">PR 2665</a> and under review. It is targeted to be part of CLDR 43, scheduled to be released in April 2023.
+    </emu-note>
+  </emu-clause>
 
-  <emu-clause id="sec-temporal-isvalideraforcalendar" type="abstract operation">
+  <emu-clause id="sec-temporal-canonicalizeeraincalendar" type="abstract operation">
     <h1>
-      IsValidEraForCalendar (
+      CanonicalizeEraInCalendar (
         _calendar_: a String,
         _era_: a String,
-      ): a Boolean
+      ): a String or *undefined*
     </h1>
     <dl class="header">
+      <dt>description</dt>
+      <dd>
+      The following algorithm refers to the era data from <a href="https://unicode.org/reports/tr35/tr35-dates.html#Calendar_Data">UTS 35's Supplemental Calendar Data</a>.
+      </dd>
     </dl>
     <emu-alg>
-      1. Assert: IsCalendarSupportEra( _calendar_ ) is *true*.
-      1. Let _r_ be the row in <emu-xref href="#table-supported-eras-and-months"></emu-xref> which the _clendar_ is in the *"Calendar"* column.
-      1. Let _valid_ be a List whose elements are the strings given in the *"Supported Eras"* column of _r_.
-      1. If _valid_ contains _era_, return *true*.
-      1. Return *false*.
+      1. For each row of <emu-xref href="#table-eras"></emu-xref>, do
+        1. Let _cal_ be the Calendar value of the current row.
+        1. If _cal_ is equal to _calendar_, then
+          1. Let _e_ be the Era value of the current row.
+          1. If _e_ is equal to _era_, return _era_.
+          1. Let _aliases_ be a List whose elements are the strings given in the Aliases column of the row.
+          1. If _aliases_ contains _era_, return _era_.
+      1. Return *undefined*.
     </emu-alg>
   </emu-clause>
 
@@ -156,12 +273,48 @@ contributors: Google, Ecma International
     <emu-alg>
       1. Let _commonMonthCodes_ be « *"M01"*, *"M02"*, *"M03"*, *"M04"*, *"M05"*, *"M06"*, *"M07"*, *"M08"*, *"M09"*, *"M10"*, *"M11"*, *"M12"* ».
       1. If _commonMonthCodes_ contains _monthCode_, return *true*.
-      1. If _calendar_ is not listed in the *"Calendar"* column of <emu-xref href="#table-supported-eras-and-months"></emu-xref>, return *false*.
-      1. Let _r_ be the row in <emu-xref href="#table-supported-eras-and-months"></emu-xref> which the _clendar_ is in the *"Calendar"* column.
+      1. If _calendar_ is not listed in the Calendar column of <emu-xref href="#table-additional-month-codes"></emu-xref>, return *false*.
+      1. Let _r_ be the row in <emu-xref href="#table-additional-month-codes"></emu-xref> which the _clendar_ is in the Calendar column.
       1. Let _specialMonthCodes_ be a List whose elements are the strings given in the *"Additional Month Codes"* column of _r_.
       1. If _specialMonthCodes_ contains _monthCode_, return *true*.
       1. Return *false*.
     </emu-alg>
+
+    <emu-table id="table-additional-month-codes">
+      <emu-caption>Additional Month Codes in Calendars</emu-caption>
+      <table class="real-table">
+        <thead>
+          <tr>
+            <th>Calendar</th>
+            <th>Additional Month Codes</th>
+          </tr>
+        </thead>
+        <tr>
+          <td>*"chinese"*</td>
+          <td>*"M01L"*, *"M02L"*, *"M03L"*, *"M04L"*, *"M05L"*, *"M06L"*, *"M07L"*, *"M08L"*, *"M09L"*, *"M10L"*, *"M11L"*, *"M12L"*</td>
+        </tr>
+        <tr>
+          <td>*"coptic"*</td>
+          <td>*"M13"*</td>
+        </tr>
+        <tr>
+          <td>*"dangi"*</td>
+          <td>*"M01L"*, *"M02L"*, *"M03L"*, *"M04L"*, *"M05L"*, *"M06L"*, *"M07L"*, *"M08L"*, *"M09L"*, *"M10L"*, *"M11L"*, *"M12L"*</td>
+        </tr>
+        <tr>
+          <td>*"ethiopic"*</td>
+          <td>*"M13"*</td>
+        </tr>
+        <tr>
+          <td>*"ethiopicaa"*</td>
+          <td>*"M13"*</td>
+        </tr>
+        <tr>
+          <td>*"hebrew"*</td>
+          <td>*"M05L"*</td>
+        </tr>
+      </table>
+    </emu-table>
   </emu-clause>
 
   <emu-clause id="sec-temporal-isvaliderayearforcalendar" type="abstract operation">
@@ -173,11 +326,15 @@ contributors: Google, Ecma International
       ): a Boolean
     </h1>
     <dl class="header">
+      <dt>description</dt>
+      <dd>
+      The following algorithm refers to the era data from <a href="https://unicode.org/reports/tr35/tr35-dates.html#Calendar_Data">UTS 35's Supplemental Calendar Data</a>.
+      </dd>
     </dl>
     <emu-alg>
-      1. Assert: IsValidEraForCalendar( _calendar_ , _era_) is *true*.
-      1. Assert: _era_ is listed in the *"Era"* column of <emu-xref href="#table-erayear-range"></emu-xref>.
-      1. Let _r_ be the row in <emu-xref href="#table-erayear-range"></emu-xref> which the _era_ is in the *"Era"* column.
+      1. Let _era_ be CanonicalizeEraInCalendar(_calendar_, _era_).
+      1. If _era_ is *undefined*, return *false*.
+      1. Let _r_ be the row in <emu-xref href="#table-eras"></emu-xref> which the _calendar_ is in the Calendar column and the _era_ is in the Era column.
       1. Let _min_ be the value given in the *"Minimum eraYear"* column of _r_.
       1. Let _max_ be the value given in the *"Maximum eraYear"* column of _r_.
       1. If _eraYear_ &lt; _min_, return *false*.
@@ -185,112 +342,6 @@ contributors: Google, Ecma International
       1. Return *true*.
     </emu-alg>
   </emu-clause>
-
-  <emu-table id="table-erayear-range">
-    <emu-caption>Range of eraYear</emu-caption>
-    <table class="real-table">
-      <thead>
-        <tr>
-          <th>Era</th>
-          <th>Minimum eraYear</th>
-          <th>Maximum eraYear</th>
-          <th>Type of &lt;calendar&gt; in CLDR</th>
-          <th>Type of &lt;eras&gt; in CLDR</th>
-        </tr>
-      </thead>
-      <tr>
-        <td>*"anno-mundi"*</td>
-        <td>*-&infin;*<sub>𝔽</sub></td>
-        <td>*+&infin;*<sub>𝔽</sub></td>
-        <td>*"ethiopic"*</td>
-        <td>*"0"*</td>
-      </tr>
-      <tr>
-        <td>*"bce"*</td>
-        <td>1</td>
-        <td>*+&infin;*<sub>𝔽</sub></td>
-        <td>*"gregorian"*</td>
-        <td>*"0"*</td>
-      </tr>
-      <tr>
-        <td>*"ce"*</td>
-        <td>1</td>
-        <td>*+&infin;*<sub>𝔽</sub></td>
-        <td>*"gregorian"*</td>
-        <td>*"1"*</td>
-      </tr>
-      <tr>
-        <td>*"coptic"*</td>
-        <td>1</td>
-        <td>*+&infin;*<sub>𝔽</sub></td>
-        <td>*"coptic"*</td>
-        <td>*"1"*</td>
-      </tr>
-      <tr>
-        <td>*"ethiopic"*</td>
-        <td>1</td>
-        <td>*+&infin;*<sub>𝔽</sub></td>
-        <td>*"ethioptic"*</td>
-        <td>*"1"*</td>
-      </tr>
-      <tr>
-        <td>*"heisei"*</td>
-        <td>1</td>
-        <td>31</td>
-        <td>*"japanese"*</td>
-        <td>*"235"*</td>
-      </tr>
-      <tr>
-        <td>*"meiji"*</td>
-        <td>1</td>
-        <td>45</td>
-        <td>*"japanese"*</td>
-        <td>*"232"*</td>
-      </tr>
-      <tr>
-        <td>*"minguo"*</td>
-        <td>1</td>
-        <td>*+&infin;*<sub>𝔽</sub></td>
-        <td>*"roc"*</td>
-        <td>*"1"*</td>
-      </tr>
-      <tr>
-        <td>*"pre-coptic"*</td>
-        <td>1</td>
-        <td>*+&infin;*<sub>𝔽</sub></td>
-        <td>*"coptic"*</td>
-        <td>*"0"*</td>
-      </tr>
-      <tr>
-        <td>*"pre-minguo"*</td>
-        <td>1</td>
-        <td>*+&infin;*<sub>𝔽</sub></td>
-        <td>*"roc"*</td>
-        <td>*"0"*</td>
-      </tr>
-      <tr>
-        <td>*"reiwa"*</td>
-        <td>1</td>
-        <td>*+&infin;*<sub>𝔽</sub></td>
-        <td>*"japanese"*</td>
-        <td>*"236"*</td>
-      </tr>
-      <tr>
-        <td>*"showa"*</td>
-        <td>1</td>
-        <td>64</td>
-        <td>*"japanese"*</td>
-        <td>*"234"*</td>
-      </tr>
-      <tr>
-        <td>*"taisho"*</td>
-        <td>1</td>
-        <td>15</td>
-        <td>*"japanese"*</td>
-        <td>*"233"*</td>
-      </tr>
-    </table>
-  </emu-table>
 
   <emu-clause id="sup-temporal-calendardateera" type="abstract operation">
     <h1>
@@ -309,8 +360,7 @@ contributors: Google, Ecma International
     <emu-alg>
       1. If IsCalendarSupportEra(_calendar_) is *false*, return *undefined*.
       1. Let _era_ be the String to indicate the era corresponding to _date_ in the context of the calendar represented by _calendar_ from an implementation-defined processing.
-      1. Assert: IsValidEraForCalendar(_calendar_, _era_).
-      1. Return _era_.
+      1. Return CanonicalizeEraInCalendar(_calendar_, _era_).
     </emu-alg>
   </emu-clause>
 
@@ -324,6 +374,7 @@ contributors: Google, Ecma International
     <dl class="header">
       <dt>description</dt>
       <dd>It performs implementation-defined processing to find the era for the date corresponding to _date_ in the context of the calendar represented by _calendar_ and returns an integer representing the ordinal position of the year of _date_ in that era, or *undefined* for calendars that do not have eras.</dd>
+    </dl>
     </dl>
     <p>
         This definition supersedes the definition provided in "Temporal proposal", #sec-temporal-calendardateerayear.
@@ -350,14 +401,14 @@ contributors: Google, Ecma International
       <dt>description</dt>
       <dd>It takes a list of standard fields in _fields_ that are necessary for a given operation and returns a new list by adding relevant calendar-specific fields for the calendar represented by _calendar_. This is relevant for calendars which accept fields other than the standard set of built-in calendar fields.</dd>
     </dl>
+    </dl>
     <p>
         This definition supersedes the definition provided in "Temporal proposal", #sec-temporal-calendardatefields.
     </p>
     <emu-alg>
-      1. If _fields_ contains an element equal to *"year"*, then
-        1. If IsCalendarSupportEra(_calendar_) is *true*, then
-          1. Append *"era"* to _fields_.
-          1. Append *"eraYear"* to _fields_.
+      1. If _fields_ contains an element equal to *"year"* and IsCalendarSupportEra(_calendar_) is *true*, then
+        1. Append *"era"* to _fields_.
+        1. Append *"eraYear"* to _fields_.
       1. Return _fields_.
     </emu-alg>
   </emu-clause>
