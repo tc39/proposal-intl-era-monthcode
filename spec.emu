@@ -77,7 +77,7 @@ contributors: Google, Ecma International
         </tr>
         <tr>
           <td>*"ethiopic"*</td>
-          <td>*"ethiopicaa"*</td>
+          <td>*"ethioaa"*</td>
           <td>*"ethiopic-amete-alem"*, *"mundi"*</td>
           <td>*-&infin;*<sub>𝔽</sub></td>
           <td>*5500*<sub>𝔽</sub></td>
@@ -90,8 +90,8 @@ contributors: Google, Ecma International
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
-          <td>*"ethiopicaa"*</td>
-          <td>*"ethiopicaa"*</td>
+          <td>*"ethioaa"*</td>
+          <td>*"ethioaa"*</td>
           <td>*"ethiopic-amete-alem"*, *"mundi"*</td>
           <td>*-&infin;*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
@@ -306,7 +306,7 @@ contributors: Google, Ecma International
           <td>*"M13"*</td>
         </tr>
         <tr>
-          <td>*"ethiopicaa"*</td>
+          <td>*"ethioaa"*</td>
           <td>*"M13"*</td>
         </tr>
         <tr>
