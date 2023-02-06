@@ -3,8 +3,14 @@
 
 To specify necessary details about era, eraYear and monthCode usage with Temporal in internationalization setting (for calendars other than "iso8601").
 
-## Stage
-This proposal is advanced to Stage 1 for ECMA402 during the TC39 meeting, Dec 1 2022.
+## Stage - Stage 2
+This proposal is advanced to Stage 2 for ECMA402 during the TC39 meeting, Feb 1 2023. (Link to be added after the meeting notes is approved by TC39 in March)
+This proposal is [advanced to Stage 1 for ECMA402 during the TC39 meeting, Dec 1 2022](https://github.com/tc39/notes/blob/main/meetings/2022-11/dec-01.md#intl-era-and-monthcode-proposal-for-stage-1).
+
+## Stage 3 Reviwers
+During the Feb 1 2023 TC39 meeting, the following members agree to serve as the Stage 3 Reviewers of this proposal:
+* EAO (Eemeli Aro) from Mozilla
+* SFC (Shane Carr) from Google
 
 ## Presentation:
 * [Intl era and monthCode proposal for Stage 1, TC39 Nov 2022 Meeting, Nov 29-Dec 1, 2022](https://docs.google.com/presentation/d/1hoQUYL_mfdLXMHRsNcG27aJirukuDGsVbqntd_tcR0A)
