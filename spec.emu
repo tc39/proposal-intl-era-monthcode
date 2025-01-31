@@ -42,189 +42,189 @@ contributors: Google, Ecma International
         </thead>
         <tr>
           <td>*"buddhist"*</td>
-          <td>*"buddhist"*</td>
+          <td>*"buddhist-era"*</td>
           <td>*"be"*</td>
           <td>*-&infin;*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"chinese"*</td>
-          <td>*"chinese"*</td>
+          <td>*"chinese-era"*</td>
           <td></td>
           <td>*-&infin;*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"coptic"*</td>
-          <td>*"coptic"*</td>
+          <td>*"coptic-era"*</td>
           <td></td>
           <td>*1*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"coptic"*</td>
-          <td>*"coptic-inverse"*</td>
+          <td>*"coptic-era-inverse"*</td>
           <td></td>
           <td>*1*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"dangi"*</td>
-          <td>*"dangi"*</td>
+          <td>*"dangi-era"*</td>
           <td></td>
           <td>*-&infin;*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"ethiopic"*</td>
-          <td>*"ethiopic"*</td>
+          <td>*"ethiopic-incar"*</td>
           <td>*"incar"*</td>
           <td>*1*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"ethiopic"*</td>
-          <td>*"ethioaa"*</td>
+          <td>*"ethiopic-mundi"*</td>
           <td>*"ethiopic-amete-alem"*, *"mundi"*</td>
           <td>*-&infin;*<sub>𝔽</sub></td>
           <td>*5500*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"ethioaa"*</td>
-          <td>*"ethioaa"*</td>
+          <td>*"ethioaa-mundi"*</td>
           <td>*"ethiopic-amete-alem"*, *"mundi"*</td>
           <td>*-&infin;*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"gregory"*</td>
-          <td>*"gregory"*</td>
+          <td>*"gregory-ce"*</td>
           <td>*"ce"*, *"ad"*</td>
           <td>*1*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"gregory"*</td>
-          <td>*"gregory-inverse"*</td>
+          <td>*"gregory-bce"*</td>
           <td>*"bc"*, *"bce"*</td>
           <td>*1*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"hebrew"*</td>
-          <td>*"hebrew"*</td>
+          <td>*"hebrew-era"*</td>
           <td>*"am"*</td>
           <td>*-&infin;*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"indian"*</td>
-          <td>*"indian"*</td>
+          <td>*"indian-era"*</td>
           <td>*"saka"*</td>
           <td>*-&infin;*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"islamic"*</td>
-          <td>*"islamic"*</td>
+          <td>*"islamic-era"*</td>
           <td>*"ah"*</td>
           <td>*-&infin;*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"islamic-civil"*</td>
-          <td>*"islamic-civil"*</td>
+          <td>*"islamic-civil-era"*</td>
           <td>*"islamicc"*, *"ah"*</td>
           <td>*-&infin;*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"islamic-rgsa"*</td>
-          <td>*"islamic-rgsa"*</td>
+          <td>*"islamic-rgsa-era"*</td>
           <td>*"ah"*</td>
           <td>*-&infin;*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"islamic-tbla"*</td>
-          <td>*"islamic-tbla"*</td>
+          <td>*"islamic-tbla-era"*</td>
           <td>*"ah"*</td>
           <td>*-&infin;*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"islamic-umalqura"*</td>
-          <td>*"islamic-umalqura"*</td>
+          <td>*"islamic-umalqura-era"*</td>
           <td>*"ah"*</td>
           <td>*-&infin;*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"japanese"*</td>
+          <td>*"japanese-heisei"*</td>
           <td>*"heisei"*</td>
-          <td></td>
           <td>*1*<sub>𝔽</sub></td>
           <td>*31*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"japanese"*</td>
-          <td>*"japanese"*</td>
-          <td>*"gregory"*, *"ad"*, *"ce"*</td>
+          <td>*"japanese-ce"*</td>
+          <td>*"ad"*, *"ce"*</td>
           <td>*1*<sub>𝔽</sub></td>
           <td>*1868*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"japanese"*</td>
-          <td>*"japanese-inverse"*</td>
-          <td>*"gregory-inverse"*, *"bc"*, *"bce"*</td>
+          <td>*"japanese-bce"*</td>
+          <td>*"bc"*, *"bce"*</td>
           <td>*1*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"japanese"*</td>
+          <td>*"japanese-meiji"*</td>
           <td>*"meiji"*</td>
-          <td></td>
           <td>*1*<sub>𝔽</sub></td>
           <td>*45*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"japanese"*</td>
+          <td>*"japanese-reiwa"*</td>
           <td>*"reiwa"*</td>
-          <td></td>
           <td>*1*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"japanese"*</td>
+          <td>*"japanese-showa"*</td>
           <td>*"showa"*</td>
-          <td></td>
           <td>*1*<sub>𝔽</sub></td>
           <td>*64*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"japanese"*</td>
+          <td>*"japanese-taisho"*</td>
           <td>*"taisho"*</td>
-          <td></td>
           <td>*1*<sub>𝔽</sub></td>
           <td>*15*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"persian"*</td>
-          <td>*"persian"*</td>
+          <td>*"persian-era"*</td>
           <td>*"ap"*</td>
           <td>*-&infin;*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"roc"*</td>
-          <td>*"roc"*</td>
-          <td>*"minguo"**</td>
+          <td>*"roc-minguo"*</td>
+          <td>*"minguo"*</td>
           <td>*1*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"roc"*</td>
-          <td>*"roc-inverse"*</td>
+          <td>*"roc-era-inverse"*</td>
           <td>*"before-roc"*</td>
           <td>*1*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
