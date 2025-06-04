@@ -274,7 +274,7 @@ contributors: Google, Ecma International
       1. Let _commonMonthCodes_ be « *"M01"*, *"M02"*, *"M03"*, *"M04"*, *"M05"*, *"M06"*, *"M07"*, *"M08"*, *"M09"*, *"M10"*, *"M11"*, *"M12"* ».
       1. If _commonMonthCodes_ contains _monthCode_, return *true*.
       1. If _calendar_ is not listed in the Calendar column of <emu-xref href="#table-additional-month-codes"></emu-xref>, return *false*.
-      1. Let _r_ be the row in <emu-xref href="#table-additional-month-codes"></emu-xref> which the _clendar_ is in the Calendar column.
+      1. Let _r_ be the row in <emu-xref href="#table-additional-month-codes"></emu-xref> which the _calendar_ is in the Calendar column.
       1. Let _specialMonthCodes_ be a List whose elements are the strings given in the *"Additional Month Codes"* column of _r_.
       1. If _specialMonthCodes_ contains _monthCode_, return *true*.
       1. Return *false*.
@@ -437,7 +437,7 @@ contributors: Google, Ecma International
       1. Let _fieldsKeys_ be ? EnumerableOwnPropertyNames(_fields_, ~key~).
       1. For each element _key_ of _fieldsKeys_, do
         1. If _key_ is not *"month"* or *"monthCode"*, then
-          1. If _handlEra_ is *false* or _key_ is not *"era"*, *"eraYear"* or *"year"*, then
+          1. If _handleEra_ is *false* or _key_ is not *"era"*, *"eraYear"* or *"year"*, then
             1. Let _propValue_ be ? Get(_fields_, _key_).
             1. If _propValue_ is not *undefined*, then
               1. Perform ! CreateDataPropertyOrThrow(_merged_, _key_, _propValue_).
