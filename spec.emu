@@ -404,6 +404,106 @@ contributors: Google, Ecma International
     </emu-note>
   </emu-clause>
 
+  <emu-clause id="sup-temporal-calendardatearithmeticyear" type="abstract operation">
+    <h1>
+      CalendarDateArithmeticYear (
+        _calendar_: a calendar type that is not *"iso8601"*,
+        _date_: a Temporal.PlainDateTime, Temporal.PlainDate, or Temporal.PlainYearMonth,
+      ): an integer
+    </h1>
+    <dl class="header">
+      <dt>description</dt>
+      <dd>It performs implementation-defined processing to find the year for the date corresponding to _date_ in the context of the calendar represented by _calendar_ relative to a well-defined epoch year for that calendar.</dd>
+    </dl>
+    <emu-alg>
+      1. Let _year_ be _date_.[[ISOYear]].
+      1. Let _r_ be the row in <emu-xref href="#table-epoch-years"></emu-xref> which the value of the Calendar column is _calendar_.
+      1. Let _epochYear_ be the value given in the *"Epoch ISO Year"* column of _r_.
+      1. Let _arithmeticYear_ be the number of whole years in the calendar represented by _calendar_ elapsed until the ISO year _year_ since the calendar year that started during ISO year _epochYear_, according to implementation-defined processing.
+      1. Return _arithmeticYear_.
+    </emu-alg>
+
+    <emu-table id="table-epoch-years">
+      <emu-caption>epoch years</emu-caption>
+      <table class="real-table">
+        <thead>
+          <tr>
+            <th>Calendar</th>
+            <th>Epoch ISO Year</th>
+          </tr>
+        </thead>
+        <tr>
+          <td>*"buddhist"*</td>
+          <td>-543</td>
+        </tr>
+        <tr>
+          <td>*"chinese"*</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>*"coptic"*</td>
+          <td>283</td>
+        </tr>
+        <tr>
+          <td>*"dangi"*</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>*"ethiopic"*</td>
+          <td>7</td>
+        </tr>
+        <tr>
+          <td>*"ethioaa"*</td>
+          <td>-5492</td>
+        </tr>
+        <tr>
+          <td>*"gregory"*</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>*"hebrew"*</td>
+          <td>-3761</td>
+        </tr>
+        <tr>
+          <td>*"indian"*</td>
+          <td>78</td>
+        </tr>
+        <tr>
+          <td>*"islamic"*</td>
+          <td>621</td>
+        </tr>
+        <tr>
+          <td>*"islamic-civil"*</td>
+          <td>621</td>
+        </tr>
+        <tr>
+          <td>*"islamic-rgsa"*</td>
+          <td>621</td>
+        </tr>
+        <tr>
+          <td>*"islamic-tbla"*</td>
+          <td>621</td>
+        </tr>
+        <tr>
+          <td>*"islamic-umalqura"*</td>
+          <td>621</td>
+        </tr>
+        <tr>
+          <td>*"japanese"*</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>*"persian"*</td>
+          <td>621</td>
+        </tr>
+        <tr>
+          <td>*"roc"*</td>
+          <td>1911</td>
+        </tr>
+      </table>
+    </emu-table>
+  </emu-clause>
+
   <emu-clause id="sup-temporal-calendardatefields" type="abstract operation">
     <h1>
       CalendarDateFields (
