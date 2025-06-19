@@ -38,6 +38,7 @@ contributors: Google, Ecma International
             <th>Aliases</th>
             <th>Minimum eraYear</th>
             <th>Maximum eraYear</th>
+            <th>Epoch Year</th>
           </tr>
         </thead>
         <tr>
@@ -46,6 +47,7 @@ contributors: Google, Ecma International
           <td>*"be"*</td>
           <td>*-&infin;*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
+          <td>*-542*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"chinese"*</td>
@@ -53,6 +55,7 @@ contributors: Google, Ecma International
           <td></td>
           <td>*-&infin;*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
+          <td>*1*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"coptic"*</td>
@@ -60,6 +63,7 @@ contributors: Google, Ecma International
           <td></td>
           <td>*1*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
+          <td>*284*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"coptic"*</td>
@@ -74,6 +78,7 @@ contributors: Google, Ecma International
           <td></td>
           <td>*-&infin;*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
+          <td>*1*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"ethiopic"*</td>
@@ -81,6 +86,7 @@ contributors: Google, Ecma International
           <td>*"incar"*</td>
           <td>*1*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
+          <td>*8*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"ethiopic"*</td>
@@ -95,6 +101,7 @@ contributors: Google, Ecma International
           <td>*"ethiopic-amete-alem"*, *"mundi"*</td>
           <td>*-&infin;*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
+          <td>*-5492*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"gregory"*</td>
@@ -102,6 +109,7 @@ contributors: Google, Ecma International
           <td>*"ce"*, *"ad"*</td>
           <td>*1*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
+          <td>*1*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"gregory"*</td>
@@ -116,6 +124,7 @@ contributors: Google, Ecma International
           <td>*"am"*</td>
           <td>*-&infin;*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
+          <td>*-3760*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"indian"*</td>
@@ -123,6 +132,7 @@ contributors: Google, Ecma International
           <td>*"saka"*</td>
           <td>*-&infin;*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
+          <td>*78*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"islamic"*</td>
@@ -130,6 +140,7 @@ contributors: Google, Ecma International
           <td>*"ah"*</td>
           <td>*-&infin;*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
+          <td>*622*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"islamic-civil"*</td>
@@ -137,6 +148,7 @@ contributors: Google, Ecma International
           <td>*"islamicc"*, *"ah"*</td>
           <td>*-&infin;*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
+          <td>*622*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"islamic-rgsa"*</td>
@@ -144,6 +156,7 @@ contributors: Google, Ecma International
           <td>*"ah"*</td>
           <td>*-&infin;*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
+          <td>*622*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"islamic-tbla"*</td>
@@ -151,6 +164,7 @@ contributors: Google, Ecma International
           <td>*"ah"*</td>
           <td>*-&infin;*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
+          <td>*622*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"islamic-umalqura"*</td>
@@ -172,6 +186,7 @@ contributors: Google, Ecma International
           <td>*"gregory"*, *"ad"*, *"ce"*</td>
           <td>*1*<sub>𝔽</sub></td>
           <td>*1868*<sub>𝔽</sub></td>
+          <td>*1*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"japanese"*</td>
@@ -214,6 +229,7 @@ contributors: Google, Ecma International
           <td>*"ap"*</td>
           <td>*-&infin;*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
+          <td>*622*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"roc"*</td>
@@ -221,6 +237,7 @@ contributors: Google, Ecma International
           <td>*"minguo"**</td>
           <td>*1*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
+          <td>*1912*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"roc"*</td>
@@ -388,6 +405,31 @@ contributors: Google, Ecma International
     <emu-note>
       Era years are 1-indexed for many calendars, but not all (e.g., the eras of the Burmese calendar each start with a year 0). Years can also advance opposite the flow of time (as for BCE years in the Gregorian calendar).
     </emu-note>
+  </emu-clause>
+
+  <emu-clause id="sup-temporal-calendardateextendedyear" type="abstract operation">
+    <h1>
+      CalendarDateExtendedYear (
+        _calendar_: a String,
+        _date_: a Temporal.PlainDateTime, Temporal.PlainDate, or Temporal.PlainYearMonth,
+      ): an integer
+    </h1>
+    <dl class="header">
+      <dt>description</dt>
+      <dd>It performs implementation-defined processing to find the year for the date corresponding to _date_ in the context of the calendar represented by _calendar_ relative to a well-defined epoch year for that calendar.</dd>
+    </dl>
+    <p>
+        This definition supersedes the definition provided in "Temporal proposal", #sec-temporal-calendardateextendedyear.
+    </p>
+    <emu-alg>
+      1. Let _year_ be _date_.[[ISOYear]].
+      1. If CalendarSupportsEra(_calendar_) is *false*, then
+        1. Return _year_.
+      1. Let _r_ be the row in <emu-xref href="#table-eras"></emu-xref> which _calendar_ is the value of the Calendar column as well as the Era column.
+      1. Let _epochYear_ be the value given in the *"Epoch Year"* column of _r_.
+      1. Let _extendedYear_ be _year_ - _epochYear_.
+      1. Return _extendedYear_.
+    </emu-alg>
   </emu-clause>
 
   <emu-clause id="sup-temporal-calendardatefields" type="abstract operation">

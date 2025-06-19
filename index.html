@@ -1632,7 +1632,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 let sdoMap = JSON.parse(`{}`);
-let biblio = JSON.parse(`{"refsByClause":{"sec-temporal-calendarsupportsera":["_ref_0"],"sec-temporal-canonicalizeeraincalendar":["_ref_1"],"sec-temporal-isvalidmonthecodeforcalendar":["_ref_2","_ref_3"],"sec-temporal-isvaliderayearforcalendar":["_ref_4","_ref_5"],"sup-temporal-calendardateera":["_ref_6","_ref_7"],"sup-temporal-calendardateerayear":["_ref_8"],"sup-temporal-calendardatefields":["_ref_9"],"sup-temporal-calendardatemergefields":["_ref_10"]},"entries":[{"type":"table","id":"table-eras","number":1,"caption":"Table 1: era aliases and range of eraYear","referencingIds":["_ref_0","_ref_1","_ref_4"]},{"type":"op","aoid":"CalendarSupportsEra","refId":"sec-temporal-calendarsupportsera"},{"type":"clause","id":"sec-temporal-calendarsupportsera","title":"CalendarSupportsEra ( calendar )","titleHTML":"CalendarSupportsEra ( <var>calendar</var> )","number":"1.1","referencingIds":["_ref_6","_ref_8","_ref_9","_ref_10"]},{"type":"op","aoid":"CanonicalizeEraInCalendar","refId":"sec-temporal-canonicalizeeraincalendar"},{"type":"clause","id":"sec-temporal-canonicalizeeraincalendar","title":"CanonicalizeEraInCalendar ( calendar, era )","titleHTML":"CanonicalizeEraInCalendar ( <var>calendar</var>, <var>era</var> )","number":"1.2","referencingIds":["_ref_5","_ref_7"]},{"type":"table","id":"table-additional-month-codes","number":2,"caption":"Table 2: Additional Month Codes in Calendars","referencingIds":["_ref_2","_ref_3"]},{"type":"op","aoid":"IsValidMonthCodeForCalendar","refId":"sec-temporal-isvalidmonthecodeforcalendar"},{"type":"clause","id":"sec-temporal-isvalidmonthecodeforcalendar","title":"IsValidMonthCodeForCalendar ( calendar, monthCode )","titleHTML":"IsValidMonthCodeForCalendar ( <var>calendar</var>, <var>monthCode</var> )","number":"1.3"},{"type":"op","aoid":"IsValidEraYearForCalendar","refId":"sec-temporal-isvaliderayearforcalendar"},{"type":"clause","id":"sec-temporal-isvaliderayearforcalendar","title":"IsValidEraYearForCalendar ( calendar, era, eraYear )","titleHTML":"IsValidEraYearForCalendar ( <var>calendar</var>, <var>era</var>, <var>eraYear</var> )","number":"1.4"},{"type":"op","aoid":"CalendarDateEra","refId":"sup-temporal-calendardateera"},{"type":"clause","id":"sup-temporal-calendardateera","title":"CalendarDateEra ( calendar, date )","titleHTML":"CalendarDateEra ( <var>calendar</var>, <var>date</var> )","number":"1.5"},{"type":"op","aoid":"CalendarDateEraYear","refId":"sup-temporal-calendardateerayear"},{"type":"clause","id":"sup-temporal-calendardateerayear","title":"CalendarDateEraYear ( calendar, date )","titleHTML":"CalendarDateEraYear ( <var>calendar</var>, <var>date</var> )","number":"1.6"},{"type":"op","aoid":"CalendarDateFields","refId":"sup-temporal-calendardatefields"},{"type":"clause","id":"sup-temporal-calendardatefields","title":"CalendarDateFields ( calendar, fields )","titleHTML":"CalendarDateFields ( <var>calendar</var>, <var>fields</var> )","number":"1.7"},{"type":"op","aoid":"CalendarDateMergeFields","refId":"sup-temporal-calendardatemergefields"},{"type":"clause","id":"sup-temporal-calendardatemergefields","title":"CalendarDateMergeFields ( calendar, fields, additionalFields )","titleHTML":"CalendarDateMergeFields ( <var>calendar</var>, <var>fields</var>, <var>additionalFields</var> )","number":"1.8"},{"type":"clause","id":"sup-temporal-calendar-abstract-ops","titleHTML":"Abstract Operations for Temporal.Calendar Objects","number":"1"},{"type":"clause","id":"sec-copyright-and-software-license","title":"Copyright & Software License","titleHTML":"Copyright &amp; Software License","number":"A"}]}`);
+let biblio = JSON.parse(`{"refsByClause":{"sec-temporal-calendarsupportsera":["_ref_0"],"sec-temporal-canonicalizeeraincalendar":["_ref_1"],"sec-temporal-isvalidmonthecodeforcalendar":["_ref_2","_ref_3"],"sec-temporal-isvaliderayearforcalendar":["_ref_4","_ref_6"],"sup-temporal-calendardateextendedyear":["_ref_5","_ref_10"],"sup-temporal-calendardateera":["_ref_7","_ref_8"],"sup-temporal-calendardateerayear":["_ref_9"],"sup-temporal-calendardatefields":["_ref_11"],"sup-temporal-calendardatemergefields":["_ref_12"]},"entries":[{"type":"table","id":"table-eras","number":1,"caption":"Table 1: era aliases and range of eraYear","referencingIds":["_ref_0","_ref_1","_ref_4","_ref_5"]},{"type":"op","aoid":"CalendarSupportsEra","refId":"sec-temporal-calendarsupportsera"},{"type":"clause","id":"sec-temporal-calendarsupportsera","title":"CalendarSupportsEra ( calendar )","titleHTML":"CalendarSupportsEra ( <var>calendar</var> )","number":"1.1","referencingIds":["_ref_7","_ref_9","_ref_10","_ref_11","_ref_12"]},{"type":"op","aoid":"CanonicalizeEraInCalendar","refId":"sec-temporal-canonicalizeeraincalendar"},{"type":"clause","id":"sec-temporal-canonicalizeeraincalendar","title":"CanonicalizeEraInCalendar ( calendar, era )","titleHTML":"CanonicalizeEraInCalendar ( <var>calendar</var>, <var>era</var> )","number":"1.2","referencingIds":["_ref_6","_ref_8"]},{"type":"table","id":"table-additional-month-codes","number":2,"caption":"Table 2: Additional Month Codes in Calendars","referencingIds":["_ref_2","_ref_3"]},{"type":"op","aoid":"IsValidMonthCodeForCalendar","refId":"sec-temporal-isvalidmonthecodeforcalendar"},{"type":"clause","id":"sec-temporal-isvalidmonthecodeforcalendar","title":"IsValidMonthCodeForCalendar ( calendar, monthCode )","titleHTML":"IsValidMonthCodeForCalendar ( <var>calendar</var>, <var>monthCode</var> )","number":"1.3"},{"type":"op","aoid":"IsValidEraYearForCalendar","refId":"sec-temporal-isvaliderayearforcalendar"},{"type":"clause","id":"sec-temporal-isvaliderayearforcalendar","title":"IsValidEraYearForCalendar ( calendar, era, eraYear )","titleHTML":"IsValidEraYearForCalendar ( <var>calendar</var>, <var>era</var>, <var>eraYear</var> )","number":"1.4"},{"type":"op","aoid":"CalendarDateEra","refId":"sup-temporal-calendardateera"},{"type":"clause","id":"sup-temporal-calendardateera","title":"CalendarDateEra ( calendar, date )","titleHTML":"CalendarDateEra ( <var>calendar</var>, <var>date</var> )","number":"1.5"},{"type":"op","aoid":"CalendarDateEraYear","refId":"sup-temporal-calendardateerayear"},{"type":"clause","id":"sup-temporal-calendardateerayear","title":"CalendarDateEraYear ( calendar, date )","titleHTML":"CalendarDateEraYear ( <var>calendar</var>, <var>date</var> )","number":"1.6"},{"type":"op","aoid":"CalendarDateExtendedYear","refId":"sup-temporal-calendardateextendedyear"},{"type":"clause","id":"sup-temporal-calendardateextendedyear","title":"CalendarDateExtendedYear ( calendar, date )","titleHTML":"CalendarDateExtendedYear ( <var>calendar</var>, <var>date</var> )","number":"1.7"},{"type":"op","aoid":"CalendarDateFields","refId":"sup-temporal-calendardatefields"},{"type":"clause","id":"sup-temporal-calendardatefields","title":"CalendarDateFields ( calendar, fields )","titleHTML":"CalendarDateFields ( <var>calendar</var>, <var>fields</var> )","number":"1.8"},{"type":"op","aoid":"CalendarDateMergeFields","refId":"sup-temporal-calendardatemergefields"},{"type":"clause","id":"sup-temporal-calendardatemergefields","title":"CalendarDateMergeFields ( calendar, fields, additionalFields )","titleHTML":"CalendarDateMergeFields ( <var>calendar</var>, <var>fields</var>, <var>additionalFields</var> )","number":"1.9"},{"type":"clause","id":"sup-temporal-calendar-abstract-ops","titleHTML":"Abstract Operations for Temporal.Calendar Objects","number":"1"},{"type":"clause","id":"sec-copyright-and-software-license","title":"Copyright & Software License","titleHTML":"Copyright &amp; Software License","number":"A"}]}`);
 ;let usesMultipage = false</script><style>:root {
   --foreground-color: #111;
   --background-color: #fff;
@@ -3960,7 +3960,7 @@ p.ECMAaddress {
 </ul></div><div id="menu-toggle"><svg xmlns="http://www.w3.org/2000/svg" style="width:100%; height:100%; stroke:currentColor" viewBox="0 0 120 120" width="54" height="54">
       <title>Menu</title>
       <path stroke-width="10" stroke-linecap="round" d="M30,60 h60  M30,30 m0,5 h60  M30,90 m0,-5 h60"></path>
-    </svg></div><div id="menu-spacer" class="menu-spacer"></div><div id="menu"><div id="menu-search"><input type="text" id="menu-search-box" placeholder="Search..."><div id="menu-search-results" class="inactive"></div></div><div id="menu-pins"><div class="menu-pane-header">Pins<button class="unpin-all">clear</button></div><ul id="menu-pins-list"></ul></div><div class="menu-pane-header">Table of Contents</div><div id="menu-toc"><ol class="toc"><li><span class="item-toggle">+</span><a href="#sup-temporal-calendar-abstract-ops" title="Abstract Operations for Temporal.Calendar Objects"><span class="secnum">1</span> Abstract Operations for Temporal.Calendar Objects</a><ol class="toc"><li><span class="item-toggle-none"></span><a href="#sec-temporal-calendarsupportsera" title="CalendarSupportsEra ( calendar )"><span class="secnum">1.1</span> CalendarSupportsEra ( <var>calendar</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sec-temporal-canonicalizeeraincalendar" title="CanonicalizeEraInCalendar ( calendar, era )"><span class="secnum">1.2</span> CanonicalizeEraInCalendar ( <var>calendar</var>, <var>era</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sec-temporal-isvalidmonthecodeforcalendar" title="IsValidMonthCodeForCalendar ( calendar, monthCode )"><span class="secnum">1.3</span> IsValidMonthCodeForCalendar ( <var>calendar</var>, <var>monthCode</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sec-temporal-isvaliderayearforcalendar" title="IsValidEraYearForCalendar ( calendar, era, eraYear )"><span class="secnum">1.4</span> IsValidEraYearForCalendar ( <var>calendar</var>, <var>era</var>, <var>eraYear</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sup-temporal-calendardateera" title="CalendarDateEra ( calendar, date )"><span class="secnum">1.5</span> CalendarDateEra ( <var>calendar</var>, <var>date</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sup-temporal-calendardateerayear" title="CalendarDateEraYear ( calendar, date )"><span class="secnum">1.6</span> CalendarDateEraYear ( <var>calendar</var>, <var>date</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sup-temporal-calendardatefields" title="CalendarDateFields ( calendar, fields )"><span class="secnum">1.7</span> CalendarDateFields ( <var>calendar</var>, <var>fields</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sup-temporal-calendardatemergefields" title="CalendarDateMergeFields ( calendar, fields, additionalFields )"><span class="secnum">1.8</span> CalendarDateMergeFields ( <var>calendar</var>, <var>fields</var>, <var>additionalFields</var> )</a></li></ol></li><li><span class="item-toggle-none"></span><a href="#sec-copyright-and-software-license" title="Copyright &amp; Software License">Copyright &amp; Software License</a></li></ol></div></div><div id="spec-container"><h1 class="version">Stage 2 Draft / June 20, 2025</h1><h1 class="title">Intl era and monthCode Proposal</h1>
+    </svg></div><div id="menu-spacer" class="menu-spacer"></div><div id="menu"><div id="menu-search"><input type="text" id="menu-search-box" placeholder="Search..."><div id="menu-search-results" class="inactive"></div></div><div id="menu-pins"><div class="menu-pane-header">Pins<button class="unpin-all">clear</button></div><ul id="menu-pins-list"></ul></div><div class="menu-pane-header">Table of Contents</div><div id="menu-toc"><ol class="toc"><li><span class="item-toggle">+</span><a href="#sup-temporal-calendar-abstract-ops" title="Abstract Operations for Temporal.Calendar Objects"><span class="secnum">1</span> Abstract Operations for Temporal.Calendar Objects</a><ol class="toc"><li><span class="item-toggle-none"></span><a href="#sec-temporal-calendarsupportsera" title="CalendarSupportsEra ( calendar )"><span class="secnum">1.1</span> CalendarSupportsEra ( <var>calendar</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sec-temporal-canonicalizeeraincalendar" title="CanonicalizeEraInCalendar ( calendar, era )"><span class="secnum">1.2</span> CanonicalizeEraInCalendar ( <var>calendar</var>, <var>era</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sec-temporal-isvalidmonthecodeforcalendar" title="IsValidMonthCodeForCalendar ( calendar, monthCode )"><span class="secnum">1.3</span> IsValidMonthCodeForCalendar ( <var>calendar</var>, <var>monthCode</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sec-temporal-isvaliderayearforcalendar" title="IsValidEraYearForCalendar ( calendar, era, eraYear )"><span class="secnum">1.4</span> IsValidEraYearForCalendar ( <var>calendar</var>, <var>era</var>, <var>eraYear</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sup-temporal-calendardateera" title="CalendarDateEra ( calendar, date )"><span class="secnum">1.5</span> CalendarDateEra ( <var>calendar</var>, <var>date</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sup-temporal-calendardateerayear" title="CalendarDateEraYear ( calendar, date )"><span class="secnum">1.6</span> CalendarDateEraYear ( <var>calendar</var>, <var>date</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sup-temporal-calendardateextendedyear" title="CalendarDateExtendedYear ( calendar, date )"><span class="secnum">1.7</span> CalendarDateExtendedYear ( <var>calendar</var>, <var>date</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sup-temporal-calendardatefields" title="CalendarDateFields ( calendar, fields )"><span class="secnum">1.8</span> CalendarDateFields ( <var>calendar</var>, <var>fields</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sup-temporal-calendardatemergefields" title="CalendarDateMergeFields ( calendar, fields, additionalFields )"><span class="secnum">1.9</span> CalendarDateMergeFields ( <var>calendar</var>, <var>fields</var>, <var>additionalFields</var> )</a></li></ol></li><li><span class="item-toggle-none"></span><a href="#sec-copyright-and-software-license" title="Copyright &amp; Software License">Copyright &amp; Software License</a></li></ol></div></div><div id="spec-container"><h1 class="version">Stage 2 Draft / June 20, 2025</h1><h1 class="title">Intl era and monthCode Proposal</h1>
 <emu-clause id="sup-temporal-calendar-abstract-ops">
   <h1><span class="secnum">1</span> Abstract Operations for Temporal.Calendar Objects</h1>
   <emu-clause id="sec-temporal-calendarsupportsera" type="abstract operation" aoid="CalendarSupportsEra">
@@ -3979,6 +3979,7 @@ p.ECMAaddress {
             <th>Aliases</th>
             <th>Minimum eraYear</th>
             <th>Maximum eraYear</th>
+            <th>Epoch Year</th>
           </tr>
         </thead>
         <tbody><tr>
@@ -3987,6 +3988,7 @@ p.ECMAaddress {
           <td><emu-val>"be"</emu-val></td>
           <td><emu-val>-∞</emu-val><sub>𝔽</sub></td>
           <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
+          <td><emu-val>-542</emu-val><sub>𝔽</sub></td>
         </tr>
         <tr>
           <td><emu-val>"chinese"</emu-val></td>
@@ -3994,6 +3996,7 @@ p.ECMAaddress {
           <td></td>
           <td><emu-val>-∞</emu-val><sub>𝔽</sub></td>
           <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
+          <td><emu-val>1</emu-val><sub>𝔽</sub></td>
         </tr>
         <tr>
           <td><emu-val>"coptic"</emu-val></td>
@@ -4001,6 +4004,7 @@ p.ECMAaddress {
           <td></td>
           <td><emu-val>1</emu-val><sub>𝔽</sub></td>
           <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
+          <td><emu-val>284</emu-val><sub>𝔽</sub></td>
         </tr>
         <tr>
           <td><emu-val>"coptic"</emu-val></td>
@@ -4015,6 +4019,7 @@ p.ECMAaddress {
           <td></td>
           <td><emu-val>-∞</emu-val><sub>𝔽</sub></td>
           <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
+          <td><emu-val>1</emu-val><sub>𝔽</sub></td>
         </tr>
         <tr>
           <td><emu-val>"ethiopic"</emu-val></td>
@@ -4022,6 +4027,7 @@ p.ECMAaddress {
           <td><emu-val>"incar"</emu-val></td>
           <td><emu-val>1</emu-val><sub>𝔽</sub></td>
           <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
+          <td><emu-val>8</emu-val><sub>𝔽</sub></td>
         </tr>
         <tr>
           <td><emu-val>"ethiopic"</emu-val></td>
@@ -4036,6 +4042,7 @@ p.ECMAaddress {
           <td><emu-val>"ethiopic-amete-alem"</emu-val>, <emu-val>"mundi"</emu-val></td>
           <td><emu-val>-∞</emu-val><sub>𝔽</sub></td>
           <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
+          <td><emu-val>-5492</emu-val><sub>𝔽</sub></td>
         </tr>
         <tr>
           <td><emu-val>"gregory"</emu-val></td>
@@ -4043,6 +4050,7 @@ p.ECMAaddress {
           <td><emu-val>"ce"</emu-val>, <emu-val>"ad"</emu-val></td>
           <td><emu-val>1</emu-val><sub>𝔽</sub></td>
           <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
+          <td><emu-val>1</emu-val><sub>𝔽</sub></td>
         </tr>
         <tr>
           <td><emu-val>"gregory"</emu-val></td>
@@ -4057,6 +4065,7 @@ p.ECMAaddress {
           <td><emu-val>"am"</emu-val></td>
           <td><emu-val>-∞</emu-val><sub>𝔽</sub></td>
           <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
+          <td><emu-val>-3760</emu-val><sub>𝔽</sub></td>
         </tr>
         <tr>
           <td><emu-val>"indian"</emu-val></td>
@@ -4064,6 +4073,7 @@ p.ECMAaddress {
           <td><emu-val>"saka"</emu-val></td>
           <td><emu-val>-∞</emu-val><sub>𝔽</sub></td>
           <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
+          <td><emu-val>78</emu-val><sub>𝔽</sub></td>
         </tr>
         <tr>
           <td><emu-val>"islamic"</emu-val></td>
@@ -4071,6 +4081,7 @@ p.ECMAaddress {
           <td><emu-val>"ah"</emu-val></td>
           <td><emu-val>-∞</emu-val><sub>𝔽</sub></td>
           <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
+          <td><emu-val>622</emu-val><sub>𝔽</sub></td>
         </tr>
         <tr>
           <td><emu-val>"islamic-civil"</emu-val></td>
@@ -4078,6 +4089,7 @@ p.ECMAaddress {
           <td><emu-val>"islamicc"</emu-val>, <emu-val>"ah"</emu-val></td>
           <td><emu-val>-∞</emu-val><sub>𝔽</sub></td>
           <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
+          <td><emu-val>622</emu-val><sub>𝔽</sub></td>
         </tr>
         <tr>
           <td><emu-val>"islamic-rgsa"</emu-val></td>
@@ -4085,6 +4097,7 @@ p.ECMAaddress {
           <td><emu-val>"ah"</emu-val></td>
           <td><emu-val>-∞</emu-val><sub>𝔽</sub></td>
           <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
+          <td><emu-val>622</emu-val><sub>𝔽</sub></td>
         </tr>
         <tr>
           <td><emu-val>"islamic-tbla"</emu-val></td>
@@ -4092,6 +4105,7 @@ p.ECMAaddress {
           <td><emu-val>"ah"</emu-val></td>
           <td><emu-val>-∞</emu-val><sub>𝔽</sub></td>
           <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
+          <td><emu-val>622</emu-val><sub>𝔽</sub></td>
         </tr>
         <tr>
           <td><emu-val>"islamic-umalqura"</emu-val></td>
@@ -4113,6 +4127,7 @@ p.ECMAaddress {
           <td><emu-val>"gregory"</emu-val>, <emu-val>"ad"</emu-val>, <emu-val>"ce"</emu-val></td>
           <td><emu-val>1</emu-val><sub>𝔽</sub></td>
           <td><emu-val>1868</emu-val><sub>𝔽</sub></td>
+          <td><emu-val>1</emu-val><sub>𝔽</sub></td>
         </tr>
         <tr>
           <td><emu-val>"japanese"</emu-val></td>
@@ -4155,6 +4170,7 @@ p.ECMAaddress {
           <td><emu-val>"ap"</emu-val></td>
           <td><emu-val>-∞</emu-val><sub>𝔽</sub></td>
           <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
+          <td><emu-val>622</emu-val><sub>𝔽</sub></td>
         </tr>
         <tr>
           <td><emu-val>"roc"</emu-val></td>
@@ -4162,6 +4178,7 @@ p.ECMAaddress {
           <td><emu-val>"minguo"</emu-val>*</td>
           <td><emu-val>1</emu-val><sub>𝔽</sub></td>
           <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
+          <td><emu-val>1912</emu-val><sub>𝔽</sub></td>
         </tr>
         <tr>
           <td><emu-val>"roc"</emu-val></td>
@@ -4232,7 +4249,7 @@ p.ECMAaddress {
     <p>The abstract operation IsValidEraYearForCalendar takes arguments <var>calendar</var> (a String), <var>era</var> (a String), and <var>eraYear</var> (a <emu-xref href="#integer"><a href="https://tc39.es/ecma262/#integer">integer</a></emu-xref>) and returns a Boolean. 
       The following algorithm refers to the era data from <a href="https://unicode.org/reports/tr35/tr35-dates.html#Calendar_Data">UTS 35's Supplemental Calendar Data</a>.
        It performs the following steps when called:</p>
-    <emu-alg><ol><li>Let <var>era</var> be <emu-xref aoid="CanonicalizeEraInCalendar" id="_ref_5"><a href="#sec-temporal-canonicalizeeraincalendar">CanonicalizeEraInCalendar</a></emu-xref>(<var>calendar</var>, <var>era</var>).</li><li>If <var>era</var> is <emu-val>undefined</emu-val>, return <emu-val>false</emu-val>.</li><li>Let <var>r</var> be the row in <emu-xref href="#table-eras" id="_ref_4"><a href="#table-eras">Table 1</a></emu-xref> which the <var>calendar</var> is in the Calendar column and the <var>era</var> is in the Era column.</li><li>Let <var>min</var> be the value given in the <emu-val>"Minimum eraYear"</emu-val> column of <var>r</var>.</li><li>Let <var>max</var> be the value given in the <emu-val>"Maximum eraYear"</emu-val> column of <var>r</var>.</li><li>If <var>eraYear</var> &lt; <var>min</var>, return <emu-val>false</emu-val>.</li><li>If <var>eraYear</var> &gt; <var>max</var>, return <emu-val>false</emu-val>.</li><li>Return <emu-val>true</emu-val>.</li></ol></emu-alg>
+    <emu-alg><ol><li>Let <var>era</var> be <emu-xref aoid="CanonicalizeEraInCalendar" id="_ref_6"><a href="#sec-temporal-canonicalizeeraincalendar">CanonicalizeEraInCalendar</a></emu-xref>(<var>calendar</var>, <var>era</var>).</li><li>If <var>era</var> is <emu-val>undefined</emu-val>, return <emu-val>false</emu-val>.</li><li>Let <var>r</var> be the row in <emu-xref href="#table-eras" id="_ref_4"><a href="#table-eras">Table 1</a></emu-xref> which the <var>calendar</var> is in the Calendar column and the <var>era</var> is in the Era column.</li><li>Let <var>min</var> be the value given in the <emu-val>"Minimum eraYear"</emu-val> column of <var>r</var>.</li><li>Let <var>max</var> be the value given in the <emu-val>"Maximum eraYear"</emu-val> column of <var>r</var>.</li><li>If <var>eraYear</var> &lt; <var>min</var>, return <emu-val>false</emu-val>.</li><li>If <var>eraYear</var> &gt; <var>max</var>, return <emu-val>false</emu-val>.</li><li>Return <emu-val>true</emu-val>.</li></ol></emu-alg>
   </emu-clause>
 
   <emu-clause id="sup-temporal-calendardateera" type="abstract operation" aoid="CalendarDateEra">
@@ -4241,7 +4258,7 @@ p.ECMAaddress {
     <p>
         This definition supersedes the definition provided in "Temporal proposal", #sec-temporal-calendardateera.
     </p>
-    <emu-alg><ol><li>If <emu-xref aoid="CalendarSupportsEra" id="_ref_6"><a href="#sec-temporal-calendarsupportsera">CalendarSupportsEra</a></emu-xref>(<var>calendar</var>) is <emu-val>false</emu-val>, return <emu-val>undefined</emu-val>.</li><li>Let <var>era</var> be the String to indicate the era corresponding to <var>date</var> in the context of the calendar represented by <var>calendar</var> from an <emu-xref href="#implementation-defined"><a href="https://tc39.es/ecma262/#implementation-defined">implementation-defined</a></emu-xref> processing.</li><li>Return <emu-xref aoid="CanonicalizeEraInCalendar" id="_ref_7"><a href="#sec-temporal-canonicalizeeraincalendar">CanonicalizeEraInCalendar</a></emu-xref>(<var>calendar</var>, <var>era</var>).</li></ol></emu-alg>
+    <emu-alg><ol><li>If <emu-xref aoid="CalendarSupportsEra" id="_ref_7"><a href="#sec-temporal-calendarsupportsera">CalendarSupportsEra</a></emu-xref>(<var>calendar</var>) is <emu-val>false</emu-val>, return <emu-val>undefined</emu-val>.</li><li>Let <var>era</var> be the String to indicate the era corresponding to <var>date</var> in the context of the calendar represented by <var>calendar</var> from an <emu-xref href="#implementation-defined"><a href="https://tc39.es/ecma262/#implementation-defined">implementation-defined</a></emu-xref> processing.</li><li>Return <emu-xref aoid="CanonicalizeEraInCalendar" id="_ref_8"><a href="#sec-temporal-canonicalizeeraincalendar">CanonicalizeEraInCalendar</a></emu-xref>(<var>calendar</var>, <var>era</var>).</li></ol></emu-alg>
   </emu-clause>
 
   <emu-clause id="sup-temporal-calendardateerayear" type="abstract operation" aoid="CalendarDateEraYear">
@@ -4251,24 +4268,33 @@ p.ECMAaddress {
     <p>
         This definition supersedes the definition provided in "Temporal proposal", #sec-temporal-calendardateerayear.
     </p>
-    <emu-alg><ol><li>If <emu-xref aoid="CalendarSupportsEra" id="_ref_8"><a href="#sec-temporal-calendarsupportsera">CalendarSupportsEra</a></emu-xref>(<var>calendar</var>) is <emu-val>false</emu-val>, return <emu-val>undefined</emu-val>.</li><li>Let <var>eraYear</var> be the <emu-xref href="#integer"><a href="https://tc39.es/ecma262/#integer">integer</a></emu-xref> to indicate the era year corresponding to <var>date</var> in the context of the calendar represented by <var>calendar</var> from an <emu-xref href="#implementation-defined"><a href="https://tc39.es/ecma262/#implementation-defined">implementation-defined</a></emu-xref> processing.</li><li><emu-xref href="#assert"><a href="https://tc39.es/ecma262/#assert">Assert</a></emu-xref>: <var>eraYear</var> is an <emu-xref href="#integer"><a href="https://tc39.es/ecma262/#integer">integer</a></emu-xref>.</li><li>Return <var>eraYear</var>.</li></ol></emu-alg>
+    <emu-alg><ol><li>If <emu-xref aoid="CalendarSupportsEra" id="_ref_9"><a href="#sec-temporal-calendarsupportsera">CalendarSupportsEra</a></emu-xref>(<var>calendar</var>) is <emu-val>false</emu-val>, return <emu-val>undefined</emu-val>.</li><li>Let <var>eraYear</var> be the <emu-xref href="#integer"><a href="https://tc39.es/ecma262/#integer">integer</a></emu-xref> to indicate the era year corresponding to <var>date</var> in the context of the calendar represented by <var>calendar</var> from an <emu-xref href="#implementation-defined"><a href="https://tc39.es/ecma262/#implementation-defined">implementation-defined</a></emu-xref> processing.</li><li><emu-xref href="#assert"><a href="https://tc39.es/ecma262/#assert">Assert</a></emu-xref>: <var>eraYear</var> is an <emu-xref href="#integer"><a href="https://tc39.es/ecma262/#integer">integer</a></emu-xref>.</li><li>Return <var>eraYear</var>.</li></ol></emu-alg>
     <emu-note><span class="note">Note</span><div class="note-contents">
       Era years are 1-indexed for many calendars, but not all (e.g., the eras of the Burmese calendar each start with a year 0). Years can also advance opposite the flow of time (as for BCE years in the Gregorian calendar).
     </div></emu-note>
   </emu-clause>
 
+  <emu-clause id="sup-temporal-calendardateextendedyear" type="abstract operation" aoid="CalendarDateExtendedYear">
+    <h1><span class="secnum">1.7</span> CalendarDateExtendedYear ( <var>calendar</var>, <var>date</var> )</h1>
+    <p>The abstract operation CalendarDateExtendedYear takes arguments <var>calendar</var> (a String) and <var>date</var> (a Temporal.PlainDateTime, Temporal.PlainDate, or Temporal.PlainYearMonth) and returns an <emu-xref href="#integer"><a href="https://tc39.es/ecma262/#integer">integer</a></emu-xref>. It performs <emu-xref href="#implementation-defined"><a href="https://tc39.es/ecma262/#implementation-defined">implementation-defined</a></emu-xref> processing to find the year for the date corresponding to <var>date</var> in the context of the calendar represented by <var>calendar</var> relative to a well-defined epoch year for that calendar.</p>
+    <p>
+        This definition supersedes the definition provided in "Temporal proposal", #sec-temporal-calendardateextendedyear.
+    </p>
+    <emu-alg><ol><li>Let <var>year</var> be <var>date</var>.<var class="field">[[ISOYear]]</var>.</li><li>If <emu-xref aoid="CalendarSupportsEra" id="_ref_10"><a href="#sec-temporal-calendarsupportsera">CalendarSupportsEra</a></emu-xref>(<var>calendar</var>) is <emu-val>false</emu-val>, then<ol><li>Return <var>year</var>.</li></ol></li><li>Let <var>r</var> be the row in <emu-xref href="#table-eras" id="_ref_5"><a href="#table-eras">Table 1</a></emu-xref> which <var>calendar</var> is the value of the Calendar column as well as the Era column.</li><li>Let <var>epochYear</var> be the value given in the <emu-val>"Epoch Year"</emu-val> column of <var>r</var>.</li><li>Let <var>extendedYear</var> be <var>year</var> - <var>epochYear</var>.</li><li>Return <var>extendedYear</var>.</li></ol></emu-alg>
+  </emu-clause>
+
   <emu-clause id="sup-temporal-calendardatefields" type="abstract operation" aoid="CalendarDateFields">
-    <h1><span class="secnum">1.7</span> CalendarDateFields ( <var>calendar</var>, <var>fields</var> )</h1>
+    <h1><span class="secnum">1.8</span> CalendarDateFields ( <var>calendar</var>, <var>fields</var> )</h1>
     <p>The abstract operation CalendarDateFields takes arguments <var>calendar</var> (a String) and <var>fields</var> (a <emu-xref href="#sec-list-and-record-specification-type"><a href="https://tc39.es/ecma262/#sec-list-and-record-specification-type">List</a></emu-xref> of Strings) and returns a <emu-xref href="#sec-list-and-record-specification-type"><a href="https://tc39.es/ecma262/#sec-list-and-record-specification-type">List</a></emu-xref> of Strings. It takes a list of standard fields in <var>fields</var> that are necessary for a given operation and returns a new list by adding relevant calendar-specific fields for the calendar represented by <var>calendar</var>. This is relevant for calendars which accept fields other than the standard set of built-in calendar fields.</p>
     
     <p>
         This definition supersedes the definition provided in "Temporal proposal", #sec-temporal-calendardatefields.
     </p>
-    <emu-alg><ol><li>If <var>fields</var> contains an element equal to <emu-val>"year"</emu-val> and <emu-xref aoid="CalendarSupportsEra" id="_ref_9"><a href="#sec-temporal-calendarsupportsera">CalendarSupportsEra</a></emu-xref>(<var>calendar</var>) is <emu-val>true</emu-val>, then<ol><li>Append <emu-val>"era"</emu-val> to <var>fields</var>.</li><li>Append <emu-val>"eraYear"</emu-val> to <var>fields</var>.</li></ol></li><li>Return <var>fields</var>.</li></ol></emu-alg>
+    <emu-alg><ol><li>If <var>fields</var> contains an element equal to <emu-val>"year"</emu-val> and <emu-xref aoid="CalendarSupportsEra" id="_ref_11"><a href="#sec-temporal-calendarsupportsera">CalendarSupportsEra</a></emu-xref>(<var>calendar</var>) is <emu-val>true</emu-val>, then<ol><li>Append <emu-val>"era"</emu-val> to <var>fields</var>.</li><li>Append <emu-val>"eraYear"</emu-val> to <var>fields</var>.</li></ol></li><li>Return <var>fields</var>.</li></ol></emu-alg>
   </emu-clause>
 
   <emu-clause id="sup-temporal-calendardatemergefields" type="abstract operation" aoid="CalendarDateMergeFields">
-    <h1><span class="secnum">1.8</span> CalendarDateMergeFields ( <var>calendar</var>, <var>fields</var>, <var>additionalFields</var> )</h1>
+    <h1><span class="secnum">1.9</span> CalendarDateMergeFields ( <var>calendar</var>, <var>fields</var>, <var>additionalFields</var> )</h1>
     <p>The abstract operation CalendarDateMergeFields takes arguments <var>calendar</var> (a String), <var>fields</var> (an Object), and <var>additionalFields</var> (an Object) and returns either a <emu-xref href="#sec-completion-record-specification-type"><a href="https://tc39.es/ecma262/#sec-completion-record-specification-type">normal completion containing</a></emu-xref> an Object or an <emu-xref href="#sec-completion-record-specification-type"><a href="https://tc39.es/ecma262/#sec-completion-record-specification-type">abrupt completion</a></emu-xref>. It takes two Objects of calendar-specific fields for the calendar represented by <var>calendar</var> in <var>fields</var> and <var>additionalFields</var> and returns a new Object that includes both sets of fields. The values in <var>additionalFields</var> should supersede the values in <var>fields</var>. Also, the returned Object must be free of ambiguity or conflicts. This is relevant for calendars which accept fields other than the standard set of built-in calendar fields.</p>
     <p>
         This definition supersedes the definition provided in "Temporal proposal", #sec-temporal-calendardatemergefields.
@@ -4276,7 +4302,7 @@ p.ECMAaddress {
     <emu-note><span class="note">Note</span><div class="note-contents">
       For example, if <var>fields</var> contains <emu-val>"year"</emu-val> but <var>additionalFields</var> contains <emu-val>"era"</emu-val> and <emu-val>"eraYear"</emu-val>, then the returned list must not include <emu-val>"year"</emu-val> in order to avoid ambiguity or conflict between different ways of specifying the year.
     </div></emu-note>
-    <emu-alg><ol><li>Let <var>handleEra</var> be <emu-xref aoid="CalendarSupportsEra" id="_ref_10"><a href="#sec-temporal-calendarsupportsera">CalendarSupportsEra</a></emu-xref>(<var>calendar</var>).</li><li>Let <var>merged</var> be <emu-xref aoid="OrdinaryObjectCreate"><a href="https://tc39.es/ecma262/#sec-ordinaryobjectcreate">OrdinaryObjectCreate</a></emu-xref>(<emu-xref href="#sec-properties-of-the-object-prototype-object"><a href="https://tc39.es/ecma262/#sec-properties-of-the-object-prototype-object">%Object.prototype%</a></emu-xref>).</li><li>Let <var>fieldsKeys</var> be ?&nbsp;<emu-xref aoid="EnumerableOwnPropertyNames"><a href="https://tc39.es/ecma262/#sec-enumerableownpropertynames">EnumerableOwnPropertyNames</a></emu-xref>(<var>fields</var>, <emu-const>key</emu-const>).</li><li>For each element <var>key</var> of <var>fieldsKeys</var>, do<ol><li>If <var>key</var> is not <emu-val>"month"</emu-val> or <emu-val>"monthCode"</emu-val>, then<ol><li>If <var>handleEra</var> is <emu-val>false</emu-val> or <var>key</var> is not <emu-val>"era"</emu-val>, <emu-val>"eraYear"</emu-val> or <emu-val>"year"</emu-val>, then<ol><li>Let <var>propValue</var> be ?&nbsp;<emu-xref aoid="Get"><a href="https://tc39.es/ecma262/#sec-get-o-p">Get</a></emu-xref>(<var>fields</var>, <var>key</var>).</li><li>If <var>propValue</var> is not <emu-val>undefined</emu-val>, then<ol><li>Perform !&nbsp;<emu-xref aoid="CreateDataPropertyOrThrow"><a href="https://tc39.es/ecma262/#sec-createdatapropertyorthrow">CreateDataPropertyOrThrow</a></emu-xref>(<var>merged</var>, <var>key</var>, <var>propValue</var>).</li></ol></li></ol></li></ol></li></ol></li><li>Let <var>additionalFieldsKeys</var> be ?&nbsp;<emu-xref aoid="EnumerableOwnPropertyNames"><a href="https://tc39.es/ecma262/#sec-enumerableownpropertynames">EnumerableOwnPropertyNames</a></emu-xref>(<var>additionalFields</var>, <emu-const>key</emu-const>).</li><li>For each element <var>key</var> of <var>additionalFieldsKeys</var>, do<ol><li>Let <var>propValue</var> be ?&nbsp;<emu-xref aoid="Get"><a href="https://tc39.es/ecma262/#sec-get-o-p">Get</a></emu-xref>(<var>additionalFields</var>, <var>key</var>).</li><li>If <var>propValue</var> is not <emu-val>undefined</emu-val>, then<ol><li>Perform !&nbsp;<emu-xref aoid="CreateDataPropertyOrThrow"><a href="https://tc39.es/ecma262/#sec-createdatapropertyorthrow">CreateDataPropertyOrThrow</a></emu-xref>(<var>merged</var>, <var>key</var>, <var>propValue</var>).</li></ol></li></ol></li><li>If <var>additionalFieldsKeys</var> does not contain either <emu-val>"month"</emu-val> or <emu-val>"monthCode"</emu-val>, then<ol><li>Let <var>month</var> be ?&nbsp;<emu-xref aoid="Get"><a href="https://tc39.es/ecma262/#sec-get-o-p">Get</a></emu-xref>(<var>fields</var>, <emu-val>"month"</emu-val>).</li><li>If <var>month</var> is not <emu-val>undefined</emu-val>, then<ol><li>Perform !&nbsp;<emu-xref aoid="CreateDataPropertyOrThrow"><a href="https://tc39.es/ecma262/#sec-createdatapropertyorthrow">CreateDataPropertyOrThrow</a></emu-xref>(<var>merged</var>, <emu-val>"month"</emu-val>, <var>month</var>).</li></ol></li><li>Let <var>monthCode</var> be ?&nbsp;<emu-xref aoid="Get"><a href="https://tc39.es/ecma262/#sec-get-o-p">Get</a></emu-xref>(<var>fields</var>, <emu-val>"monthCode"</emu-val>).</li><li>If <var>monthCode</var> is not <emu-val>undefined</emu-val>, then<ol><li>Perform !&nbsp;<emu-xref aoid="CreateDataPropertyOrThrow"><a href="https://tc39.es/ecma262/#sec-createdatapropertyorthrow">CreateDataPropertyOrThrow</a></emu-xref>(<var>merged</var>, <emu-val>"monthCode"</emu-val>, <var>monthCode</var>).</li></ol></li></ol></li><li>If <var>handleEra</var> is <emu-val>true</emu-val>, then<ol><li>If <var>additionalFieldsKeys</var> does not contain <emu-val>"era"</emu-val>, <emu-val>"eraYear"</emu-val>, or <emu-val>"year"</emu-val>, then<ol><li>Let <var>year</var> be ?&nbsp;<emu-xref aoid="Get"><a href="https://tc39.es/ecma262/#sec-get-o-p">Get</a></emu-xref>(<var>fields</var>, <emu-val>"year"</emu-val>).</li><li>If <var>year</var> is not <emu-val>undefined</emu-val>, then<ol><li>Perform !&nbsp;<emu-xref aoid="CreateDataPropertyOrThrow"><a href="https://tc39.es/ecma262/#sec-createdatapropertyorthrow">CreateDataPropertyOrThrow</a></emu-xref>(<var>merged</var>, <emu-val>"year"</emu-val>, <var>year</var>).</li></ol></li></ol></li></ol></li><li>Return <var>merged</var>.</li></ol></emu-alg>
+    <emu-alg><ol><li>Let <var>handleEra</var> be <emu-xref aoid="CalendarSupportsEra" id="_ref_12"><a href="#sec-temporal-calendarsupportsera">CalendarSupportsEra</a></emu-xref>(<var>calendar</var>).</li><li>Let <var>merged</var> be <emu-xref aoid="OrdinaryObjectCreate"><a href="https://tc39.es/ecma262/#sec-ordinaryobjectcreate">OrdinaryObjectCreate</a></emu-xref>(<emu-xref href="#sec-properties-of-the-object-prototype-object"><a href="https://tc39.es/ecma262/#sec-properties-of-the-object-prototype-object">%Object.prototype%</a></emu-xref>).</li><li>Let <var>fieldsKeys</var> be ?&nbsp;<emu-xref aoid="EnumerableOwnPropertyNames"><a href="https://tc39.es/ecma262/#sec-enumerableownpropertynames">EnumerableOwnPropertyNames</a></emu-xref>(<var>fields</var>, <emu-const>key</emu-const>).</li><li>For each element <var>key</var> of <var>fieldsKeys</var>, do<ol><li>If <var>key</var> is not <emu-val>"month"</emu-val> or <emu-val>"monthCode"</emu-val>, then<ol><li>If <var>handleEra</var> is <emu-val>false</emu-val> or <var>key</var> is not <emu-val>"era"</emu-val>, <emu-val>"eraYear"</emu-val> or <emu-val>"year"</emu-val>, then<ol><li>Let <var>propValue</var> be ?&nbsp;<emu-xref aoid="Get"><a href="https://tc39.es/ecma262/#sec-get-o-p">Get</a></emu-xref>(<var>fields</var>, <var>key</var>).</li><li>If <var>propValue</var> is not <emu-val>undefined</emu-val>, then<ol><li>Perform !&nbsp;<emu-xref aoid="CreateDataPropertyOrThrow"><a href="https://tc39.es/ecma262/#sec-createdatapropertyorthrow">CreateDataPropertyOrThrow</a></emu-xref>(<var>merged</var>, <var>key</var>, <var>propValue</var>).</li></ol></li></ol></li></ol></li></ol></li><li>Let <var>additionalFieldsKeys</var> be ?&nbsp;<emu-xref aoid="EnumerableOwnPropertyNames"><a href="https://tc39.es/ecma262/#sec-enumerableownpropertynames">EnumerableOwnPropertyNames</a></emu-xref>(<var>additionalFields</var>, <emu-const>key</emu-const>).</li><li>For each element <var>key</var> of <var>additionalFieldsKeys</var>, do<ol><li>Let <var>propValue</var> be ?&nbsp;<emu-xref aoid="Get"><a href="https://tc39.es/ecma262/#sec-get-o-p">Get</a></emu-xref>(<var>additionalFields</var>, <var>key</var>).</li><li>If <var>propValue</var> is not <emu-val>undefined</emu-val>, then<ol><li>Perform !&nbsp;<emu-xref aoid="CreateDataPropertyOrThrow"><a href="https://tc39.es/ecma262/#sec-createdatapropertyorthrow">CreateDataPropertyOrThrow</a></emu-xref>(<var>merged</var>, <var>key</var>, <var>propValue</var>).</li></ol></li></ol></li><li>If <var>additionalFieldsKeys</var> does not contain either <emu-val>"month"</emu-val> or <emu-val>"monthCode"</emu-val>, then<ol><li>Let <var>month</var> be ?&nbsp;<emu-xref aoid="Get"><a href="https://tc39.es/ecma262/#sec-get-o-p">Get</a></emu-xref>(<var>fields</var>, <emu-val>"month"</emu-val>).</li><li>If <var>month</var> is not <emu-val>undefined</emu-val>, then<ol><li>Perform !&nbsp;<emu-xref aoid="CreateDataPropertyOrThrow"><a href="https://tc39.es/ecma262/#sec-createdatapropertyorthrow">CreateDataPropertyOrThrow</a></emu-xref>(<var>merged</var>, <emu-val>"month"</emu-val>, <var>month</var>).</li></ol></li><li>Let <var>monthCode</var> be ?&nbsp;<emu-xref aoid="Get"><a href="https://tc39.es/ecma262/#sec-get-o-p">Get</a></emu-xref>(<var>fields</var>, <emu-val>"monthCode"</emu-val>).</li><li>If <var>monthCode</var> is not <emu-val>undefined</emu-val>, then<ol><li>Perform !&nbsp;<emu-xref aoid="CreateDataPropertyOrThrow"><a href="https://tc39.es/ecma262/#sec-createdatapropertyorthrow">CreateDataPropertyOrThrow</a></emu-xref>(<var>merged</var>, <emu-val>"monthCode"</emu-val>, <var>monthCode</var>).</li></ol></li></ol></li><li>If <var>handleEra</var> is <emu-val>true</emu-val>, then<ol><li>If <var>additionalFieldsKeys</var> does not contain <emu-val>"era"</emu-val>, <emu-val>"eraYear"</emu-val>, or <emu-val>"year"</emu-val>, then<ol><li>Let <var>year</var> be ?&nbsp;<emu-xref aoid="Get"><a href="https://tc39.es/ecma262/#sec-get-o-p">Get</a></emu-xref>(<var>fields</var>, <emu-val>"year"</emu-val>).</li><li>If <var>year</var> is not <emu-val>undefined</emu-val>, then<ol><li>Perform !&nbsp;<emu-xref aoid="CreateDataPropertyOrThrow"><a href="https://tc39.es/ecma262/#sec-createdatapropertyorthrow">CreateDataPropertyOrThrow</a></emu-xref>(<var>merged</var>, <emu-val>"year"</emu-val>, <var>year</var>).</li></ol></li></ol></li></ol></li><li>Return <var>merged</var>.</li></ol></emu-alg>
   </emu-clause>
 </emu-clause><emu-annex id="sec-copyright-and-software-license" back-matter="">
         <h1>Copyright &amp; Software License</h1>
