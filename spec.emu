@@ -12,9 +12,9 @@ contributors: Google, Ecma International
 </pre>
 <emu-clause id="sup-temporal-calendar-abstract-ops">
   <h1>Abstract Operations for Temporal.Calendar Objects</h1>
-  <emu-clause id="sec-temporal-iscalendarsupportera" type="abstract operation">
+  <emu-clause id="sec-temporal-calendarsupportsera" type="abstract operation">
     <h1>
-      IsCalendarSupportEra (
+      CalendarSupportsEra (
         _calendar_: a String,
       ): a Boolean
     </h1>
@@ -358,7 +358,7 @@ contributors: Google, Ecma International
         This definition supersedes the definition provided in "Temporal proposal", #sec-temporal-calendardateera.
     </p>
     <emu-alg>
-      1. If IsCalendarSupportEra(_calendar_) is *false*, return *undefined*.
+      1. If CalendarSupportsEra(_calendar_) is *false*, return *undefined*.
       1. Let _era_ be the String to indicate the era corresponding to _date_ in the context of the calendar represented by _calendar_ from an implementation-defined processing.
       1. Return CanonicalizeEraInCalendar(_calendar_, _era_).
     </emu-alg>
@@ -380,7 +380,7 @@ contributors: Google, Ecma International
         This definition supersedes the definition provided in "Temporal proposal", #sec-temporal-calendardateerayear.
     </p>
     <emu-alg>
-      1. If IsCalendarSupportEra(_calendar_) is *false*, return *undefined*.
+      1. If CalendarSupportsEra(_calendar_) is *false*, return *undefined*.
       1. Let _eraYear_ be the integer to indicate the era year corresponding to _date_ in the context of the calendar represented by _calendar_ from an implementation-defined processing.
       1. Assert: _eraYear_ is an integer.
       1. Return _eraYear_.
@@ -406,7 +406,7 @@ contributors: Google, Ecma International
         This definition supersedes the definition provided in "Temporal proposal", #sec-temporal-calendardatefields.
     </p>
     <emu-alg>
-      1. If _fields_ contains an element equal to *"year"* and IsCalendarSupportEra(_calendar_) is *true*, then
+      1. If _fields_ contains an element equal to *"year"* and CalendarSupportsEra(_calendar_) is *true*, then
         1. Append *"era"* to _fields_.
         1. Append *"eraYear"* to _fields_.
       1. Return _fields_.
@@ -432,7 +432,7 @@ contributors: Google, Ecma International
       For example, if _fields_ contains *"year"* but _additionalFields_ contains *"era"* and *"eraYear"*, then the returned list must not include *"year"* in order to avoid ambiguity or conflict between different ways of specifying the year.
     </emu-note>
     <emu-alg>
-      1. Let _handleEra_ be IsCalendarSupportEra(_calendar_).
+      1. Let _handleEra_ be CalendarSupportsEra(_calendar_).
       1. Let _merged_ be OrdinaryObjectCreate(%Object.prototype%).
       1. Let _fieldsKeys_ be ? EnumerableOwnPropertyNames(_fields_, ~key~).
       1. For each element _key_ of _fieldsKeys_, do
