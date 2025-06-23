@@ -234,6 +234,81 @@ contributors: Google, Ecma International
     <emu-note>
       The content in this table is proposed by Era Code WG to CLDR TC in <a href="https://github.com/unicode-org/cldr/pull/2665">PR 2665</a> and under review. It is targeted to be part of CLDR 43, scheduled to be released in April 2023.
     </emu-note>
+    <emu-table id="table-epoch-years">
+      <emu-caption>epoch years</emu-caption>
+      <table class="real-table">
+        <thead>
+          <tr>
+            <th>Calendar</th>
+            <th>Epoch Year</th>
+          </tr>
+        </thead>
+        <tr>
+          <td>*"buddhist"*</td>
+          <td>-543</td>
+        </tr>
+        <tr>
+          <td>*"chinese"*</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>*"coptic"*</td>
+          <td>284</td>
+        </tr>
+        <tr>
+          <td>*"dangi"*</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>*"ethiopic"*</td>
+          <td>8</td>
+        </tr>
+        <tr>
+          <td>*"ethioaa"*</td>
+          <td>-5492</td>
+        </tr>
+        <tr>
+          <td>*"gregory"*</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>*"hebrew"*</td>
+          <td>-3760</td>
+        </tr>
+        <tr>
+          <td>*"indian"*</td>
+          <td>78</td>
+        </tr>
+        <tr>
+          <td>*"islamic"*</td>
+          <td>621</td>
+        </tr>
+        <tr>
+          <td>*"islamic-civil"*</td>
+          <td>621</td>
+        </tr>
+        <tr>
+          <td>*"islamic-rgsa"*</td>
+          <td>621</td>
+        </tr>
+        <tr>
+          <td>*"islamic-tbla"*</td>
+          <td>621</td>
+        </tr>
+        <tr>
+          <td>*"persian"*</td>
+          <td>621</td>
+        </tr>
+        <tr>
+          <td>*"roc"*</td>
+          <td>1911</td>
+        </tr>
+        <tr>
+          <td>*"japanese"*</td>
+          <td>0</td>
+        </tr>
+      </table>
+    </emu-table>
   </emu-clause>
 
   <emu-clause id="sec-temporal-canonicalizeeraincalendar" type="abstract operation">
@@ -388,6 +463,29 @@ contributors: Google, Ecma International
     <emu-note>
       Era years are 1-indexed for many calendars, but not all (e.g., the eras of the Burmese calendar each start with a year 0). Years can also advance opposite the flow of time (as for BCE years in the Gregorian calendar).
     </emu-note>
+  </emu-clause>
+
+  <emu-clause id="sup-temporal-calendardatearithmeticyear" type="abstract operation">
+    <h1>
+      CalendarDateArithmeticYear (
+        _calendar_: a String,
+        _date_: a Temporal.PlainDateTime, Temporal.PlainDate, or Temporal.PlainYearMonth,
+      ): an integer
+    </h1>
+    <dl class="header">
+      <dt>description</dt>
+      <dd>It performs implementation-defined processing to find the year for the date corresponding to _date_ in the context of the calendar represented by _calendar_ relative to a well-defined epoch year for that calendar.</dd>
+    </dl>
+    <emu-alg>
+      1. Assert: CalendarSupportsEra(_calendar_) is *true*.
+      1. Let _year_ be _date_.[[ISOYear]].
+      1. Let _r_ be the row in <emu-xref href="#table-epoch-years"></emu-xref> which the value of the Calendar column is _calendar_.
+      1. Let _epochYear_ be the value given in the *"Epoch Year"* column of _r_.
+      1. Let _relativeYear_ be _year_ - _epochYear_.
+      1. Let _arithmeticYear_ be the year that according to implementation-defined processing is the year of the calendar represented by _calendar_ that started during the ISO year _relativeYear_.
+      1. Assert: _arithmeticYear_ is an integer where adding 1 represents the next year in the calendar.
+      1. Return _arithmeticYear_.
+    </emu-alg>
   </emu-clause>
 
   <emu-clause id="sup-temporal-calendardatefields" type="abstract operation">
