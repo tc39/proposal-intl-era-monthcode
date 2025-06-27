@@ -218,14 +218,14 @@ contributors: Google, Ecma International
         <tr>
           <td>*"roc"*</td>
           <td>*"roc"*</td>
-          <td>*"minguo"**</td>
+          <td>*"minguo"*</td>
           <td>*1*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"roc"*</td>
-          <td>*"roc-inverse"*</td>
-          <td>*"before-roc"*</td>
+          <td>*"broc"*</td>
+          <td>*"before-roc"*, *"minguo-qian"*</td>
           <td>*1*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
