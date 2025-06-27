@@ -77,22 +77,22 @@ contributors: Google, Ecma International
         </tr>
         <tr>
           <td>*"ethiopic"*</td>
-          <td>*"ethiopic"*</td>
-          <td>*"incar"*</td>
+          <td>*"am"*</td>
+          <td>*"ethiopic-amete-mihret"*, *"incar"*</td>
           <td>*1*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"ethiopic"*</td>
-          <td>*"ethioaa"*</td>
-          <td>*"ethiopic-amete-alem"*, *"mundi"*</td>
+          <td>*"aa"*</td>
+          <td>*"ethioaa"*, *"ethiopic-amete-alem"*, *"mundi"*</td>
           <td>*-&infin;*<sub>𝔽</sub></td>
           <td>*5500*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"ethioaa"*</td>
           <td>*"ethioaa"*</td>
-          <td>*"ethiopic-amete-alem"*, *"mundi"*</td>
+          <td>*"aa"*, *"ethiopic-amete-alem"*, *"mundi"*</td>
           <td>*-&infin;*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
