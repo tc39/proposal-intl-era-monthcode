@@ -56,15 +56,15 @@ contributors: Google, Ecma International
         </tr>
         <tr>
           <td>*"coptic"*</td>
+          <td>*"am"*</td>
           <td>*"coptic"*</td>
-          <td></td>
           <td>*1*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"coptic"*</td>
+          <td>*"am-inverse"*</td>
           <td>*"coptic-inverse"*</td>
-          <td></td>
           <td>*1*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
