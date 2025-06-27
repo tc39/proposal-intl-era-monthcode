@@ -42,8 +42,8 @@ contributors: Google, Ecma International
         </thead>
         <tr>
           <td>*"buddhist"*</td>
-          <td>*"buddhist"*</td>
           <td>*"be"*</td>
+          <td></td>
           <td>*-&infin;*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
@@ -57,14 +57,14 @@ contributors: Google, Ecma International
         <tr>
           <td>*"coptic"*</td>
           <td>*"am"*</td>
-          <td>*"coptic"*</td>
+          <td></td>
           <td>*1*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"coptic"*</td>
           <td>*"am-inverse"*</td>
-          <td>*"coptic-inverse"*</td>
+          <td></td>
           <td>*1*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
@@ -78,84 +78,84 @@ contributors: Google, Ecma International
         <tr>
           <td>*"ethiopic"*</td>
           <td>*"am"*</td>
-          <td>*"ethiopic-amete-mihret"*, *"incar"*</td>
+          <td>*"incar"*</td>
           <td>*1*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"ethiopic"*</td>
           <td>*"aa"*</td>
-          <td>*"ethioaa"*, *"ethiopic-amete-alem"*, *"mundi"*</td>
+          <td>*"mundi"*</td>
           <td>*-&infin;*<sub>𝔽</sub></td>
           <td>*5500*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"ethioaa"*</td>
-          <td>*"ethioaa"*</td>
-          <td>*"aa"*, *"ethiopic-amete-alem"*, *"mundi"*</td>
+          <td>*"aa"*</td>
+          <td>*"mundi"*</td>
           <td>*-&infin;*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"gregory"*</td>
           <td>*"ce"*</td>
-          <td>*"gregory"*, *"ad"*</td>
+          <td>*"ad"*</td>
           <td>*1*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"gregory"*</td>
           <td>*"bce"*</td>
-          <td>*"gregory-inverse"*, *"bc"*</td>
+          <td>*"bc"*</td>
           <td>*1*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"hebrew"*</td>
-          <td>*"hebrew"*</td>
           <td>*"am"*</td>
+          <td></td>
           <td>*-&infin;*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"indian"*</td>
           <td>*"shaka"*</td>
-          <td>*"indian"*</td>
+          <td></td>
           <td>*-&infin;*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"islamic"*</td>
-          <td>*"islamic"*</td>
           <td>*"ah"*</td>
+          <td></td>
           <td>*-&infin;*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"islamic-civil"*</td>
-          <td>*"islamic-civil"*</td>
-          <td>*"islamicc"*, *"ah"*</td>
+          <td>*"ah"*</td>
+          <td></td>
           <td>*-&infin;*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"islamic-rgsa"*</td>
-          <td>*"islamic-rgsa"*</td>
           <td>*"ah"*</td>
+          <td></td>
           <td>*-&infin;*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"islamic-tbla"*</td>
-          <td>*"islamic-tbla"*</td>
           <td>*"ah"*</td>
+          <td></td>
           <td>*-&infin;*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"islamic-umalqura"*</td>
-          <td>*"islamic-umalqura"*</td>
           <td>*"ah"*</td>
+          <td></td>
           <td>*-&infin;*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
@@ -168,15 +168,15 @@ contributors: Google, Ecma International
         </tr>
         <tr>
           <td>*"japanese"*</td>
-          <td>*"japanese"*</td>
-          <td>*"gregory"*, *"ad"*, *"ce"*</td>
+          <td>*"ce"*</td>
+          <td>*"ad"*</td>
           <td>*1*<sub>𝔽</sub></td>
           <td>*1868*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"japanese"*</td>
-          <td>*"japanese-inverse"*</td>
-          <td>*"gregory-inverse"*, *"bc"*, *"bce"*</td>
+          <td>*"bce"*</td>
+          <td>*"bc"*</td>
           <td>*1*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
@@ -211,7 +211,7 @@ contributors: Google, Ecma International
         <tr>
           <td>*"persian"*</td>
           <td>*"ap"*</td>
-          <td>*"persian"*</td>
+          <td></td>
           <td>*-&infin;*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
