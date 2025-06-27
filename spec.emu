@@ -98,15 +98,15 @@ contributors: Google, Ecma International
         </tr>
         <tr>
           <td>*"gregory"*</td>
-          <td>*"gregory"*</td>
-          <td>*"ce"*, *"ad"*</td>
+          <td>*"ce"*</td>
+          <td>*"gregory"*, *"ad"*</td>
           <td>*1*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"gregory"*</td>
-          <td>*"gregory-inverse"*</td>
-          <td>*"bc"*, *"bce"*</td>
+          <td>*"bce"*</td>
+          <td>*"gregory-inverse"*, *"bc"*</td>
           <td>*1*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
