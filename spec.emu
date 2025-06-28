@@ -6,7 +6,7 @@
 <pre class="metadata">
 title: Intl era and monthCode Proposal
 stage: 2
-location: https://frankyftang.github.io/proposal-intl-era-monthcode/
+location: https://tc39.es/proposal-intl-era-monthcode/
 copyright: true
 contributors: Google, Ecma International
 </pre>
@@ -42,121 +42,142 @@ contributors: Google, Ecma International
         </thead>
         <tr>
           <td>*"buddhist"*</td>
-          <td>*"buddhist"*</td>
           <td>*"be"*</td>
-          <td>*-&infin;*<sub>𝔽</sub></td>
-          <td>*+&infin;*<sub>𝔽</sub></td>
-        </tr>
-        <tr>
-          <td>*"chinese"*</td>
-          <td>*"chinese"*</td>
           <td></td>
           <td>*-&infin;*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"coptic"*</td>
-          <td>*"coptic"*</td>
-          <td></td>
-          <td>*1*<sub>𝔽</sub></td>
-          <td>*+&infin;*<sub>𝔽</sub></td>
-        </tr>
-        <tr>
-          <td>*"coptic"*</td>
-          <td>*"coptic-inverse"*</td>
-          <td></td>
-          <td>*1*<sub>𝔽</sub></td>
-          <td>*+&infin;*<sub>𝔽</sub></td>
-        </tr>
-        <tr>
-          <td>*"dangi"*</td>
-          <td>*"dangi"*</td>
+          <td>*"am"*</td>
           <td></td>
           <td>*-&infin;*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"ethiopic"*</td>
-          <td>*"ethiopic"*</td>
+          <td>*"am"*</td>
           <td>*"incar"*</td>
           <td>*1*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"ethiopic"*</td>
-          <td>*"ethioaa"*</td>
-          <td>*"ethiopic-amete-alem"*, *"mundi"*</td>
+          <td>*"aa"*</td>
+          <td>*"mundi"*</td>
           <td>*-&infin;*<sub>𝔽</sub></td>
           <td>*5500*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"ethioaa"*</td>
-          <td>*"ethioaa"*</td>
-          <td>*"ethiopic-amete-alem"*, *"mundi"*</td>
+          <td>*"aa"*</td>
+          <td>*"mundi"*</td>
           <td>*-&infin;*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"gregory"*</td>
-          <td>*"gregory"*</td>
-          <td>*"ce"*, *"ad"*</td>
+          <td>*"ce"*</td>
+          <td>*"ad"*</td>
           <td>*1*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"gregory"*</td>
-          <td>*"gregory-inverse"*</td>
-          <td>*"bc"*, *"bce"*</td>
+          <td>*"bce"*</td>
+          <td>*"bc"*</td>
           <td>*1*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
-          <td>*"hebrew"*</td>
           <td>*"hebrew"*</td>
           <td>*"am"*</td>
+          <td></td>
           <td>*-&infin;*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"indian"*</td>
-          <td>*"indian"*</td>
-          <td>*"saka"*</td>
+          <td>*"shaka"*</td>
+          <td></td>
           <td>*-&infin;*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"islamic"*</td>
+          <td>*"ah"*</td>
+          <td></td>
+          <td>*1*<sub>𝔽</sub></td>
+          <td>*+&infin;*<sub>𝔽</sub></td>
+        </tr>
+        <tr>
           <td>*"islamic"*</td>
-          <td>*"ah"*</td>
-          <td>*-&infin;*<sub>𝔽</sub></td>
+          <td>*"bh"*</td>
+          <td></td>
+          <td>*1*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"islamic-civil"*</td>
+          <td>*"ah"*</td>
+          <td></td>
+          <td>*1*<sub>𝔽</sub></td>
+          <td>*+&infin;*<sub>𝔽</sub></td>
+        </tr>
+        <tr>
           <td>*"islamic-civil"*</td>
-          <td>*"islamicc"*, *"ah"*</td>
-          <td>*-&infin;*<sub>𝔽</sub></td>
+          <td>*"bh"*</td>
+          <td></td>
+          <td>*1*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"islamic-rgsa"*</td>
+          <td>*"ah"*</td>
+          <td></td>
+          <td>*1*<sub>𝔽</sub></td>
+          <td>*+&infin;*<sub>𝔽</sub></td>
+        </tr>
+        <tr>
           <td>*"islamic-rgsa"*</td>
-          <td>*"ah"*</td>
-          <td>*-&infin;*<sub>𝔽</sub></td>
+          <td>*"bh"*</td>
+          <td></td>
+          <td>*1*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"islamic-tbla"*</td>
-          <td>*"islamic-tbla"*</td>
           <td>*"ah"*</td>
-          <td>*-&infin;*<sub>𝔽</sub></td>
+          <td></td>
+          <td>*1*<sub>𝔽</sub></td>
+          <td>*+&infin;*<sub>𝔽</sub></td>
+        </tr>
+        <tr>
+          <td>*"islamic-tbla"*</td>
+          <td>*"bh"*</td>
+          <td></td>
+          <td>*1*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"islamic-umalqura"*</td>
-          <td>*"islamic-umalqura"*</td>
           <td>*"ah"*</td>
-          <td>*-&infin;*<sub>𝔽</sub></td>
+          <td></td>
+          <td>*1*<sub>𝔽</sub></td>
+          <td>*+&infin;*<sub>𝔽</sub></td>
+        </tr>
+        <tr>
+          <td>*"islamic-umalqura"*</td>
+          <td>*"bh"*</td>
+          <td></td>
+          <td>*1*<sub>𝔽</sub></td>
+          <td>*+&infin;*<sub>𝔽</sub></td>
+        </tr>
+        <tr>
+          <td>*"japanese"*</td>
+          <td>*"reiwa"*</td>
+          <td></td>
+          <td>*1*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
@@ -165,34 +186,6 @@ contributors: Google, Ecma International
           <td></td>
           <td>*1*<sub>𝔽</sub></td>
           <td>*31*<sub>𝔽</sub></td>
-        </tr>
-        <tr>
-          <td>*"japanese"*</td>
-          <td>*"japanese"*</td>
-          <td>*"gregory"*, *"ad"*, *"ce"*</td>
-          <td>*1*<sub>𝔽</sub></td>
-          <td>*1868*<sub>𝔽</sub></td>
-        </tr>
-        <tr>
-          <td>*"japanese"*</td>
-          <td>*"japanese-inverse"*</td>
-          <td>*"gregory-inverse"*, *"bc"*, *"bce"*</td>
-          <td>*1*<sub>𝔽</sub></td>
-          <td>*+&infin;*<sub>𝔽</sub></td>
-        </tr>
-        <tr>
-          <td>*"japanese"*</td>
-          <td>*"meiji"*</td>
-          <td></td>
-          <td>*1*<sub>𝔽</sub></td>
-          <td>*45*<sub>𝔽</sub></td>
-        </tr>
-        <tr>
-          <td>*"japanese"*</td>
-          <td>*"reiwa"*</td>
-          <td></td>
-          <td>*1*<sub>𝔽</sub></td>
-          <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"japanese"*</td>
@@ -209,23 +202,44 @@ contributors: Google, Ecma International
           <td>*15*<sub>𝔽</sub></td>
         </tr>
         <tr>
-          <td>*"persian"*</td>
+          <td>*"japanese"*</td>
+          <td>*"meiji"*</td>
+          <td></td>
+          <td>*1*<sub>𝔽</sub></td>
+          <td>*45*<sub>𝔽</sub></td>
+        </tr>
+        <tr>
+          <td>*"japanese"*</td>
+          <td>*"ce"*</td>
+          <td>*"ad"*</td>
+          <td>*1*<sub>𝔽</sub></td>
+          <td>*1868*<sub>𝔽</sub></td>
+        </tr>
+        <tr>
+          <td>*"japanese"*</td>
+          <td>*"bce"*</td>
+          <td>*"bc"*</td>
+          <td>*1*<sub>𝔽</sub></td>
+          <td>*+&infin;*<sub>𝔽</sub></td>
+        </tr>
+        <tr>
           <td>*"persian"*</td>
           <td>*"ap"*</td>
+          <td></td>
           <td>*-&infin;*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"roc"*</td>
           <td>*"roc"*</td>
-          <td>*"minguo"**</td>
+          <td>*"minguo"*</td>
           <td>*1*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"roc"*</td>
-          <td>*"roc-inverse"*</td>
-          <td>*"before-roc"*</td>
+          <td>*"broc"*</td>
+          <td>*"before-roc"*, *"minguo-qian"*</td>
           <td>*1*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
