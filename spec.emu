@@ -107,35 +107,70 @@ contributors: Google, Ecma International
           <td>*"islamic"*</td>
           <td>*"ah"*</td>
           <td></td>
-          <td>*-&infin;*<sub>𝔽</sub></td>
+          <td>*1*<sub>𝔽</sub></td>
+          <td>*+&infin;*<sub>𝔽</sub></td>
+        </tr>
+        <tr>
+          <td>*"islamic"*</td>
+          <td>*"bh"*</td>
+          <td></td>
+          <td>*1*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"islamic-civil"*</td>
           <td>*"ah"*</td>
           <td></td>
-          <td>*-&infin;*<sub>𝔽</sub></td>
+          <td>*1*<sub>𝔽</sub></td>
+          <td>*+&infin;*<sub>𝔽</sub></td>
+        </tr>
+        <tr>
+          <td>*"islamic-civil"*</td>
+          <td>*"bh"*</td>
+          <td></td>
+          <td>*1*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"islamic-rgsa"*</td>
           <td>*"ah"*</td>
           <td></td>
-          <td>*-&infin;*<sub>𝔽</sub></td>
+          <td>*1*<sub>𝔽</sub></td>
+          <td>*+&infin;*<sub>𝔽</sub></td>
+        </tr>
+        <tr>
+          <td>*"islamic-rgsa"*</td>
+          <td>*"bh"*</td>
+          <td></td>
+          <td>*1*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"islamic-tbla"*</td>
           <td>*"ah"*</td>
           <td></td>
-          <td>*-&infin;*<sub>𝔽</sub></td>
+          <td>*1*<sub>𝔽</sub></td>
+          <td>*+&infin;*<sub>𝔽</sub></td>
+        </tr>
+        <tr>
+          <td>*"islamic-tbla"*</td>
+          <td>*"bh"*</td>
+          <td></td>
+          <td>*1*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"islamic-umalqura"*</td>
           <td>*"ah"*</td>
           <td></td>
-          <td>*-&infin;*<sub>𝔽</sub></td>
+          <td>*1*<sub>𝔽</sub></td>
+          <td>*+&infin;*<sub>𝔽</sub></td>
+        </tr>
+        <tr>
+          <td>*"islamic-umalqura"*</td>
+          <td>*"bh"*</td>
+          <td></td>
+          <td>*1*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
