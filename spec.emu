@@ -48,29 +48,8 @@ contributors: Google, Ecma International
           <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
-          <td>*"chinese"*</td>
-          <td>*"chinese"*</td>
-          <td></td>
-          <td>*-&infin;*<sub>𝔽</sub></td>
-          <td>*+&infin;*<sub>𝔽</sub></td>
-        </tr>
-        <tr>
           <td>*"coptic"*</td>
           <td>*"am"*</td>
-          <td></td>
-          <td>*1*<sub>𝔽</sub></td>
-          <td>*+&infin;*<sub>𝔽</sub></td>
-        </tr>
-        <tr>
-          <td>*"coptic"*</td>
-          <td>*"am-inverse"*</td>
-          <td></td>
-          <td>*1*<sub>𝔽</sub></td>
-          <td>*+&infin;*<sub>𝔽</sub></td>
-        </tr>
-        <tr>
-          <td>*"dangi"*</td>
-          <td>*"dangi"*</td>
           <td></td>
           <td>*-&infin;*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
