@@ -140,38 +140,17 @@ contributors: Google, Ecma International
         </tr>
         <tr>
           <td>*"japanese"*</td>
-          <td>*"heisei"*</td>
-          <td></td>
-          <td>*1*<sub>𝔽</sub></td>
-          <td>*31*<sub>𝔽</sub></td>
-        </tr>
-        <tr>
-          <td>*"japanese"*</td>
-          <td>*"ce"*</td>
-          <td>*"ad"*</td>
-          <td>*1*<sub>𝔽</sub></td>
-          <td>*1868*<sub>𝔽</sub></td>
-        </tr>
-        <tr>
-          <td>*"japanese"*</td>
-          <td>*"bce"*</td>
-          <td>*"bc"*</td>
-          <td>*1*<sub>𝔽</sub></td>
-          <td>*+&infin;*<sub>𝔽</sub></td>
-        </tr>
-        <tr>
-          <td>*"japanese"*</td>
-          <td>*"meiji"*</td>
-          <td></td>
-          <td>*1*<sub>𝔽</sub></td>
-          <td>*45*<sub>𝔽</sub></td>
-        </tr>
-        <tr>
-          <td>*"japanese"*</td>
           <td>*"reiwa"*</td>
           <td></td>
           <td>*1*<sub>𝔽</sub></td>
           <td>*+&infin;*<sub>𝔽</sub></td>
+        </tr>
+        <tr>
+          <td>*"japanese"*</td>
+          <td>*"heisei"*</td>
+          <td></td>
+          <td>*1*<sub>𝔽</sub></td>
+          <td>*31*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"japanese"*</td>
@@ -186,6 +165,27 @@ contributors: Google, Ecma International
           <td></td>
           <td>*1*<sub>𝔽</sub></td>
           <td>*15*<sub>𝔽</sub></td>
+        </tr>
+        <tr>
+          <td>*"japanese"*</td>
+          <td>*"meiji"*</td>
+          <td></td>
+          <td>*1*<sub>𝔽</sub></td>
+          <td>*45*<sub>𝔽</sub></td>
+        </tr>
+        <tr>
+          <td>*"japanese"*</td>
+          <td>*"ce"*</td>
+          <td>*"ad"*</td>
+          <td>*1*<sub>𝔽</sub></td>
+          <td>*1868*<sub>𝔽</sub></td>
+        </tr>
+        <tr>
+          <td>*"japanese"*</td>
+          <td>*"bce"*</td>
+          <td>*"bc"*</td>
+          <td>*1*<sub>𝔽</sub></td>
+          <td>*+&infin;*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"persian"*</td>
