@@ -1,8 +1,5 @@
-<!doctype html>
+<!DOCTYPE html>
 <meta charset="utf8">
-<link rel="stylesheet" href="./spec.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
-<script src="./spec.js"></script>
 <pre class="metadata">
 title: Intl era and monthCode Proposal
 stage: 2
@@ -10,8 +7,10 @@ location: https://tc39.es/proposal-intl-era-monthcode/
 copyright: true
 contributors: Google, Ecma International
 </pre>
+
 <emu-clause id="sup-temporal-calendar-abstract-ops">
   <h1>Abstract Operations for Temporal.Calendar Objects</h1>
+
   <emu-clause id="sec-temporal-calendarsupportsera" type="abstract operation">
     <h1>
       CalendarSupportsEra (
@@ -44,141 +43,141 @@ contributors: Google, Ecma International
           <td>*"buddhist"*</td>
           <td>*"be"*</td>
           <td></td>
-          <td>*-&infin;*<sub>𝔽</sub></td>
-          <td>*+&infin;*<sub>𝔽</sub></td>
+          <td>*-∞*<sub>𝔽</sub></td>
+          <td>*+∞*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"coptic"*</td>
           <td>*"am"*</td>
           <td></td>
-          <td>*-&infin;*<sub>𝔽</sub></td>
-          <td>*+&infin;*<sub>𝔽</sub></td>
+          <td>*-∞*<sub>𝔽</sub></td>
+          <td>*+∞*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"ethiopic"*</td>
           <td>*"am"*</td>
           <td>*"incar"*</td>
           <td>*1*<sub>𝔽</sub></td>
-          <td>*+&infin;*<sub>𝔽</sub></td>
+          <td>*+∞*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"ethiopic"*</td>
           <td>*"aa"*</td>
           <td>*"mundi"*</td>
-          <td>*-&infin;*<sub>𝔽</sub></td>
+          <td>*-∞*<sub>𝔽</sub></td>
           <td>*5500*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"ethioaa"*</td>
           <td>*"aa"*</td>
           <td>*"mundi"*</td>
-          <td>*-&infin;*<sub>𝔽</sub></td>
-          <td>*+&infin;*<sub>𝔽</sub></td>
+          <td>*-∞*<sub>𝔽</sub></td>
+          <td>*+∞*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"gregory"*</td>
           <td>*"ce"*</td>
           <td>*"ad"*</td>
           <td>*1*<sub>𝔽</sub></td>
-          <td>*+&infin;*<sub>𝔽</sub></td>
+          <td>*+∞*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"gregory"*</td>
           <td>*"bce"*</td>
           <td>*"bc"*</td>
           <td>*1*<sub>𝔽</sub></td>
-          <td>*+&infin;*<sub>𝔽</sub></td>
+          <td>*+∞*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"hebrew"*</td>
           <td>*"am"*</td>
           <td></td>
-          <td>*-&infin;*<sub>𝔽</sub></td>
-          <td>*+&infin;*<sub>𝔽</sub></td>
+          <td>*-∞*<sub>𝔽</sub></td>
+          <td>*+∞*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"indian"*</td>
           <td>*"shaka"*</td>
           <td></td>
-          <td>*-&infin;*<sub>𝔽</sub></td>
-          <td>*+&infin;*<sub>𝔽</sub></td>
+          <td>*-∞*<sub>𝔽</sub></td>
+          <td>*+∞*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"islamic"*</td>
           <td>*"ah"*</td>
           <td></td>
           <td>*1*<sub>𝔽</sub></td>
-          <td>*+&infin;*<sub>𝔽</sub></td>
+          <td>*+∞*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"islamic"*</td>
           <td>*"bh"*</td>
           <td></td>
           <td>*1*<sub>𝔽</sub></td>
-          <td>*+&infin;*<sub>𝔽</sub></td>
+          <td>*+∞*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"islamic-civil"*</td>
           <td>*"ah"*</td>
           <td></td>
           <td>*1*<sub>𝔽</sub></td>
-          <td>*+&infin;*<sub>𝔽</sub></td>
+          <td>*+∞*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"islamic-civil"*</td>
           <td>*"bh"*</td>
           <td></td>
           <td>*1*<sub>𝔽</sub></td>
-          <td>*+&infin;*<sub>𝔽</sub></td>
+          <td>*+∞*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"islamic-rgsa"*</td>
           <td>*"ah"*</td>
           <td></td>
           <td>*1*<sub>𝔽</sub></td>
-          <td>*+&infin;*<sub>𝔽</sub></td>
+          <td>*+∞*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"islamic-rgsa"*</td>
           <td>*"bh"*</td>
           <td></td>
           <td>*1*<sub>𝔽</sub></td>
-          <td>*+&infin;*<sub>𝔽</sub></td>
+          <td>*+∞*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"islamic-tbla"*</td>
           <td>*"ah"*</td>
           <td></td>
           <td>*1*<sub>𝔽</sub></td>
-          <td>*+&infin;*<sub>𝔽</sub></td>
+          <td>*+∞*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"islamic-tbla"*</td>
           <td>*"bh"*</td>
           <td></td>
           <td>*1*<sub>𝔽</sub></td>
-          <td>*+&infin;*<sub>𝔽</sub></td>
+          <td>*+∞*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"islamic-umalqura"*</td>
           <td>*"ah"*</td>
           <td></td>
           <td>*1*<sub>𝔽</sub></td>
-          <td>*+&infin;*<sub>𝔽</sub></td>
+          <td>*+∞*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"islamic-umalqura"*</td>
           <td>*"bh"*</td>
           <td></td>
           <td>*1*<sub>𝔽</sub></td>
-          <td>*+&infin;*<sub>𝔽</sub></td>
+          <td>*+∞*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"japanese"*</td>
           <td>*"reiwa"*</td>
           <td></td>
           <td>*1*<sub>𝔽</sub></td>
-          <td>*+&infin;*<sub>𝔽</sub></td>
+          <td>*+∞*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"japanese"*</td>
@@ -220,28 +219,28 @@ contributors: Google, Ecma International
           <td>*"bce"*</td>
           <td>*"bc"*</td>
           <td>*1*<sub>𝔽</sub></td>
-          <td>*+&infin;*<sub>𝔽</sub></td>
+          <td>*+∞*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"persian"*</td>
           <td>*"ap"*</td>
           <td></td>
-          <td>*-&infin;*<sub>𝔽</sub></td>
-          <td>*+&infin;*<sub>𝔽</sub></td>
+          <td>*-∞*<sub>𝔽</sub></td>
+          <td>*+∞*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"roc"*</td>
           <td>*"roc"*</td>
           <td>*"minguo"*</td>
           <td>*1*<sub>𝔽</sub></td>
-          <td>*+&infin;*<sub>𝔽</sub></td>
+          <td>*+∞*<sub>𝔽</sub></td>
         </tr>
         <tr>
           <td>*"roc"*</td>
           <td>*"broc"*</td>
           <td>*"before-roc"*, *"minguo-qian"*</td>
           <td>*1*<sub>𝔽</sub></td>
-          <td>*+&infin;*<sub>𝔽</sub></td>
+          <td>*+∞*<sub>𝔽</sub></td>
         </tr>
       </table>
     </emu-table>
@@ -260,7 +259,7 @@ contributors: Google, Ecma International
     <dl class="header">
       <dt>description</dt>
       <dd>
-      The following algorithm refers to the era data from <a href="https://unicode.org/reports/tr35/tr35-dates.html#Calendar_Data">UTS 35's Supplemental Calendar Data</a>.
+        The following algorithm refers to the era data from <a href="https://unicode.org/reports/tr35/tr35-dates.html#Calendar_Data">UTS 35's Supplemental Calendar Data</a>.
       </dd>
     </dl>
     <emu-alg>
@@ -342,7 +341,7 @@ contributors: Google, Ecma International
     <dl class="header">
       <dt>description</dt>
       <dd>
-      The following algorithm refers to the era data from <a href="https://unicode.org/reports/tr35/tr35-dates.html#Calendar_Data">UTS 35's Supplemental Calendar Data</a>.
+        The following algorithm refers to the era data from <a href="https://unicode.org/reports/tr35/tr35-dates.html#Calendar_Data">UTS 35's Supplemental Calendar Data</a>.
       </dd>
     </dl>
     <emu-alg>
@@ -352,7 +351,7 @@ contributors: Google, Ecma International
       1. Let _min_ be the value given in the *"Minimum eraYear"* column of _r_.
       1. Let _max_ be the value given in the *"Maximum eraYear"* column of _r_.
       1. If _eraYear_ &lt; _min_, return *false*.
-      1. If _eraYear_ &gt; _max_, return *false*.
+      1. If _eraYear_ > _max_, return *false*.
       1. Return *true*.
     </emu-alg>
   </emu-clause>
@@ -368,9 +367,7 @@ contributors: Google, Ecma International
       <dt>description</dt>
       <dd>It performs implementation-defined processing to find the era for the date corresponding to _date_ in the context of the calendar represented by _calendar_ and returns a lowercase String value representing that era, or *undefined* for calendars that do not have eras.</dd>
     </dl>
-    <p>
-        This definition supersedes the definition provided in "Temporal proposal", #sec-temporal-calendardateera.
-    </p>
+    <p>This definition supersedes the definition provided in "Temporal proposal", #sec-temporal-calendardateera.</p>
     <emu-alg>
       1. If CalendarSupportsEra(_calendar_) is *false*, return *undefined*.
       1. Let _era_ be the String to indicate the era corresponding to _date_ in the context of the calendar represented by _calendar_ from an implementation-defined processing.
@@ -390,9 +387,7 @@ contributors: Google, Ecma International
       <dd>It performs implementation-defined processing to find the era for the date corresponding to _date_ in the context of the calendar represented by _calendar_ and returns an integer representing the ordinal position of the year of _date_ in that era, or *undefined* for calendars that do not have eras.</dd>
     </dl>
     </dl>
-    <p>
-        This definition supersedes the definition provided in "Temporal proposal", #sec-temporal-calendardateerayear.
-    </p>
+    <p>This definition supersedes the definition provided in "Temporal proposal", #sec-temporal-calendardateerayear.</p>
     <emu-alg>
       1. If CalendarSupportsEra(_calendar_) is *false*, return *undefined*.
       1. Let _eraYear_ be the integer to indicate the era year corresponding to _date_ in the context of the calendar represented by _calendar_ from an implementation-defined processing.
@@ -516,9 +511,7 @@ contributors: Google, Ecma International
       <dd>It takes a list of standard fields in _fields_ that are necessary for a given operation and returns a new list by adding relevant calendar-specific fields for the calendar represented by _calendar_. This is relevant for calendars which accept fields other than the standard set of built-in calendar fields.</dd>
     </dl>
     </dl>
-    <p>
-        This definition supersedes the definition provided in "Temporal proposal", #sec-temporal-calendardatefields.
-    </p>
+    <p>This definition supersedes the definition provided in "Temporal proposal", #sec-temporal-calendardatefields.</p>
     <emu-alg>
       1. If _fields_ contains an element equal to *"year"* and CalendarSupportsEra(_calendar_) is *true*, then
         1. Append *"era"* to _fields_.
@@ -539,9 +532,7 @@ contributors: Google, Ecma International
       <dt>description</dt>
       <dd>It takes two Objects of calendar-specific fields for the calendar represented by _calendar_ in _fields_ and _additionalFields_ and returns a new Object that includes both sets of fields. The values in _additionalFields_ should supersede the values in _fields_. Also, the returned Object must be free of ambiguity or conflicts. This is relevant for calendars which accept fields other than the standard set of built-in calendar fields.</dd>
     </dl>
-    <p>
-        This definition supersedes the definition provided in "Temporal proposal", #sec-temporal-calendardatemergefields.
-    </p>
+    <p>This definition supersedes the definition provided in "Temporal proposal", #sec-temporal-calendardatemergefields.</p>
     <emu-note>
       For example, if _fields_ contains *"year"* but _additionalFields_ contains *"era"* and *"eraYear"*, then the returned list must not include *"year"* in order to avoid ambiguity or conflict between different ways of specifying the year.
     </emu-note>
@@ -566,7 +557,7 @@ contributors: Google, Ecma International
           1. Perform ! CreateDataPropertyOrThrow(_merged_, *"month"*, _month_).
         1. Let _monthCode_ be ? Get(_fields_, *"monthCode"*).
         1. If _monthCode_ is not *undefined*, then
-            1. Perform ! CreateDataPropertyOrThrow(_merged_, *"monthCode"*, _monthCode_).
+          1. Perform ! CreateDataPropertyOrThrow(_merged_, *"monthCode"*, _monthCode_).
       1. If _handleEra_ is *true*, then
         1. If _additionalFieldsKeys_ does not contain *"era"*, *"eraYear"*, or *"year"*, then
           1. Let _year_ be ? Get(_fields_, *"year"*).
