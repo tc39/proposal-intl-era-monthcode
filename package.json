@@ -1,16 +1,17 @@
 {
   "private": true,
-  "name": "template-for-proposals",
-  "description": "A repository template for ECMAScript proposals.",
+  "name": "proposal-intl-era-monthcode",
+  "description": " To specify necessary details about era, eraYear and monthCode usage with Temporal for non-ISO calendars.",
   "scripts": {
     "start": "npm run build-loose -- --watch",
     "build": "npm run build-loose -- --strict",
-    "build-loose": "ecmarkup --load-biblio @tc39/ecma262-biblio --verbose spec.emu index.html --lint-spec"
+    "build-loose": "ecmarkup --load-biblio @tc39/ecma262-biblio --verbose spec.emu index.html --lint-spec",
+    "format": "emu-format --write spec.emu"
   },
-  "homepage": "https://github.com/tc39/template-for-proposals#readme",
+  "homepage": "https://tc39.es/proposal-intl-era-monthcode/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tc39/template-for-proposals.git"
+    "url": "git+https://github.com/tc39/proposal-intl-era-monthcode.git"
   },
   "license": "MIT",
   "devDependencies": {
