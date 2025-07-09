@@ -4336,16 +4336,20 @@ p.ECMAaddress {
         </tr>
         <tr>
           <td><var class="field">[[WeekOfYear]]</var></td>
-          <td>a Year-Week <emu-xref href="#sec-list-and-record-specification-type"><a href="https://tc39.es/ecma262/#sec-list-and-record-specification-type">Record</a></emu-xref></td>
+          <td>a <emu-xref href="#sec-year-week-record-specification-type"><a href="https://tc39.es/proposal-temporal/#sec-year-week-record-specification-type">Year-Week Record</a></emu-xref></td>
           <td>
             <p>The date's <em>calendar week of year</em>, and the corresponding <em>week calendar year</em>.</p>
-            <p>The Year-Week <emu-xref href="#sec-list-and-record-specification-type"><a href="https://tc39.es/ecma262/#sec-list-and-record-specification-type">Record</a></emu-xref>'s <var class="field">[[Week]]</var> field should be 1-based.</p>
-            <p>The Year-Week <emu-xref href="#sec-list-and-record-specification-type"><a href="https://tc39.es/ecma262/#sec-list-and-record-specification-type">Record</a></emu-xref>'s <var class="field">[[Year]]</var> field is relative to the first day of a calendar-specific "epoch year", as in the <emu-xref href="#sup-temporal-calendar-date-records" id="_ref_12"><a href="#sup-temporal-calendar-date-records">Calendar Date Record</a></emu-xref>'s <var class="field">[[Year]]</var> field, not relative to an era as in <var class="field">[[EraYear]]</var>.</p>
+            <p>The <emu-xref href="#sec-year-week-record-specification-type"><a href="https://tc39.es/proposal-temporal/#sec-year-week-record-specification-type">Year-Week Record</a></emu-xref>'s <var class="field">[[Week]]</var> field should be 1-based.</p>
+            <p>The <emu-xref href="#sec-year-week-record-specification-type"><a href="https://tc39.es/proposal-temporal/#sec-year-week-record-specification-type">Year-Week Record</a></emu-xref>'s <var class="field">[[Year]]</var> field is relative to the first day of a calendar-specific "epoch year", as in the <emu-xref href="#sup-temporal-calendar-date-records" id="_ref_12"><a href="#sup-temporal-calendar-date-records">Calendar Date Record</a></emu-xref>'s <var class="field">[[Year]]</var> field, not relative to an era as in <var class="field">[[EraYear]]</var>.</p>
             <p>
-              Usually the Year-Week <emu-xref href="#sec-list-and-record-specification-type"><a href="https://tc39.es/ecma262/#sec-list-and-record-specification-type">Record</a></emu-xref>'s <var class="field">[[Year]]</var> field will contain the same value as the <emu-xref href="#sup-temporal-calendar-date-records" id="_ref_13"><a href="#sup-temporal-calendar-date-records">Calendar Date Record</a></emu-xref>'s <var class="field">[[Year]]</var> field, but may contain the previous or next year if the week number in the Year-Week <emu-xref href="#sec-list-and-record-specification-type"><a href="https://tc39.es/ecma262/#sec-list-and-record-specification-type">Record</a></emu-xref>'s <var class="field">[[Week]]</var> field overlaps two different years.
+              Usually the <emu-xref href="#sec-year-week-record-specification-type"><a href="https://tc39.es/proposal-temporal/#sec-year-week-record-specification-type">Year-Week Record</a></emu-xref>'s <var class="field">[[Year]]</var> field will contain the same value as the <emu-xref href="#sup-temporal-calendar-date-records" id="_ref_13"><a href="#sup-temporal-calendar-date-records">Calendar Date Record</a></emu-xref>'s <var class="field">[[Year]]</var> field, but may contain the previous or next year if the week number in the <emu-xref href="#sec-year-week-record-specification-type"><a href="https://tc39.es/proposal-temporal/#sec-year-week-record-specification-type">Year-Week Record</a></emu-xref>'s <var class="field">[[Week]]</var> field overlaps two different years.
               See also ISOWeekOfYear.
             </p>
-            <p>The Year-Week <emu-xref href="#sec-list-and-record-specification-type"><a href="https://tc39.es/ecma262/#sec-list-and-record-specification-type">Record</a></emu-xref> contains <emu-val>undefined</emu-val> in <var class="field">[[Week]]</var> and <var class="field">[[Year]]</var> field for calendars that do not have a well-defined week calendar system.</p>
+            <p>The <emu-xref href="#sec-year-week-record-specification-type"><a href="https://tc39.es/proposal-temporal/#sec-year-week-record-specification-type">Year-Week Record</a></emu-xref> contains <emu-val>undefined</emu-val> in <var class="field">[[Week]]</var> and <var class="field">[[Year]]</var> field for calendars that do not have a well-defined week numbering system.</p>
+            <emu-note><span class="note">Note 5</span><div class="note-contents">
+              Currently, of the calendars supported in this specification, only <emu-val>"iso8601"</emu-val> has a well-defined, locale-independent week numbering system.
+              For all other calendars, the <emu-xref href="#sec-year-week-record-specification-type"><a href="https://tc39.es/proposal-temporal/#sec-year-week-record-specification-type">Year-Week Record</a></emu-xref> fields are <emu-val>undefined</emu-val>.
+            </div></emu-note>
           </td>
         </tr>
         <tr>
@@ -4373,7 +4377,7 @@ p.ECMAaddress {
           <td>a Boolean</td>
           <td>
             <emu-val>true</emu-val> if the date falls within a leap year, and <emu-val>false</emu-val> otherwise.
-            <emu-note><span class="note">Note 5</span><div class="note-contents">
+            <emu-note><span class="note">Note 6</span><div class="note-contents">
               A "leap year" is a year that contains more days than other years (for solar or lunar calendars) or more months than other years (for lunisolar calendars like Hebrew or Chinese).
               Some calendars, especially lunisolar ones, have further variation in year length that is not represented in the output of this operation (e.g., the Hebrew calendar includes common years with 353, 354, or 355 days and leap years with 383, 384, or 385 days).
             </div></emu-note>

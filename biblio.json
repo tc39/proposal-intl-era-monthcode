@@ -26,6 +26,11 @@
                 "type": "term",
                 "term": "calendar type",
                 "id": "sec-calendar-types"
+            },
+            {
+                "type": "term",
+                "term": "Year-Week Record",
+                "id": "sec-year-week-record-specification-type"
             }
         ]
     }
