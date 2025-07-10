@@ -7,9 +7,10 @@ location: https://tc39.es/proposal-intl-era-monthcode/
 copyright: true
 contributors: Google, Ecma International
 </pre>
+<emu-biblio href="biblio.json"></emu-biblio>
 
 <emu-clause id="sup-temporal-calendar-abstract-ops">
-  <h1>Abstract Operations for Temporal.Calendar Objects</h1>
+  <h1>Abstract Operations</h1>
 
   <emu-clause id="sec-temporal-calendarsupportsera" type="abstract operation">
     <h1>
@@ -356,7 +357,140 @@ contributors: Google, Ecma International
     </emu-alg>
   </emu-clause>
 
-  <emu-clause id="sup-temporal-calendardateera" type="abstract operation">
+  <emu-clause id="sup-temporal-calendar-date-records">
+    <h1>Calendar Date Records</h1>
+    <p>
+      A <dfn variants="Calendar Date Records">Calendar Date Record</dfn> is a Record value used to represent a valid calendar date in a non-ISO 8601 calendar.
+      Calendar Date Records are produced by the abstract operation CalendarISOToDate.
+    </p>
+    <p>Calendar Date Records have the fields listed in <emu-xref href="#table-temporal-calendar-date-record-fields"></emu-xref>.</p>
+    <p>This definition supersedes the one in <emu-xref href="#sec-temporal-calendar-date-records"></emu-xref>.</p>
+    <emu-table id="table-temporal-calendar-date-record-fields" caption="Calendar Date Record Fields">
+      <table class="real-table">
+        <tr>
+          <th>Field Name</th>
+          <th>Value</th>
+          <th>Meaning</th>
+        </tr>
+        <tr>
+          <td>[[Era]]</td>
+          <td>a String or *undefined*</td>
+          <td>
+            A lowercase String value representing the date's era, or *undefined* for calendars that do not have eras.<br>
+            The value of this field for a calendar with the identifier _calendar_ should be the result of calling CalendarDateEra(_calendar_, _date_), where _date_ is a Temporal.PlainDateTime, Temporal.PlainDate, or Temporal.PlainYearMonth value corresponding to the date.
+          </td>
+        </tr>
+        <tr>
+          <td>[[EraYear]]</td>
+          <td>an integer or *undefined*</td>
+          <td>
+            The ordinal position of the date's year within its era, or *undefined* for calendars that do not have eras.<br>
+            The value of this field for a calendar with the identifier _calendar_ should be the result of calling CalendarDateEraYear(_calendar_, _date_), where _date_ is a Temporal.PlainDateTime, Temporal.PlainDate, or Temporal.PlainYearMonth value corresponding to the date.
+            <emu-note>
+              Era years are 1-indexed for many calendars, but not all (e.g., the eras of the Burmese calendar each start with a year 0). Years can also advance opposite the flow of time (as for BCE years in the Gregorian calendar).
+            </emu-note>
+          </td>
+        </tr>
+        <tr>
+          <td>[[Year]]</td>
+          <td>an integer</td>
+          <td>
+            The date's year relative to the first day of a calendar-specific "epoch year".<br>
+            The value of this field for a calendar with the identifier _calendar_ should be the result of calling CalendarDateArithmeticYear(_calendar_, _date_), where _date_ is a Temporal.PlainDateTime, Temporal.PlainDate, or Temporal.PlainYearMonth value corresponding to the date.
+            <emu-note>The year is relative to the first day of the calendar's epoch year, so if the epoch era starts in the middle of the year, the year will be the same value before and after the start date of the era.</emu-note>
+          </td>
+        </tr>
+        <tr>
+          <td>[[Month]]</td>
+          <td>a positive integer</td>
+          <td>
+            The 1-based ordinal position of the date's month within its year.
+            <emu-note>
+              When the number of months in a year of the calendar is variable, a different value can be returned for dates that are part of the same month in different years. For example, in the Hebrew calendar, 1 Nisan 5781 is associated with value 7 while 1 Nisan 5782 is associated with value 8 because 5782 is a leap year and Nisan follows the insertion of Adar I.
+            </emu-note>
+          </td>
+        </tr>
+        <tr>
+          <td>[[MonthCode]]</td>
+          <td>a String</td>
+          <td>
+            The month code of the date's month. The month code for a month that is not a leap month and whose 1-based ordinal position in a common year of the calendar (i.e., a year that is not a leap year) is _n_ should be the string-concatenation of *"M"* and ToZeroPaddedDecimalString(_n_, 2), and the month code for a month that is a leap month inserted after a month whose 1-based ordinal position in a common year of the calendar is _p_ should be the string-concatenation of *"M"*, ToZeroPaddedDecimalString(_p_, 2), and *"L"*.
+            <emu-note>
+              For example, in the Hebrew calendar, the month code of Adar (and Adar II, in leap years) is *"M06"* and the month code of Adar I (the leap month inserted before Adar II) is *"M05L"*. In a calendar with a leap month at the start of some years, the month code of that month would be *"M00L"*.
+            </emu-note>
+          </td>
+        </tr>
+        <tr>
+          <td>[[Day]]</td>
+          <td>a positive integer</td>
+          <td>
+            The 1-based ordinal position of the date's day within its month.
+          </td>
+        </tr>
+        <tr>
+          <td>[[DayOfWeek]]</td>
+          <td>a positive integer</td>
+          <td>
+            The day of the week corresponding to the date. The value should be 1-based, where 1 is the day corresponding to Monday in the given calendar.
+          </td>
+        </tr>
+        <tr>
+          <td>[[DayOfYear]]</td>
+          <td>a positive integer</td>
+          <td>
+            The 1-based ordinal position of the date's day within its year.
+          </td>
+        </tr>
+        <tr>
+          <td>[[WeekOfYear]]</td>
+          <td>a Year-Week Record</td>
+          <td>
+            <p>The date's <em>calendar week of year</em>, and the corresponding <em>week calendar year</em>.</p>
+            <p>The Year-Week Record's [[Week]] field should be 1-based.</p>
+            <p>The Year-Week Record's [[Year]] field is relative to the first day of a calendar-specific "epoch year", as in the Calendar Date Record's [[Year]] field, not relative to an era as in [[EraYear]].</p>
+            <p>
+              Usually the Year-Week Record's [[Year]] field will contain the same value as the Calendar Date Record's [[Year]] field, but may contain the previous or next year if the week number in the Year-Week Record's [[Week]] field overlaps two different years.
+              See also ISOWeekOfYear.
+            </p>
+            <p>The Year-Week Record contains *undefined* in [[Week]] and [[Year]] field for calendars that do not have a well-defined week calendar system.</p>
+          </td>
+        </tr>
+        <tr>
+          <td>[[DaysInWeek]]</td>
+          <td>a positive integer</td>
+          <td>The number of days in the date's week.</td>
+        </tr>
+        <tr>
+          <td>[[DaysInMonth]]</td>
+          <td>a positive integer</td>
+          <td>The number of days in the date's month.</td>
+        </tr>
+        <tr>
+          <td>[[DaysInYear]]</td>
+          <td>a positive integer</td>
+          <td>The number of days in the date's year.</td>
+        </tr>
+        <tr>
+          <td>[[MonthsInYear]]</td>
+          <td>a positive integer</td>
+          <td>The number of months in the date's year.</td>
+        </tr>
+        <tr>
+          <td>[[InLeapYear]]</td>
+          <td>a Boolean</td>
+          <td>
+            *true* if the date falls within a leap year, and *false* otherwise.
+            <emu-note>
+              A "leap year" is a year that contains more days than other years (for solar or lunar calendars) or more months than other years (for lunisolar calendars like Hebrew or Chinese).
+              Some calendars, especially lunisolar ones, have further variation in year length that is not represented in the output of this operation (e.g., the Hebrew calendar includes common years with 353, 354, or 355 days and leap years with 383, 384, or 385 days).
+            </emu-note>
+          </td>
+        </tr>
+      </table>
+    </emu-table>
+  </emu-clause>
+
+  <emu-clause id="sec-temporal-calendardateera" type="abstract operation">
     <h1>
       CalendarDateEra (
         _calendar_: a String,
@@ -367,7 +501,6 @@ contributors: Google, Ecma International
       <dt>description</dt>
       <dd>It performs implementation-defined processing to find the era for the date corresponding to _date_ in the context of the calendar represented by _calendar_ and returns a lowercase String value representing that era, or *undefined* for calendars that do not have eras.</dd>
     </dl>
-    <p>This definition supersedes the definition provided in "Temporal proposal", #sec-temporal-calendardateera.</p>
     <emu-alg>
       1. If CalendarSupportsEra(_calendar_) is *false*, return *undefined*.
       1. Let _era_ be the String to indicate the era corresponding to _date_ in the context of the calendar represented by _calendar_ from an implementation-defined processing.
@@ -375,7 +508,7 @@ contributors: Google, Ecma International
     </emu-alg>
   </emu-clause>
 
-  <emu-clause id="sup-temporal-calendardateerayear" type="abstract operation">
+  <emu-clause id="sec-temporal-calendardateerayear" type="abstract operation">
     <h1>
       CalendarDateEraYear (
         _calendar_: a String,
@@ -387,7 +520,6 @@ contributors: Google, Ecma International
       <dd>It performs implementation-defined processing to find the era for the date corresponding to _date_ in the context of the calendar represented by _calendar_ and returns an integer representing the ordinal position of the year of _date_ in that era, or *undefined* for calendars that do not have eras.</dd>
     </dl>
     </dl>
-    <p>This definition supersedes the definition provided in "Temporal proposal", #sec-temporal-calendardateerayear.</p>
     <emu-alg>
       1. If CalendarSupportsEra(_calendar_) is *false*, return *undefined*.
       1. Let _eraYear_ be the integer to indicate the era year corresponding to _date_ in the context of the calendar represented by _calendar_ from an implementation-defined processing.
@@ -399,7 +531,7 @@ contributors: Google, Ecma International
     </emu-note>
   </emu-clause>
 
-  <emu-clause id="sup-temporal-calendardatearithmeticyear" type="abstract operation">
+  <emu-clause id="sec-temporal-calendardatearithmeticyear" type="abstract operation">
     <h1>
       CalendarDateArithmeticYear (
         _calendar_: a calendar type that is not *"iso8601"*,
@@ -499,71 +631,51 @@ contributors: Google, Ecma International
     </emu-table>
   </emu-clause>
 
-  <emu-clause id="sup-temporal-calendardatefields" type="abstract operation">
+  <emu-clause id="sup-temporal-calendarextrafields" type="implementation-defined abstract operation">
     <h1>
-      CalendarDateFields (
-        _calendar_: a String,
-        _fields_: a List of Strings,
-      ): a List of Strings
+      CalendarExtraFields (
+        _calendar_: a calendar type,
+        _fields_: a List of values from the Enumeration Key column of <emu-xref href="#table-temporal-calendar-fields-record-fields"></emu-xref>,
+      ): a List of values from the Enumeration Key column of <emu-xref href="#table-temporal-calendar-fields-record-fields"></emu-xref>
     </h1>
     <dl class="header">
       <dt>description</dt>
-      <dd>It takes a list of standard fields in _fields_ that are necessary for a given operation and returns a new list by adding relevant calendar-specific fields for the calendar represented by _calendar_. This is relevant for calendars which accept fields other than the standard set of built-in calendar fields.</dd>
+      <dd>It characterizes calendar-specific fields that are relevant for the provided _fields_ in the built-in calendar identified by _calendar_.</dd>
     </dl>
-    </dl>
-    <p>This definition supersedes the definition provided in "Temporal proposal", #sec-temporal-calendardatefields.</p>
+    <p>This definition supersedes the definition provided in TemporalCalendarExtraFields.</p>
     <emu-alg>
-      1. If _fields_ contains an element equal to *"year"* and CalendarSupportsEra(_calendar_) is *true*, then
-        1. Append *"era"* to _fields_.
-        1. Append *"eraYear"* to _fields_.
+      1. If _fields_ contains an element equal to ~year~ and CalendarSupportsEra(_calendar_) is *true*, then
+        1. Append ~era~ and ~era-year~ to _fields_.
       1. Return _fields_.
     </emu-alg>
   </emu-clause>
 
-  <emu-clause id="sup-temporal-calendardatemergefields" type="abstract operation">
+  <emu-clause id="sup-temporal-calendarfieldkeystoignore" type="implementation-defined abstract operation">
     <h1>
-      CalendarDateMergeFields (
-        _calendar_: a String,
-        _fields_: an Object,
-        _additionalFields_: an Object,
-      ): either a normal completion containing an Object or an abrupt completion
+      CalendarFieldKeysToIgnore (
+        _calendar_: a calendar type,
+        _keys_: a List of values from the Enumeration Key column of <emu-xref href="#table-temporal-calendar-fields-record-fields"></emu-xref>,
+      ): a List of values from the Enumeration Key column of <emu-xref href="#table-temporal-calendar-fields-record-fields"></emu-xref>
     </h1>
     <dl class="header">
       <dt>description</dt>
-      <dd>It takes two Objects of calendar-specific fields for the calendar represented by _calendar_ in _fields_ and _additionalFields_ and returns a new Object that includes both sets of fields. The values in _additionalFields_ should supersede the values in _fields_. Also, the returned Object must be free of ambiguity or conflicts. This is relevant for calendars which accept fields other than the standard set of built-in calendar fields.</dd>
+      <dd>
+        It determines which calendar date fields changing any of the fields named in _keys_ can potentially conflict with or invalidate, for the given _calendar_.
+        A field always invalidates at least itself.
+      </dd>
     </dl>
-    <p>This definition supersedes the definition provided in "Temporal proposal", #sec-temporal-calendardatemergefields.</p>
-    <emu-note>
-      For example, if _fields_ contains *"year"* but _additionalFields_ contains *"era"* and *"eraYear"*, then the returned list must not include *"year"* in order to avoid ambiguity or conflict between different ways of specifying the year.
-    </emu-note>
+    <p>This definition supersedes the definition provided in TemporalCalendarFieldKeysToIgnore.</p>
     <emu-alg>
-      1. Let _handleEra_ be CalendarSupportsEra(_calendar_).
-      1. Let _merged_ be OrdinaryObjectCreate(%Object.prototype%).
-      1. Let _fieldsKeys_ be ? EnumerableOwnPropertyNames(_fields_, ~key~).
-      1. For each element _key_ of _fieldsKeys_, do
-        1. If _key_ is not *"month"* or *"monthCode"*, then
-          1. If _handleEra_ is *false* or _key_ is not *"era"*, *"eraYear"* or *"year"*, then
-            1. Let _propValue_ be ? Get(_fields_, _key_).
-            1. If _propValue_ is not *undefined*, then
-              1. Perform ! CreateDataPropertyOrThrow(_merged_, _key_, _propValue_).
-      1. Let _additionalFieldsKeys_ be ? EnumerableOwnPropertyNames(_additionalFields_, ~key~).
-      1. For each element _key_ of _additionalFieldsKeys_, do
-        1. Let _propValue_ be ? Get(_additionalFields_, _key_).
-        1. If _propValue_ is not *undefined*, then
-          1. Perform ! CreateDataPropertyOrThrow(_merged_, _key_, _propValue_).
-      1. If _additionalFieldsKeys_ does not contain either *"month"* or *"monthCode"*, then
-        1. Let _month_ be ? Get(_fields_, *"month"*).
-        1. If _month_ is not *undefined*, then
-          1. Perform ! CreateDataPropertyOrThrow(_merged_, *"month"*, _month_).
-        1. Let _monthCode_ be ? Get(_fields_, *"monthCode"*).
-        1. If _monthCode_ is not *undefined*, then
-          1. Perform ! CreateDataPropertyOrThrow(_merged_, *"monthCode"*, _monthCode_).
-      1. If _handleEra_ is *true*, then
-        1. If _additionalFieldsKeys_ does not contain *"era"*, *"eraYear"*, or *"year"*, then
-          1. Let _year_ be ? Get(_fields_, *"year"*).
-          1. If _year_ is not *undefined*, then
-            1. Perform ! CreateDataPropertyOrThrow(_merged_, *"year"*, _year_).
-      1. Return _merged_.
+      1. Let _ignoredKeys_ be an empty List.
+      1. For each element _key_ of _keys_, do
+        1. If _key_ is ~month~, append ~month-code~ to _ignoredKeys_.
+        1. Else if _key_ is ~month-code~, append ~month~ to _ignoredKeys_.
+        1. If _key_ is one of ~era~, ~era-year~, or ~year~ and CalendarSupportsEra(_calendar_) is *true*, then
+          1. Append ~era~, ~era-year~, and ~year~ to _ignoredKeys_.
+        1. Else,
+          1. Append _key_ to _ignoredKeys_.
+      1. NOTE: While _ignoredKeys_ can have duplicate elements, this is not intended to be meaningful. This specification only checks whether particular keys are or are not members of the list.
+      1. Return _ignoredKeys_.
     </emu-alg>
   </emu-clause>
 </emu-clause>
