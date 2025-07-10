@@ -19,8 +19,18 @@
             },
             {
                 "type": "clause",
+                "number": "Temporal, 12.2.6",
+                "id": "sec-temporal-calendardateadd"
+            },
+            {
+                "type": "clause",
                 "number": "Calendar Date Records",
                 "id": "sec-temporal-calendar-date-records"
+            },
+            {
+                "type": "clause",
+                "number": "Temporal, 12.2.19",
+                "id": "sec-temporal-calendardatetoiso"
             },
             {
                 "type": "clause",
@@ -41,6 +51,11 @@
                 "type": "op",
                 "aoid": "TemporalCalendarFieldKeysToIgnore",
                 "id": "sec-temporal-calendarfieldkeystoignore"
+            },
+            {
+                "type": "op",
+                "aoid": "CalendarISOToDate",
+                "id": "sec-temporal-calendarisotodate"
             },
             {
                 "type": "term",
@@ -66,6 +81,21 @@
                 "type": "op",
                 "aoid": "ISODateSurpasses",
                 "id": "sec-temporal-isodatesurpasses"
+            },
+            {
+                "type": "op",
+                "aoid": "RegulateISODate",
+                "id": "sec-temporal-regulateisodate"
+            },
+            {
+                "type": "term",
+                "term": "ISO Date Record",
+                "id": "sec-temporal-iso-date-records"
+            },
+            {
+                "type": "op",
+                "aoid": "ISODateWithinLimits",
+                "id": "sec-temporal-isodatewithinlimits"
             },
             {
                 "type": "op",
