@@ -4,6 +4,11 @@
         "entries": [
             {
                 "type": "clause",
+                "number": "Temporal, 12.1",
+                "id": "sec-availablecalendars"
+            },
+            {
+                "type": "clause",
                 "number": "Calendar Date Records",
                 "id": "sec-temporal-calendar-date-records"
             },
@@ -25,6 +30,11 @@
             {
                 "type": "term",
                 "term": "calendar type",
+                "id": "sec-calendar-types"
+            },
+            {
+                "type": "term",
+                "term": "calendar types",
                 "id": "sec-calendar-types"
             },
             {
