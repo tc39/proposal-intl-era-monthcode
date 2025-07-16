@@ -3,6 +3,16 @@
         "location": "https://tc39.es/proposal-temporal/",
         "entries": [
             {
+                "type": "op",
+                "aoid": "BalanceISODate",
+                "id": "sec-temporal-balanceisodate"
+            },
+            {
+                "type": "op",
+                "aoid": "BalanceISOYearMonth",
+                "id": "sec-temporal-balanceisoyearmonth"
+            },
+            {
                 "type": "clause",
                 "number": "Temporal, 12.1",
                 "id": "sec-availablecalendars"
@@ -11,6 +21,11 @@
                 "type": "clause",
                 "number": "Calendar Date Records",
                 "id": "sec-temporal-calendar-date-records"
+            },
+            {
+                "type": "clause",
+                "number": "Temporal, 12.2.7",
+                "id": "sec-temporal-calendardateuntil"
             },
             {
                 "type": "op",
@@ -33,6 +48,31 @@
                 "id": "sec-calendar-types"
             },
             {
+                "type": "op",
+                "aoid": "CompareISODate",
+                "id": "sec-temporal-compareisodate"
+            },
+            {
+                "type": "op",
+                "aoid": "CreateDateDurationRecord",
+                "id": "sec-temporal-createdatedurationrecord"
+            },
+            {
+                "type": "term",
+                "term": "Date Duration Record",
+                "id": "sec-temporal-date-duration-records"
+            },
+            {
+                "type": "op",
+                "aoid": "ISODateSurpasses",
+                "id": "sec-temporal-isodatesurpasses"
+            },
+            {
+                "type": "op",
+                "aoid": "RegulateISODate",
+                "id": "sec-temporal-regulateisodate"
+            },
+            {
                 "type": "term",
                 "term": "calendar types",
                 "id": "sec-calendar-types"
@@ -41,6 +81,11 @@
                 "type": "term",
                 "term": "Year-Week Record",
                 "id": "sec-year-week-record-specification-type"
+            },
+            {
+                "type": "op",
+                "aoid": "ZeroDateDuration",
+                "id": "sec-temporal-zerodateduration"
             }
         ]
     }
