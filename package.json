@@ -5,7 +5,7 @@
   "scripts": {
     "start": "npm run build-loose -- --watch",
     "build": "npm run build-loose -- --strict",
-    "build-loose": "ecmarkup --load-biblio @tc39/ecma262-biblio --verbose spec.emu index.html --lint-spec",
+    "build-loose": "ecmarkup --load-biblio @tc39/ecma262-biblio --load-biblio @tc39/ecma402-biblio --verbose spec.emu index.html --lint-spec",
     "format": "emu-format --write spec.emu"
   },
   "homepage": "https://tc39.es/proposal-intl-era-monthcode/",
@@ -16,6 +16,7 @@
   "license": "MIT",
   "devDependencies": {
     "@tc39/ecma262-biblio": "2.0.2331",
+    "@tc39/ecma402-biblio": "=2.1.1191",
     "ecmarkup": "^21.3.0"
   }
 }
