@@ -535,6 +535,139 @@ contributors: Google, Ecma International
       </emu-alg>
     </emu-clause>
 
+    <emu-clause id="sec-temporal-calendardateera" type="abstract operation">
+      <h1>
+        CalendarDateEra (
+          _calendar_: a String,
+          _date_: a Temporal.PlainDateTime, Temporal.PlainDate, or Temporal.PlainYearMonth,
+        ): a String or *undefined*
+      </h1>
+      <dl class="header">
+        <dt>description</dt>
+        <dd>It performs implementation-defined processing to find the era for the date corresponding to _date_ in the context of the calendar represented by _calendar_ and returns a lowercase String value representing that era, or *undefined* for calendars that do not have eras.</dd>
+      </dl>
+      <emu-alg>
+        1. If CalendarSupportsEra(_calendar_) is *false*, return *undefined*.
+        1. Let _era_ be the String to indicate the era corresponding to _date_ in the context of the calendar represented by _calendar_ from an implementation-defined processing.
+        1. Return CanonicalizeEraInCalendar(_calendar_, _era_).
+      </emu-alg>
+    </emu-clause>
+
+    <emu-clause id="sec-temporal-calendardateerayear" type="abstract operation">
+      <h1>
+        CalendarDateEraYear (
+          _calendar_: a String,
+          _date_: a Temporal.PlainDateTime, Temporal.PlainDate, or Temporal.PlainYearMonth,
+        ): an integer or *undefined*
+      </h1>
+      <dl class="header">
+        <dt>description</dt>
+        <dd>It performs implementation-defined processing to find the era for the date corresponding to _date_ in the context of the calendar represented by _calendar_ and returns an integer representing the ordinal position of the year of _date_ in that era, or *undefined* for calendars that do not have eras.</dd>
+      </dl>
+      </dl>
+      <emu-alg>
+        1. If CalendarSupportsEra(_calendar_) is *false*, return *undefined*.
+        1. Let _eraYear_ be the integer to indicate the era year corresponding to _date_ in the context of the calendar represented by _calendar_ from an implementation-defined processing.
+        1. Assert: _eraYear_ is an integer.
+        1. Return _eraYear_.
+      </emu-alg>
+      <emu-note>
+        Era years are 1-indexed for many calendars, but not all (e.g., the eras of the Burmese calendar each start with a year 0). Years can also advance opposite the flow of time (as for BCE years in the Gregorian calendar).
+      </emu-note>
+    </emu-clause>
+
+    <emu-clause id="sec-temporal-calendardatearithmeticyear" type="abstract operation">
+      <h1>
+        CalendarDateArithmeticYear (
+          _calendar_: a calendar type that is not *"iso8601"*,
+          _date_: a Temporal.PlainDateTime, Temporal.PlainDate, or Temporal.PlainYearMonth,
+        ): an integer
+      </h1>
+      <dl class="header">
+        <dt>description</dt>
+        <dd>It performs implementation-defined processing to find the year for the date corresponding to _date_ in the context of the calendar represented by _calendar_ relative to a well-defined epoch year for that calendar.</dd>
+      </dl>
+      <emu-alg>
+        1. Let _year_ be _date_.[[ISOYear]].
+        1. Let _r_ be the row in <emu-xref href="#table-epoch-years"></emu-xref> which the value of the Calendar column is _calendar_.
+        1. Let _epochYear_ be the value given in the *"Epoch ISO Year"* column of _r_.
+        1. Let _arithmeticYear_ be the number of whole years in the calendar represented by _calendar_ elapsed until the ISO year _year_ since the calendar year that started during ISO year _epochYear_, according to implementation-defined processing.
+        1. Return _arithmeticYear_.
+      </emu-alg>
+
+      <emu-table id="table-epoch-years">
+        <emu-caption>epoch years</emu-caption>
+        <table class="real-table">
+          <thead>
+            <tr>
+              <th>Calendar</th>
+              <th>Epoch ISO Year</th>
+            </tr>
+          </thead>
+          <tr>
+            <td>*"buddhist"*</td>
+            <td>-543</td>
+          </tr>
+          <tr>
+            <td>*"chinese"*</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>*"coptic"*</td>
+            <td>283</td>
+          </tr>
+          <tr>
+            <td>*"dangi"*</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>*"ethiopic"*</td>
+            <td>7</td>
+          </tr>
+          <tr>
+            <td>*"ethioaa"*</td>
+            <td>-5492</td>
+          </tr>
+          <tr>
+            <td>*"gregory"*</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>*"hebrew"*</td>
+            <td>-3761</td>
+          </tr>
+          <tr>
+            <td>*"indian"*</td>
+            <td>78</td>
+          </tr>
+          <tr>
+            <td>*"islamic-civil"*</td>
+            <td>621</td>
+          </tr>
+          <tr>
+            <td>*"islamic-tbla"*</td>
+            <td>621</td>
+          </tr>
+          <tr>
+            <td>*"islamic-umalqura"*</td>
+            <td>621</td>
+          </tr>
+          <tr>
+            <td>*"japanese"*</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>*"persian"*</td>
+            <td>621</td>
+          </tr>
+          <tr>
+            <td>*"roc"*</td>
+            <td>1911</td>
+          </tr>
+        </table>
+      </emu-table>
+    </emu-clause>
+
     <emu-clause id="sup-temporal-calendar-date-records">
       <h1>Calendar Date Records</h1>
       <p>
@@ -667,139 +800,6 @@ contributors: Google, Ecma International
                 Some calendars, especially lunisolar ones, have further variation in year length that is not represented in the output of this operation (e.g., the Hebrew calendar includes common years with 353, 354, or 355 days and leap years with 383, 384, or 385 days).
               </emu-note>
             </td>
-          </tr>
-        </table>
-      </emu-table>
-    </emu-clause>
-
-    <emu-clause id="sec-temporal-calendardateera" type="abstract operation">
-      <h1>
-        CalendarDateEra (
-          _calendar_: a String,
-          _date_: a Temporal.PlainDateTime, Temporal.PlainDate, or Temporal.PlainYearMonth,
-        ): a String or *undefined*
-      </h1>
-      <dl class="header">
-        <dt>description</dt>
-        <dd>It performs implementation-defined processing to find the era for the date corresponding to _date_ in the context of the calendar represented by _calendar_ and returns a lowercase String value representing that era, or *undefined* for calendars that do not have eras.</dd>
-      </dl>
-      <emu-alg>
-        1. If CalendarSupportsEra(_calendar_) is *false*, return *undefined*.
-        1. Let _era_ be the String to indicate the era corresponding to _date_ in the context of the calendar represented by _calendar_ from an implementation-defined processing.
-        1. Return CanonicalizeEraInCalendar(_calendar_, _era_).
-      </emu-alg>
-    </emu-clause>
-
-    <emu-clause id="sec-temporal-calendardateerayear" type="abstract operation">
-      <h1>
-        CalendarDateEraYear (
-          _calendar_: a String,
-          _date_: a Temporal.PlainDateTime, Temporal.PlainDate, or Temporal.PlainYearMonth,
-        ): an integer or *undefined*
-      </h1>
-      <dl class="header">
-        <dt>description</dt>
-        <dd>It performs implementation-defined processing to find the era for the date corresponding to _date_ in the context of the calendar represented by _calendar_ and returns an integer representing the ordinal position of the year of _date_ in that era, or *undefined* for calendars that do not have eras.</dd>
-      </dl>
-      </dl>
-      <emu-alg>
-        1. If CalendarSupportsEra(_calendar_) is *false*, return *undefined*.
-        1. Let _eraYear_ be the integer to indicate the era year corresponding to _date_ in the context of the calendar represented by _calendar_ from an implementation-defined processing.
-        1. Assert: _eraYear_ is an integer.
-        1. Return _eraYear_.
-      </emu-alg>
-      <emu-note>
-        Era years are 1-indexed for many calendars, but not all (e.g., the eras of the Burmese calendar each start with a year 0). Years can also advance opposite the flow of time (as for BCE years in the Gregorian calendar).
-      </emu-note>
-    </emu-clause>
-
-    <emu-clause id="sec-temporal-calendardatearithmeticyear" type="abstract operation">
-      <h1>
-        CalendarDateArithmeticYear (
-          _calendar_: a calendar type that is not *"iso8601"*,
-          _date_: a Temporal.PlainDateTime, Temporal.PlainDate, or Temporal.PlainYearMonth,
-        ): an integer
-      </h1>
-      <dl class="header">
-        <dt>description</dt>
-        <dd>It performs implementation-defined processing to find the year for the date corresponding to _date_ in the context of the calendar represented by _calendar_ relative to a well-defined epoch year for that calendar.</dd>
-      </dl>
-      <emu-alg>
-        1. Let _year_ be _date_.[[ISOYear]].
-        1. Let _r_ be the row in <emu-xref href="#table-epoch-years"></emu-xref> which the value of the Calendar column is _calendar_.
-        1. Let _epochYear_ be the value given in the *"Epoch ISO Year"* column of _r_.
-        1. Let _arithmeticYear_ be the number of whole years in the calendar represented by _calendar_ elapsed until the ISO year _year_ since the calendar year that started during ISO year _epochYear_, according to implementation-defined processing.
-        1. Return _arithmeticYear_.
-      </emu-alg>
-
-      <emu-table id="table-epoch-years">
-        <emu-caption>epoch years</emu-caption>
-        <table class="real-table">
-          <thead>
-            <tr>
-              <th>Calendar</th>
-              <th>Epoch ISO Year</th>
-            </tr>
-          </thead>
-          <tr>
-            <td>*"buddhist"*</td>
-            <td>-543</td>
-          </tr>
-          <tr>
-            <td>*"chinese"*</td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <td>*"coptic"*</td>
-            <td>283</td>
-          </tr>
-          <tr>
-            <td>*"dangi"*</td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <td>*"ethiopic"*</td>
-            <td>7</td>
-          </tr>
-          <tr>
-            <td>*"ethioaa"*</td>
-            <td>-5492</td>
-          </tr>
-          <tr>
-            <td>*"gregory"*</td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <td>*"hebrew"*</td>
-            <td>-3761</td>
-          </tr>
-          <tr>
-            <td>*"indian"*</td>
-            <td>78</td>
-          </tr>
-          <tr>
-            <td>*"islamic-civil"*</td>
-            <td>621</td>
-          </tr>
-          <tr>
-            <td>*"islamic-tbla"*</td>
-            <td>621</td>
-          </tr>
-          <tr>
-            <td>*"islamic-umalqura"*</td>
-            <td>621</td>
-          </tr>
-          <tr>
-            <td>*"japanese"*</td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <td>*"persian"*</td>
-            <td>621</td>
-          </tr>
-          <tr>
-            <td>*"roc"*</td>
-            <td>1911</td>
           </tr>
         </table>
       </emu-table>
