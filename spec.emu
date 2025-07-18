@@ -568,9 +568,6 @@ contributors: Google, Ecma International
         1. Assert: _eraYear_ is an integer.
         1. Return _eraYear_.
       </emu-alg>
-      <emu-note>
-        Era years are 1-indexed for many calendars, but not all (e.g., the eras of the Burmese calendar each start with a year 0). Years can also advance opposite the flow of time (as for BCE years in the Gregorian calendar).
-      </emu-note>
     </emu-clause>
 
     <emu-clause id="sec-temporal-calendardatearithmeticyear" type="abstract operation">
