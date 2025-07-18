@@ -545,7 +545,7 @@ contributors: Google, Ecma International
       </dl>
       <emu-alg>
         1. If CalendarSupportsEra(_calendar_) is *false*, return *undefined*.
-        1. Let _era_ be the String to indicate the era corresponding to _date_ in the context of the calendar represented by _calendar_ from an implementation-defined processing.
+        1. Let _era_ be the String to indicate the era corresponding to _date_ in the context of the calendar represented by _calendar_ according to implementation-defined processing.
         1. Return CanonicalizeEraInCalendar(_calendar_, _era_).
       </emu-alg>
     </emu-clause>
@@ -564,7 +564,7 @@ contributors: Google, Ecma International
       </dl>
       <emu-alg>
         1. If CalendarSupportsEra(_calendar_) is *false*, return *undefined*.
-        1. Let _eraYear_ be the integer to indicate the era year corresponding to _date_ in the context of the calendar represented by _calendar_ from an implementation-defined processing.
+        1. Let _eraYear_ be the integer to indicate the era year corresponding to _date_ in the context of the calendar represented by _calendar_ according to implementation-defined processing.
         1. Assert: _eraYear_ is an integer.
         1. Return _eraYear_.
       </emu-alg>
