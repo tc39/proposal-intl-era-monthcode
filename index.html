@@ -1,10 +1,13 @@
 <!doctype html>
-<head><meta name="viewport" content="width=device-width, initial-scale=1"><meta charset="utf-8"><meta property="og:image" content="https://tc39.es/ecmarkup/ecma-logo.png"><meta property="og:title" content="Intl era and monthCode Proposal"><meta property="og:description" content="Calendar Types
+<head><meta name="viewport" content="width=device-width, initial-scale=1"><meta charset="utf-8"><meta property="og:image" content="https://tc39.es/ecmarkup/ecma-logo.png"><meta property="og:title" content="Intl era and monthCode Proposal"><meta property="og:description" content="Identification of Locales, Currencies, Time Zones, Measurement Units, Numbering Systems, Collations, and Calendars
 
   
+    Calendar Types
+
     
-      This section, Calendar Types, is present in ECMA-402 but is slated to move to ECMA-262 as part of the Temporal proposal.
-      This proposal re-adds the section to ECMA-402, but with additional requirements for Intl-supporting implementations, beyond those specified">
+      
+        This section, Calendar Types, is present in ECMA-402 but is slated to move to ECMA-262 as part of the Temporal proposal.
+        This prop">
 <title>Intl era and monthCode Proposal</title><script>'use strict';
 let sdoBox = {
   init() {
@@ -1620,7 +1623,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 let sdoMap = JSON.parse(`{}`);
-let biblio = JSON.parse(`{"refsByClause":{"sup-availablecalendars":["_ref_0","_ref_10","_ref_11"],"sec-ecma402-intl.datetimeformat-internal-slots":["_ref_1","_ref_2"],"sec-temporal-calendarsupportsera":["_ref_3"],"sec-temporal-canonicalizeeraincalendar":["_ref_4"],"sec-temporal-isvalidmonthecodeforcalendar":["_ref_5","_ref_6"],"sec-temporal-isvaliderayearforcalendar":["_ref_7","_ref_15"],"sup-temporal-calendar-date-records":["_ref_8","_ref_16","_ref_17","_ref_18","_ref_19","_ref_20","_ref_21"],"sec-temporal-calendardatearithmeticyear":["_ref_9","_ref_25"],"sec-ecma402-calendar-types":["_ref_12"],"sec-createdatetimeformat":["_ref_13","_ref_14"],"sec-temporal-calendardateera":["_ref_22","_ref_23"],"sec-temporal-calendardateerayear":["_ref_24"],"sup-temporal-calendardateadd":["_ref_26","_ref_27"],"sup-temporal-calendardateuntil":["_ref_28"],"sup-temporal-calendardatetoiso":["_ref_29","_ref_30","_ref_31"],"sup-temporal-calendarextrafields":["_ref_32","_ref_33"],"sup-temporal-calendarfieldkeystoignore":["_ref_34","_ref_35"]},"entries":[{"type":"term","term":"calendar type","refId":"sec-ecma402-calendar-types"},{"type":"op","aoid":"AvailableCalendars","refId":"sup-availablecalendars"},{"type":"clause","id":"sup-availablecalendars","titleHTML":"AvailableCalendars ( )","number":"1.1","referencingIds":["_ref_14"]},{"type":"table","id":"table-calendar-types","number":1,"caption":"Table 1: Calendar types described in CLDR","referencingIds":["_ref_0","_ref_2"]},{"type":"clause","id":"sec-ecma402-calendar-types","titleHTML":"Calendar Types","number":"1","referencingIds":["_ref_10","_ref_11","_ref_12","_ref_13","_ref_25","_ref_26","_ref_28","_ref_29","_ref_32","_ref_34"]},{"type":"clause","id":"sec-internal-slots","titleHTML":"Internal slots of Service Constructors","number":"2.1","referencingIds":["_ref_1"]},{"type":"clause","id":"locale-and-parameter-negotiation","titleHTML":"Locale and Parameter Negotiation","number":"2"},{"type":"op","aoid":"CreateDateTimeFormat","refId":"sec-createdatetimeformat"},{"type":"clause","id":"sec-createdatetimeformat","title":"CreateDateTimeFormat ( newTarget, locales, options, required, defaults )","titleHTML":"CreateDateTimeFormat ( <var>newTarget</var>, <var>locales</var>, <var>options</var>, <var>required</var>, <var>defaults</var> )","number":"3.1.1"},{"type":"clause","id":"sec-ecma402-intl-datetimeformat-constructor","titleHTML":"The Intl.DateTimeFormat Constructor","number":"3.1"},{"type":"clause","id":"sec-ecma402-intl.datetimeformat-internal-slots","titleHTML":"Internal slots","number":"3.2.1"},{"type":"clause","id":"sec-ecma402-properties-of-intl-datetimeformat-constructor","titleHTML":"Properties of the Intl.DateTimeFormat Constructor","number":"3.2"},{"type":"clause","id":"ecma402-datetimeformat-objects","titleHTML":"DateTimeFormat Objects","number":"3"},{"type":"table","id":"table-eras","number":2,"caption":"Table 2: era aliases and range of eraYear","referencingIds":["_ref_3","_ref_4","_ref_7"]},{"type":"op","aoid":"CalendarSupportsEra","refId":"sec-temporal-calendarsupportsera"},{"type":"clause","id":"sec-temporal-calendarsupportsera","title":"CalendarSupportsEra ( calendar )","titleHTML":"CalendarSupportsEra ( <var>calendar</var> )","number":"4.1","referencingIds":["_ref_22","_ref_24","_ref_33","_ref_35"]},{"type":"op","aoid":"CanonicalizeEraInCalendar","refId":"sec-temporal-canonicalizeeraincalendar"},{"type":"clause","id":"sec-temporal-canonicalizeeraincalendar","title":"CanonicalizeEraInCalendar ( calendar, era )","titleHTML":"CanonicalizeEraInCalendar ( <var>calendar</var>, <var>era</var> )","number":"4.2","referencingIds":["_ref_15","_ref_23"]},{"type":"table","id":"table-additional-month-codes","number":3,"caption":"Table 3: Additional Month Codes in Calendars","referencingIds":["_ref_5","_ref_6"]},{"type":"op","aoid":"IsValidMonthCodeForCalendar","refId":"sec-temporal-isvalidmonthecodeforcalendar"},{"type":"clause","id":"sec-temporal-isvalidmonthecodeforcalendar","title":"IsValidMonthCodeForCalendar ( calendar, monthCode )","titleHTML":"IsValidMonthCodeForCalendar ( <var>calendar</var>, <var>monthCode</var> )","number":"4.3","referencingIds":["_ref_31"]},{"type":"op","aoid":"IsValidEraYearForCalendar","refId":"sec-temporal-isvaliderayearforcalendar"},{"type":"clause","id":"sec-temporal-isvaliderayearforcalendar","title":"IsValidEraYearForCalendar ( calendar, era, eraYear )","titleHTML":"IsValidEraYearForCalendar ( <var>calendar</var>, <var>era</var>, <var>eraYear</var> )","number":"4.4","referencingIds":["_ref_30"]},{"type":"term","term":"Calendar Date Record","refId":"sup-temporal-calendar-date-records"},{"type":"table","id":"table-temporal-calendar-date-record-fields","number":4,"caption":"Table 4: Calendar Date Record Fields","referencingIds":["_ref_8"]},{"type":"clause","id":"sup-temporal-calendar-date-records","titleHTML":"Calendar Date Records","number":"4.5","referencingIds":["_ref_16","_ref_20","_ref_21"]},{"type":"op","aoid":"CalendarDateEra","refId":"sec-temporal-calendardateera"},{"type":"clause","id":"sec-temporal-calendardateera","title":"CalendarDateEra ( calendar, date )","titleHTML":"CalendarDateEra ( <var>calendar</var>, <var>date</var> )","number":"4.6","referencingIds":["_ref_17"]},{"type":"op","aoid":"CalendarDateEraYear","refId":"sec-temporal-calendardateerayear"},{"type":"clause","id":"sec-temporal-calendardateerayear","title":"CalendarDateEraYear ( calendar, date )","titleHTML":"CalendarDateEraYear ( <var>calendar</var>, <var>date</var> )","number":"4.7","referencingIds":["_ref_18"]},{"type":"table","id":"table-epoch-years","number":5,"caption":"Table 5: epoch years","referencingIds":["_ref_9"]},{"type":"op","aoid":"CalendarDateArithmeticYear","refId":"sec-temporal-calendardatearithmeticyear"},{"type":"clause","id":"sec-temporal-calendardatearithmeticyear","title":"CalendarDateArithmeticYear ( calendar, date )","titleHTML":"CalendarDateArithmeticYear ( <var>calendar</var>, <var>date</var> )","number":"4.8","referencingIds":["_ref_19"]},{"type":"op","aoid":"CalendarDateAdd","refId":"sup-temporal-calendardateadd"},{"type":"clause","id":"sup-temporal-calendardateadd","title":"CalendarDateAdd ( calendar, isoDate, duration, overflow )","titleHTML":"CalendarDateAdd ( <var>calendar</var>, <var>isoDate</var>, <var>duration</var>, <var>overflow</var> )","number":"4.9"},{"type":"op","aoid":"CalendarDateUntil","refId":"sup-temporal-calendardateuntil"},{"type":"clause","id":"sup-temporal-calendardateuntil","title":"CalendarDateUntil ( calendar, one, two, largestUnit )","titleHTML":"CalendarDateUntil ( <var>calendar</var>, <var>one</var>, <var>two</var>, <var>largestUnit</var> )","number":"4.10"},{"type":"op","aoid":"CalendarDateToISO","refId":"sup-temporal-calendardatetoiso"},{"type":"clause","id":"sup-temporal-calendardatetoiso","title":"CalendarDateToISO ( calendar, fields, overflow )","titleHTML":"CalendarDateToISO ( <var>calendar</var>, <var>fields</var>, <var>overflow</var> )","number":"4.11","referencingIds":["_ref_27"]},{"type":"op","aoid":"CalendarExtraFields","refId":"sup-temporal-calendarextrafields"},{"type":"clause","id":"sup-temporal-calendarextrafields","title":"CalendarExtraFields ( calendar, fields )","titleHTML":"CalendarExtraFields ( <var>calendar</var>, <var>fields</var> )","number":"4.12"},{"type":"op","aoid":"CalendarFieldKeysToIgnore","refId":"sup-temporal-calendarfieldkeystoignore"},{"type":"clause","id":"sup-temporal-calendarfieldkeystoignore","title":"CalendarFieldKeysToIgnore ( calendar, keys )","titleHTML":"CalendarFieldKeysToIgnore ( <var>calendar</var>, <var>keys</var> )","number":"4.13"},{"type":"clause","id":"sup-temporal-calendar-abstract-ops","titleHTML":"Abstract Operations","number":"4"},{"type":"clause","id":"sec-copyright-and-software-license","title":"Copyright & Software License","titleHTML":"Copyright &amp; Software License","number":"A"}]}`);
+let biblio = JSON.parse(`{"refsByClause":{"sup-availablecalendars":["_ref_0","_ref_10","_ref_11"],"sec-ecma402-intl.datetimeformat-internal-slots":["_ref_1","_ref_2"],"sec-temporal-calendarsupportsera":["_ref_3"],"sec-temporal-canonicalizeeraincalendar":["_ref_4"],"sec-temporal-isvalidmonthecodeforcalendar":["_ref_5","_ref_6"],"sec-temporal-isvaliderayearforcalendar":["_ref_7","_ref_15"],"sup-temporal-calendar-date-records":["_ref_8","_ref_16","_ref_17","_ref_18","_ref_19","_ref_20","_ref_21"],"sec-temporal-calendardatearithmeticyear":["_ref_9","_ref_25"],"sec-ecma402-calendar-types":["_ref_12"],"sec-createdatetimeformat":["_ref_13","_ref_14"],"sec-temporal-calendardateera":["_ref_22","_ref_23"],"sec-temporal-calendardateerayear":["_ref_24"],"sup-temporal-calendardateadd":["_ref_26","_ref_27"],"sup-temporal-calendardateuntil":["_ref_28"],"sup-temporal-calendardatetoiso":["_ref_29","_ref_30","_ref_31"],"sup-temporal-calendarextrafields":["_ref_32","_ref_33"],"sup-temporal-calendarfieldkeystoignore":["_ref_34","_ref_35"]},"entries":[{"type":"term","term":"calendar type","refId":"sec-ecma402-calendar-types"},{"type":"op","aoid":"AvailableCalendars","refId":"sup-availablecalendars"},{"type":"clause","id":"sup-availablecalendars","titleHTML":"AvailableCalendars ( )","number":"1.1.1","referencingIds":["_ref_14"]},{"type":"table","id":"table-calendar-types","number":1,"caption":"Table 1: Calendar types described in CLDR","referencingIds":["_ref_0","_ref_2"]},{"type":"clause","id":"sec-ecma402-calendar-types","titleHTML":"Calendar Types","number":"1.1","referencingIds":["_ref_10","_ref_11","_ref_12","_ref_13","_ref_25","_ref_26","_ref_28","_ref_29","_ref_32","_ref_34"]},{"type":"clause","id":"ecma402-locales-currencies-tz","titleHTML":"Identification of Locales, Currencies, Time Zones, Measurement Units, Numbering Systems, Collations, and Calendars","number":"1"},{"type":"clause","id":"sec-internal-slots","titleHTML":"Internal slots of Service Constructors","number":"2.1","referencingIds":["_ref_1"]},{"type":"clause","id":"locale-and-parameter-negotiation","titleHTML":"Locale and Parameter Negotiation","number":"2"},{"type":"op","aoid":"CreateDateTimeFormat","refId":"sec-createdatetimeformat"},{"type":"clause","id":"sec-createdatetimeformat","title":"CreateDateTimeFormat ( newTarget, locales, options, required, defaults )","titleHTML":"CreateDateTimeFormat ( <var>newTarget</var>, <var>locales</var>, <var>options</var>, <var>required</var>, <var>defaults</var> )","number":"3.1.1"},{"type":"clause","id":"sec-ecma402-intl-datetimeformat-constructor","titleHTML":"The Intl.DateTimeFormat Constructor","number":"3.1"},{"type":"clause","id":"sec-ecma402-intl.datetimeformat-internal-slots","titleHTML":"Internal slots","number":"3.2.1"},{"type":"clause","id":"sec-ecma402-properties-of-intl-datetimeformat-constructor","titleHTML":"Properties of the Intl.DateTimeFormat Constructor","number":"3.2"},{"type":"clause","id":"ecma402-datetimeformat-objects","titleHTML":"DateTimeFormat Objects","number":"3"},{"type":"table","id":"table-eras","number":2,"caption":"Table 2: era aliases and range of eraYear","referencingIds":["_ref_3","_ref_4","_ref_7"]},{"type":"op","aoid":"CalendarSupportsEra","refId":"sec-temporal-calendarsupportsera"},{"type":"clause","id":"sec-temporal-calendarsupportsera","title":"CalendarSupportsEra ( calendar )","titleHTML":"CalendarSupportsEra ( <var>calendar</var> )","number":"4.1.1","referencingIds":["_ref_22","_ref_24","_ref_33","_ref_35"]},{"type":"op","aoid":"CanonicalizeEraInCalendar","refId":"sec-temporal-canonicalizeeraincalendar"},{"type":"clause","id":"sec-temporal-canonicalizeeraincalendar","title":"CanonicalizeEraInCalendar ( calendar, era )","titleHTML":"CanonicalizeEraInCalendar ( <var>calendar</var>, <var>era</var> )","number":"4.1.2","referencingIds":["_ref_15","_ref_23"]},{"type":"table","id":"table-additional-month-codes","number":3,"caption":"Table 3: Additional Month Codes in Calendars","referencingIds":["_ref_5","_ref_6"]},{"type":"op","aoid":"IsValidMonthCodeForCalendar","refId":"sec-temporal-isvalidmonthecodeforcalendar"},{"type":"clause","id":"sec-temporal-isvalidmonthecodeforcalendar","title":"IsValidMonthCodeForCalendar ( calendar, monthCode )","titleHTML":"IsValidMonthCodeForCalendar ( <var>calendar</var>, <var>monthCode</var> )","number":"4.1.3","referencingIds":["_ref_31"]},{"type":"op","aoid":"IsValidEraYearForCalendar","refId":"sec-temporal-isvaliderayearforcalendar"},{"type":"clause","id":"sec-temporal-isvaliderayearforcalendar","title":"IsValidEraYearForCalendar ( calendar, era, eraYear )","titleHTML":"IsValidEraYearForCalendar ( <var>calendar</var>, <var>era</var>, <var>eraYear</var> )","number":"4.1.4","referencingIds":["_ref_30"]},{"type":"term","term":"Calendar Date Record","refId":"sup-temporal-calendar-date-records"},{"type":"table","id":"table-temporal-calendar-date-record-fields","number":4,"caption":"Table 4: Calendar Date Record Fields","referencingIds":["_ref_8"]},{"type":"clause","id":"sup-temporal-calendar-date-records","titleHTML":"Calendar Date Records","number":"4.1.5","referencingIds":["_ref_16","_ref_20","_ref_21"]},{"type":"op","aoid":"CalendarDateEra","refId":"sec-temporal-calendardateera"},{"type":"clause","id":"sec-temporal-calendardateera","title":"CalendarDateEra ( calendar, date )","titleHTML":"CalendarDateEra ( <var>calendar</var>, <var>date</var> )","number":"4.1.6","referencingIds":["_ref_17"]},{"type":"op","aoid":"CalendarDateEraYear","refId":"sec-temporal-calendardateerayear"},{"type":"clause","id":"sec-temporal-calendardateerayear","title":"CalendarDateEraYear ( calendar, date )","titleHTML":"CalendarDateEraYear ( <var>calendar</var>, <var>date</var> )","number":"4.1.7","referencingIds":["_ref_18"]},{"type":"table","id":"table-epoch-years","number":5,"caption":"Table 5: epoch years","referencingIds":["_ref_9"]},{"type":"op","aoid":"CalendarDateArithmeticYear","refId":"sec-temporal-calendardatearithmeticyear"},{"type":"clause","id":"sec-temporal-calendardatearithmeticyear","title":"CalendarDateArithmeticYear ( calendar, date )","titleHTML":"CalendarDateArithmeticYear ( <var>calendar</var>, <var>date</var> )","number":"4.1.8","referencingIds":["_ref_19"]},{"type":"op","aoid":"CalendarDateAdd","refId":"sup-temporal-calendardateadd"},{"type":"clause","id":"sup-temporal-calendardateadd","title":"CalendarDateAdd ( calendar, isoDate, duration, overflow )","titleHTML":"CalendarDateAdd ( <var>calendar</var>, <var>isoDate</var>, <var>duration</var>, <var>overflow</var> )","number":"4.1.9"},{"type":"op","aoid":"CalendarDateUntil","refId":"sup-temporal-calendardateuntil"},{"type":"clause","id":"sup-temporal-calendardateuntil","title":"CalendarDateUntil ( calendar, one, two, largestUnit )","titleHTML":"CalendarDateUntil ( <var>calendar</var>, <var>one</var>, <var>two</var>, <var>largestUnit</var> )","number":"4.1.10"},{"type":"op","aoid":"CalendarDateToISO","refId":"sup-temporal-calendardatetoiso"},{"type":"clause","id":"sup-temporal-calendardatetoiso","title":"CalendarDateToISO ( calendar, fields, overflow )","titleHTML":"CalendarDateToISO ( <var>calendar</var>, <var>fields</var>, <var>overflow</var> )","number":"4.1.11","referencingIds":["_ref_27"]},{"type":"op","aoid":"CalendarExtraFields","refId":"sup-temporal-calendarextrafields"},{"type":"clause","id":"sup-temporal-calendarextrafields","title":"CalendarExtraFields ( calendar, fields )","titleHTML":"CalendarExtraFields ( <var>calendar</var>, <var>fields</var> )","number":"4.1.12"},{"type":"op","aoid":"CalendarFieldKeysToIgnore","refId":"sup-temporal-calendarfieldkeystoignore"},{"type":"clause","id":"sup-temporal-calendarfieldkeystoignore","title":"CalendarFieldKeysToIgnore ( calendar, keys )","titleHTML":"CalendarFieldKeysToIgnore ( <var>calendar</var>, <var>keys</var> )","number":"4.1.13"},{"type":"clause","id":"sec-calendar-abstract-ops","titleHTML":"Abstract Operations for Calendar Calculations","number":"4.1"},{"type":"clause","id":"ecma402-locale-sensitive-functions","titleHTML":"Locale Sensitive Functions of the ECMAScript Language Specification","number":"4"},{"type":"clause","id":"sec-copyright-and-software-license","title":"Copyright & Software License","titleHTML":"Copyright &amp; Software License","number":"A"}]}`);
 ;let usesMultipage = false</script><style>:root {
   --foreground-color: #111;
   --background-color: #fff;
@@ -1910,23 +1913,6 @@ h1.shortname { display: none; }
 
 body.oldtoc {
   margin: 0 auto;
-}
-
-#metadata-block {
-  margin: 4em 0;
-  padding: 10px;
-  border: 1px solid #ee8421;
-}
-
-#metadata-block h1 {
-  font-size: 1.5em;
-  margin-top: 0;
-}
-
-#metadata-block > ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
 }
 
 span[aria-hidden='true'] {
@@ -3267,7 +3253,6 @@ emu-normative-optional,
 
 #ecma-logo {
   background: var(--figure-background);
-  width: 500px;
 }
 </style><style>@media print {
 @font-face {
@@ -3341,7 +3326,6 @@ emu-normative-optional,
 
 :root {
   --page-number-style: decimal;
-  -prince-change-line-breaks-for-pagination: yes; /* see https://www.princexml.com/doc/prince-for-books/#pagination-fine-tuning */
 }
 
 @page {
@@ -3350,16 +3334,16 @@ emu-normative-optional,
   margin-bottom: 20mm;
   margin-inside: 19mm;
   margin-outside: 13mm;
-  -prince-page-fill: prefer-balance; /* see https://www.princexml.com/doc/prince-for-books/#the-property--prince-page-fill */
+  -prince-page-fill: prefer-fill;
 
-  /* Uncomment when producing WIP versions of final standards, see https://www.princexml.com/doc/paged/#page-regions */
+  /* Uncomment when producing WIP versions of final standards */
   /*
   @prince-overlay {
     color: rgba(0,0,0,0.15);
-    content: "DRAFT";
+    content: "WORK IN PROGRESS";
     font-family: Arial;
     font-weight: bolder;
-    font-size: 200pt;
+    font-size: 100pt;
     transform: rotate(-60deg);
   }
   */
@@ -3469,7 +3453,7 @@ body {
   line-height: 1.15;
 }
 
-h1, h2, h3, h4, h5, h6 { -prince-bookmark-level: none } /* see https://www.princexml.com/doc/prince-output/#pdf-bookmarks */
+h1, h2, h3, h4, h5, h6 { -prince-bookmark-level: none }
 
 .copyright-notice + h1.title {
   break-before: recto;
@@ -3489,22 +3473,13 @@ p {
   text-wrap: pretty;
   overflow-wrap: break-word;
   hyphens: auto;
-  orphans: 2, -prince-prefer 3; /* see https://www.princexml.com/doc/prince-for-books/#pagination-goals */
-  widows: 2, -prince-prefer 3;
+  orphans: 2;
+  widows: 2;
 }
 
 h1 {
   text-wrap: balance;
   line-height: 1.4;
-}
-
-pre:has(> code) {
-  margin: 0;
-}
-
-p + pre:has(+ p) {
-  padding-top: 0;
-  padding-bottom: 0;
 }
 
 emu-alg {
@@ -3545,10 +3520,6 @@ emu-alg ol li:last-child {
   break-after: initial; /* it's okay to break after the last item in a list, even if it's also the first item in the list */
 }
 
-emu-normative-optional {
-  break-inside: avoid;
-}
-
 emu-normative-optional emu-clause[id] {
   margin-top: 0;
 }
@@ -3565,10 +3536,6 @@ emu-note {
 emu-note .note {
   font-size: 9pt;
   min-width: 4.5em;
-}
-
-emu-note table td {
-  background-color: white;
 }
 
 emu-note p,
@@ -3599,6 +3566,7 @@ emu-intro, emu-clause, emu-annex {
 }
 
 emu-clause p:first-of-type {
+  margin-bottom: 0;
   orphans: 3;
 }
 
@@ -3718,7 +3686,7 @@ caption, table > figcaption {
 }
 
 caption {
-  -prince-caption-page: first; /* see https://www.princexml.com/doc/css-props/#prop-prince-caption-page */
+  -prince-caption-page: first;
 }
 
 /* do not break inside of small tables */
@@ -3757,11 +3725,6 @@ emu-figure img {
   margin-top: 1ex;
   max-width: 100%;
   height: auto;
-}
-
-.attributes-tag {
-  break-before: avoid-page;
-  break-after: avoid-page;
 }
 
 #spec-container {
@@ -3859,8 +3822,8 @@ emu-annex > h1 .secnum {
   border: 1px solid black;
   padding: 1em;
   page: copyright;
-  break-before: page;
-  break-after: page;
+  page-break-before: always;
+  page-break-after: always;
 }
 
 .secnum {
@@ -3988,121 +3951,125 @@ p.ECMAaddress {
 </ul></div><div id="menu-toggle"><svg xmlns="http://www.w3.org/2000/svg" style="width:100%; height:100%; stroke:currentColor" viewBox="0 0 120 120" width="54" height="54">
       <title>Menu</title>
       <path stroke-width="10" stroke-linecap="round" d="M30,60 h60  M30,30 m0,5 h60  M30,90 m0,-5 h60"></path>
-    </svg></div><div id="menu-spacer" class="menu-spacer"></div><div id="menu"><div id="menu-search"><input type="text" id="menu-search-box" placeholder="Search..."><div id="menu-search-results" class="inactive"></div></div><div id="menu-pins"><div class="menu-pane-header">Pins<button class="unpin-all">clear</button></div><ul id="menu-pins-list"></ul></div><div class="menu-pane-header">Table of Contents</div><div id="menu-toc"><ol class="toc"><li><span class="item-toggle">+</span><a href="#sec-ecma402-calendar-types" title="Calendar Types"><span class="secnum">1</span> Calendar Types</a><ol class="toc"><li><span class="item-toggle-none"></span><a href="#sup-availablecalendars" title="AvailableCalendars ( )"><span class="secnum">1.1</span> AvailableCalendars ( )</a></li></ol></li><li><span class="item-toggle">+</span><a href="#locale-and-parameter-negotiation" title="Locale and Parameter Negotiation"><span class="secnum">2</span> Locale and Parameter Negotiation</a><ol class="toc"><li><span class="item-toggle-none"></span><a href="#sec-internal-slots" title="Internal slots of Service Constructors"><span class="secnum">2.1</span> Internal slots of Service Constructors</a></li></ol></li><li><span class="item-toggle">+</span><a href="#ecma402-datetimeformat-objects" title="DateTimeFormat Objects"><span class="secnum">3</span> DateTimeFormat Objects</a><ol class="toc"><li><span class="item-toggle">+</span><a href="#sec-ecma402-intl-datetimeformat-constructor" title="The Intl.DateTimeFormat Constructor"><span class="secnum">3.1</span> The Intl.DateTimeFormat Constructor</a><ol class="toc"><li><span class="item-toggle-none"></span><a href="#sec-createdatetimeformat" title="CreateDateTimeFormat ( newTarget, locales, options, required, defaults )"><span class="secnum">3.1.1</span> CreateDateTimeFormat ( <var>newTarget</var>, <var>locales</var>, <var>options</var>, <var>required</var>, <var>defaults</var> )</a></li></ol></li><li><span class="item-toggle">+</span><a href="#sec-ecma402-properties-of-intl-datetimeformat-constructor" title="Properties of the Intl.DateTimeFormat Constructor"><span class="secnum">3.2</span> Properties of the Intl.DateTimeFormat Constructor</a><ol class="toc"><li><span class="item-toggle-none"></span><a href="#sec-ecma402-intl.datetimeformat-internal-slots" title="Internal slots"><span class="secnum">3.2.1</span> Internal slots</a></li></ol></li></ol></li><li><span class="item-toggle">+</span><a href="#sup-temporal-calendar-abstract-ops" title="Abstract Operations"><span class="secnum">4</span> Abstract Operations</a><ol class="toc"><li><span class="item-toggle-none"></span><a href="#sec-temporal-calendarsupportsera" title="CalendarSupportsEra ( calendar )"><span class="secnum">4.1</span> CalendarSupportsEra ( <var>calendar</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sec-temporal-canonicalizeeraincalendar" title="CanonicalizeEraInCalendar ( calendar, era )"><span class="secnum">4.2</span> CanonicalizeEraInCalendar ( <var>calendar</var>, <var>era</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sec-temporal-isvalidmonthecodeforcalendar" title="IsValidMonthCodeForCalendar ( calendar, monthCode )"><span class="secnum">4.3</span> IsValidMonthCodeForCalendar ( <var>calendar</var>, <var>monthCode</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sec-temporal-isvaliderayearforcalendar" title="IsValidEraYearForCalendar ( calendar, era, eraYear )"><span class="secnum">4.4</span> IsValidEraYearForCalendar ( <var>calendar</var>, <var>era</var>, <var>eraYear</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sup-temporal-calendar-date-records" title="Calendar Date Records"><span class="secnum">4.5</span> Calendar Date Records</a></li><li><span class="item-toggle-none"></span><a href="#sec-temporal-calendardateera" title="CalendarDateEra ( calendar, date )"><span class="secnum">4.6</span> CalendarDateEra ( <var>calendar</var>, <var>date</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sec-temporal-calendardateerayear" title="CalendarDateEraYear ( calendar, date )"><span class="secnum">4.7</span> CalendarDateEraYear ( <var>calendar</var>, <var>date</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sec-temporal-calendardatearithmeticyear" title="CalendarDateArithmeticYear ( calendar, date )"><span class="secnum">4.8</span> CalendarDateArithmeticYear ( <var>calendar</var>, <var>date</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sup-temporal-calendardateadd" title="CalendarDateAdd ( calendar, isoDate, duration, overflow )"><span class="secnum">4.9</span> CalendarDateAdd ( <var>calendar</var>, <var>isoDate</var>, <var>duration</var>, <var>overflow</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sup-temporal-calendardateuntil" title="CalendarDateUntil ( calendar, one, two, largestUnit )"><span class="secnum">4.10</span> CalendarDateUntil ( <var>calendar</var>, <var>one</var>, <var>two</var>, <var>largestUnit</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sup-temporal-calendardatetoiso" title="CalendarDateToISO ( calendar, fields, overflow )"><span class="secnum">4.11</span> CalendarDateToISO ( <var>calendar</var>, <var>fields</var>, <var>overflow</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sup-temporal-calendarextrafields" title="CalendarExtraFields ( calendar, fields )"><span class="secnum">4.12</span> CalendarExtraFields ( <var>calendar</var>, <var>fields</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sup-temporal-calendarfieldkeystoignore" title="CalendarFieldKeysToIgnore ( calendar, keys )"><span class="secnum">4.13</span> CalendarFieldKeysToIgnore ( <var>calendar</var>, <var>keys</var> )</a></li></ol></li><li><span class="item-toggle-none"></span><a href="#sec-copyright-and-software-license" title="Copyright &amp; Software License">Copyright &amp; Software License</a></li></ol></div></div><div id="spec-container"><h1 class="version">Stage 2 Draft / July 18, 2025</h1><h1 class="title">Intl era and monthCode Proposal</h1>
+    </svg></div><div id="menu-spacer" class="menu-spacer"></div><div id="menu"><div id="menu-search"><input type="text" id="menu-search-box" placeholder="Search..."><div id="menu-search-results" class="inactive"></div></div><div id="menu-pins"><div class="menu-pane-header">Pins<button class="unpin-all">clear</button></div><ul id="menu-pins-list"></ul></div><div class="menu-pane-header">Table of Contents</div><div id="menu-toc"><ol class="toc"><li><span class="item-toggle">+</span><a href="#ecma402-locales-currencies-tz" title="Identification of Locales, Currencies, Time Zones, Measurement Units, Numbering Systems, Collations, and Calendars"><span class="secnum">1</span> Identification of Locales, Currencies, Time Zones, Measurement Units, Numbering Systems, Collations, and Calendars</a><ol class="toc"><li><span class="item-toggle">+</span><a href="#sec-ecma402-calendar-types" title="Calendar Types"><span class="secnum">1.1</span> Calendar Types</a><ol class="toc"><li><span class="item-toggle-none"></span><a href="#sup-availablecalendars" title="AvailableCalendars ( )"><span class="secnum">1.1.1</span> AvailableCalendars ( )</a></li></ol></li></ol></li><li><span class="item-toggle">+</span><a href="#locale-and-parameter-negotiation" title="Locale and Parameter Negotiation"><span class="secnum">2</span> Locale and Parameter Negotiation</a><ol class="toc"><li><span class="item-toggle-none"></span><a href="#sec-internal-slots" title="Internal slots of Service Constructors"><span class="secnum">2.1</span> Internal slots of Service Constructors</a></li></ol></li><li><span class="item-toggle">+</span><a href="#ecma402-datetimeformat-objects" title="DateTimeFormat Objects"><span class="secnum">3</span> DateTimeFormat Objects</a><ol class="toc"><li><span class="item-toggle">+</span><a href="#sec-ecma402-intl-datetimeformat-constructor" title="The Intl.DateTimeFormat Constructor"><span class="secnum">3.1</span> The Intl.DateTimeFormat Constructor</a><ol class="toc"><li><span class="item-toggle-none"></span><a href="#sec-createdatetimeformat" title="CreateDateTimeFormat ( newTarget, locales, options, required, defaults )"><span class="secnum">3.1.1</span> CreateDateTimeFormat ( <var>newTarget</var>, <var>locales</var>, <var>options</var>, <var>required</var>, <var>defaults</var> )</a></li></ol></li><li><span class="item-toggle">+</span><a href="#sec-ecma402-properties-of-intl-datetimeformat-constructor" title="Properties of the Intl.DateTimeFormat Constructor"><span class="secnum">3.2</span> Properties of the Intl.DateTimeFormat Constructor</a><ol class="toc"><li><span class="item-toggle-none"></span><a href="#sec-ecma402-intl.datetimeformat-internal-slots" title="Internal slots"><span class="secnum">3.2.1</span> Internal slots</a></li></ol></li></ol></li><li><span class="item-toggle">+</span><a href="#ecma402-locale-sensitive-functions" title="Locale Sensitive Functions of the ECMAScript Language Specification"><span class="secnum">4</span> Locale Sensitive Functions of the ECMAScript Language Specification</a><ol class="toc"><li><span class="item-toggle">+</span><a href="#sec-calendar-abstract-ops" title="Abstract Operations for Calendar Calculations"><span class="secnum">4.1</span> Abstract Operations for Calendar Calculations</a><ol class="toc"><li><span class="item-toggle-none"></span><a href="#sec-temporal-calendarsupportsera" title="CalendarSupportsEra ( calendar )"><span class="secnum">4.1.1</span> CalendarSupportsEra ( <var>calendar</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sec-temporal-canonicalizeeraincalendar" title="CanonicalizeEraInCalendar ( calendar, era )"><span class="secnum">4.1.2</span> CanonicalizeEraInCalendar ( <var>calendar</var>, <var>era</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sec-temporal-isvalidmonthecodeforcalendar" title="IsValidMonthCodeForCalendar ( calendar, monthCode )"><span class="secnum">4.1.3</span> IsValidMonthCodeForCalendar ( <var>calendar</var>, <var>monthCode</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sec-temporal-isvaliderayearforcalendar" title="IsValidEraYearForCalendar ( calendar, era, eraYear )"><span class="secnum">4.1.4</span> IsValidEraYearForCalendar ( <var>calendar</var>, <var>era</var>, <var>eraYear</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sup-temporal-calendar-date-records" title="Calendar Date Records"><span class="secnum">4.1.5</span> Calendar Date Records</a></li><li><span class="item-toggle-none"></span><a href="#sec-temporal-calendardateera" title="CalendarDateEra ( calendar, date )"><span class="secnum">4.1.6</span> CalendarDateEra ( <var>calendar</var>, <var>date</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sec-temporal-calendardateerayear" title="CalendarDateEraYear ( calendar, date )"><span class="secnum">4.1.7</span> CalendarDateEraYear ( <var>calendar</var>, <var>date</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sec-temporal-calendardatearithmeticyear" title="CalendarDateArithmeticYear ( calendar, date )"><span class="secnum">4.1.8</span> CalendarDateArithmeticYear ( <var>calendar</var>, <var>date</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sup-temporal-calendardateadd" title="CalendarDateAdd ( calendar, isoDate, duration, overflow )"><span class="secnum">4.1.9</span> CalendarDateAdd ( <var>calendar</var>, <var>isoDate</var>, <var>duration</var>, <var>overflow</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sup-temporal-calendardateuntil" title="CalendarDateUntil ( calendar, one, two, largestUnit )"><span class="secnum">4.1.10</span> CalendarDateUntil ( <var>calendar</var>, <var>one</var>, <var>two</var>, <var>largestUnit</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sup-temporal-calendardatetoiso" title="CalendarDateToISO ( calendar, fields, overflow )"><span class="secnum">4.1.11</span> CalendarDateToISO ( <var>calendar</var>, <var>fields</var>, <var>overflow</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sup-temporal-calendarextrafields" title="CalendarExtraFields ( calendar, fields )"><span class="secnum">4.1.12</span> CalendarExtraFields ( <var>calendar</var>, <var>fields</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sup-temporal-calendarfieldkeystoignore" title="CalendarFieldKeysToIgnore ( calendar, keys )"><span class="secnum">4.1.13</span> CalendarFieldKeysToIgnore ( <var>calendar</var>, <var>keys</var> )</a></li></ol></li></ol></li><li><span class="item-toggle-none"></span><a href="#sec-copyright-and-software-license" title="Copyright &amp; Software License">Copyright &amp; Software License</a></li></ol></div></div><div id="spec-container"><h1 class="version">Stage 2 Draft / July 18, 2025</h1><h1 class="title">Intl era and monthCode Proposal</h1>
 
 
-<emu-clause id="sec-ecma402-calendar-types" oldids="sec-calendar-types"><span id="sec-calendar-types"></span>
-  <h1><span class="secnum">1</span> Calendar Types</h1>
+<emu-clause id="ecma402-locales-currencies-tz">
+  <h1><span class="secnum">1</span> Identification of Locales, Currencies, Time Zones, Measurement Units, Numbering Systems, Collations, and Calendars</h1>
 
-  <emu-note type="editor"><span class="note">Editor's Note</span><div class="note-contents">
-    <p>
-      This section, Calendar Types, is <a href="https://tc39.es/ecma402/#sec-calendar-types">present in ECMA-402</a> but is slated to <a href="https://tc39.es/proposal-temporal/#sec-calendar-types">move to ECMA-262 as part of the Temporal proposal</a>.
-      This proposal re-adds the section to ECMA-402, but with additional requirements for Intl-supporting implementations, beyond those specified in <emu-xref href="#ecma262"><a href="https://tc39.es/ecma402/#ecma262">ECMA-262</a></emu-xref>.
-    </p>
-  </div></emu-note>
+  <emu-clause id="sec-ecma402-calendar-types" oldids="sec-calendar-types"><span id="sec-calendar-types"></span>
+    <h1><span class="secnum">1.1</span> Calendar Types</h1>
 
-  <del class="block">
-    <p>This specification identifies calendars using a <dfn variants="calendar types" tabindex="-1">calendar type</dfn> as defined by <a href="https://unicode.org/reports/tr35/tr35-dates.html#Calendar_Elements">Unicode Technical Standard #35 Part 4 Dates, Section 2 Calendar Elements</a>. Their canonical form is a string containing only Unicode Basic Latin lowercase letters (U+0061 LATIN SMALL LETTER A through U+007A LATIN SMALL LETTER Z) with zero or more medial hyphens (U+002D HYPHEN-MINUS).</p>
-  </del>
+    <emu-note type="editor"><span class="note">Editor's Note</span><div class="note-contents">
+      <p>
+        This section, Calendar Types, is <a href="https://tc39.es/ecma402/#sec-calendar-types">present in ECMA-402</a> but is slated to <a href="https://tc39.es/proposal-temporal/#sec-calendar-types">move to ECMA-262 as part of the Temporal proposal</a>.
+        This proposal re-adds the section to ECMA-402, but with additional requirements for Intl-supporting implementations, beyond those specified in <emu-xref href="#ecma262"><a href="https://tc39.es/ecma402/#ecma262">ECMA-262</a></emu-xref>.
+      </p>
+    </div></emu-note>
 
-  <ins class="block">
-    <p>
-      <emu-xref href="#ecma262"><a href="https://tc39.es/ecma402/#ecma262">ECMA-262</a></emu-xref> describes calendar types, of which <emu-val>"iso8601"</emu-val> is required to be supported.
-      This specification additionally requires ECMAScript implementations to support calendar types corresponding with those of the <a href="https://cldr.unicode.org/">Unicode Common Locale Data Repository (CLDR)</a>.
-    </p>
-  </ins>
+    <del class="block">
+      <p>This specification identifies calendars using a <dfn variants="calendar types" tabindex="-1">calendar type</dfn> as defined by <a href="https://unicode.org/reports/tr35/tr35-dates.html#Calendar_Elements">Unicode Technical Standard #35 Part 4 Dates, Section 2 Calendar Elements</a>. Their canonical form is a string containing only Unicode Basic Latin lowercase letters (U+0061 LATIN SMALL LETTER A through U+007A LATIN SMALL LETTER Z) with zero or more medial hyphens (U+002D HYPHEN-MINUS).</p>
+    </del>
 
-  <emu-clause id="sup-availablecalendars" oldids="sec-availablecalendars sec-availablecanonicalcalendars" type="implementation-defined abstract operation" aoid="AvailableCalendars"><span id="sec-availablecalendars sec-availablecanonicalcalendars"></span>
-    <h1><span class="secnum">1.1</span> AvailableCalendars ( )</h1>
-    <p>The <emu-xref href="#implementation-defined"><a href="https://tc39.es/ecma262/#implementation-defined">implementation-defined</a></emu-xref> abstract operation AvailableCalendars takes no arguments and returns a <emu-xref href="#sec-list-and-record-specification-type"><a href="https://tc39.es/ecma262/#sec-list-and-record-specification-type">List</a></emu-xref> of <emu-xref href="#sec-ecma402-calendar-types" id="_ref_10"><a href="#sec-ecma402-calendar-types">calendar types</a></emu-xref>. The returned <emu-xref href="#sec-list-and-record-specification-type"><a href="https://tc39.es/ecma262/#sec-list-and-record-specification-type">List</a></emu-xref> is sorted according to lexicographic code unit order, and contains unique <emu-xref href="#sec-ecma402-calendar-types" id="_ref_11"><a href="#sec-ecma402-calendar-types">calendar types</a></emu-xref> in canonical form (<emu-xref href="#sec-calendar-types"><a href="https://tc39.es/ecma402/#sec-calendar-types">6.9</a></emu-xref>) identifying the calendars for which the implementation provides the functionality of Intl.DateTimeFormat objects, including their aliases (e.g., <del>either</del> both <del>or neither of</del> <emu-val>"islamicc"</emu-val> and <emu-val>"islamic-civil"</emu-val>). The <emu-xref href="#sec-list-and-record-specification-type"><a href="https://tc39.es/ecma262/#sec-list-and-record-specification-type">List</a></emu-xref> must include <del><emu-val>"iso8601"</emu-val></del><ins>the Calendar Type value of every row of <emu-xref href="#table-calendar-types" id="_ref_0"><a href="#table-calendar-types">Table 1</a></emu-xref>, except the header row</ins>.</p>
-    <p><ins>This definition supersedes the definition provided in <emu-xref href="#sec-availablecalendars"><a href="https://tc39.es/ecma402/#sec-availablecalendars">6.9.1</a></emu-xref>.</ins></p>
-  </emu-clause>
+    <ins class="block">
+      <p>
+        <emu-xref href="#ecma262"><a href="https://tc39.es/ecma402/#ecma262">ECMA-262</a></emu-xref> describes calendar types, of which <emu-val>"iso8601"</emu-val> is required to be supported.
+        This specification additionally requires ECMAScript implementations to support calendar types corresponding with those of the <a href="https://cldr.unicode.org/">Unicode Common Locale Data Repository (CLDR)</a>.
+      </p>
+    </ins>
 
-  <ins class="block">
-    <emu-table id="table-calendar-types"><figure><figcaption>Table 1: <emu-xref href="#sec-ecma402-calendar-types" id="_ref_12"><a href="#sec-ecma402-calendar-types">Calendar types</a></emu-xref> described in CLDR</figcaption>
-      
-      <table class="real-table">
-        <thead>
-          <tr>
-            <th>Calendar Type</th>
-            <th>Description and implementation notes</th>
+    <emu-clause id="sup-availablecalendars" oldids="sec-availablecalendars sec-availablecanonicalcalendars" type="implementation-defined abstract operation" aoid="AvailableCalendars"><span id="sec-availablecalendars sec-availablecanonicalcalendars"></span>
+      <h1><span class="secnum">1.1.1</span> AvailableCalendars ( )</h1>
+      <p>The <emu-xref href="#implementation-defined"><a href="https://tc39.es/ecma262/#implementation-defined">implementation-defined</a></emu-xref> abstract operation AvailableCalendars takes no arguments and returns a <emu-xref href="#sec-list-and-record-specification-type"><a href="https://tc39.es/ecma262/#sec-list-and-record-specification-type">List</a></emu-xref> of <emu-xref href="#sec-ecma402-calendar-types" id="_ref_10"><a href="#sec-ecma402-calendar-types">calendar types</a></emu-xref>. The returned <emu-xref href="#sec-list-and-record-specification-type"><a href="https://tc39.es/ecma262/#sec-list-and-record-specification-type">List</a></emu-xref> is sorted according to lexicographic code unit order, and contains unique <emu-xref href="#sec-ecma402-calendar-types" id="_ref_11"><a href="#sec-ecma402-calendar-types">calendar types</a></emu-xref> in canonical form (<emu-xref href="#sec-calendar-types"><a href="https://tc39.es/ecma402/#sec-calendar-types">6.9</a></emu-xref>) identifying the calendars for which the implementation provides the functionality of Intl.DateTimeFormat objects, including their aliases (e.g., <del>either</del> both <del>or neither of</del> <emu-val>"islamicc"</emu-val> and <emu-val>"islamic-civil"</emu-val>). The <emu-xref href="#sec-list-and-record-specification-type"><a href="https://tc39.es/ecma262/#sec-list-and-record-specification-type">List</a></emu-xref> must include <del><emu-val>"iso8601"</emu-val></del><ins>the Calendar Type value of every row of <emu-xref href="#table-calendar-types" id="_ref_0"><a href="#table-calendar-types">Table 1</a></emu-xref>, except the header row</ins>.</p>
+      <p><ins>This definition supersedes the definition provided in <emu-xref href="#sec-availablecalendars"><a href="https://tc39.es/ecma402/#sec-availablecalendars">6.9.1</a></emu-xref>.</ins></p>
+    </emu-clause>
+
+    <ins class="block">
+      <emu-table id="table-calendar-types"><figure><figcaption>Table 1: <emu-xref href="#sec-ecma402-calendar-types" id="_ref_12"><a href="#sec-ecma402-calendar-types">Calendar types</a></emu-xref> described in CLDR</figcaption>
+        
+        <table class="real-table">
+          <thead>
+            <tr>
+              <th>Calendar Type</th>
+              <th>Description and implementation notes</th>
+            </tr>
+          </thead>
+          <tbody><tr>
+            <td><emu-val>"buddhist"</emu-val></td>
+            <td>Thai Buddhist calendar, proleptic. Month numbers, month codes, and days are the same as in the ISO 8601 calendar, but the epoch year is different. There is one era.</td>
           </tr>
-        </thead>
-        <tbody><tr>
-          <td><emu-val>"buddhist"</emu-val></td>
-          <td>Thai Buddhist calendar, proleptic. Month numbers, month codes, and days are the same as in the ISO 8601 calendar, but the epoch year is different. There is one era.</td>
-        </tr>
-        <tr>
-          <td><emu-val>"chinese"</emu-val></td>
-          <td>Traditional Chinese calendar, proleptic. Similar lunisolar algorithm to <emu-val>"dangi"</emu-val>. The arithmetic year is identical to <emu-val>"gregory"</emu-val> and there are no eras.</td>
-        </tr>
-        <tr>
-          <td><emu-val>"coptic"</emu-val></td>
-          <td>Coptic calendar, proleptic. Similar solar algorithm to <emu-val>"ethioaa"</emu-val> and <emu-val>"ethiopic"</emu-val>, with one era and a different epoch year.</td>
-        </tr>
-        <tr>
-          <td><emu-val>"dangi"</emu-val></td>
-          <td>Traditional Korean calendar, proleptic. Similar lunisolar algorithm to <emu-val>"chinese"</emu-val>. The arithmetic year is identical to <emu-val>"gregory"</emu-val> and there are no eras.</td>
-        </tr>
-        <tr>
-          <td><emu-val>"ethioaa"</emu-val></td>
-          <td>Ethiopic calendar, Amete Alem, proleptic. Similar solar algorithm to <emu-val>"coptic"</emu-val> and <emu-val>"ethiopic"</emu-val>, with one era and a different epoch year.</td>
-        </tr>
-        <tr>
-          <td><emu-val>"ethiopic"</emu-val></td>
-          <td>Ethiopic calendar, Amete Mihret, proleptic. Similar solar algorithm to <emu-val>"coptic"</emu-val> and <emu-val>"ethioaa"</emu-val>, with two eras and a different epoch year.</td>
-        </tr>
-        <tr>
-          <td><emu-val>"ethiopic-amete-alem"</emu-val></td>
-          <td>Alias for <emu-val>"ethioaa"</emu-val>.</td>
-        </tr>
-        <tr>
-          <td><emu-val>"gregory"</emu-val></td>
-          <td>Gregorian calendar, proleptic. Solar calendar almost identical to the ISO 8601 calendar, except that it does not define week numbering and it contains two eras, one before the epoch year.</td>
-        </tr>
-        <tr>
-          <td><emu-val>"hebrew"</emu-val></td>
-          <td>Hebrew calendar, proleptic. Lunisolar calendar with one leap month inserted after month 5. There is one era.</td>
-        </tr>
-        <tr>
-          <td><emu-val>"indian"</emu-val></td>
-          <td>Indian national (or Śaka) calendar, proleptic. Solar calendar with one era.</td>
-        </tr>
-        <tr>
-          <td><emu-val>"islamic-civil"</emu-val></td>
-          <td>Hijri calendar, proleptic, tabular/rule-based with leap years 2, 5, 7, 10, 13, 16, 18, 21, 24, 26, 29 in the 30-year cycle, and civil epoch (Friday July 16, 622 Julian / 0622-07-19 ISO)</td>
-        </tr>
-        <tr>
-          <td><emu-val>"islamic-tbla"</emu-val></td>
-          <td>Hijri calendar, proleptic, tabular/rule-based with leap years 2, 5, 7, 10, 13, 16, 18, 21, 24, 26, 29 in the 30-year cycle, and astronomical epoch (Thursday July 15, 622 Julian / 0622-07-18 ISO)</td>
-        </tr>
-        <tr>
-          <td><emu-val>"islamic-umalqura"</emu-val></td>
-          <td>Hijri calendar, proleptic, Umm al-Qura. Lunisolar calendar using KACST-calculated months from the start of 1300 AH to the end of 1600 AH and falls back to <emu-val>"islamic-civil"</emu-val> outside that range.</td>
-        </tr>
-        <tr>
-          <td><emu-val>"islamicc"</emu-val></td>
-          <td>Deprecated alias for <emu-val>"islamic-civil"</emu-val>.</td>
-        </tr>
-        <tr>
-          <td><emu-val>"iso8601"</emu-val></td>
-          <td>ISO 8601 calendar. Fully specified in <emu-xref href="#ecma262"><a href="https://tc39.es/ecma402/#ecma262">ECMA-262</a></emu-xref>.</td>
-        </tr>
-        <tr>
-          <td><emu-val>"japanese"</emu-val></td>
-          <td>Japanese Imperial calendar, era system hybridised with <emu-val>"gregory"</emu-val>. Month numbers, month codes, and days are the same as in the ISO 8601 calendar, extended proleptically before their introduction in ISO year 1873. Imperial era names only extend as far back as the Meiji period (starting in ISO year 1868) during which calendar reforms took place. The arithmetic year, and the years and eras before ISO year 1868, are identical to <emu-val>"gregory"</emu-val>.</td>
-        </tr>
-        <tr>
-          <td><emu-val>"persian"</emu-val></td>
-          <td>Persian (or Solar Hijri) calendar, proleptic. There is one era.</td>
-        </tr>
-        <tr>
-          <td><emu-val>"roc"</emu-val></td>
-          <td>Republic of China (or Minguo) calendar, proleptic. Month numbers, month codes, and days are the same as in the ISO 8601 calendar, but the epoch year is different. There are two eras, one before the epoch year and one after.</td>
-        </tr>
-      </tbody></table>
-    </figure></emu-table>
-  </ins>
+          <tr>
+            <td><emu-val>"chinese"</emu-val></td>
+            <td>Traditional Chinese calendar, proleptic. Similar lunisolar algorithm to <emu-val>"dangi"</emu-val>. The arithmetic year is identical to <emu-val>"gregory"</emu-val> and there are no eras.</td>
+          </tr>
+          <tr>
+            <td><emu-val>"coptic"</emu-val></td>
+            <td>Coptic calendar, proleptic. Similar solar algorithm to <emu-val>"ethioaa"</emu-val> and <emu-val>"ethiopic"</emu-val>, with one era and a different epoch year.</td>
+          </tr>
+          <tr>
+            <td><emu-val>"dangi"</emu-val></td>
+            <td>Traditional Korean calendar, proleptic. Similar lunisolar algorithm to <emu-val>"chinese"</emu-val>. The arithmetic year is identical to <emu-val>"gregory"</emu-val> and there are no eras.</td>
+          </tr>
+          <tr>
+            <td><emu-val>"ethioaa"</emu-val></td>
+            <td>Ethiopic calendar, Amete Alem, proleptic. Similar solar algorithm to <emu-val>"coptic"</emu-val> and <emu-val>"ethiopic"</emu-val>, with one era and a different epoch year.</td>
+          </tr>
+          <tr>
+            <td><emu-val>"ethiopic"</emu-val></td>
+            <td>Ethiopic calendar, Amete Mihret, proleptic. Similar solar algorithm to <emu-val>"coptic"</emu-val> and <emu-val>"ethioaa"</emu-val>, with two eras and a different epoch year.</td>
+          </tr>
+          <tr>
+            <td><emu-val>"ethiopic-amete-alem"</emu-val></td>
+            <td>Alias for <emu-val>"ethioaa"</emu-val>.</td>
+          </tr>
+          <tr>
+            <td><emu-val>"gregory"</emu-val></td>
+            <td>Gregorian calendar, proleptic. Solar calendar almost identical to the ISO 8601 calendar, except that it does not define week numbering and it contains two eras, one before the epoch year.</td>
+          </tr>
+          <tr>
+            <td><emu-val>"hebrew"</emu-val></td>
+            <td>Hebrew calendar, proleptic. Lunisolar calendar with one leap month inserted after month 5. There is one era.</td>
+          </tr>
+          <tr>
+            <td><emu-val>"indian"</emu-val></td>
+            <td>Indian national (or Śaka) calendar, proleptic. Solar calendar with one era.</td>
+          </tr>
+          <tr>
+            <td><emu-val>"islamic-civil"</emu-val></td>
+            <td>Hijri calendar, proleptic, tabular/rule-based with leap years 2, 5, 7, 10, 13, 16, 18, 21, 24, 26, 29 in the 30-year cycle, and civil epoch (Friday July 16, 622 Julian / 0622-07-19 ISO)</td>
+          </tr>
+          <tr>
+            <td><emu-val>"islamic-tbla"</emu-val></td>
+            <td>Hijri calendar, proleptic, tabular/rule-based with leap years 2, 5, 7, 10, 13, 16, 18, 21, 24, 26, 29 in the 30-year cycle, and astronomical epoch (Thursday July 15, 622 Julian / 0622-07-18 ISO)</td>
+          </tr>
+          <tr>
+            <td><emu-val>"islamic-umalqura"</emu-val></td>
+            <td>Hijri calendar, proleptic, Umm al-Qura. Lunisolar calendar using KACST-calculated months from the start of 1300 AH to the end of 1600 AH and falls back to <emu-val>"islamic-civil"</emu-val> outside that range.</td>
+          </tr>
+          <tr>
+            <td><emu-val>"islamicc"</emu-val></td>
+            <td>Deprecated alias for <emu-val>"islamic-civil"</emu-val>.</td>
+          </tr>
+          <tr>
+            <td><emu-val>"iso8601"</emu-val></td>
+            <td>ISO 8601 calendar. Fully specified in <emu-xref href="#ecma262"><a href="https://tc39.es/ecma402/#ecma262">ECMA-262</a></emu-xref>.</td>
+          </tr>
+          <tr>
+            <td><emu-val>"japanese"</emu-val></td>
+            <td>Japanese Imperial calendar, era system hybridised with <emu-val>"gregory"</emu-val>. Month numbers, month codes, and days are the same as in the ISO 8601 calendar, extended proleptically before their introduction in ISO year 1873. Imperial era names only extend as far back as the Meiji period (starting in ISO year 1868) during which calendar reforms took place. The arithmetic year, and the years and eras before ISO year 1868, are identical to <emu-val>"gregory"</emu-val>.</td>
+          </tr>
+          <tr>
+            <td><emu-val>"persian"</emu-val></td>
+            <td>Persian (or Solar Hijri) calendar, proleptic. There is one era.</td>
+          </tr>
+          <tr>
+            <td><emu-val>"roc"</emu-val></td>
+            <td>Republic of China (or Minguo) calendar, proleptic. Month numbers, month codes, and days are the same as in the ISO 8601 calendar, but the epoch year is different. There are two eras, one before the epoch year and one after.</td>
+          </tr>
+        </tbody></table>
+      </figure></emu-table>
+    </ins>
+  </emu-clause>
 </emu-clause>
 
 <emu-clause id="locale-and-parameter-negotiation">
@@ -4160,547 +4127,551 @@ p.ECMAaddress {
   </emu-clause>
 </emu-clause>
 
-<emu-clause id="sup-temporal-calendar-abstract-ops">
-  <h1><span class="secnum">4</span> Abstract Operations</h1>
+<emu-clause id="ecma402-locale-sensitive-functions">
+  <h1><span class="secnum">4</span> Locale Sensitive Functions of the ECMAScript Language Specification</h1>
 
-  <emu-clause id="sec-temporal-calendarsupportsera" type="abstract operation" aoid="CalendarSupportsEra">
-    <h1><span class="secnum">4.1</span> CalendarSupportsEra ( <var>calendar</var> )</h1>
-    <p>The abstract operation CalendarSupportsEra takes argument <var>calendar</var> (a String) and returns a Boolean. 
-        The following algorithm refers to the era data from <a href="https://unicode.org/reports/tr35/tr35-dates.html#Calendar_Data">UTS 35's Supplemental Calendar Data</a>.
-       It performs the following steps when called:</p>
-    <emu-alg><ol><li>If <var>calendar</var> is listed in the Calendar column of <emu-xref href="#table-eras" id="_ref_3"><a href="#table-eras">Table 2</a></emu-xref>, return <emu-val>true</emu-val>.</li><li>Return <emu-val>false</emu-val>.</li></ol></emu-alg>
-    <emu-table id="table-eras"><figure><figcaption>Table 2: era aliases and range of eraYear</figcaption>
-      
-      <table class="real-table">
-        <thead>
-          <tr>
-            <th>Calendar</th>
-            <th>Era</th>
-            <th>Aliases</th>
-            <th>Minimum eraYear</th>
-            <th>Maximum eraYear</th>
+  <emu-clause id="sec-calendar-abstract-ops">
+    <h1><span class="secnum">4.1</span> Abstract Operations for Calendar Calculations</h1>
+
+    <emu-clause id="sec-temporal-calendarsupportsera" type="abstract operation" aoid="CalendarSupportsEra">
+      <h1><span class="secnum">4.1.1</span> CalendarSupportsEra ( <var>calendar</var> )</h1>
+      <p>The abstract operation CalendarSupportsEra takes argument <var>calendar</var> (a String) and returns a Boolean. 
+          The following algorithm refers to the era data from <a href="https://unicode.org/reports/tr35/tr35-dates.html#Calendar_Data">UTS 35's Supplemental Calendar Data</a>.
+         It performs the following steps when called:</p>
+      <emu-alg><ol><li>If <var>calendar</var> is listed in the Calendar column of <emu-xref href="#table-eras" id="_ref_3"><a href="#table-eras">Table 2</a></emu-xref>, return <emu-val>true</emu-val>.</li><li>Return <emu-val>false</emu-val>.</li></ol></emu-alg>
+      <emu-table id="table-eras"><figure><figcaption>Table 2: era aliases and range of eraYear</figcaption>
+        
+        <table class="real-table">
+          <thead>
+            <tr>
+              <th>Calendar</th>
+              <th>Era</th>
+              <th>Aliases</th>
+              <th>Minimum eraYear</th>
+              <th>Maximum eraYear</th>
+            </tr>
+          </thead>
+          <tbody><tr>
+            <td><emu-val>"buddhist"</emu-val></td>
+            <td><emu-val>"be"</emu-val></td>
+            <td></td>
+            <td><emu-val>-∞</emu-val><sub>𝔽</sub></td>
+            <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
           </tr>
-        </thead>
-        <tbody><tr>
-          <td><emu-val>"buddhist"</emu-val></td>
-          <td><emu-val>"be"</emu-val></td>
-          <td></td>
-          <td><emu-val>-∞</emu-val><sub>𝔽</sub></td>
-          <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
-        </tr>
-        <tr>
-          <td><emu-val>"coptic"</emu-val></td>
-          <td><emu-val>"am"</emu-val></td>
-          <td></td>
-          <td><emu-val>-∞</emu-val><sub>𝔽</sub></td>
-          <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
-        </tr>
-        <tr>
-          <td><emu-val>"ethiopic"</emu-val></td>
-          <td><emu-val>"am"</emu-val></td>
-          <td><emu-val>"incar"</emu-val></td>
-          <td><emu-val>1</emu-val><sub>𝔽</sub></td>
-          <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
-        </tr>
-        <tr>
-          <td><emu-val>"ethiopic"</emu-val></td>
-          <td><emu-val>"aa"</emu-val></td>
-          <td><emu-val>"mundi"</emu-val></td>
-          <td><emu-val>-∞</emu-val><sub>𝔽</sub></td>
-          <td><emu-val>5500</emu-val><sub>𝔽</sub></td>
-        </tr>
-        <tr>
-          <td><emu-val>"ethioaa"</emu-val></td>
-          <td><emu-val>"aa"</emu-val></td>
-          <td><emu-val>"mundi"</emu-val></td>
-          <td><emu-val>-∞</emu-val><sub>𝔽</sub></td>
-          <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
-        </tr>
-        <tr>
-          <td><emu-val>"gregory"</emu-val></td>
-          <td><emu-val>"ce"</emu-val></td>
-          <td><emu-val>"ad"</emu-val></td>
-          <td><emu-val>1</emu-val><sub>𝔽</sub></td>
-          <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
-        </tr>
-        <tr>
-          <td><emu-val>"gregory"</emu-val></td>
-          <td><emu-val>"bce"</emu-val></td>
-          <td><emu-val>"bc"</emu-val></td>
-          <td><emu-val>1</emu-val><sub>𝔽</sub></td>
-          <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
-        </tr>
-        <tr>
-          <td><emu-val>"hebrew"</emu-val></td>
-          <td><emu-val>"am"</emu-val></td>
-          <td></td>
-          <td><emu-val>-∞</emu-val><sub>𝔽</sub></td>
-          <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
-        </tr>
-        <tr>
-          <td><emu-val>"indian"</emu-val></td>
-          <td><emu-val>"shaka"</emu-val></td>
-          <td></td>
-          <td><emu-val>-∞</emu-val><sub>𝔽</sub></td>
-          <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
-        </tr>
-        <tr>
-          <td><emu-val>"islamic-civil"</emu-val></td>
-          <td><emu-val>"ah"</emu-val></td>
-          <td></td>
-          <td><emu-val>1</emu-val><sub>𝔽</sub></td>
-          <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
-        </tr>
-        <tr>
-          <td><emu-val>"islamic-civil"</emu-val></td>
-          <td><emu-val>"bh"</emu-val></td>
-          <td></td>
-          <td><emu-val>1</emu-val><sub>𝔽</sub></td>
-          <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
-        </tr>
-        <tr>
-          <td><emu-val>"islamic-tbla"</emu-val></td>
-          <td><emu-val>"ah"</emu-val></td>
-          <td></td>
-          <td><emu-val>1</emu-val><sub>𝔽</sub></td>
-          <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
-        </tr>
-        <tr>
-          <td><emu-val>"islamic-tbla"</emu-val></td>
-          <td><emu-val>"bh"</emu-val></td>
-          <td></td>
-          <td><emu-val>1</emu-val><sub>𝔽</sub></td>
-          <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
-        </tr>
-        <tr>
-          <td><emu-val>"islamic-umalqura"</emu-val></td>
-          <td><emu-val>"ah"</emu-val></td>
-          <td></td>
-          <td><emu-val>1</emu-val><sub>𝔽</sub></td>
-          <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
-        </tr>
-        <tr>
-          <td><emu-val>"islamic-umalqura"</emu-val></td>
-          <td><emu-val>"bh"</emu-val></td>
-          <td></td>
-          <td><emu-val>1</emu-val><sub>𝔽</sub></td>
-          <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
-        </tr>
-        <tr>
-          <td><emu-val>"japanese"</emu-val></td>
-          <td><emu-val>"reiwa"</emu-val></td>
-          <td></td>
-          <td><emu-val>1</emu-val><sub>𝔽</sub></td>
-          <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
-        </tr>
-        <tr>
-          <td><emu-val>"japanese"</emu-val></td>
-          <td><emu-val>"heisei"</emu-val></td>
-          <td></td>
-          <td><emu-val>1</emu-val><sub>𝔽</sub></td>
-          <td><emu-val>31</emu-val><sub>𝔽</sub></td>
-        </tr>
-        <tr>
-          <td><emu-val>"japanese"</emu-val></td>
-          <td><emu-val>"showa"</emu-val></td>
-          <td></td>
-          <td><emu-val>1</emu-val><sub>𝔽</sub></td>
-          <td><emu-val>64</emu-val><sub>𝔽</sub></td>
-        </tr>
-        <tr>
-          <td><emu-val>"japanese"</emu-val></td>
-          <td><emu-val>"taisho"</emu-val></td>
-          <td></td>
-          <td><emu-val>1</emu-val><sub>𝔽</sub></td>
-          <td><emu-val>15</emu-val><sub>𝔽</sub></td>
-        </tr>
-        <tr>
-          <td><emu-val>"japanese"</emu-val></td>
-          <td><emu-val>"meiji"</emu-val></td>
-          <td></td>
-          <td><emu-val>1</emu-val><sub>𝔽</sub></td>
-          <td><emu-val>45</emu-val><sub>𝔽</sub></td>
-        </tr>
-        <tr>
-          <td><emu-val>"japanese"</emu-val></td>
-          <td><emu-val>"ce"</emu-val></td>
-          <td><emu-val>"ad"</emu-val></td>
-          <td><emu-val>1</emu-val><sub>𝔽</sub></td>
-          <td><emu-val>1868</emu-val><sub>𝔽</sub></td>
-        </tr>
-        <tr>
-          <td><emu-val>"japanese"</emu-val></td>
-          <td><emu-val>"bce"</emu-val></td>
-          <td><emu-val>"bc"</emu-val></td>
-          <td><emu-val>1</emu-val><sub>𝔽</sub></td>
-          <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
-        </tr>
-        <tr>
-          <td><emu-val>"persian"</emu-val></td>
-          <td><emu-val>"ap"</emu-val></td>
-          <td></td>
-          <td><emu-val>-∞</emu-val><sub>𝔽</sub></td>
-          <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
-        </tr>
-        <tr>
-          <td><emu-val>"roc"</emu-val></td>
-          <td><emu-val>"roc"</emu-val></td>
-          <td><emu-val>"minguo"</emu-val></td>
-          <td><emu-val>1</emu-val><sub>𝔽</sub></td>
-          <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
-        </tr>
-        <tr>
-          <td><emu-val>"roc"</emu-val></td>
-          <td><emu-val>"broc"</emu-val></td>
-          <td><emu-val>"before-roc"</emu-val>, <emu-val>"minguo-qian"</emu-val></td>
-          <td><emu-val>1</emu-val><sub>𝔽</sub></td>
-          <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
-        </tr>
-      </tbody></table>
-    </figure></emu-table>
-    <emu-note><span class="note">Note</span><div class="note-contents">
-      The content in this table is proposed by Era Code WG to CLDR TC in <a href="https://github.com/unicode-org/cldr/pull/2665">PR 2665</a> and under review. It is targeted to be part of CLDR 43, scheduled to be released in April 2023.
-    </div></emu-note>
-  </emu-clause>
-
-  <emu-clause id="sec-temporal-canonicalizeeraincalendar" type="abstract operation" aoid="CanonicalizeEraInCalendar">
-    <h1><span class="secnum">4.2</span> CanonicalizeEraInCalendar ( <var>calendar</var>, <var>era</var> )</h1>
-    <p>The abstract operation CanonicalizeEraInCalendar takes arguments <var>calendar</var> (a String) and <var>era</var> (a String) and returns a String or <emu-val>undefined</emu-val>. 
-        The following algorithm refers to the era data from <a href="https://unicode.org/reports/tr35/tr35-dates.html#Calendar_Data">UTS 35's Supplemental Calendar Data</a>.
-       It performs the following steps when called:</p>
-    <emu-alg><ol><li>For each row of <emu-xref href="#table-eras" id="_ref_4"><a href="#table-eras">Table 2</a></emu-xref>, do<ol><li>Let <var>cal</var> be the Calendar value of the current row.</li><li>If <var>cal</var> is equal to <var>calendar</var>, then<ol><li>Let <var>e</var> be the Era value of the current row.</li><li>If <var>e</var> is equal to <var>era</var>, return <var>era</var>.</li><li>Let <var>aliases</var> be a <emu-xref href="#sec-list-and-record-specification-type"><a href="https://tc39.es/ecma262/#sec-list-and-record-specification-type">List</a></emu-xref> whose elements are the strings given in the Aliases column of the row.</li><li>If <var>aliases</var> contains <var>era</var>, return <var>era</var>.</li></ol></li></ol></li><li>Return <emu-val>undefined</emu-val>.</li></ol></emu-alg>
-  </emu-clause>
-
-  <emu-clause id="sec-temporal-isvalidmonthecodeforcalendar" type="abstract operation" aoid="IsValidMonthCodeForCalendar">
-    <h1><span class="secnum">4.3</span> IsValidMonthCodeForCalendar ( <var>calendar</var>, <var>monthCode</var> )</h1>
-    <p>The abstract operation IsValidMonthCodeForCalendar takes arguments <var>calendar</var> (a String) and <var>monthCode</var> (a String) and returns a Boolean. It performs the following steps when called:</p>
-    <emu-alg><ol><li>Let <var>commonMonthCodes</var> be « <emu-val>"M01"</emu-val>, <emu-val>"M02"</emu-val>, <emu-val>"M03"</emu-val>, <emu-val>"M04"</emu-val>, <emu-val>"M05"</emu-val>, <emu-val>"M06"</emu-val>, <emu-val>"M07"</emu-val>, <emu-val>"M08"</emu-val>, <emu-val>"M09"</emu-val>, <emu-val>"M10"</emu-val>, <emu-val>"M11"</emu-val>, <emu-val>"M12"</emu-val>&nbsp;».</li><li>If <var>commonMonthCodes</var> contains <var>monthCode</var>, return <emu-val>true</emu-val>.</li><li>If <var>calendar</var> is not listed in the Calendar column of <emu-xref href="#table-additional-month-codes" id="_ref_5"><a href="#table-additional-month-codes">Table 3</a></emu-xref>, return <emu-val>false</emu-val>.</li><li>Let <var>r</var> be the row in <emu-xref href="#table-additional-month-codes" id="_ref_6"><a href="#table-additional-month-codes">Table 3</a></emu-xref> which the <var>calendar</var> is in the Calendar column.</li><li>Let <var>specialMonthCodes</var> be a <emu-xref href="#sec-list-and-record-specification-type"><a href="https://tc39.es/ecma262/#sec-list-and-record-specification-type">List</a></emu-xref> whose elements are the strings given in the <emu-val>"Additional Month Codes"</emu-val> column of <var>r</var>.</li><li>If <var>specialMonthCodes</var> contains <var>monthCode</var>, return <emu-val>true</emu-val>.</li><li>Return <emu-val>false</emu-val>.</li></ol></emu-alg>
-
-    <emu-table id="table-additional-month-codes"><figure><figcaption>Table 3: Additional Month Codes in Calendars</figcaption>
-      
-      <table class="real-table">
-        <thead>
           <tr>
-            <th>Calendar</th>
-            <th>Additional Month Codes</th>
+            <td><emu-val>"coptic"</emu-val></td>
+            <td><emu-val>"am"</emu-val></td>
+            <td></td>
+            <td><emu-val>-∞</emu-val><sub>𝔽</sub></td>
+            <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
           </tr>
-        </thead>
-        <tbody><tr>
-          <td><emu-val>"chinese"</emu-val></td>
-          <td><emu-val>"M01L"</emu-val>, <emu-val>"M02L"</emu-val>, <emu-val>"M03L"</emu-val>, <emu-val>"M04L"</emu-val>, <emu-val>"M05L"</emu-val>, <emu-val>"M06L"</emu-val>, <emu-val>"M07L"</emu-val>, <emu-val>"M08L"</emu-val>, <emu-val>"M09L"</emu-val>, <emu-val>"M10L"</emu-val>, <emu-val>"M11L"</emu-val>, <emu-val>"M12L"</emu-val></td>
-        </tr>
-        <tr>
-          <td><emu-val>"coptic"</emu-val></td>
-          <td><emu-val>"M13"</emu-val></td>
-        </tr>
-        <tr>
-          <td><emu-val>"dangi"</emu-val></td>
-          <td><emu-val>"M01L"</emu-val>, <emu-val>"M02L"</emu-val>, <emu-val>"M03L"</emu-val>, <emu-val>"M04L"</emu-val>, <emu-val>"M05L"</emu-val>, <emu-val>"M06L"</emu-val>, <emu-val>"M07L"</emu-val>, <emu-val>"M08L"</emu-val>, <emu-val>"M09L"</emu-val>, <emu-val>"M10L"</emu-val>, <emu-val>"M11L"</emu-val>, <emu-val>"M12L"</emu-val></td>
-        </tr>
-        <tr>
-          <td><emu-val>"ethiopic"</emu-val></td>
-          <td><emu-val>"M13"</emu-val></td>
-        </tr>
-        <tr>
-          <td><emu-val>"ethioaa"</emu-val></td>
-          <td><emu-val>"M13"</emu-val></td>
-        </tr>
-        <tr>
-          <td><emu-val>"hebrew"</emu-val></td>
-          <td><emu-val>"M05L"</emu-val></td>
-        </tr>
-      </tbody></table>
-    </figure></emu-table>
-  </emu-clause>
-
-  <emu-clause id="sec-temporal-isvaliderayearforcalendar" type="abstract operation" aoid="IsValidEraYearForCalendar">
-    <h1><span class="secnum">4.4</span> IsValidEraYearForCalendar ( <var>calendar</var>, <var>era</var>, <var>eraYear</var> )</h1>
-    <p>The abstract operation IsValidEraYearForCalendar takes arguments <var>calendar</var> (a String), <var>era</var> (a String), and <var>eraYear</var> (a <emu-xref href="#integer"><a href="https://tc39.es/ecma262/#integer">integer</a></emu-xref>) and returns a Boolean. 
-        The following algorithm refers to the era data from <a href="https://unicode.org/reports/tr35/tr35-dates.html#Calendar_Data">UTS 35's Supplemental Calendar Data</a>.
-       It performs the following steps when called:</p>
-    <emu-alg><ol><li>Let <var>era</var> be <emu-xref aoid="CanonicalizeEraInCalendar" id="_ref_15"><a href="#sec-temporal-canonicalizeeraincalendar">CanonicalizeEraInCalendar</a></emu-xref>(<var>calendar</var>, <var>era</var>).</li><li>If <var>era</var> is <emu-val>undefined</emu-val>, return <emu-val>false</emu-val>.</li><li>Let <var>r</var> be the row in <emu-xref href="#table-eras" id="_ref_7"><a href="#table-eras">Table 2</a></emu-xref> which the <var>calendar</var> is in the Calendar column and the <var>era</var> is in the Era column.</li><li>Let <var>min</var> be the value given in the <emu-val>"Minimum eraYear"</emu-val> column of <var>r</var>.</li><li>Let <var>max</var> be the value given in the <emu-val>"Maximum eraYear"</emu-val> column of <var>r</var>.</li><li>If <var>eraYear</var> &lt; <var>min</var>, return <emu-val>false</emu-val>.</li><li>If <var>eraYear</var> &gt; <var>max</var>, return <emu-val>false</emu-val>.</li><li>Return <emu-val>true</emu-val>.</li></ol></emu-alg>
-  </emu-clause>
-
-  <emu-clause id="sup-temporal-calendar-date-records">
-    <h1><span class="secnum">4.5</span> Calendar Date Records</h1>
-    <p>
-      A <dfn variants="Calendar Date Records" tabindex="-1">Calendar Date Record</dfn> is a <emu-xref href="#sec-list-and-record-specification-type"><a href="https://tc39.es/ecma262/#sec-list-and-record-specification-type">Record</a></emu-xref> value used to represent a valid calendar date in a non-ISO 8601 calendar.
-      Calendar Date Records are produced by the abstract operation <emu-xref aoid="CalendarISOToDate"><a href="https://tc39.es/proposal-temporal/#sec-temporal-calendarisotodate">CalendarISOToDate</a></emu-xref>.
-    </p>
-    <p>Calendar Date Records have the fields listed in <emu-xref href="#table-temporal-calendar-date-record-fields" id="_ref_8"><a href="#table-temporal-calendar-date-record-fields">Table 4</a></emu-xref>.</p>
-    <p>This definition supersedes the one in <emu-xref href="#sec-temporal-calendar-date-records"><a href="https://tc39.es/proposal-temporal/#sec-temporal-calendar-date-records">Calendar Date Records</a></emu-xref>.</p>
-    <emu-table id="table-temporal-calendar-date-record-fields" caption="Calendar Date Record Fields"><figure><figcaption>Table 4: <emu-xref href="#sup-temporal-calendar-date-records" id="_ref_16"><a href="#sup-temporal-calendar-date-records">Calendar Date Record</a></emu-xref> Fields</figcaption>
-      <table class="real-table">
-        <tbody><tr>
-          <th>Field Name</th>
-          <th>Value</th>
-          <th>Meaning</th>
-        </tr>
-        <tr>
-          <td><var class="field">[[Era]]</var></td>
-          <td>a String or <emu-val>undefined</emu-val></td>
-          <td>
-            A lowercase String value representing the date's era, or <emu-val>undefined</emu-val> for calendars that do not have eras.<br>
-            The value of this field for a calendar with the identifier <var>calendar</var> should be the result of calling <emu-xref aoid="CalendarDateEra" id="_ref_17"><a href="#sec-temporal-calendardateera">CalendarDateEra</a></emu-xref>(<var>calendar</var>, <var>date</var>), where <var>date</var> is a Temporal.PlainDateTime, Temporal.PlainDate, or Temporal.PlainYearMonth value corresponding to the date.
-          </td>
-        </tr>
-        <tr>
-          <td><var class="field">[[EraYear]]</var></td>
-          <td>an <emu-xref href="#integer"><a href="https://tc39.es/ecma262/#integer">integer</a></emu-xref> or <emu-val>undefined</emu-val></td>
-          <td>
-            The ordinal position of the date's year within its era, or <emu-val>undefined</emu-val> for calendars that do not have eras.<br>
-            The value of this field for a calendar with the identifier <var>calendar</var> should be the result of calling <emu-xref aoid="CalendarDateEraYear" id="_ref_18"><a href="#sec-temporal-calendardateerayear">CalendarDateEraYear</a></emu-xref>(<var>calendar</var>, <var>date</var>), where <var>date</var> is a Temporal.PlainDateTime, Temporal.PlainDate, or Temporal.PlainYearMonth value corresponding to the date.
-            <emu-note><span class="note">Note 1</span><div class="note-contents">
-              Era years are 1-indexed for many calendars, but not all (e.g., the eras of the Burmese calendar each start with a year 0). Years can also advance opposite the flow of time (as for BCE years in the Gregorian calendar).
-            </div></emu-note>
-          </td>
-        </tr>
-        <tr>
-          <td><var class="field">[[Year]]</var></td>
-          <td>an <emu-xref href="#integer"><a href="https://tc39.es/ecma262/#integer">integer</a></emu-xref></td>
-          <td>
-            The date's year relative to the first day of a calendar-specific "epoch year".<br>
-            The value of this field for a calendar with the identifier <var>calendar</var> should be the result of calling <emu-xref aoid="CalendarDateArithmeticYear" id="_ref_19"><a href="#sec-temporal-calendardatearithmeticyear">CalendarDateArithmeticYear</a></emu-xref>(<var>calendar</var>, <var>date</var>), where <var>date</var> is a Temporal.PlainDateTime, Temporal.PlainDate, or Temporal.PlainYearMonth value corresponding to the date.
-            <emu-note><span class="note">Note 2</span><div class="note-contents">The year is relative to the first day of the calendar's epoch year, so if the epoch era starts in the middle of the year, the year will be the same value before and after the start date of the era.</div></emu-note>
-          </td>
-        </tr>
-        <tr>
-          <td><var class="field">[[Month]]</var></td>
-          <td>a positive <emu-xref href="#integer"><a href="https://tc39.es/ecma262/#integer">integer</a></emu-xref></td>
-          <td>
-            The 1-based ordinal position of the date's month within its year.
-            <emu-note><span class="note">Note 3</span><div class="note-contents">
-              When the number of months in a year of the calendar is variable, a different value can be returned for dates that are part of the same month in different years. For example, in the Hebrew calendar, 1 Nisan 5781 is associated with value 7 while 1 Nisan 5782 is associated with value 8 because 5782 is a leap year and Nisan follows the insertion of Adar I.
-            </div></emu-note>
-          </td>
-        </tr>
-        <tr>
-          <td><var class="field">[[MonthCode]]</var></td>
-          <td>a String</td>
-          <td>
-            The month code of the date's month. The month code for a month that is not a leap month and whose 1-based ordinal position in a common year of the calendar (i.e., a year that is not a leap year) is <var>n</var> should be the <emu-xref href="#string-concatenation"><a href="https://tc39.es/ecma262/#string-concatenation">string-concatenation</a></emu-xref> of <emu-val>"M"</emu-val> and <emu-xref aoid="ToZeroPaddedDecimalString"><a href="https://tc39.es/ecma262/#sec-tozeropaddeddecimalstring">ToZeroPaddedDecimalString</a></emu-xref>(<var>n</var>, 2), and the month code for a month that is a leap month inserted after a month whose 1-based ordinal position in a common year of the calendar is <var>p</var> should be the <emu-xref href="#string-concatenation"><a href="https://tc39.es/ecma262/#string-concatenation">string-concatenation</a></emu-xref> of <emu-val>"M"</emu-val>, <emu-xref aoid="ToZeroPaddedDecimalString"><a href="https://tc39.es/ecma262/#sec-tozeropaddeddecimalstring">ToZeroPaddedDecimalString</a></emu-xref>(<var>p</var>, 2), and <emu-val>"L"</emu-val>.
-            <emu-note><span class="note">Note 4</span><div class="note-contents">
-              For example, in the Hebrew calendar, the month code of Adar (and Adar II, in leap years) is <emu-val>"M06"</emu-val> and the month code of Adar I (the leap month inserted before Adar II) is <emu-val>"M05L"</emu-val>. In a calendar with a leap month at the start of some years, the month code of that month would be <emu-val>"M00L"</emu-val>.
-            </div></emu-note>
-          </td>
-        </tr>
-        <tr>
-          <td><var class="field">[[Day]]</var></td>
-          <td>a positive <emu-xref href="#integer"><a href="https://tc39.es/ecma262/#integer">integer</a></emu-xref></td>
-          <td>
-            The 1-based ordinal position of the date's day within its month.
-          </td>
-        </tr>
-        <tr>
-          <td><var class="field">[[DayOfWeek]]</var></td>
-          <td>a positive <emu-xref href="#integer"><a href="https://tc39.es/ecma262/#integer">integer</a></emu-xref></td>
-          <td>
-            The day of the week corresponding to the date. The value should be 1-based, where 1 is the day corresponding to Monday in the given calendar.
-          </td>
-        </tr>
-        <tr>
-          <td><var class="field">[[DayOfYear]]</var></td>
-          <td>a positive <emu-xref href="#integer"><a href="https://tc39.es/ecma262/#integer">integer</a></emu-xref></td>
-          <td>
-            The 1-based ordinal position of the date's day within its year.
-          </td>
-        </tr>
-        <tr>
-          <td><var class="field">[[WeekOfYear]]</var></td>
-          <td>a <emu-xref href="#sec-year-week-record-specification-type"><a href="https://tc39.es/proposal-temporal/#sec-year-week-record-specification-type">Year-Week Record</a></emu-xref></td>
-          <td>
-            <p>The date's <em>calendar week of year</em>, and the corresponding <em>week calendar year</em>.</p>
-            <p>The <emu-xref href="#sec-year-week-record-specification-type"><a href="https://tc39.es/proposal-temporal/#sec-year-week-record-specification-type">Year-Week Record</a></emu-xref>'s <var class="field">[[Week]]</var> field should be 1-based.</p>
-            <p>The <emu-xref href="#sec-year-week-record-specification-type"><a href="https://tc39.es/proposal-temporal/#sec-year-week-record-specification-type">Year-Week Record</a></emu-xref>'s <var class="field">[[Year]]</var> field is relative to the first day of a calendar-specific "epoch year", as in the <emu-xref href="#sup-temporal-calendar-date-records" id="_ref_20"><a href="#sup-temporal-calendar-date-records">Calendar Date Record</a></emu-xref>'s <var class="field">[[Year]]</var> field, not relative to an era as in <var class="field">[[EraYear]]</var>.</p>
-            <p>
-              Usually the <emu-xref href="#sec-year-week-record-specification-type"><a href="https://tc39.es/proposal-temporal/#sec-year-week-record-specification-type">Year-Week Record</a></emu-xref>'s <var class="field">[[Year]]</var> field will contain the same value as the <emu-xref href="#sup-temporal-calendar-date-records" id="_ref_21"><a href="#sup-temporal-calendar-date-records">Calendar Date Record</a></emu-xref>'s <var class="field">[[Year]]</var> field, but may contain the previous or next year if the week number in the <emu-xref href="#sec-year-week-record-specification-type"><a href="https://tc39.es/proposal-temporal/#sec-year-week-record-specification-type">Year-Week Record</a></emu-xref>'s <var class="field">[[Week]]</var> field overlaps two different years.
-              See also ISOWeekOfYear.
-            </p>
-            <p>The <emu-xref href="#sec-year-week-record-specification-type"><a href="https://tc39.es/proposal-temporal/#sec-year-week-record-specification-type">Year-Week Record</a></emu-xref> contains <emu-val>undefined</emu-val> in <var class="field">[[Week]]</var> and <var class="field">[[Year]]</var> field for calendars that do not have a well-defined week numbering system.</p>
-            <emu-note><span class="note">Note 5</span><div class="note-contents">
-              Currently, of the calendars supported in this specification, only <emu-val>"iso8601"</emu-val> has a well-defined, locale-independent week numbering system.
-              For all other calendars, the <emu-xref href="#sec-year-week-record-specification-type"><a href="https://tc39.es/proposal-temporal/#sec-year-week-record-specification-type">Year-Week Record</a></emu-xref> fields are <emu-val>undefined</emu-val>.
-            </div></emu-note>
-          </td>
-        </tr>
-        <tr>
-          <td><var class="field">[[DaysInWeek]]</var></td>
-          <td>a positive <emu-xref href="#integer"><a href="https://tc39.es/ecma262/#integer">integer</a></emu-xref></td>
-          <td>The number of days in the date's week.</td>
-        </tr>
-        <tr>
-          <td><var class="field">[[DaysInMonth]]</var></td>
-          <td>a positive <emu-xref href="#integer"><a href="https://tc39.es/ecma262/#integer">integer</a></emu-xref></td>
-          <td>The number of days in the date's month.</td>
-        </tr>
-        <tr>
-          <td><var class="field">[[DaysInYear]]</var></td>
-          <td>a positive <emu-xref href="#integer"><a href="https://tc39.es/ecma262/#integer">integer</a></emu-xref></td>
-          <td>The number of days in the date's year.</td>
-        </tr>
-        <tr>
-          <td><var class="field">[[MonthsInYear]]</var></td>
-          <td>a positive <emu-xref href="#integer"><a href="https://tc39.es/ecma262/#integer">integer</a></emu-xref></td>
-          <td>The number of months in the date's year.</td>
-        </tr>
-        <tr>
-          <td><var class="field">[[InLeapYear]]</var></td>
-          <td>a Boolean</td>
-          <td>
-            <emu-val>true</emu-val> if the date falls within a leap year, and <emu-val>false</emu-val> otherwise.
-            <emu-note><span class="note">Note 6</span><div class="note-contents">
-              A "leap year" is a year that contains more days than other years (for solar or lunar calendars) or more months than other years (for lunisolar calendars like Hebrew or Chinese).
-              Some calendars, especially lunisolar ones, have further variation in year length that is not represented in the output of this operation (e.g., the Hebrew calendar includes common years with 353, 354, or 355 days and leap years with 383, 384, or 385 days).
-            </div></emu-note>
-          </td>
-        </tr>
-      </tbody></table>
-    </figure></emu-table>
-  </emu-clause>
-
-  <emu-clause id="sec-temporal-calendardateera" type="abstract operation" aoid="CalendarDateEra">
-    <h1><span class="secnum">4.6</span> CalendarDateEra ( <var>calendar</var>, <var>date</var> )</h1>
-    <p>The abstract operation CalendarDateEra takes arguments <var>calendar</var> (a String) and <var>date</var> (a Temporal.PlainDateTime, Temporal.PlainDate, or Temporal.PlainYearMonth) and returns a String or <emu-val>undefined</emu-val>. It performs <emu-xref href="#implementation-defined"><a href="https://tc39.es/ecma262/#implementation-defined">implementation-defined</a></emu-xref> processing to find the era for the date corresponding to <var>date</var> in the context of the calendar represented by <var>calendar</var> and returns a lowercase String value representing that era, or <emu-val>undefined</emu-val> for calendars that do not have eras. It performs the following steps when called:</p>
-    <emu-alg><ol><li>If <emu-xref aoid="CalendarSupportsEra" id="_ref_22"><a href="#sec-temporal-calendarsupportsera">CalendarSupportsEra</a></emu-xref>(<var>calendar</var>) is <emu-val>false</emu-val>, return <emu-val>undefined</emu-val>.</li><li>Let <var>era</var> be the String to indicate the era corresponding to <var>date</var> in the context of the calendar represented by <var>calendar</var> from an <emu-xref href="#implementation-defined"><a href="https://tc39.es/ecma262/#implementation-defined">implementation-defined</a></emu-xref> processing.</li><li>Return <emu-xref aoid="CanonicalizeEraInCalendar" id="_ref_23"><a href="#sec-temporal-canonicalizeeraincalendar">CanonicalizeEraInCalendar</a></emu-xref>(<var>calendar</var>, <var>era</var>).</li></ol></emu-alg>
-  </emu-clause>
-
-  <emu-clause id="sec-temporal-calendardateerayear" type="abstract operation" aoid="CalendarDateEraYear">
-    <h1><span class="secnum">4.7</span> CalendarDateEraYear ( <var>calendar</var>, <var>date</var> )</h1>
-    <p>The abstract operation CalendarDateEraYear takes arguments <var>calendar</var> (a String) and <var>date</var> (a Temporal.PlainDateTime, Temporal.PlainDate, or Temporal.PlainYearMonth) and returns an <emu-xref href="#integer"><a href="https://tc39.es/ecma262/#integer">integer</a></emu-xref> or <emu-val>undefined</emu-val>. It performs <emu-xref href="#implementation-defined"><a href="https://tc39.es/ecma262/#implementation-defined">implementation-defined</a></emu-xref> processing to find the era for the date corresponding to <var>date</var> in the context of the calendar represented by <var>calendar</var> and returns an <emu-xref href="#integer"><a href="https://tc39.es/ecma262/#integer">integer</a></emu-xref> representing the ordinal position of the year of <var>date</var> in that era, or <emu-val>undefined</emu-val> for calendars that do not have eras. It performs the following steps when called:</p>
-    
-    <emu-alg><ol><li>If <emu-xref aoid="CalendarSupportsEra" id="_ref_24"><a href="#sec-temporal-calendarsupportsera">CalendarSupportsEra</a></emu-xref>(<var>calendar</var>) is <emu-val>false</emu-val>, return <emu-val>undefined</emu-val>.</li><li>Let <var>eraYear</var> be the <emu-xref href="#integer"><a href="https://tc39.es/ecma262/#integer">integer</a></emu-xref> to indicate the era year corresponding to <var>date</var> in the context of the calendar represented by <var>calendar</var> from an <emu-xref href="#implementation-defined"><a href="https://tc39.es/ecma262/#implementation-defined">implementation-defined</a></emu-xref> processing.</li><li><emu-xref href="#assert"><a href="https://tc39.es/ecma262/#assert">Assert</a></emu-xref>: <var>eraYear</var> is an <emu-xref href="#integer"><a href="https://tc39.es/ecma262/#integer">integer</a></emu-xref>.</li><li>Return <var>eraYear</var>.</li></ol></emu-alg>
-    <emu-note><span class="note">Note</span><div class="note-contents">
-      Era years are 1-indexed for many calendars, but not all (e.g., the eras of the Burmese calendar each start with a year 0). Years can also advance opposite the flow of time (as for BCE years in the Gregorian calendar).
-    </div></emu-note>
-  </emu-clause>
-
-  <emu-clause id="sec-temporal-calendardatearithmeticyear" type="abstract operation" aoid="CalendarDateArithmeticYear">
-    <h1><span class="secnum">4.8</span> CalendarDateArithmeticYear ( <var>calendar</var>, <var>date</var> )</h1>
-    <p>The abstract operation CalendarDateArithmeticYear takes arguments <var>calendar</var> (a <emu-xref href="#sec-ecma402-calendar-types" id="_ref_25"><a href="#sec-ecma402-calendar-types">calendar type</a></emu-xref> that is not <emu-val>"iso8601"</emu-val>) and <var>date</var> (a Temporal.PlainDateTime, Temporal.PlainDate, or Temporal.PlainYearMonth) and returns an <emu-xref href="#integer"><a href="https://tc39.es/ecma262/#integer">integer</a></emu-xref>. It performs <emu-xref href="#implementation-defined"><a href="https://tc39.es/ecma262/#implementation-defined">implementation-defined</a></emu-xref> processing to find the year for the date corresponding to <var>date</var> in the context of the calendar represented by <var>calendar</var> relative to a well-defined epoch year for that calendar. It performs the following steps when called:</p>
-    <emu-alg><ol><li>Let <var>year</var> be <var>date</var>.<var class="field">[[ISOYear]]</var>.</li><li>Let <var>r</var> be the row in <emu-xref href="#table-epoch-years" id="_ref_9"><a href="#table-epoch-years">Table 5</a></emu-xref> which the value of the Calendar column is <var>calendar</var>.</li><li>Let <var>epochYear</var> be the value given in the <emu-val>"Epoch ISO Year"</emu-val> column of <var>r</var>.</li><li>Let <var>arithmeticYear</var> be the number of whole years in the calendar represented by <var>calendar</var> elapsed until the ISO year <var>year</var> since the calendar year that started during ISO year <var>epochYear</var>, according to <emu-xref href="#implementation-defined"><a href="https://tc39.es/ecma262/#implementation-defined">implementation-defined</a></emu-xref> processing.</li><li>Return <var>arithmeticYear</var>.</li></ol></emu-alg>
-
-    <emu-table id="table-epoch-years"><figure><figcaption>Table 5: epoch years</figcaption>
-      
-      <table class="real-table">
-        <thead>
           <tr>
-            <th>Calendar</th>
-            <th>Epoch ISO Year</th>
+            <td><emu-val>"ethiopic"</emu-val></td>
+            <td><emu-val>"am"</emu-val></td>
+            <td><emu-val>"incar"</emu-val></td>
+            <td><emu-val>1</emu-val><sub>𝔽</sub></td>
+            <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
           </tr>
-        </thead>
-        <tbody><tr>
-          <td><emu-val>"buddhist"</emu-val></td>
-          <td>-543</td>
-        </tr>
-        <tr>
-          <td><emu-val>"chinese"</emu-val></td>
-          <td>0</td>
-        </tr>
-        <tr>
-          <td><emu-val>"coptic"</emu-val></td>
-          <td>283</td>
-        </tr>
-        <tr>
-          <td><emu-val>"dangi"</emu-val></td>
-          <td>0</td>
-        </tr>
-        <tr>
-          <td><emu-val>"ethiopic"</emu-val></td>
-          <td>7</td>
-        </tr>
-        <tr>
-          <td><emu-val>"ethioaa"</emu-val></td>
-          <td>-5492</td>
-        </tr>
-        <tr>
-          <td><emu-val>"gregory"</emu-val></td>
-          <td>0</td>
-        </tr>
-        <tr>
-          <td><emu-val>"hebrew"</emu-val></td>
-          <td>-3761</td>
-        </tr>
-        <tr>
-          <td><emu-val>"indian"</emu-val></td>
-          <td>78</td>
-        </tr>
-        <tr>
-          <td><emu-val>"islamic-civil"</emu-val></td>
-          <td>621</td>
-        </tr>
-        <tr>
-          <td><emu-val>"islamic-tbla"</emu-val></td>
-          <td>621</td>
-        </tr>
-        <tr>
-          <td><emu-val>"islamic-umalqura"</emu-val></td>
-          <td>621</td>
-        </tr>
-        <tr>
-          <td><emu-val>"japanese"</emu-val></td>
-          <td>0</td>
-        </tr>
-        <tr>
-          <td><emu-val>"persian"</emu-val></td>
-          <td>621</td>
-        </tr>
-        <tr>
-          <td><emu-val>"roc"</emu-val></td>
-          <td>1911</td>
-        </tr>
-      </tbody></table>
-    </figure></emu-table>
-  </emu-clause>
+          <tr>
+            <td><emu-val>"ethiopic"</emu-val></td>
+            <td><emu-val>"aa"</emu-val></td>
+            <td><emu-val>"mundi"</emu-val></td>
+            <td><emu-val>-∞</emu-val><sub>𝔽</sub></td>
+            <td><emu-val>5500</emu-val><sub>𝔽</sub></td>
+          </tr>
+          <tr>
+            <td><emu-val>"ethioaa"</emu-val></td>
+            <td><emu-val>"aa"</emu-val></td>
+            <td><emu-val>"mundi"</emu-val></td>
+            <td><emu-val>-∞</emu-val><sub>𝔽</sub></td>
+            <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
+          </tr>
+          <tr>
+            <td><emu-val>"gregory"</emu-val></td>
+            <td><emu-val>"ce"</emu-val></td>
+            <td><emu-val>"ad"</emu-val></td>
+            <td><emu-val>1</emu-val><sub>𝔽</sub></td>
+            <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
+          </tr>
+          <tr>
+            <td><emu-val>"gregory"</emu-val></td>
+            <td><emu-val>"bce"</emu-val></td>
+            <td><emu-val>"bc"</emu-val></td>
+            <td><emu-val>1</emu-val><sub>𝔽</sub></td>
+            <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
+          </tr>
+          <tr>
+            <td><emu-val>"hebrew"</emu-val></td>
+            <td><emu-val>"am"</emu-val></td>
+            <td></td>
+            <td><emu-val>-∞</emu-val><sub>𝔽</sub></td>
+            <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
+          </tr>
+          <tr>
+            <td><emu-val>"indian"</emu-val></td>
+            <td><emu-val>"shaka"</emu-val></td>
+            <td></td>
+            <td><emu-val>-∞</emu-val><sub>𝔽</sub></td>
+            <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
+          </tr>
+          <tr>
+            <td><emu-val>"islamic-civil"</emu-val></td>
+            <td><emu-val>"ah"</emu-val></td>
+            <td></td>
+            <td><emu-val>1</emu-val><sub>𝔽</sub></td>
+            <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
+          </tr>
+          <tr>
+            <td><emu-val>"islamic-civil"</emu-val></td>
+            <td><emu-val>"bh"</emu-val></td>
+            <td></td>
+            <td><emu-val>1</emu-val><sub>𝔽</sub></td>
+            <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
+          </tr>
+          <tr>
+            <td><emu-val>"islamic-tbla"</emu-val></td>
+            <td><emu-val>"ah"</emu-val></td>
+            <td></td>
+            <td><emu-val>1</emu-val><sub>𝔽</sub></td>
+            <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
+          </tr>
+          <tr>
+            <td><emu-val>"islamic-tbla"</emu-val></td>
+            <td><emu-val>"bh"</emu-val></td>
+            <td></td>
+            <td><emu-val>1</emu-val><sub>𝔽</sub></td>
+            <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
+          </tr>
+          <tr>
+            <td><emu-val>"islamic-umalqura"</emu-val></td>
+            <td><emu-val>"ah"</emu-val></td>
+            <td></td>
+            <td><emu-val>1</emu-val><sub>𝔽</sub></td>
+            <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
+          </tr>
+          <tr>
+            <td><emu-val>"islamic-umalqura"</emu-val></td>
+            <td><emu-val>"bh"</emu-val></td>
+            <td></td>
+            <td><emu-val>1</emu-val><sub>𝔽</sub></td>
+            <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
+          </tr>
+          <tr>
+            <td><emu-val>"japanese"</emu-val></td>
+            <td><emu-val>"reiwa"</emu-val></td>
+            <td></td>
+            <td><emu-val>1</emu-val><sub>𝔽</sub></td>
+            <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
+          </tr>
+          <tr>
+            <td><emu-val>"japanese"</emu-val></td>
+            <td><emu-val>"heisei"</emu-val></td>
+            <td></td>
+            <td><emu-val>1</emu-val><sub>𝔽</sub></td>
+            <td><emu-val>31</emu-val><sub>𝔽</sub></td>
+          </tr>
+          <tr>
+            <td><emu-val>"japanese"</emu-val></td>
+            <td><emu-val>"showa"</emu-val></td>
+            <td></td>
+            <td><emu-val>1</emu-val><sub>𝔽</sub></td>
+            <td><emu-val>64</emu-val><sub>𝔽</sub></td>
+          </tr>
+          <tr>
+            <td><emu-val>"japanese"</emu-val></td>
+            <td><emu-val>"taisho"</emu-val></td>
+            <td></td>
+            <td><emu-val>1</emu-val><sub>𝔽</sub></td>
+            <td><emu-val>15</emu-val><sub>𝔽</sub></td>
+          </tr>
+          <tr>
+            <td><emu-val>"japanese"</emu-val></td>
+            <td><emu-val>"meiji"</emu-val></td>
+            <td></td>
+            <td><emu-val>1</emu-val><sub>𝔽</sub></td>
+            <td><emu-val>45</emu-val><sub>𝔽</sub></td>
+          </tr>
+          <tr>
+            <td><emu-val>"japanese"</emu-val></td>
+            <td><emu-val>"ce"</emu-val></td>
+            <td><emu-val>"ad"</emu-val></td>
+            <td><emu-val>1</emu-val><sub>𝔽</sub></td>
+            <td><emu-val>1868</emu-val><sub>𝔽</sub></td>
+          </tr>
+          <tr>
+            <td><emu-val>"japanese"</emu-val></td>
+            <td><emu-val>"bce"</emu-val></td>
+            <td><emu-val>"bc"</emu-val></td>
+            <td><emu-val>1</emu-val><sub>𝔽</sub></td>
+            <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
+          </tr>
+          <tr>
+            <td><emu-val>"persian"</emu-val></td>
+            <td><emu-val>"ap"</emu-val></td>
+            <td></td>
+            <td><emu-val>-∞</emu-val><sub>𝔽</sub></td>
+            <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
+          </tr>
+          <tr>
+            <td><emu-val>"roc"</emu-val></td>
+            <td><emu-val>"roc"</emu-val></td>
+            <td><emu-val>"minguo"</emu-val></td>
+            <td><emu-val>1</emu-val><sub>𝔽</sub></td>
+            <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
+          </tr>
+          <tr>
+            <td><emu-val>"roc"</emu-val></td>
+            <td><emu-val>"broc"</emu-val></td>
+            <td><emu-val>"before-roc"</emu-val>, <emu-val>"minguo-qian"</emu-val></td>
+            <td><emu-val>1</emu-val><sub>𝔽</sub></td>
+            <td><emu-val>+∞</emu-val><sub>𝔽</sub></td>
+          </tr>
+        </tbody></table>
+      </figure></emu-table>
+      <emu-note><span class="note">Note</span><div class="note-contents">
+        The content in this table is proposed by Era Code WG to CLDR TC in <a href="https://github.com/unicode-org/cldr/pull/2665">PR 2665</a> and under review. It is targeted to be part of CLDR 43, scheduled to be released in April 2023.
+      </div></emu-note>
+    </emu-clause>
 
-  <emu-clause id="sup-temporal-calendardateadd" type="implementation-defined abstract operation" aoid="CalendarDateAdd">
-    <h1><span class="secnum">4.9</span> CalendarDateAdd ( <var>calendar</var>, <var>isoDate</var>, <var>duration</var>, <var>overflow</var> )</h1>
-    <p>The <emu-xref href="#implementation-defined"><a href="https://tc39.es/ecma262/#implementation-defined">implementation-defined</a></emu-xref> abstract operation CalendarDateAdd takes arguments <var>calendar</var> (a <emu-xref href="#sec-ecma402-calendar-types" id="_ref_26"><a href="#sec-ecma402-calendar-types">calendar type</a></emu-xref>), <var>isoDate</var> (an <emu-xref href="#sec-temporal-iso-date-records"><a href="https://tc39.es/proposal-temporal/#sec-temporal-iso-date-records">ISO Date Record</a></emu-xref>), <var>duration</var> (a <emu-xref href="#sec-temporal-date-duration-records"><a href="https://tc39.es/proposal-temporal/#sec-temporal-date-duration-records">Date Duration Record</a></emu-xref>), and <var>overflow</var> (<emu-const>constrain</emu-const> or <emu-const>reject</emu-const>) and returns either a <emu-xref href="#sec-completion-record-specification-type"><a href="https://tc39.es/ecma262/#sec-completion-record-specification-type">normal completion containing</a></emu-xref> an <emu-xref href="#sec-temporal-iso-date-records"><a href="https://tc39.es/proposal-temporal/#sec-temporal-iso-date-records">ISO Date Record</a></emu-xref> or a <emu-xref href="#sec-completion-record-specification-type"><a href="https://tc39.es/ecma262/#sec-completion-record-specification-type">throw completion</a></emu-xref>. 
-        It adds <var>dateDuration</var> to <var>isoDate</var> using the years, months, and weeks reckoning of <var>calendar</var>.
-        If addition of years or months results in a nonexistent date, depending on <var>overflow</var> it will be coerced to an existing date or the operation will throw.
+    <emu-clause id="sec-temporal-canonicalizeeraincalendar" type="abstract operation" aoid="CanonicalizeEraInCalendar">
+      <h1><span class="secnum">4.1.2</span> CanonicalizeEraInCalendar ( <var>calendar</var>, <var>era</var> )</h1>
+      <p>The abstract operation CanonicalizeEraInCalendar takes arguments <var>calendar</var> (a String) and <var>era</var> (a String) and returns a String or <emu-val>undefined</emu-val>. 
+          The following algorithm refers to the era data from <a href="https://unicode.org/reports/tr35/tr35-dates.html#Calendar_Data">UTS 35's Supplemental Calendar Data</a>.
+         It performs the following steps when called:</p>
+      <emu-alg><ol><li>For each row of <emu-xref href="#table-eras" id="_ref_4"><a href="#table-eras">Table 2</a></emu-xref>, do<ol><li>Let <var>cal</var> be the Calendar value of the current row.</li><li>If <var>cal</var> is equal to <var>calendar</var>, then<ol><li>Let <var>e</var> be the Era value of the current row.</li><li>If <var>e</var> is equal to <var>era</var>, return <var>era</var>.</li><li>Let <var>aliases</var> be a <emu-xref href="#sec-list-and-record-specification-type"><a href="https://tc39.es/ecma262/#sec-list-and-record-specification-type">List</a></emu-xref> whose elements are the strings given in the Aliases column of the row.</li><li>If <var>aliases</var> contains <var>era</var>, return <var>era</var>.</li></ol></li></ol></li><li>Return <emu-val>undefined</emu-val>.</li></ol></emu-alg>
+    </emu-clause>
+
+    <emu-clause id="sec-temporal-isvalidmonthecodeforcalendar" type="abstract operation" aoid="IsValidMonthCodeForCalendar">
+      <h1><span class="secnum">4.1.3</span> IsValidMonthCodeForCalendar ( <var>calendar</var>, <var>monthCode</var> )</h1>
+      <p>The abstract operation IsValidMonthCodeForCalendar takes arguments <var>calendar</var> (a String) and <var>monthCode</var> (a String) and returns a Boolean. It performs the following steps when called:</p>
+      <emu-alg><ol><li>Let <var>commonMonthCodes</var> be « <emu-val>"M01"</emu-val>, <emu-val>"M02"</emu-val>, <emu-val>"M03"</emu-val>, <emu-val>"M04"</emu-val>, <emu-val>"M05"</emu-val>, <emu-val>"M06"</emu-val>, <emu-val>"M07"</emu-val>, <emu-val>"M08"</emu-val>, <emu-val>"M09"</emu-val>, <emu-val>"M10"</emu-val>, <emu-val>"M11"</emu-val>, <emu-val>"M12"</emu-val>&nbsp;».</li><li>If <var>commonMonthCodes</var> contains <var>monthCode</var>, return <emu-val>true</emu-val>.</li><li>If <var>calendar</var> is not listed in the Calendar column of <emu-xref href="#table-additional-month-codes" id="_ref_5"><a href="#table-additional-month-codes">Table 3</a></emu-xref>, return <emu-val>false</emu-val>.</li><li>Let <var>r</var> be the row in <emu-xref href="#table-additional-month-codes" id="_ref_6"><a href="#table-additional-month-codes">Table 3</a></emu-xref> which the <var>calendar</var> is in the Calendar column.</li><li>Let <var>specialMonthCodes</var> be a <emu-xref href="#sec-list-and-record-specification-type"><a href="https://tc39.es/ecma262/#sec-list-and-record-specification-type">List</a></emu-xref> whose elements are the strings given in the <emu-val>"Additional Month Codes"</emu-val> column of <var>r</var>.</li><li>If <var>specialMonthCodes</var> contains <var>monthCode</var>, return <emu-val>true</emu-val>.</li><li>Return <emu-val>false</emu-val>.</li></ol></emu-alg>
+
+      <emu-table id="table-additional-month-codes"><figure><figcaption>Table 3: Additional Month Codes in Calendars</figcaption>
+        
+        <table class="real-table">
+          <thead>
+            <tr>
+              <th>Calendar</th>
+              <th>Additional Month Codes</th>
+            </tr>
+          </thead>
+          <tbody><tr>
+            <td><emu-val>"chinese"</emu-val></td>
+            <td><emu-val>"M01L"</emu-val>, <emu-val>"M02L"</emu-val>, <emu-val>"M03L"</emu-val>, <emu-val>"M04L"</emu-val>, <emu-val>"M05L"</emu-val>, <emu-val>"M06L"</emu-val>, <emu-val>"M07L"</emu-val>, <emu-val>"M08L"</emu-val>, <emu-val>"M09L"</emu-val>, <emu-val>"M10L"</emu-val>, <emu-val>"M11L"</emu-val>, <emu-val>"M12L"</emu-val></td>
+          </tr>
+          <tr>
+            <td><emu-val>"coptic"</emu-val></td>
+            <td><emu-val>"M13"</emu-val></td>
+          </tr>
+          <tr>
+            <td><emu-val>"dangi"</emu-val></td>
+            <td><emu-val>"M01L"</emu-val>, <emu-val>"M02L"</emu-val>, <emu-val>"M03L"</emu-val>, <emu-val>"M04L"</emu-val>, <emu-val>"M05L"</emu-val>, <emu-val>"M06L"</emu-val>, <emu-val>"M07L"</emu-val>, <emu-val>"M08L"</emu-val>, <emu-val>"M09L"</emu-val>, <emu-val>"M10L"</emu-val>, <emu-val>"M11L"</emu-val>, <emu-val>"M12L"</emu-val></td>
+          </tr>
+          <tr>
+            <td><emu-val>"ethiopic"</emu-val></td>
+            <td><emu-val>"M13"</emu-val></td>
+          </tr>
+          <tr>
+            <td><emu-val>"ethioaa"</emu-val></td>
+            <td><emu-val>"M13"</emu-val></td>
+          </tr>
+          <tr>
+            <td><emu-val>"hebrew"</emu-val></td>
+            <td><emu-val>"M05L"</emu-val></td>
+          </tr>
+        </tbody></table>
+      </figure></emu-table>
+    </emu-clause>
+
+    <emu-clause id="sec-temporal-isvaliderayearforcalendar" type="abstract operation" aoid="IsValidEraYearForCalendar">
+      <h1><span class="secnum">4.1.4</span> IsValidEraYearForCalendar ( <var>calendar</var>, <var>era</var>, <var>eraYear</var> )</h1>
+      <p>The abstract operation IsValidEraYearForCalendar takes arguments <var>calendar</var> (a String), <var>era</var> (a String), and <var>eraYear</var> (a <emu-xref href="#integer"><a href="https://tc39.es/ecma262/#integer">integer</a></emu-xref>) and returns a Boolean. 
+          The following algorithm refers to the era data from <a href="https://unicode.org/reports/tr35/tr35-dates.html#Calendar_Data">UTS 35's Supplemental Calendar Data</a>.
+         It performs the following steps when called:</p>
+      <emu-alg><ol><li>Let <var>era</var> be <emu-xref aoid="CanonicalizeEraInCalendar" id="_ref_15"><a href="#sec-temporal-canonicalizeeraincalendar">CanonicalizeEraInCalendar</a></emu-xref>(<var>calendar</var>, <var>era</var>).</li><li>If <var>era</var> is <emu-val>undefined</emu-val>, return <emu-val>false</emu-val>.</li><li>Let <var>r</var> be the row in <emu-xref href="#table-eras" id="_ref_7"><a href="#table-eras">Table 2</a></emu-xref> which the <var>calendar</var> is in the Calendar column and the <var>era</var> is in the Era column.</li><li>Let <var>min</var> be the value given in the <emu-val>"Minimum eraYear"</emu-val> column of <var>r</var>.</li><li>Let <var>max</var> be the value given in the <emu-val>"Maximum eraYear"</emu-val> column of <var>r</var>.</li><li>If <var>eraYear</var> &lt; <var>min</var>, return <emu-val>false</emu-val>.</li><li>If <var>eraYear</var> &gt; <var>max</var>, return <emu-val>false</emu-val>.</li><li>Return <emu-val>true</emu-val>.</li></ol></emu-alg>
+    </emu-clause>
+
+    <emu-clause id="sup-temporal-calendar-date-records">
+      <h1><span class="secnum">4.1.5</span> Calendar Date Records</h1>
+      <p>
+        A <dfn variants="Calendar Date Records" tabindex="-1">Calendar Date Record</dfn> is a <emu-xref href="#sec-list-and-record-specification-type"><a href="https://tc39.es/ecma262/#sec-list-and-record-specification-type">Record</a></emu-xref> value used to represent a valid calendar date in a non-ISO 8601 calendar.
+        Calendar Date Records are produced by the abstract operation <emu-xref aoid="CalendarISOToDate"><a href="https://tc39.es/proposal-temporal/#sec-temporal-calendarisotodate">CalendarISOToDate</a></emu-xref>.
       </p>
-    <p>This definition supersedes the definition provided in <emu-xref href="#sec-temporal-calendardateadd"><a href="https://tc39.es/proposal-temporal/#sec-temporal-calendardateadd">Temporal, 12.2.6</a></emu-xref>.</p>
-    <p>It performs the following steps when called:</p>
-    <emu-alg><ol><li>If <var>calendar</var> is <emu-val>"iso8601"</emu-val>, then<ol><li>Let <var>intermediate</var> be <emu-xref aoid="BalanceISOYearMonth"><a href="https://tc39.es/proposal-temporal/#sec-temporal-balanceisoyearmonth">BalanceISOYearMonth</a></emu-xref>(<var>isoDate</var>.<var class="field">[[Year]]</var> + <var>duration</var>.<var class="field">[[Years]]</var>, <var>isoDate</var>.<var class="field">[[Month]]</var> + <var>duration</var>.<var class="field">[[Months]]</var>).</li><li>Set <var>intermediate</var> to ?&nbsp;<emu-xref aoid="RegulateISODate"><a href="https://tc39.es/proposal-temporal/#sec-temporal-regulateisodate">RegulateISODate</a></emu-xref>(<var>intermediate</var>.<var class="field">[[Year]]</var>, <var>intermediate</var>.<var class="field">[[Month]]</var>, <var>isoDate</var>.<var class="field">[[Day]]</var>, <var>overflow</var>).</li><li>Let <var>d</var> be <var>intermediate</var>.<var class="field">[[Day]]</var> + <var>duration</var>.<var class="field">[[Days]]</var> + 7 × <var>duration</var>.<var class="field">[[Weeks]]</var>.</li><li>Let <var>result</var> be <emu-xref aoid="BalanceISODate"><a href="https://tc39.es/proposal-temporal/#sec-temporal-balanceisodate">BalanceISODate</a></emu-xref>(<var>intermediate</var>.<var class="field">[[Year]]</var>, <var>intermediate</var>.<var class="field">[[Month]]</var>, <var>d</var>).</li></ol></li><li>Else,<ol><li>NOTE: The algorithm when <var>calendar</var> is not <emu-val>"iso8601"</emu-val> is <emu-xref href="#implementation-defined"><a href="https://tc39.es/ecma262/#implementation-defined">implementation-defined</a></emu-xref>, but all calendars follow the general steps given here, which is a generalization of the precise algorithm specified above for <emu-val>"iso8601"</emu-val>.</li><li>Let <var>calendarDate</var> be <emu-xref aoid="CalendarISOToDate"><a href="https://tc39.es/proposal-temporal/#sec-temporal-calendarisotodate">CalendarISOToDate</a></emu-xref>(<var>calendar</var>, <var>isoDate</var>).</li><li>Add <var>duration</var>.<var class="field">[[Years]]</var> to <var>calendarDate</var>.</li><li>(This step only matters for lunisolar calendars.) If <var>calendarDate</var>.<var class="field">[[MonthCode]]</var> is a leap month that doesn't exist in the year, then:<ol><li>If <var>overflow</var> is <emu-const>reject</emu-const>, throw a <emu-val>RangeError</emu-val> exception.</li><li>Set <var>calendarDate</var> to another date according to the cultural conventions of that calendar's users. Of the currently supported calendars: if <var>calendar</var> is <emu-val>"chinese"</emu-val> or <emu-val>"dangi"</emu-val>, change <var>calendarDate</var>.<var class="field">[[MonthCode]]</var> to the same month code but without the <emu-val>"L"</emu-val>. If <var>calendar</var> is <emu-val>"hebrew"</emu-val>, change <var>calendarDate</var>.<var class="field">[[MonthCode]]</var> from <emu-val>"M05L"</emu-val> to <emu-val>"M06"</emu-val>.</li><li>Update <var>calendarDate</var>.<var class="field">[[Month]]</var> accordingly.</li></ol></li><li>Add <var>duration</var>.<var class="field">[[Months]]</var> to <var>calendarDate</var>, balancing <var>calendarDate</var> if it goes over a year boundary.</li><li>If the date described by <var>calendarDate</var> does not exist, then<ol><li>If <var>overflow</var> is <emu-const>reject</emu-const>, throw a <emu-val>RangeError</emu-val> exception.</li><li>If <var>calendarDate</var>.<var class="field">[[MonthCode]]</var> is a valid month code for <var>calendarDate</var>.<var class="field">[[Year]]</var>, but the date described by <var>calendarDate</var> does not exist, set <var>calendarDate</var>.<var class="field">[[Day]]</var> to the closest day in the same month. If there are two equally-close dates in the same month, pick the later one.</li><li>(This step does not apply to any currently supported calendars.) If the date described by <var>calendarDate</var> still does not exist, set <var>calendarDate</var> to the closest date in the same year. If there are two equally-close dates in that year, pick the later one.</li></ol></li><li>Add <var>duration</var>.<var class="field">[[Weeks]]</var> and <var>duration</var>.<var class="field">[[Days]]</var> to <var>calendarDate</var>, balancing <var>calendarDate</var> if it goes over a month or year boundary.</li><li>Let <var>result</var> be ?&nbsp;<emu-xref aoid="CalendarDateToISO" id="_ref_27"><a href="#sup-temporal-calendardatetoiso">CalendarDateToISO</a></emu-xref>(<var>calendar</var>, <var>calendarDate</var>, <var>overflow</var>).</li></ol></li><li>If <emu-xref aoid="ISODateWithinLimits"><a href="https://tc39.es/proposal-temporal/#sec-temporal-isodatewithinlimits">ISODateWithinLimits</a></emu-xref>(<var>result</var>) is <emu-val>false</emu-val>, throw a <emu-val>RangeError</emu-val> exception.</li><li>Return <var>result</var>.</li></ol></emu-alg>
-  </emu-clause>
+      <p>Calendar Date Records have the fields listed in <emu-xref href="#table-temporal-calendar-date-record-fields" id="_ref_8"><a href="#table-temporal-calendar-date-record-fields">Table 4</a></emu-xref>.</p>
+      <p>This definition supersedes the one in <emu-xref href="#sec-temporal-calendar-date-records"><a href="https://tc39.es/proposal-temporal/#sec-temporal-calendar-date-records">Calendar Date Records</a></emu-xref>.</p>
+      <emu-table id="table-temporal-calendar-date-record-fields" caption="Calendar Date Record Fields"><figure><figcaption>Table 4: <emu-xref href="#sup-temporal-calendar-date-records" id="_ref_16"><a href="#sup-temporal-calendar-date-records">Calendar Date Record</a></emu-xref> Fields</figcaption>
+        <table class="real-table">
+          <tbody><tr>
+            <th>Field Name</th>
+            <th>Value</th>
+            <th>Meaning</th>
+          </tr>
+          <tr>
+            <td><var class="field">[[Era]]</var></td>
+            <td>a String or <emu-val>undefined</emu-val></td>
+            <td>
+              A lowercase String value representing the date's era, or <emu-val>undefined</emu-val> for calendars that do not have eras.<br>
+              The value of this field for a calendar with the identifier <var>calendar</var> should be the result of calling <emu-xref aoid="CalendarDateEra" id="_ref_17"><a href="#sec-temporal-calendardateera">CalendarDateEra</a></emu-xref>(<var>calendar</var>, <var>date</var>), where <var>date</var> is a Temporal.PlainDateTime, Temporal.PlainDate, or Temporal.PlainYearMonth value corresponding to the date.
+            </td>
+          </tr>
+          <tr>
+            <td><var class="field">[[EraYear]]</var></td>
+            <td>an <emu-xref href="#integer"><a href="https://tc39.es/ecma262/#integer">integer</a></emu-xref> or <emu-val>undefined</emu-val></td>
+            <td>
+              The ordinal position of the date's year within its era, or <emu-val>undefined</emu-val> for calendars that do not have eras.<br>
+              The value of this field for a calendar with the identifier <var>calendar</var> should be the result of calling <emu-xref aoid="CalendarDateEraYear" id="_ref_18"><a href="#sec-temporal-calendardateerayear">CalendarDateEraYear</a></emu-xref>(<var>calendar</var>, <var>date</var>), where <var>date</var> is a Temporal.PlainDateTime, Temporal.PlainDate, or Temporal.PlainYearMonth value corresponding to the date.
+              <emu-note><span class="note">Note 1</span><div class="note-contents">
+                Era years are 1-indexed for many calendars, but not all (e.g., the eras of the Burmese calendar each start with a year 0). Years can also advance opposite the flow of time (as for BCE years in the Gregorian calendar).
+              </div></emu-note>
+            </td>
+          </tr>
+          <tr>
+            <td><var class="field">[[Year]]</var></td>
+            <td>an <emu-xref href="#integer"><a href="https://tc39.es/ecma262/#integer">integer</a></emu-xref></td>
+            <td>
+              The date's year relative to the first day of a calendar-specific "epoch year".<br>
+              The value of this field for a calendar with the identifier <var>calendar</var> should be the result of calling <emu-xref aoid="CalendarDateArithmeticYear" id="_ref_19"><a href="#sec-temporal-calendardatearithmeticyear">CalendarDateArithmeticYear</a></emu-xref>(<var>calendar</var>, <var>date</var>), where <var>date</var> is a Temporal.PlainDateTime, Temporal.PlainDate, or Temporal.PlainYearMonth value corresponding to the date.
+              <emu-note><span class="note">Note 2</span><div class="note-contents">The year is relative to the first day of the calendar's epoch year, so if the epoch era starts in the middle of the year, the year will be the same value before and after the start date of the era.</div></emu-note>
+            </td>
+          </tr>
+          <tr>
+            <td><var class="field">[[Month]]</var></td>
+            <td>a positive <emu-xref href="#integer"><a href="https://tc39.es/ecma262/#integer">integer</a></emu-xref></td>
+            <td>
+              The 1-based ordinal position of the date's month within its year.
+              <emu-note><span class="note">Note 3</span><div class="note-contents">
+                When the number of months in a year of the calendar is variable, a different value can be returned for dates that are part of the same month in different years. For example, in the Hebrew calendar, 1 Nisan 5781 is associated with value 7 while 1 Nisan 5782 is associated with value 8 because 5782 is a leap year and Nisan follows the insertion of Adar I.
+              </div></emu-note>
+            </td>
+          </tr>
+          <tr>
+            <td><var class="field">[[MonthCode]]</var></td>
+            <td>a String</td>
+            <td>
+              The month code of the date's month. The month code for a month that is not a leap month and whose 1-based ordinal position in a common year of the calendar (i.e., a year that is not a leap year) is <var>n</var> should be the <emu-xref href="#string-concatenation"><a href="https://tc39.es/ecma262/#string-concatenation">string-concatenation</a></emu-xref> of <emu-val>"M"</emu-val> and <emu-xref aoid="ToZeroPaddedDecimalString"><a href="https://tc39.es/ecma262/#sec-tozeropaddeddecimalstring">ToZeroPaddedDecimalString</a></emu-xref>(<var>n</var>, 2), and the month code for a month that is a leap month inserted after a month whose 1-based ordinal position in a common year of the calendar is <var>p</var> should be the <emu-xref href="#string-concatenation"><a href="https://tc39.es/ecma262/#string-concatenation">string-concatenation</a></emu-xref> of <emu-val>"M"</emu-val>, <emu-xref aoid="ToZeroPaddedDecimalString"><a href="https://tc39.es/ecma262/#sec-tozeropaddeddecimalstring">ToZeroPaddedDecimalString</a></emu-xref>(<var>p</var>, 2), and <emu-val>"L"</emu-val>.
+              <emu-note><span class="note">Note 4</span><div class="note-contents">
+                For example, in the Hebrew calendar, the month code of Adar (and Adar II, in leap years) is <emu-val>"M06"</emu-val> and the month code of Adar I (the leap month inserted before Adar II) is <emu-val>"M05L"</emu-val>. In a calendar with a leap month at the start of some years, the month code of that month would be <emu-val>"M00L"</emu-val>.
+              </div></emu-note>
+            </td>
+          </tr>
+          <tr>
+            <td><var class="field">[[Day]]</var></td>
+            <td>a positive <emu-xref href="#integer"><a href="https://tc39.es/ecma262/#integer">integer</a></emu-xref></td>
+            <td>
+              The 1-based ordinal position of the date's day within its month.
+            </td>
+          </tr>
+          <tr>
+            <td><var class="field">[[DayOfWeek]]</var></td>
+            <td>a positive <emu-xref href="#integer"><a href="https://tc39.es/ecma262/#integer">integer</a></emu-xref></td>
+            <td>
+              The day of the week corresponding to the date. The value should be 1-based, where 1 is the day corresponding to Monday in the given calendar.
+            </td>
+          </tr>
+          <tr>
+            <td><var class="field">[[DayOfYear]]</var></td>
+            <td>a positive <emu-xref href="#integer"><a href="https://tc39.es/ecma262/#integer">integer</a></emu-xref></td>
+            <td>
+              The 1-based ordinal position of the date's day within its year.
+            </td>
+          </tr>
+          <tr>
+            <td><var class="field">[[WeekOfYear]]</var></td>
+            <td>a <emu-xref href="#sec-year-week-record-specification-type"><a href="https://tc39.es/proposal-temporal/#sec-year-week-record-specification-type">Year-Week Record</a></emu-xref></td>
+            <td>
+              <p>The date's <em>calendar week of year</em>, and the corresponding <em>week calendar year</em>.</p>
+              <p>The <emu-xref href="#sec-year-week-record-specification-type"><a href="https://tc39.es/proposal-temporal/#sec-year-week-record-specification-type">Year-Week Record</a></emu-xref>'s <var class="field">[[Week]]</var> field should be 1-based.</p>
+              <p>The <emu-xref href="#sec-year-week-record-specification-type"><a href="https://tc39.es/proposal-temporal/#sec-year-week-record-specification-type">Year-Week Record</a></emu-xref>'s <var class="field">[[Year]]</var> field is relative to the first day of a calendar-specific "epoch year", as in the <emu-xref href="#sup-temporal-calendar-date-records" id="_ref_20"><a href="#sup-temporal-calendar-date-records">Calendar Date Record</a></emu-xref>'s <var class="field">[[Year]]</var> field, not relative to an era as in <var class="field">[[EraYear]]</var>.</p>
+              <p>
+                Usually the <emu-xref href="#sec-year-week-record-specification-type"><a href="https://tc39.es/proposal-temporal/#sec-year-week-record-specification-type">Year-Week Record</a></emu-xref>'s <var class="field">[[Year]]</var> field will contain the same value as the <emu-xref href="#sup-temporal-calendar-date-records" id="_ref_21"><a href="#sup-temporal-calendar-date-records">Calendar Date Record</a></emu-xref>'s <var class="field">[[Year]]</var> field, but may contain the previous or next year if the week number in the <emu-xref href="#sec-year-week-record-specification-type"><a href="https://tc39.es/proposal-temporal/#sec-year-week-record-specification-type">Year-Week Record</a></emu-xref>'s <var class="field">[[Week]]</var> field overlaps two different years.
+                See also ISOWeekOfYear.
+              </p>
+              <p>The <emu-xref href="#sec-year-week-record-specification-type"><a href="https://tc39.es/proposal-temporal/#sec-year-week-record-specification-type">Year-Week Record</a></emu-xref> contains <emu-val>undefined</emu-val> in <var class="field">[[Week]]</var> and <var class="field">[[Year]]</var> field for calendars that do not have a well-defined week numbering system.</p>
+              <emu-note><span class="note">Note 5</span><div class="note-contents">
+                Currently, of the calendars supported in this specification, only <emu-val>"iso8601"</emu-val> has a well-defined, locale-independent week numbering system.
+                For all other calendars, the <emu-xref href="#sec-year-week-record-specification-type"><a href="https://tc39.es/proposal-temporal/#sec-year-week-record-specification-type">Year-Week Record</a></emu-xref> fields are <emu-val>undefined</emu-val>.
+              </div></emu-note>
+            </td>
+          </tr>
+          <tr>
+            <td><var class="field">[[DaysInWeek]]</var></td>
+            <td>a positive <emu-xref href="#integer"><a href="https://tc39.es/ecma262/#integer">integer</a></emu-xref></td>
+            <td>The number of days in the date's week.</td>
+          </tr>
+          <tr>
+            <td><var class="field">[[DaysInMonth]]</var></td>
+            <td>a positive <emu-xref href="#integer"><a href="https://tc39.es/ecma262/#integer">integer</a></emu-xref></td>
+            <td>The number of days in the date's month.</td>
+          </tr>
+          <tr>
+            <td><var class="field">[[DaysInYear]]</var></td>
+            <td>a positive <emu-xref href="#integer"><a href="https://tc39.es/ecma262/#integer">integer</a></emu-xref></td>
+            <td>The number of days in the date's year.</td>
+          </tr>
+          <tr>
+            <td><var class="field">[[MonthsInYear]]</var></td>
+            <td>a positive <emu-xref href="#integer"><a href="https://tc39.es/ecma262/#integer">integer</a></emu-xref></td>
+            <td>The number of months in the date's year.</td>
+          </tr>
+          <tr>
+            <td><var class="field">[[InLeapYear]]</var></td>
+            <td>a Boolean</td>
+            <td>
+              <emu-val>true</emu-val> if the date falls within a leap year, and <emu-val>false</emu-val> otherwise.
+              <emu-note><span class="note">Note 6</span><div class="note-contents">
+                A "leap year" is a year that contains more days than other years (for solar or lunar calendars) or more months than other years (for lunisolar calendars like Hebrew or Chinese).
+                Some calendars, especially lunisolar ones, have further variation in year length that is not represented in the output of this operation (e.g., the Hebrew calendar includes common years with 353, 354, or 355 days and leap years with 383, 384, or 385 days).
+              </div></emu-note>
+            </td>
+          </tr>
+        </tbody></table>
+      </figure></emu-table>
+    </emu-clause>
 
-  <emu-clause id="sup-temporal-calendardateuntil" type="implementation-defined abstract operation" aoid="CalendarDateUntil">
-    <h1><span class="secnum">4.10</span> CalendarDateUntil ( <var>calendar</var>, <var>one</var>, <var>two</var>, <var>largestUnit</var> )</h1>
-    <p>The <emu-xref href="#implementation-defined"><a href="https://tc39.es/ecma262/#implementation-defined">implementation-defined</a></emu-xref> abstract operation CalendarDateUntil takes arguments <var>calendar</var> (a <emu-xref href="#sec-ecma402-calendar-types" id="_ref_28"><a href="#sec-ecma402-calendar-types">calendar type</a></emu-xref>), <var>one</var> (an <emu-xref href="#sec-temporal-iso-date-records"><a href="https://tc39.es/proposal-temporal/#sec-temporal-iso-date-records">ISO Date Record</a></emu-xref>), <var>two</var> (an <emu-xref href="#sec-temporal-iso-date-records"><a href="https://tc39.es/proposal-temporal/#sec-temporal-iso-date-records">ISO Date Record</a></emu-xref>), and <var>largestUnit</var> (a date unit) and returns a <emu-xref href="#sec-temporal-date-duration-records"><a href="https://tc39.es/proposal-temporal/#sec-temporal-date-duration-records">Date Duration Record</a></emu-xref>. 
-        It determines the difference between the dates <var>one</var> and <var>two</var> using the years, months, and weeks reckoning of <var>calendar</var>.
-        No fields larger than <var>largestUnit</var> will be non-zero in the resulting <emu-xref href="#sec-temporal-date-duration-records"><a href="https://tc39.es/proposal-temporal/#sec-temporal-date-duration-records">Date Duration Record</a></emu-xref>.
-      </p>
-    <p>This definition supersedes the definition provided in <emu-xref href="#sec-temporal-calendardateuntil"><a href="https://tc39.es/proposal-temporal/#sec-temporal-calendardateuntil">Temporal, 12.2.7</a></emu-xref>.</p>
-    <p>It performs the following steps when called:</p>
-    <emu-alg><ol><li>If <var>calendar</var> is <emu-val>"iso8601"</emu-val>, then<ol><li>Let <var>sign</var> be -<emu-xref aoid="CompareISODate"><a href="https://tc39.es/proposal-temporal/#sec-temporal-compareisodate">CompareISODate</a></emu-xref>(<var>one</var>, <var>two</var>).</li><li>If <var>sign</var> = 0, return <emu-xref aoid="ZeroDateDuration"><a href="https://tc39.es/proposal-temporal/#sec-temporal-zerodateduration">ZeroDateDuration</a></emu-xref>().</li><li>Let <var>years</var> be 0.</li><li>If <var>largestUnit</var> is <emu-const>year</emu-const>, then<ol><li>Let <var>candidateYears</var> be <var>sign</var>.</li><li>Repeat, while <emu-xref aoid="ISODateSurpasses"><a href="https://tc39.es/proposal-temporal/#sec-temporal-isodatesurpasses">ISODateSurpasses</a></emu-xref>(<var>sign</var>, <var>one</var>.<var class="field">[[Year]]</var> + <var>candidateYears</var>, <var>one</var>.<var class="field">[[Month]]</var>, <var>one</var>.<var class="field">[[Day]]</var>, <var>two</var>) is <emu-val>false</emu-val>,<ol><li>Set <var>years</var> to <var>candidateYears</var>.</li><li>Set <var>candidateYears</var> to <var>candidateYears</var> + <var>sign</var>.</li></ol></li></ol></li><li>Let <var>months</var> be 0.</li><li>If <var>largestUnit</var> is <emu-const>year</emu-const> or <var>largestUnit</var> is <emu-const>month</emu-const>, then<ol><li>Let <var>candidateMonths</var> be <var>sign</var>.</li><li>Let <var>intermediate</var> be <emu-xref aoid="BalanceISOYearMonth"><a href="https://tc39.es/proposal-temporal/#sec-temporal-balanceisoyearmonth">BalanceISOYearMonth</a></emu-xref>(<var>one</var>.<var class="field">[[Year]]</var> + <var>years</var>, <var>one</var>.<var class="field">[[Month]]</var> + <var>candidateMonths</var>).</li><li>Repeat, while <emu-xref aoid="ISODateSurpasses"><a href="https://tc39.es/proposal-temporal/#sec-temporal-isodatesurpasses">ISODateSurpasses</a></emu-xref>(<var>sign</var>, <var>intermediate</var>.<var class="field">[[Year]]</var>, <var>intermediate</var>.<var class="field">[[Month]]</var>, <var>one</var>.<var class="field">[[Day]]</var>, <var>two</var>) is <emu-val>false</emu-val>,<ol><li>Set <var>months</var> to <var>candidateMonths</var>.</li><li>Set <var>candidateMonths</var> to <var>candidateMonths</var> + <var>sign</var>.</li><li>Set <var>intermediate</var> to <emu-xref aoid="BalanceISOYearMonth"><a href="https://tc39.es/proposal-temporal/#sec-temporal-balanceisoyearmonth">BalanceISOYearMonth</a></emu-xref>(<var>intermediate</var>.<var class="field">[[Year]]</var>, <var>intermediate</var>.<var class="field">[[Month]]</var> + <var>sign</var>).</li></ol></li></ol></li><li>Set <var>intermediate</var> to <emu-xref aoid="BalanceISOYearMonth"><a href="https://tc39.es/proposal-temporal/#sec-temporal-balanceisoyearmonth">BalanceISOYearMonth</a></emu-xref>(<var>one</var>.<var class="field">[[Year]]</var> + <var>years</var>, <var>one</var>.<var class="field">[[Month]]</var> + <var>months</var>).</li><li>Let <var>constrained</var> be !&nbsp;<emu-xref aoid="RegulateISODate"><a href="https://tc39.es/proposal-temporal/#sec-temporal-regulateisodate">RegulateISODate</a></emu-xref>(<var>intermediate</var>.<var class="field">[[Year]]</var>, <var>intermediate</var>.<var class="field">[[Month]]</var>, <var>one</var>.<var class="field">[[Day]]</var>, <emu-const>constrain</emu-const>).</li><li>Let <var>weeks</var> be 0.</li><li>If <var>largestUnit</var> is <emu-const>week</emu-const>, then<ol><li>Let <var>candidateWeeks</var> be <var>sign</var>.</li><li>Set <var>intermediate</var> to <emu-xref aoid="BalanceISODate"><a href="https://tc39.es/proposal-temporal/#sec-temporal-balanceisodate">BalanceISODate</a></emu-xref>(<var>constrained</var>.<var class="field">[[Year]]</var>, <var>constrained</var>.<var class="field">[[Month]]</var>, <var>constrained</var>.<var class="field">[[Day]]</var> + 7 × <var>candidateWeeks</var>).</li><li>Repeat, while <emu-xref aoid="ISODateSurpasses"><a href="https://tc39.es/proposal-temporal/#sec-temporal-isodatesurpasses">ISODateSurpasses</a></emu-xref>(<var>sign</var>, <var>intermediate</var>.<var class="field">[[Year]]</var>, <var>intermediate</var>.<var class="field">[[Month]]</var>, <var>intermediate</var>.<var class="field">[[Day]]</var>, <var>two</var>) is <emu-val>false</emu-val>,<ol><li>Set <var>weeks</var> to <var>candidateWeeks</var>.</li><li>Set <var>candidateWeeks</var> to <var>candidateWeeks</var> + sign.</li><li>Set <var>intermediate</var> to <emu-xref aoid="BalanceISODate"><a href="https://tc39.es/proposal-temporal/#sec-temporal-balanceisodate">BalanceISODate</a></emu-xref>(<var>intermediate</var>.<var class="field">[[Year]]</var>, <var>intermediate</var>.<var class="field">[[Month]]</var>, <var>intermediate</var>.<var class="field">[[Day]]</var> + 7 × <var>sign</var>).</li></ol></li></ol></li><li>Let <var>days</var> be 0.</li><li>Let <var>candidateDays</var> be <var>sign</var>.</li><li>Set <var>intermediate</var> to <emu-xref aoid="BalanceISODate"><a href="https://tc39.es/proposal-temporal/#sec-temporal-balanceisodate">BalanceISODate</a></emu-xref>(<var>constrained</var>.<var class="field">[[Year]]</var>, <var>constrained</var>.<var class="field">[[Month]]</var>, <var>constrained</var>.<var class="field">[[Day]]</var> + 7 × <var>weeks</var> + <var>candidateDays</var>).</li><li>Repeat, while <emu-xref aoid="ISODateSurpasses"><a href="https://tc39.es/proposal-temporal/#sec-temporal-isodatesurpasses">ISODateSurpasses</a></emu-xref>(<var>sign</var>, <var>intermediate</var>.<var class="field">[[Year]]</var>, <var>intermediate</var>.<var class="field">[[Month]]</var>, <var>intermediate</var>.<var class="field">[[Day]]</var>, <var>two</var>) is <emu-val>false</emu-val>,<ol><li>Set <var>days</var> to <var>candidateDays</var>.</li><li>Set <var>candidateDays</var> to <var>candidateDays</var> + <var>sign</var>.</li><li>Set <var>intermediate</var> to <emu-xref aoid="BalanceISODate"><a href="https://tc39.es/proposal-temporal/#sec-temporal-balanceisodate">BalanceISODate</a></emu-xref>(<var>intermediate</var>.<var class="field">[[Year]]</var>, <var>intermediate</var>.<var class="field">[[Month]]</var>, <var>intermediate</var>.<var class="field">[[Day]]</var> + <var>sign</var>).</li></ol></li><li>Return !&nbsp;<emu-xref aoid="CreateDateDurationRecord"><a href="https://tc39.es/proposal-temporal/#sec-temporal-createdatedurationrecord">CreateDateDurationRecord</a></emu-xref>(<var>years</var>, <var>months</var>, <var>weeks</var>, <var>days</var>).</li></ol></li><li>NOTE: The algorithm when <var>calendar</var> is not <emu-val>"iso8601"</emu-val> is <emu-xref href="#implementation-defined"><a href="https://tc39.es/ecma262/#implementation-defined">implementation-defined</a></emu-xref>, but all calendars follow the general steps given here, which is a generalization of the precise algorithm specified above for <emu-val>"iso8601"</emu-val>.</li><li>If <var>largestUnit</var> is <emu-const>year</emu-const>, then<ol><li>Add (without constraining) as many years as possible to <var>one</var>, in the direction from <var>one</var> to <var>two</var>, without surpassing <var>two</var>. "Surpassing" here (and in all steps below) means to compare years numerically, then month codes lexicographically, then days numerically; if any of them exceed <var>two</var> in the direction from <var>one</var> to <var>two</var>, then <var>two</var> is surpassed.</li><li>Constrain <var>one</var> to a real year and month, not taking day into account. This step only matters for lunisolar calendars.</li></ol></li><li>If <var>largestUnit</var> is <emu-const>year</emu-const> or <emu-const>month</emu-const>, then<ol><li>Add (without constraining) as many months as possible to <var>one</var> without surpassing <var>two</var>.</li><li>Constrain <var>one</var> to a real year, month, and day.</li></ol></li><li>If <var>largestUnit</var> is <emu-const>week</emu-const>, add as many weeks as possible to <var>one</var> without surpassing <var>two</var>.</li><li>Add as many days as possible to <var>one</var> until it is equal to <var>two</var>.</li><li>Return a <emu-xref href="#sec-temporal-date-duration-records"><a href="https://tc39.es/proposal-temporal/#sec-temporal-date-duration-records">Date Duration Record</a></emu-xref> of the number of years, months, weeks, and days added.</li></ol></emu-alg>
-  </emu-clause>
+    <emu-clause id="sec-temporal-calendardateera" type="abstract operation" aoid="CalendarDateEra">
+      <h1><span class="secnum">4.1.6</span> CalendarDateEra ( <var>calendar</var>, <var>date</var> )</h1>
+      <p>The abstract operation CalendarDateEra takes arguments <var>calendar</var> (a String) and <var>date</var> (a Temporal.PlainDateTime, Temporal.PlainDate, or Temporal.PlainYearMonth) and returns a String or <emu-val>undefined</emu-val>. It performs <emu-xref href="#implementation-defined"><a href="https://tc39.es/ecma262/#implementation-defined">implementation-defined</a></emu-xref> processing to find the era for the date corresponding to <var>date</var> in the context of the calendar represented by <var>calendar</var> and returns a lowercase String value representing that era, or <emu-val>undefined</emu-val> for calendars that do not have eras. It performs the following steps when called:</p>
+      <emu-alg><ol><li>If <emu-xref aoid="CalendarSupportsEra" id="_ref_22"><a href="#sec-temporal-calendarsupportsera">CalendarSupportsEra</a></emu-xref>(<var>calendar</var>) is <emu-val>false</emu-val>, return <emu-val>undefined</emu-val>.</li><li>Let <var>era</var> be the String to indicate the era corresponding to <var>date</var> in the context of the calendar represented by <var>calendar</var> from an <emu-xref href="#implementation-defined"><a href="https://tc39.es/ecma262/#implementation-defined">implementation-defined</a></emu-xref> processing.</li><li>Return <emu-xref aoid="CanonicalizeEraInCalendar" id="_ref_23"><a href="#sec-temporal-canonicalizeeraincalendar">CanonicalizeEraInCalendar</a></emu-xref>(<var>calendar</var>, <var>era</var>).</li></ol></emu-alg>
+    </emu-clause>
 
-  <emu-clause id="sup-temporal-calendardatetoiso" type="implementation-defined abstract operation" aoid="CalendarDateToISO">
-    <h1><span class="secnum">4.11</span> CalendarDateToISO ( <var>calendar</var>, <var>fields</var>, <var>overflow</var> )</h1>
-    <p>The <emu-xref href="#implementation-defined"><a href="https://tc39.es/ecma262/#implementation-defined">implementation-defined</a></emu-xref> abstract operation CalendarDateToISO takes arguments <var>calendar</var> (a <emu-xref href="#sec-ecma402-calendar-types" id="_ref_29"><a href="#sec-ecma402-calendar-types">calendar type</a></emu-xref>), <var>fields</var> (a Calendar Fields <emu-xref href="#sec-list-and-record-specification-type"><a href="https://tc39.es/ecma262/#sec-list-and-record-specification-type">Record</a></emu-xref>), and <var>overflow</var> (<emu-const>constrain</emu-const> or <emu-const>reject</emu-const>) and returns either a <emu-xref href="#sec-completion-record-specification-type"><a href="https://tc39.es/ecma262/#sec-completion-record-specification-type">normal completion containing</a></emu-xref> an <emu-xref href="#sec-temporal-iso-date-records"><a href="https://tc39.es/proposal-temporal/#sec-temporal-iso-date-records">ISO Date Record</a></emu-xref> or a <emu-xref href="#sec-completion-record-specification-type"><a href="https://tc39.es/ecma262/#sec-completion-record-specification-type">throw completion</a></emu-xref>. 
-        It performs <emu-xref href="#implementation-defined"><a href="https://tc39.es/ecma262/#implementation-defined">implementation-defined</a></emu-xref> processing to convert <var>fields</var>, which represents either a date or a year and month in the built-in calendar identified by <var>calendar</var>, to a corresponding representative date in the ISO 8601 calendar, subject to overflow correction specified by <var>overflow</var>.
-        For <emu-const>reject</emu-const>, values that do not form a valid date cause an exception to be thrown, as described below.
-        For <emu-const>constrain</emu-const>, values that do not form a valid date are clamped to their respective valid range.
-      </p>
-    <p>This definition supersedes the definition provided in <emu-xref href="#sec-temporal-calendardatetoiso"><a href="https://tc39.es/proposal-temporal/#sec-temporal-calendardatetoiso">Temporal, 12.2.19</a></emu-xref>.</p>
-    <p>It performs the following steps when called:</p>
-    <emu-alg><ol><li>If <var>calendar</var> is <emu-val>"iso8601"</emu-val>, then<ol><li><emu-xref href="#assert"><a href="https://tc39.es/ecma262/#assert">Assert</a></emu-xref>: <var>fields</var>.<var class="field">[[Year]]</var>, <var>fields</var>.<var class="field">[[Month]]</var>, and <var>fields</var>.<var class="field">[[Day]]</var> are not <emu-const>unset</emu-const>.</li><li>Return ?&nbsp;<emu-xref aoid="RegulateISODate"><a href="https://tc39.es/proposal-temporal/#sec-temporal-regulateisodate">RegulateISODate</a></emu-xref>(<var>fields</var>.<var class="field">[[Year]]</var>, <var>fields</var>.<var class="field">[[Month]]</var>, <var>fields</var>.<var class="field">[[Day]]</var>, <var>overflow</var>).</li></ol></li><li>NOTE: The algorithm when <var>calendar</var> is not <emu-val>"iso8601"</emu-val> is <emu-xref href="#implementation-defined"><a href="https://tc39.es/ecma262/#implementation-defined">implementation-defined</a></emu-xref>, but all calendars follow the general steps given here, which is a generalization of the precise algorithm specified above for <emu-val>"iso8601"</emu-val>.</li><li>If <var>fields</var>.<var class="field">[[Era]]</var> and <var>fields</var>.<var class="field">[[EraYear]]</var> are not <emu-const>unset</emu-const> and <emu-xref aoid="IsValidEraYearForCalendar" id="_ref_30"><a href="#sec-temporal-isvaliderayearforcalendar">IsValidEraYearForCalendar</a></emu-xref>(<var>calendar</var>, <var>fields</var>.<var class="field">[[Era]]</var>, <var>fields</var>.<var class="field">[[EraYear]]</var>) is <emu-val>false</emu-val>, throw a <emu-val>RangeError</emu-val> exception.</li><li>If <var>fields</var>.<var class="field">[[MonthCode]]</var> is not <emu-const>unset</emu-const> and <emu-xref aoid="IsValidMonthCodeForCalendar" id="_ref_31"><a href="#sec-temporal-isvalidmonthecodeforcalendar">IsValidMonthCodeForCalendar</a></emu-xref>(<var>calendar</var>, <var>fields</var>.<var class="field">[[MonthCode]]</var>) is <emu-val>false</emu-val>, throw a <emu-val>RangeError</emu-val> exception.</li><li>If <var>fields</var> describes an existing date in <var>calendar</var>, return an <emu-xref href="#implementation-defined"><a href="https://tc39.es/ecma262/#implementation-defined">implementation-defined</a></emu-xref> <emu-xref href="#sec-temporal-iso-date-records"><a href="https://tc39.es/proposal-temporal/#sec-temporal-iso-date-records">ISO Date Record</a></emu-xref> that corresponds to the date described by <var>fields</var>.</li><li>If <var>overflow</var> is <emu-const>reject</emu-const>, throw a <emu-val>RangeError</emu-val> exception.</li><li>(This step only matters for lunisolar calendars.) If <var>fields</var>.<var class="field">[[MonthCode]]</var> is a leap month that doesn't exist in the year, then:<ol><li>Set <var>fields</var> to another date according to the cultural conventions of that calendar's users. Of the currently supported calendars: if <var>calendar</var> is <emu-val>"chinese"</emu-val> or <emu-val>"dangi"</emu-val>, change <var>fields</var>.<var class="field">[[MonthCode]]</var> to the same month code but without the <emu-val>"L"</emu-val>. If <var>calendar</var> is <emu-val>"hebrew"</emu-val>, change <var>fields</var>.<var class="field">[[MonthCode]]</var> from <emu-val>"M05L"</emu-val> to <emu-val>"M06"</emu-val>.</li><li>Update <var>fields</var>.<var class="field">[[Month]]</var> accordingly.</li></ol></li><li>If <var>fields</var>.<var class="field">[[MonthCode]]</var> is a valid month code for <var>fields</var>.<var class="field">[[Year]]</var>, but the date described by <var>fields</var> does not exist, set <var>fields</var>.<var class="field">[[Day]]</var> to the closest day in the same month. If there are two equally-close dates in the same month, pick the later one.</li><li>(This step does not apply to any currently supported calendars.) If the date described by <var>fields</var> still does not exist, set <var>fields</var> to the closest date in the same year. If there are two equally-close dates in that year, pick the later one.</li><li>Return an <emu-xref href="#implementation-defined"><a href="https://tc39.es/ecma262/#implementation-defined">implementation-defined</a></emu-xref> <emu-xref href="#sec-temporal-iso-date-records"><a href="https://tc39.es/proposal-temporal/#sec-temporal-iso-date-records">ISO Date Record</a></emu-xref> that corresponds to the date described by <var>fields</var>.</li></ol></emu-alg>
-  </emu-clause>
+    <emu-clause id="sec-temporal-calendardateerayear" type="abstract operation" aoid="CalendarDateEraYear">
+      <h1><span class="secnum">4.1.7</span> CalendarDateEraYear ( <var>calendar</var>, <var>date</var> )</h1>
+      <p>The abstract operation CalendarDateEraYear takes arguments <var>calendar</var> (a String) and <var>date</var> (a Temporal.PlainDateTime, Temporal.PlainDate, or Temporal.PlainYearMonth) and returns an <emu-xref href="#integer"><a href="https://tc39.es/ecma262/#integer">integer</a></emu-xref> or <emu-val>undefined</emu-val>. It performs <emu-xref href="#implementation-defined"><a href="https://tc39.es/ecma262/#implementation-defined">implementation-defined</a></emu-xref> processing to find the era for the date corresponding to <var>date</var> in the context of the calendar represented by <var>calendar</var> and returns an <emu-xref href="#integer"><a href="https://tc39.es/ecma262/#integer">integer</a></emu-xref> representing the ordinal position of the year of <var>date</var> in that era, or <emu-val>undefined</emu-val> for calendars that do not have eras. It performs the following steps when called:</p>
+      
+      <emu-alg><ol><li>If <emu-xref aoid="CalendarSupportsEra" id="_ref_24"><a href="#sec-temporal-calendarsupportsera">CalendarSupportsEra</a></emu-xref>(<var>calendar</var>) is <emu-val>false</emu-val>, return <emu-val>undefined</emu-val>.</li><li>Let <var>eraYear</var> be the <emu-xref href="#integer"><a href="https://tc39.es/ecma262/#integer">integer</a></emu-xref> to indicate the era year corresponding to <var>date</var> in the context of the calendar represented by <var>calendar</var> from an <emu-xref href="#implementation-defined"><a href="https://tc39.es/ecma262/#implementation-defined">implementation-defined</a></emu-xref> processing.</li><li><emu-xref href="#assert"><a href="https://tc39.es/ecma262/#assert">Assert</a></emu-xref>: <var>eraYear</var> is an <emu-xref href="#integer"><a href="https://tc39.es/ecma262/#integer">integer</a></emu-xref>.</li><li>Return <var>eraYear</var>.</li></ol></emu-alg>
+      <emu-note><span class="note">Note</span><div class="note-contents">
+        Era years are 1-indexed for many calendars, but not all (e.g., the eras of the Burmese calendar each start with a year 0). Years can also advance opposite the flow of time (as for BCE years in the Gregorian calendar).
+      </div></emu-note>
+    </emu-clause>
 
-  <emu-clause id="sup-temporal-calendarextrafields" type="implementation-defined abstract operation" aoid="CalendarExtraFields">
-    <h1><span class="secnum">4.12</span> CalendarExtraFields ( <var>calendar</var>, <var>fields</var> )</h1>
-    <p>The <emu-xref href="#implementation-defined"><a href="https://tc39.es/ecma262/#implementation-defined">implementation-defined</a></emu-xref> abstract operation CalendarExtraFields takes arguments <var>calendar</var> (a <emu-xref href="#sec-ecma402-calendar-types" id="_ref_32"><a href="#sec-ecma402-calendar-types">calendar type</a></emu-xref>) and <var>fields</var> (a <emu-xref href="#sec-list-and-record-specification-type"><a href="https://tc39.es/ecma262/#sec-list-and-record-specification-type">List</a></emu-xref> of values from the Enumeration Key column of <emu-xref href="#table-temporal-calendar-fields-record-fields"><a href="https://tc39.es/proposal-temporal/#table-temporal-calendar-fields-record-fields">Table 19</a></emu-xref>) and returns a <emu-xref href="#sec-list-and-record-specification-type"><a href="https://tc39.es/ecma262/#sec-list-and-record-specification-type">List</a></emu-xref> of values from the Enumeration Key column of <emu-xref href="#table-temporal-calendar-fields-record-fields"><a href="https://tc39.es/proposal-temporal/#table-temporal-calendar-fields-record-fields">Table 19</a></emu-xref>. It characterizes calendar-specific fields that are relevant for the provided <var>fields</var> in the built-in calendar identified by <var>calendar</var>.</p>
-    <p>This definition supersedes the definition provided in <emu-xref aoid="TemporalCalendarExtraFields"><a href="https://tc39.es/proposal-temporal/#sec-temporal-calendarextrafields">TemporalCalendarExtraFields</a></emu-xref>.</p>
-    <emu-alg><ol><li>If <var>fields</var> contains an element equal to <emu-const>year</emu-const> and <emu-xref aoid="CalendarSupportsEra" id="_ref_33"><a href="#sec-temporal-calendarsupportsera">CalendarSupportsEra</a></emu-xref>(<var>calendar</var>) is <emu-val>true</emu-val>, then<ol><li>Append <emu-const>era</emu-const> and <emu-const>era-year</emu-const> to <var>fields</var>.</li></ol></li><li>Return <var>fields</var>.</li></ol></emu-alg>
-  </emu-clause>
+    <emu-clause id="sec-temporal-calendardatearithmeticyear" type="abstract operation" aoid="CalendarDateArithmeticYear">
+      <h1><span class="secnum">4.1.8</span> CalendarDateArithmeticYear ( <var>calendar</var>, <var>date</var> )</h1>
+      <p>The abstract operation CalendarDateArithmeticYear takes arguments <var>calendar</var> (a <emu-xref href="#sec-ecma402-calendar-types" id="_ref_25"><a href="#sec-ecma402-calendar-types">calendar type</a></emu-xref> that is not <emu-val>"iso8601"</emu-val>) and <var>date</var> (a Temporal.PlainDateTime, Temporal.PlainDate, or Temporal.PlainYearMonth) and returns an <emu-xref href="#integer"><a href="https://tc39.es/ecma262/#integer">integer</a></emu-xref>. It performs <emu-xref href="#implementation-defined"><a href="https://tc39.es/ecma262/#implementation-defined">implementation-defined</a></emu-xref> processing to find the year for the date corresponding to <var>date</var> in the context of the calendar represented by <var>calendar</var> relative to a well-defined epoch year for that calendar. It performs the following steps when called:</p>
+      <emu-alg><ol><li>Let <var>year</var> be <var>date</var>.<var class="field">[[ISOYear]]</var>.</li><li>Let <var>r</var> be the row in <emu-xref href="#table-epoch-years" id="_ref_9"><a href="#table-epoch-years">Table 5</a></emu-xref> which the value of the Calendar column is <var>calendar</var>.</li><li>Let <var>epochYear</var> be the value given in the <emu-val>"Epoch ISO Year"</emu-val> column of <var>r</var>.</li><li>Let <var>arithmeticYear</var> be the number of whole years in the calendar represented by <var>calendar</var> elapsed until the ISO year <var>year</var> since the calendar year that started during ISO year <var>epochYear</var>, according to <emu-xref href="#implementation-defined"><a href="https://tc39.es/ecma262/#implementation-defined">implementation-defined</a></emu-xref> processing.</li><li>Return <var>arithmeticYear</var>.</li></ol></emu-alg>
 
-  <emu-clause id="sup-temporal-calendarfieldkeystoignore" type="implementation-defined abstract operation" aoid="CalendarFieldKeysToIgnore">
-    <h1><span class="secnum">4.13</span> CalendarFieldKeysToIgnore ( <var>calendar</var>, <var>keys</var> )</h1>
-    <p>The <emu-xref href="#implementation-defined"><a href="https://tc39.es/ecma262/#implementation-defined">implementation-defined</a></emu-xref> abstract operation CalendarFieldKeysToIgnore takes arguments <var>calendar</var> (a <emu-xref href="#sec-ecma402-calendar-types" id="_ref_34"><a href="#sec-ecma402-calendar-types">calendar type</a></emu-xref>) and <var>keys</var> (a <emu-xref href="#sec-list-and-record-specification-type"><a href="https://tc39.es/ecma262/#sec-list-and-record-specification-type">List</a></emu-xref> of values from the Enumeration Key column of <emu-xref href="#table-temporal-calendar-fields-record-fields"><a href="https://tc39.es/proposal-temporal/#table-temporal-calendar-fields-record-fields">Table 19</a></emu-xref>) and returns a <emu-xref href="#sec-list-and-record-specification-type"><a href="https://tc39.es/ecma262/#sec-list-and-record-specification-type">List</a></emu-xref> of values from the Enumeration Key column of <emu-xref href="#table-temporal-calendar-fields-record-fields"><a href="https://tc39.es/proposal-temporal/#table-temporal-calendar-fields-record-fields">Table 19</a></emu-xref>. 
-        It determines which calendar date fields changing any of the fields named in <var>keys</var> can potentially conflict with or invalidate, for the given <var>calendar</var>.
-        A field always invalidates at least itself.
-      </p>
-    <p>This definition supersedes the definition provided in <emu-xref aoid="TemporalCalendarFieldKeysToIgnore"><a href="https://tc39.es/proposal-temporal/#sec-temporal-calendarfieldkeystoignore">TemporalCalendarFieldKeysToIgnore</a></emu-xref>.</p>
-    <emu-alg><ol><li>Let <var>ignoredKeys</var> be an empty <emu-xref href="#sec-list-and-record-specification-type"><a href="https://tc39.es/ecma262/#sec-list-and-record-specification-type">List</a></emu-xref>.</li><li>For each element <var>key</var> of <var>keys</var>, do<ol><li>If <var>key</var> is <emu-const>month</emu-const>, append <emu-const>month-code</emu-const> to <var>ignoredKeys</var>.</li><li>Else if <var>key</var> is <emu-const>month-code</emu-const>, append <emu-const>month</emu-const> to <var>ignoredKeys</var>.</li><li>If <var>key</var> is one of <emu-const>era</emu-const>, <emu-const>era-year</emu-const>, or <emu-const>year</emu-const> and <emu-xref aoid="CalendarSupportsEra" id="_ref_35"><a href="#sec-temporal-calendarsupportsera">CalendarSupportsEra</a></emu-xref>(<var>calendar</var>) is <emu-val>true</emu-val>, then<ol><li>Append <emu-const>era</emu-const>, <emu-const>era-year</emu-const>, and <emu-const>year</emu-const> to <var>ignoredKeys</var>.</li></ol></li><li>Else,<ol><li>Append <var>key</var> to <var>ignoredKeys</var>.</li></ol></li></ol></li><li>NOTE: While <var>ignoredKeys</var> can have duplicate elements, this is not intended to be meaningful. This specification only checks whether particular keys are or are not members of the list.</li><li>Return <var>ignoredKeys</var>.</li></ol></emu-alg>
+      <emu-table id="table-epoch-years"><figure><figcaption>Table 5: epoch years</figcaption>
+        
+        <table class="real-table">
+          <thead>
+            <tr>
+              <th>Calendar</th>
+              <th>Epoch ISO Year</th>
+            </tr>
+          </thead>
+          <tbody><tr>
+            <td><emu-val>"buddhist"</emu-val></td>
+            <td>-543</td>
+          </tr>
+          <tr>
+            <td><emu-val>"chinese"</emu-val></td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td><emu-val>"coptic"</emu-val></td>
+            <td>283</td>
+          </tr>
+          <tr>
+            <td><emu-val>"dangi"</emu-val></td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td><emu-val>"ethiopic"</emu-val></td>
+            <td>7</td>
+          </tr>
+          <tr>
+            <td><emu-val>"ethioaa"</emu-val></td>
+            <td>-5492</td>
+          </tr>
+          <tr>
+            <td><emu-val>"gregory"</emu-val></td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td><emu-val>"hebrew"</emu-val></td>
+            <td>-3761</td>
+          </tr>
+          <tr>
+            <td><emu-val>"indian"</emu-val></td>
+            <td>78</td>
+          </tr>
+          <tr>
+            <td><emu-val>"islamic-civil"</emu-val></td>
+            <td>621</td>
+          </tr>
+          <tr>
+            <td><emu-val>"islamic-tbla"</emu-val></td>
+            <td>621</td>
+          </tr>
+          <tr>
+            <td><emu-val>"islamic-umalqura"</emu-val></td>
+            <td>621</td>
+          </tr>
+          <tr>
+            <td><emu-val>"japanese"</emu-val></td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td><emu-val>"persian"</emu-val></td>
+            <td>621</td>
+          </tr>
+          <tr>
+            <td><emu-val>"roc"</emu-val></td>
+            <td>1911</td>
+          </tr>
+        </tbody></table>
+      </figure></emu-table>
+    </emu-clause>
+
+    <emu-clause id="sup-temporal-calendardateadd" type="implementation-defined abstract operation" aoid="CalendarDateAdd">
+      <h1><span class="secnum">4.1.9</span> CalendarDateAdd ( <var>calendar</var>, <var>isoDate</var>, <var>duration</var>, <var>overflow</var> )</h1>
+      <p>The <emu-xref href="#implementation-defined"><a href="https://tc39.es/ecma262/#implementation-defined">implementation-defined</a></emu-xref> abstract operation CalendarDateAdd takes arguments <var>calendar</var> (a <emu-xref href="#sec-ecma402-calendar-types" id="_ref_26"><a href="#sec-ecma402-calendar-types">calendar type</a></emu-xref>), <var>isoDate</var> (an <emu-xref href="#sec-temporal-iso-date-records"><a href="https://tc39.es/proposal-temporal/#sec-temporal-iso-date-records">ISO Date Record</a></emu-xref>), <var>duration</var> (a <emu-xref href="#sec-temporal-date-duration-records"><a href="https://tc39.es/proposal-temporal/#sec-temporal-date-duration-records">Date Duration Record</a></emu-xref>), and <var>overflow</var> (<emu-const>constrain</emu-const> or <emu-const>reject</emu-const>) and returns either a <emu-xref href="#sec-completion-record-specification-type"><a href="https://tc39.es/ecma262/#sec-completion-record-specification-type">normal completion containing</a></emu-xref> an <emu-xref href="#sec-temporal-iso-date-records"><a href="https://tc39.es/proposal-temporal/#sec-temporal-iso-date-records">ISO Date Record</a></emu-xref> or a <emu-xref href="#sec-completion-record-specification-type"><a href="https://tc39.es/ecma262/#sec-completion-record-specification-type">throw completion</a></emu-xref>. 
+          It adds <var>dateDuration</var> to <var>isoDate</var> using the years, months, and weeks reckoning of <var>calendar</var>.
+          If addition of years or months results in a nonexistent date, depending on <var>overflow</var> it will be coerced to an existing date or the operation will throw.
+        </p>
+      <p>This definition supersedes the definition provided in <emu-xref href="#sec-temporal-calendardateadd"><a href="https://tc39.es/proposal-temporal/#sec-temporal-calendardateadd">Temporal, 12.2.6</a></emu-xref>.</p>
+      <p>It performs the following steps when called:</p>
+      <emu-alg><ol><li>If <var>calendar</var> is <emu-val>"iso8601"</emu-val>, then<ol><li>Let <var>intermediate</var> be <emu-xref aoid="BalanceISOYearMonth"><a href="https://tc39.es/proposal-temporal/#sec-temporal-balanceisoyearmonth">BalanceISOYearMonth</a></emu-xref>(<var>isoDate</var>.<var class="field">[[Year]]</var> + <var>duration</var>.<var class="field">[[Years]]</var>, <var>isoDate</var>.<var class="field">[[Month]]</var> + <var>duration</var>.<var class="field">[[Months]]</var>).</li><li>Set <var>intermediate</var> to ?&nbsp;<emu-xref aoid="RegulateISODate"><a href="https://tc39.es/proposal-temporal/#sec-temporal-regulateisodate">RegulateISODate</a></emu-xref>(<var>intermediate</var>.<var class="field">[[Year]]</var>, <var>intermediate</var>.<var class="field">[[Month]]</var>, <var>isoDate</var>.<var class="field">[[Day]]</var>, <var>overflow</var>).</li><li>Let <var>d</var> be <var>intermediate</var>.<var class="field">[[Day]]</var> + <var>duration</var>.<var class="field">[[Days]]</var> + 7 × <var>duration</var>.<var class="field">[[Weeks]]</var>.</li><li>Let <var>result</var> be <emu-xref aoid="BalanceISODate"><a href="https://tc39.es/proposal-temporal/#sec-temporal-balanceisodate">BalanceISODate</a></emu-xref>(<var>intermediate</var>.<var class="field">[[Year]]</var>, <var>intermediate</var>.<var class="field">[[Month]]</var>, <var>d</var>).</li></ol></li><li>Else,<ol><li>NOTE: The algorithm when <var>calendar</var> is not <emu-val>"iso8601"</emu-val> is <emu-xref href="#implementation-defined"><a href="https://tc39.es/ecma262/#implementation-defined">implementation-defined</a></emu-xref>, but all calendars follow the general steps given here, which is a generalization of the precise algorithm specified above for <emu-val>"iso8601"</emu-val>.</li><li>Let <var>calendarDate</var> be <emu-xref aoid="CalendarISOToDate"><a href="https://tc39.es/proposal-temporal/#sec-temporal-calendarisotodate">CalendarISOToDate</a></emu-xref>(<var>calendar</var>, <var>isoDate</var>).</li><li>Add <var>duration</var>.<var class="field">[[Years]]</var> to <var>calendarDate</var>.</li><li>(This step only matters for lunisolar calendars.) If <var>calendarDate</var>.<var class="field">[[MonthCode]]</var> is a leap month that doesn't exist in the year, then:<ol><li>If <var>overflow</var> is <emu-const>reject</emu-const>, throw a <emu-val>RangeError</emu-val> exception.</li><li>Set <var>calendarDate</var> to another date according to the cultural conventions of that calendar's users. Of the currently supported calendars: if <var>calendar</var> is <emu-val>"chinese"</emu-val> or <emu-val>"dangi"</emu-val>, change <var>calendarDate</var>.<var class="field">[[MonthCode]]</var> to the same month code but without the <emu-val>"L"</emu-val>. If <var>calendar</var> is <emu-val>"hebrew"</emu-val>, change <var>calendarDate</var>.<var class="field">[[MonthCode]]</var> from <emu-val>"M05L"</emu-val> to <emu-val>"M06"</emu-val>.</li><li>Update <var>calendarDate</var>.<var class="field">[[Month]]</var> accordingly.</li></ol></li><li>Add <var>duration</var>.<var class="field">[[Months]]</var> to <var>calendarDate</var>, balancing <var>calendarDate</var> if it goes over a year boundary.</li><li>If the date described by <var>calendarDate</var> does not exist, then<ol><li>If <var>overflow</var> is <emu-const>reject</emu-const>, throw a <emu-val>RangeError</emu-val> exception.</li><li>If <var>calendarDate</var>.<var class="field">[[MonthCode]]</var> is a valid month code for <var>calendarDate</var>.<var class="field">[[Year]]</var>, but the date described by <var>calendarDate</var> does not exist, set <var>calendarDate</var>.<var class="field">[[Day]]</var> to the closest day in the same month. If there are two equally-close dates in the same month, pick the later one.</li><li>(This step does not apply to any currently supported calendars.) If the date described by <var>calendarDate</var> still does not exist, set <var>calendarDate</var> to the closest date in the same year. If there are two equally-close dates in that year, pick the later one.</li></ol></li><li>Add <var>duration</var>.<var class="field">[[Weeks]]</var> and <var>duration</var>.<var class="field">[[Days]]</var> to <var>calendarDate</var>, balancing <var>calendarDate</var> if it goes over a month or year boundary.</li><li>Let <var>result</var> be ?&nbsp;<emu-xref aoid="CalendarDateToISO" id="_ref_27"><a href="#sup-temporal-calendardatetoiso">CalendarDateToISO</a></emu-xref>(<var>calendar</var>, <var>calendarDate</var>, <var>overflow</var>).</li></ol></li><li>If <emu-xref aoid="ISODateWithinLimits"><a href="https://tc39.es/proposal-temporal/#sec-temporal-isodatewithinlimits">ISODateWithinLimits</a></emu-xref>(<var>result</var>) is <emu-val>false</emu-val>, throw a <emu-val>RangeError</emu-val> exception.</li><li>Return <var>result</var>.</li></ol></emu-alg>
+    </emu-clause>
+
+    <emu-clause id="sup-temporal-calendardateuntil" type="implementation-defined abstract operation" aoid="CalendarDateUntil">
+      <h1><span class="secnum">4.1.10</span> CalendarDateUntil ( <var>calendar</var>, <var>one</var>, <var>two</var>, <var>largestUnit</var> )</h1>
+      <p>The <emu-xref href="#implementation-defined"><a href="https://tc39.es/ecma262/#implementation-defined">implementation-defined</a></emu-xref> abstract operation CalendarDateUntil takes arguments <var>calendar</var> (a <emu-xref href="#sec-ecma402-calendar-types" id="_ref_28"><a href="#sec-ecma402-calendar-types">calendar type</a></emu-xref>), <var>one</var> (an <emu-xref href="#sec-temporal-iso-date-records"><a href="https://tc39.es/proposal-temporal/#sec-temporal-iso-date-records">ISO Date Record</a></emu-xref>), <var>two</var> (an <emu-xref href="#sec-temporal-iso-date-records"><a href="https://tc39.es/proposal-temporal/#sec-temporal-iso-date-records">ISO Date Record</a></emu-xref>), and <var>largestUnit</var> (a date unit) and returns a <emu-xref href="#sec-temporal-date-duration-records"><a href="https://tc39.es/proposal-temporal/#sec-temporal-date-duration-records">Date Duration Record</a></emu-xref>. 
+          It determines the difference between the dates <var>one</var> and <var>two</var> using the years, months, and weeks reckoning of <var>calendar</var>.
+          No fields larger than <var>largestUnit</var> will be non-zero in the resulting <emu-xref href="#sec-temporal-date-duration-records"><a href="https://tc39.es/proposal-temporal/#sec-temporal-date-duration-records">Date Duration Record</a></emu-xref>.
+        </p>
+      <p>This definition supersedes the definition provided in <emu-xref href="#sec-temporal-calendardateuntil"><a href="https://tc39.es/proposal-temporal/#sec-temporal-calendardateuntil">Temporal, 12.2.7</a></emu-xref>.</p>
+      <p>It performs the following steps when called:</p>
+      <emu-alg><ol><li>If <var>calendar</var> is <emu-val>"iso8601"</emu-val>, then<ol><li>Let <var>sign</var> be -<emu-xref aoid="CompareISODate"><a href="https://tc39.es/proposal-temporal/#sec-temporal-compareisodate">CompareISODate</a></emu-xref>(<var>one</var>, <var>two</var>).</li><li>If <var>sign</var> = 0, return <emu-xref aoid="ZeroDateDuration"><a href="https://tc39.es/proposal-temporal/#sec-temporal-zerodateduration">ZeroDateDuration</a></emu-xref>().</li><li>Let <var>years</var> be 0.</li><li>If <var>largestUnit</var> is <emu-const>year</emu-const>, then<ol><li>Let <var>candidateYears</var> be <var>sign</var>.</li><li>Repeat, while <emu-xref aoid="ISODateSurpasses"><a href="https://tc39.es/proposal-temporal/#sec-temporal-isodatesurpasses">ISODateSurpasses</a></emu-xref>(<var>sign</var>, <var>one</var>.<var class="field">[[Year]]</var> + <var>candidateYears</var>, <var>one</var>.<var class="field">[[Month]]</var>, <var>one</var>.<var class="field">[[Day]]</var>, <var>two</var>) is <emu-val>false</emu-val>,<ol><li>Set <var>years</var> to <var>candidateYears</var>.</li><li>Set <var>candidateYears</var> to <var>candidateYears</var> + <var>sign</var>.</li></ol></li></ol></li><li>Let <var>months</var> be 0.</li><li>If <var>largestUnit</var> is <emu-const>year</emu-const> or <var>largestUnit</var> is <emu-const>month</emu-const>, then<ol><li>Let <var>candidateMonths</var> be <var>sign</var>.</li><li>Let <var>intermediate</var> be <emu-xref aoid="BalanceISOYearMonth"><a href="https://tc39.es/proposal-temporal/#sec-temporal-balanceisoyearmonth">BalanceISOYearMonth</a></emu-xref>(<var>one</var>.<var class="field">[[Year]]</var> + <var>years</var>, <var>one</var>.<var class="field">[[Month]]</var> + <var>candidateMonths</var>).</li><li>Repeat, while <emu-xref aoid="ISODateSurpasses"><a href="https://tc39.es/proposal-temporal/#sec-temporal-isodatesurpasses">ISODateSurpasses</a></emu-xref>(<var>sign</var>, <var>intermediate</var>.<var class="field">[[Year]]</var>, <var>intermediate</var>.<var class="field">[[Month]]</var>, <var>one</var>.<var class="field">[[Day]]</var>, <var>two</var>) is <emu-val>false</emu-val>,<ol><li>Set <var>months</var> to <var>candidateMonths</var>.</li><li>Set <var>candidateMonths</var> to <var>candidateMonths</var> + <var>sign</var>.</li><li>Set <var>intermediate</var> to <emu-xref aoid="BalanceISOYearMonth"><a href="https://tc39.es/proposal-temporal/#sec-temporal-balanceisoyearmonth">BalanceISOYearMonth</a></emu-xref>(<var>intermediate</var>.<var class="field">[[Year]]</var>, <var>intermediate</var>.<var class="field">[[Month]]</var> + <var>sign</var>).</li></ol></li></ol></li><li>Set <var>intermediate</var> to <emu-xref aoid="BalanceISOYearMonth"><a href="https://tc39.es/proposal-temporal/#sec-temporal-balanceisoyearmonth">BalanceISOYearMonth</a></emu-xref>(<var>one</var>.<var class="field">[[Year]]</var> + <var>years</var>, <var>one</var>.<var class="field">[[Month]]</var> + <var>months</var>).</li><li>Let <var>constrained</var> be !&nbsp;<emu-xref aoid="RegulateISODate"><a href="https://tc39.es/proposal-temporal/#sec-temporal-regulateisodate">RegulateISODate</a></emu-xref>(<var>intermediate</var>.<var class="field">[[Year]]</var>, <var>intermediate</var>.<var class="field">[[Month]]</var>, <var>one</var>.<var class="field">[[Day]]</var>, <emu-const>constrain</emu-const>).</li><li>Let <var>weeks</var> be 0.</li><li>If <var>largestUnit</var> is <emu-const>week</emu-const>, then<ol><li>Let <var>candidateWeeks</var> be <var>sign</var>.</li><li>Set <var>intermediate</var> to <emu-xref aoid="BalanceISODate"><a href="https://tc39.es/proposal-temporal/#sec-temporal-balanceisodate">BalanceISODate</a></emu-xref>(<var>constrained</var>.<var class="field">[[Year]]</var>, <var>constrained</var>.<var class="field">[[Month]]</var>, <var>constrained</var>.<var class="field">[[Day]]</var> + 7 × <var>candidateWeeks</var>).</li><li>Repeat, while <emu-xref aoid="ISODateSurpasses"><a href="https://tc39.es/proposal-temporal/#sec-temporal-isodatesurpasses">ISODateSurpasses</a></emu-xref>(<var>sign</var>, <var>intermediate</var>.<var class="field">[[Year]]</var>, <var>intermediate</var>.<var class="field">[[Month]]</var>, <var>intermediate</var>.<var class="field">[[Day]]</var>, <var>two</var>) is <emu-val>false</emu-val>,<ol><li>Set <var>weeks</var> to <var>candidateWeeks</var>.</li><li>Set <var>candidateWeeks</var> to <var>candidateWeeks</var> + sign.</li><li>Set <var>intermediate</var> to <emu-xref aoid="BalanceISODate"><a href="https://tc39.es/proposal-temporal/#sec-temporal-balanceisodate">BalanceISODate</a></emu-xref>(<var>intermediate</var>.<var class="field">[[Year]]</var>, <var>intermediate</var>.<var class="field">[[Month]]</var>, <var>intermediate</var>.<var class="field">[[Day]]</var> + 7 × <var>sign</var>).</li></ol></li></ol></li><li>Let <var>days</var> be 0.</li><li>Let <var>candidateDays</var> be <var>sign</var>.</li><li>Set <var>intermediate</var> to <emu-xref aoid="BalanceISODate"><a href="https://tc39.es/proposal-temporal/#sec-temporal-balanceisodate">BalanceISODate</a></emu-xref>(<var>constrained</var>.<var class="field">[[Year]]</var>, <var>constrained</var>.<var class="field">[[Month]]</var>, <var>constrained</var>.<var class="field">[[Day]]</var> + 7 × <var>weeks</var> + <var>candidateDays</var>).</li><li>Repeat, while <emu-xref aoid="ISODateSurpasses"><a href="https://tc39.es/proposal-temporal/#sec-temporal-isodatesurpasses">ISODateSurpasses</a></emu-xref>(<var>sign</var>, <var>intermediate</var>.<var class="field">[[Year]]</var>, <var>intermediate</var>.<var class="field">[[Month]]</var>, <var>intermediate</var>.<var class="field">[[Day]]</var>, <var>two</var>) is <emu-val>false</emu-val>,<ol><li>Set <var>days</var> to <var>candidateDays</var>.</li><li>Set <var>candidateDays</var> to <var>candidateDays</var> + <var>sign</var>.</li><li>Set <var>intermediate</var> to <emu-xref aoid="BalanceISODate"><a href="https://tc39.es/proposal-temporal/#sec-temporal-balanceisodate">BalanceISODate</a></emu-xref>(<var>intermediate</var>.<var class="field">[[Year]]</var>, <var>intermediate</var>.<var class="field">[[Month]]</var>, <var>intermediate</var>.<var class="field">[[Day]]</var> + <var>sign</var>).</li></ol></li><li>Return !&nbsp;<emu-xref aoid="CreateDateDurationRecord"><a href="https://tc39.es/proposal-temporal/#sec-temporal-createdatedurationrecord">CreateDateDurationRecord</a></emu-xref>(<var>years</var>, <var>months</var>, <var>weeks</var>, <var>days</var>).</li></ol></li><li>NOTE: The algorithm when <var>calendar</var> is not <emu-val>"iso8601"</emu-val> is <emu-xref href="#implementation-defined"><a href="https://tc39.es/ecma262/#implementation-defined">implementation-defined</a></emu-xref>, but all calendars follow the general steps given here, which is a generalization of the precise algorithm specified above for <emu-val>"iso8601"</emu-val>.</li><li>If <var>largestUnit</var> is <emu-const>year</emu-const>, then<ol><li>Add (without constraining) as many years as possible to <var>one</var>, in the direction from <var>one</var> to <var>two</var>, without surpassing <var>two</var>. "Surpassing" here (and in all steps below) means to compare years numerically, then month codes lexicographically, then days numerically; if any of them exceed <var>two</var> in the direction from <var>one</var> to <var>two</var>, then <var>two</var> is surpassed.</li><li>Constrain <var>one</var> to a real year and month, not taking day into account. This step only matters for lunisolar calendars.</li></ol></li><li>If <var>largestUnit</var> is <emu-const>year</emu-const> or <emu-const>month</emu-const>, then<ol><li>Add (without constraining) as many months as possible to <var>one</var> without surpassing <var>two</var>.</li><li>Constrain <var>one</var> to a real year, month, and day.</li></ol></li><li>If <var>largestUnit</var> is <emu-const>week</emu-const>, add as many weeks as possible to <var>one</var> without surpassing <var>two</var>.</li><li>Add as many days as possible to <var>one</var> until it is equal to <var>two</var>.</li><li>Return a <emu-xref href="#sec-temporal-date-duration-records"><a href="https://tc39.es/proposal-temporal/#sec-temporal-date-duration-records">Date Duration Record</a></emu-xref> of the number of years, months, weeks, and days added.</li></ol></emu-alg>
+    </emu-clause>
+
+    <emu-clause id="sup-temporal-calendardatetoiso" type="implementation-defined abstract operation" aoid="CalendarDateToISO">
+      <h1><span class="secnum">4.1.11</span> CalendarDateToISO ( <var>calendar</var>, <var>fields</var>, <var>overflow</var> )</h1>
+      <p>The <emu-xref href="#implementation-defined"><a href="https://tc39.es/ecma262/#implementation-defined">implementation-defined</a></emu-xref> abstract operation CalendarDateToISO takes arguments <var>calendar</var> (a <emu-xref href="#sec-ecma402-calendar-types" id="_ref_29"><a href="#sec-ecma402-calendar-types">calendar type</a></emu-xref>), <var>fields</var> (a Calendar Fields <emu-xref href="#sec-list-and-record-specification-type"><a href="https://tc39.es/ecma262/#sec-list-and-record-specification-type">Record</a></emu-xref>), and <var>overflow</var> (<emu-const>constrain</emu-const> or <emu-const>reject</emu-const>) and returns either a <emu-xref href="#sec-completion-record-specification-type"><a href="https://tc39.es/ecma262/#sec-completion-record-specification-type">normal completion containing</a></emu-xref> an <emu-xref href="#sec-temporal-iso-date-records"><a href="https://tc39.es/proposal-temporal/#sec-temporal-iso-date-records">ISO Date Record</a></emu-xref> or a <emu-xref href="#sec-completion-record-specification-type"><a href="https://tc39.es/ecma262/#sec-completion-record-specification-type">throw completion</a></emu-xref>. 
+          It performs <emu-xref href="#implementation-defined"><a href="https://tc39.es/ecma262/#implementation-defined">implementation-defined</a></emu-xref> processing to convert <var>fields</var>, which represents either a date or a year and month in the built-in calendar identified by <var>calendar</var>, to a corresponding representative date in the ISO 8601 calendar, subject to overflow correction specified by <var>overflow</var>.
+          For <emu-const>reject</emu-const>, values that do not form a valid date cause an exception to be thrown, as described below.
+          For <emu-const>constrain</emu-const>, values that do not form a valid date are clamped to their respective valid range.
+        </p>
+      <p>This definition supersedes the definition provided in <emu-xref href="#sec-temporal-calendardatetoiso"><a href="https://tc39.es/proposal-temporal/#sec-temporal-calendardatetoiso">Temporal, 12.2.19</a></emu-xref>.</p>
+      <p>It performs the following steps when called:</p>
+      <emu-alg><ol><li>If <var>calendar</var> is <emu-val>"iso8601"</emu-val>, then<ol><li><emu-xref href="#assert"><a href="https://tc39.es/ecma262/#assert">Assert</a></emu-xref>: <var>fields</var>.<var class="field">[[Year]]</var>, <var>fields</var>.<var class="field">[[Month]]</var>, and <var>fields</var>.<var class="field">[[Day]]</var> are not <emu-const>unset</emu-const>.</li><li>Return ?&nbsp;<emu-xref aoid="RegulateISODate"><a href="https://tc39.es/proposal-temporal/#sec-temporal-regulateisodate">RegulateISODate</a></emu-xref>(<var>fields</var>.<var class="field">[[Year]]</var>, <var>fields</var>.<var class="field">[[Month]]</var>, <var>fields</var>.<var class="field">[[Day]]</var>, <var>overflow</var>).</li></ol></li><li>NOTE: The algorithm when <var>calendar</var> is not <emu-val>"iso8601"</emu-val> is <emu-xref href="#implementation-defined"><a href="https://tc39.es/ecma262/#implementation-defined">implementation-defined</a></emu-xref>, but all calendars follow the general steps given here, which is a generalization of the precise algorithm specified above for <emu-val>"iso8601"</emu-val>.</li><li>If <var>fields</var>.<var class="field">[[Era]]</var> and <var>fields</var>.<var class="field">[[EraYear]]</var> are not <emu-const>unset</emu-const> and <emu-xref aoid="IsValidEraYearForCalendar" id="_ref_30"><a href="#sec-temporal-isvaliderayearforcalendar">IsValidEraYearForCalendar</a></emu-xref>(<var>calendar</var>, <var>fields</var>.<var class="field">[[Era]]</var>, <var>fields</var>.<var class="field">[[EraYear]]</var>) is <emu-val>false</emu-val>, throw a <emu-val>RangeError</emu-val> exception.</li><li>If <var>fields</var>.<var class="field">[[MonthCode]]</var> is not <emu-const>unset</emu-const> and <emu-xref aoid="IsValidMonthCodeForCalendar" id="_ref_31"><a href="#sec-temporal-isvalidmonthecodeforcalendar">IsValidMonthCodeForCalendar</a></emu-xref>(<var>calendar</var>, <var>fields</var>.<var class="field">[[MonthCode]]</var>) is <emu-val>false</emu-val>, throw a <emu-val>RangeError</emu-val> exception.</li><li>If <var>fields</var> describes an existing date in <var>calendar</var>, return an <emu-xref href="#implementation-defined"><a href="https://tc39.es/ecma262/#implementation-defined">implementation-defined</a></emu-xref> <emu-xref href="#sec-temporal-iso-date-records"><a href="https://tc39.es/proposal-temporal/#sec-temporal-iso-date-records">ISO Date Record</a></emu-xref> that corresponds to the date described by <var>fields</var>.</li><li>If <var>overflow</var> is <emu-const>reject</emu-const>, throw a <emu-val>RangeError</emu-val> exception.</li><li>(This step only matters for lunisolar calendars.) If <var>fields</var>.<var class="field">[[MonthCode]]</var> is a leap month that doesn't exist in the year, then:<ol><li>Set <var>fields</var> to another date according to the cultural conventions of that calendar's users. Of the currently supported calendars: if <var>calendar</var> is <emu-val>"chinese"</emu-val> or <emu-val>"dangi"</emu-val>, change <var>fields</var>.<var class="field">[[MonthCode]]</var> to the same month code but without the <emu-val>"L"</emu-val>. If <var>calendar</var> is <emu-val>"hebrew"</emu-val>, change <var>fields</var>.<var class="field">[[MonthCode]]</var> from <emu-val>"M05L"</emu-val> to <emu-val>"M06"</emu-val>.</li><li>Update <var>fields</var>.<var class="field">[[Month]]</var> accordingly.</li></ol></li><li>If <var>fields</var>.<var class="field">[[MonthCode]]</var> is a valid month code for <var>fields</var>.<var class="field">[[Year]]</var>, but the date described by <var>fields</var> does not exist, set <var>fields</var>.<var class="field">[[Day]]</var> to the closest day in the same month. If there are two equally-close dates in the same month, pick the later one.</li><li>(This step does not apply to any currently supported calendars.) If the date described by <var>fields</var> still does not exist, set <var>fields</var> to the closest date in the same year. If there are two equally-close dates in that year, pick the later one.</li><li>Return an <emu-xref href="#implementation-defined"><a href="https://tc39.es/ecma262/#implementation-defined">implementation-defined</a></emu-xref> <emu-xref href="#sec-temporal-iso-date-records"><a href="https://tc39.es/proposal-temporal/#sec-temporal-iso-date-records">ISO Date Record</a></emu-xref> that corresponds to the date described by <var>fields</var>.</li></ol></emu-alg>
+    </emu-clause>
+
+    <emu-clause id="sup-temporal-calendarextrafields" type="implementation-defined abstract operation" aoid="CalendarExtraFields">
+      <h1><span class="secnum">4.1.12</span> CalendarExtraFields ( <var>calendar</var>, <var>fields</var> )</h1>
+      <p>The <emu-xref href="#implementation-defined"><a href="https://tc39.es/ecma262/#implementation-defined">implementation-defined</a></emu-xref> abstract operation CalendarExtraFields takes arguments <var>calendar</var> (a <emu-xref href="#sec-ecma402-calendar-types" id="_ref_32"><a href="#sec-ecma402-calendar-types">calendar type</a></emu-xref>) and <var>fields</var> (a <emu-xref href="#sec-list-and-record-specification-type"><a href="https://tc39.es/ecma262/#sec-list-and-record-specification-type">List</a></emu-xref> of values from the Enumeration Key column of <emu-xref href="#table-temporal-calendar-fields-record-fields"><a href="https://tc39.es/proposal-temporal/#table-temporal-calendar-fields-record-fields">Table 19</a></emu-xref>) and returns a <emu-xref href="#sec-list-and-record-specification-type"><a href="https://tc39.es/ecma262/#sec-list-and-record-specification-type">List</a></emu-xref> of values from the Enumeration Key column of <emu-xref href="#table-temporal-calendar-fields-record-fields"><a href="https://tc39.es/proposal-temporal/#table-temporal-calendar-fields-record-fields">Table 19</a></emu-xref>. It characterizes calendar-specific fields that are relevant for the provided <var>fields</var> in the built-in calendar identified by <var>calendar</var>.</p>
+      <p>This definition supersedes the definition provided in <emu-xref aoid="TemporalCalendarExtraFields"><a href="https://tc39.es/proposal-temporal/#sec-temporal-calendarextrafields">TemporalCalendarExtraFields</a></emu-xref>.</p>
+      <emu-alg><ol><li>If <var>fields</var> contains an element equal to <emu-const>year</emu-const> and <emu-xref aoid="CalendarSupportsEra" id="_ref_33"><a href="#sec-temporal-calendarsupportsera">CalendarSupportsEra</a></emu-xref>(<var>calendar</var>) is <emu-val>true</emu-val>, then<ol><li>Append <emu-const>era</emu-const> and <emu-const>era-year</emu-const> to <var>fields</var>.</li></ol></li><li>Return <var>fields</var>.</li></ol></emu-alg>
+    </emu-clause>
+
+    <emu-clause id="sup-temporal-calendarfieldkeystoignore" type="implementation-defined abstract operation" aoid="CalendarFieldKeysToIgnore">
+      <h1><span class="secnum">4.1.13</span> CalendarFieldKeysToIgnore ( <var>calendar</var>, <var>keys</var> )</h1>
+      <p>The <emu-xref href="#implementation-defined"><a href="https://tc39.es/ecma262/#implementation-defined">implementation-defined</a></emu-xref> abstract operation CalendarFieldKeysToIgnore takes arguments <var>calendar</var> (a <emu-xref href="#sec-ecma402-calendar-types" id="_ref_34"><a href="#sec-ecma402-calendar-types">calendar type</a></emu-xref>) and <var>keys</var> (a <emu-xref href="#sec-list-and-record-specification-type"><a href="https://tc39.es/ecma262/#sec-list-and-record-specification-type">List</a></emu-xref> of values from the Enumeration Key column of <emu-xref href="#table-temporal-calendar-fields-record-fields"><a href="https://tc39.es/proposal-temporal/#table-temporal-calendar-fields-record-fields">Table 19</a></emu-xref>) and returns a <emu-xref href="#sec-list-and-record-specification-type"><a href="https://tc39.es/ecma262/#sec-list-and-record-specification-type">List</a></emu-xref> of values from the Enumeration Key column of <emu-xref href="#table-temporal-calendar-fields-record-fields"><a href="https://tc39.es/proposal-temporal/#table-temporal-calendar-fields-record-fields">Table 19</a></emu-xref>. 
+          It determines which calendar date fields changing any of the fields named in <var>keys</var> can potentially conflict with or invalidate, for the given <var>calendar</var>.
+          A field always invalidates at least itself.
+        </p>
+      <p>This definition supersedes the definition provided in <emu-xref aoid="TemporalCalendarFieldKeysToIgnore"><a href="https://tc39.es/proposal-temporal/#sec-temporal-calendarfieldkeystoignore">TemporalCalendarFieldKeysToIgnore</a></emu-xref>.</p>
+      <emu-alg><ol><li>Let <var>ignoredKeys</var> be an empty <emu-xref href="#sec-list-and-record-specification-type"><a href="https://tc39.es/ecma262/#sec-list-and-record-specification-type">List</a></emu-xref>.</li><li>For each element <var>key</var> of <var>keys</var>, do<ol><li>If <var>key</var> is <emu-const>month</emu-const>, append <emu-const>month-code</emu-const> to <var>ignoredKeys</var>.</li><li>Else if <var>key</var> is <emu-const>month-code</emu-const>, append <emu-const>month</emu-const> to <var>ignoredKeys</var>.</li><li>If <var>key</var> is one of <emu-const>era</emu-const>, <emu-const>era-year</emu-const>, or <emu-const>year</emu-const> and <emu-xref aoid="CalendarSupportsEra" id="_ref_35"><a href="#sec-temporal-calendarsupportsera">CalendarSupportsEra</a></emu-xref>(<var>calendar</var>) is <emu-val>true</emu-val>, then<ol><li>Append <emu-const>era</emu-const>, <emu-const>era-year</emu-const>, and <emu-const>year</emu-const> to <var>ignoredKeys</var>.</li></ol></li><li>Else,<ol><li>Append <var>key</var> to <var>ignoredKeys</var>.</li></ol></li></ol></li><li>NOTE: While <var>ignoredKeys</var> can have duplicate elements, this is not intended to be meaningful. This specification only checks whether particular keys are or are not members of the list.</li><li>Return <var>ignoredKeys</var>.</li></ol></emu-alg>
+    </emu-clause>
   </emu-clause>
 </emu-clause><emu-annex id="sec-copyright-and-software-license" back-matter="">
         <h1>Copyright &amp; Software License</h1>
