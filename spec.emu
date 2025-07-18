@@ -445,7 +445,7 @@ contributors: Google, Ecma International
             1. Let _e_ be the Era value of the current row.
             1. If _e_ is equal to _era_, return _era_.
             1. Let _aliases_ be a List whose elements are the strings given in the Aliases column of the row.
-            1. If _aliases_ contains _era_, return _era_.
+            1. If _aliases_ contains _era_, return _e_.
         1. Return *undefined*.
       </emu-alg>
     </emu-clause>
