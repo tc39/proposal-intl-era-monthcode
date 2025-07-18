@@ -24,7 +24,7 @@
             },
             {
                 "type": "clause",
-                "number": "Calendar Date Records",
+                "number": "Temporal, 12.2.1",
                 "id": "sec-temporal-calendar-date-records"
             },
             {
@@ -38,8 +38,8 @@
                 "id": "sec-temporal-calendardateuntil"
             },
             {
-                "type": "op",
-                "aoid": "TemporalCalendarExtraFields",
+                "type": "clause",
+                "number": "Temporal, 12.2.22",
                 "id": "sec-temporal-calendarextrafields"
             },
             {
@@ -48,8 +48,8 @@
                 "id": "table-temporal-calendar-fields-record-fields"
             },
             {
-                "type": "op",
-                "aoid": "TemporalCalendarFieldKeysToIgnore",
+                "type": "clause",
+                "number": "Temporal, 12.2.23",
                 "id": "sec-temporal-calendarfieldkeystoignore"
             },
             {
