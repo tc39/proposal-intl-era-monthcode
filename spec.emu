@@ -450,7 +450,7 @@ contributors: Google, Ecma International
       </emu-alg>
     </emu-clause>
 
-    <emu-clause id="sec-temporal-isvalidmonthecodeforcalendar" type="abstract operation">
+    <emu-clause id="sec-temporal-isvalidmonthcodeforcalendar" type="abstract operation">
       <h1>
         IsValidMonthCodeForCalendar (
           _calendar_: a calendar type that is not *"iso8601"*,
