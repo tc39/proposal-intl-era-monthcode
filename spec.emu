@@ -964,6 +964,7 @@ contributors: Google, Ecma International
         <dd>It characterizes calendar-specific fields that are relevant for the provided _fields_ in the built-in calendar identified by _calendar_.</dd>
       </dl>
       <p>This definition supersedes the definition provided in <emu-xref href="#sec-temporal-calendarextrafields"></emu-xref>.</p>
+      <p>It performs the following steps when called:</p>
       <emu-alg>
         1. If _fields_ contains an element equal to ~year~ and CalendarSupportsEra(_calendar_) is *true*, then
           1. Append ~era~ and ~era-year~ to _fields_.
@@ -986,6 +987,7 @@ contributors: Google, Ecma International
         </dd>
       </dl>
       <p>This definition supersedes the definition provided in <emu-xref href="#sec-temporal-calendarfieldkeystoignore"></emu-xref>.</p>
+      <p>It performs the following steps when called:</p>
       <emu-alg>
         1. Let _ignoredKeys_ be an empty List.
         1. For each element _key_ of _keys_, do
