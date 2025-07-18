@@ -221,7 +221,7 @@ contributors: Google, Ecma International
     <emu-clause id="sec-temporal-calendarsupportsera" type="abstract operation">
       <h1>
         CalendarSupportsEra (
-          _calendar_: a String,
+          _calendar_: a calendar type,
         ): a Boolean
       </h1>
       <dl class="header">
@@ -428,7 +428,7 @@ contributors: Google, Ecma International
     <emu-clause id="sec-temporal-canonicalizeeraincalendar" type="abstract operation">
       <h1>
         CanonicalizeEraInCalendar (
-          _calendar_: a String,
+          _calendar_: a calendar type that is not *"iso8601"*,
           _era_: a String,
         ): a String or *undefined*
       </h1>
@@ -453,7 +453,7 @@ contributors: Google, Ecma International
     <emu-clause id="sec-temporal-isvalidmonthecodeforcalendar" type="abstract operation">
       <h1>
         IsValidMonthCodeForCalendar (
-          _calendar_: a String,
+          _calendar_: a calendar type that is not *"iso8601"*,
           _monthCode_: a String,
         ): a Boolean
       </h1>
@@ -509,7 +509,7 @@ contributors: Google, Ecma International
     <emu-clause id="sec-temporal-isvaliderayearforcalendar" type="abstract operation">
       <h1>
         IsValidEraYearForCalendar (
-          _calendar_: a String,
+          _calendar_: a calendar type that is not *"iso8601"*,
           _era_: a String,
           _eraYear_: a integer,
         ): a Boolean
@@ -535,7 +535,7 @@ contributors: Google, Ecma International
     <emu-clause id="sec-temporal-calendardateera" type="abstract operation">
       <h1>
         CalendarDateEra (
-          _calendar_: a String,
+          _calendar_: a calendar type that is not *"iso8601"*,
           _date_: a Temporal.PlainDateTime, Temporal.PlainDate, or Temporal.PlainYearMonth,
         ): a String or *undefined*
       </h1>
@@ -553,7 +553,7 @@ contributors: Google, Ecma International
     <emu-clause id="sec-temporal-calendardateerayear" type="abstract operation">
       <h1>
         CalendarDateEraYear (
-          _calendar_: a String,
+          _calendar_: a calendar type that is not *"iso8601"*,
           _date_: a Temporal.PlainDateTime, Temporal.PlainDate, or Temporal.PlainYearMonth,
         ): an integer or *undefined*
       </h1>
@@ -685,7 +685,7 @@ contributors: Google, Ecma International
             <td>a String or *undefined*</td>
             <td>
               A lowercase String value representing the date's era, or *undefined* for calendars that do not have eras.<br>
-              The value of this field for a calendar with the identifier _calendar_ should be the result of calling CalendarDateEra(_calendar_, _date_), where _date_ is a Temporal.PlainDateTime, Temporal.PlainDate, or Temporal.PlainYearMonth value corresponding to the date.
+              The value of this field for a calendar type _calendar_ should be the result of calling CalendarDateEra(_calendar_, _date_), where _date_ is a Temporal.PlainDateTime, Temporal.PlainDate, or Temporal.PlainYearMonth value corresponding to the date.
             </td>
           </tr>
           <tr>
@@ -693,7 +693,7 @@ contributors: Google, Ecma International
             <td>an integer or *undefined*</td>
             <td>
               The ordinal position of the date's year within its era, or *undefined* for calendars that do not have eras.<br>
-              The value of this field for a calendar with the identifier _calendar_ should be the result of calling CalendarDateEraYear(_calendar_, _date_), where _date_ is a Temporal.PlainDateTime, Temporal.PlainDate, or Temporal.PlainYearMonth value corresponding to the date.
+              The value of this field for a calendar type _calendar_ should be the result of calling CalendarDateEraYear(_calendar_, _date_), where _date_ is a Temporal.PlainDateTime, Temporal.PlainDate, or Temporal.PlainYearMonth value corresponding to the date.
               <emu-note>
                 Era years are 1-indexed for many calendars, but not all (e.g., the eras of the Burmese calendar each start with a year 0). Years can also advance opposite the flow of time (as for BCE years in the Gregorian calendar).
               </emu-note>
@@ -704,7 +704,7 @@ contributors: Google, Ecma International
             <td>an integer</td>
             <td>
               The date's year relative to the first day of a calendar-specific "epoch year".<br>
-              The value of this field for a calendar with the identifier _calendar_ should be the result of calling CalendarDateArithmeticYear(_calendar_, _date_), where _date_ is a Temporal.PlainDateTime, Temporal.PlainDate, or Temporal.PlainYearMonth value corresponding to the date.
+              The value of this field for a calendar type _calendar_ should be the result of calling CalendarDateArithmeticYear(_calendar_, _date_), where _date_ is a Temporal.PlainDateTime, Temporal.PlainDate, or Temporal.PlainYearMonth value corresponding to the date.
               <emu-note>The year is relative to the first day of the calendar's epoch year, so if the epoch era starts in the middle of the year, the year will be the same value before and after the start date of the era.</emu-note>
             </td>
           </tr>
