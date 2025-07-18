@@ -511,7 +511,7 @@ contributors: Google, Ecma International
         IsValidEraYearForCalendar (
           _calendar_: a calendar type that is not *"iso8601"*,
           _era_: a String,
-          _eraYear_: a integer,
+          _eraYear_: an integer,
         ): a Boolean
       </h1>
       <dl class="header">
@@ -523,7 +523,7 @@ contributors: Google, Ecma International
       <emu-alg>
         1. Let _era_ be CanonicalizeEraInCalendar(_calendar_, _era_).
         1. If _era_ is *undefined*, return *false*.
-        1. Let _r_ be the row in <emu-xref href="#table-eras"></emu-xref> which the _calendar_ is in the Calendar column and the _era_ is in the Era column.
+        1. Let _r_ be the row in <emu-xref href="#table-eras"></emu-xref> in which _calendar_ is in the Calendar column and _era_ is in the Era column.
         1. Let _min_ be the value given in the *"Minimum eraYear"* column of _r_.
         1. Let _max_ be the value given in the *"Maximum eraYear"* column of _r_.
         1. If _eraYear_ &lt; _min_, return *false*.
