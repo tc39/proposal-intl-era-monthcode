@@ -86,7 +86,7 @@ contributors: Google, Ecma International
           </tr>
           <tr>
             <td>*"hebrew"*</td>
-            <td>Hebrew calendar, proleptic. Lunisolar calendar with one leap month inserted after month 5. There is one era.</td>
+            <td>Hebrew calendar, proleptic. Civil calendar with Tishrei as the first month of the year. Lunisolar calendar with one leap month inserted after month 5. There is one era.</td>
           </tr>
           <tr>
             <td>*"indian"*</td>
