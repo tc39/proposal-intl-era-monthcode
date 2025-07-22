@@ -106,7 +106,7 @@ contributors: Google, Ecma International
           </tr>
           <tr>
             <td>*"islamicc"*</td>
-            <td>Deprecated alias for *"islamic-civil"*.</td>
+            <td>Alias for *"islamic-civil"*.</td>
           </tr>
           <tr>
             <td>*"iso8601"*</td>
