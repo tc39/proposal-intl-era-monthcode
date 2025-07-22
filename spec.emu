@@ -260,6 +260,13 @@ contributors: Google, Ecma International
             <td>+∞</td>
           </tr>
           <tr>
+            <td>*"ethioaa"*</td>
+            <td>*"aa"*</td>
+            <td>*"mundi"*</td>
+            <td>-∞</td>
+            <td>+∞</td>
+          </tr>
+          <tr>
             <td>*"ethiopic"*</td>
             <td>*"am"*</td>
             <td>*"incar"*</td>
@@ -272,13 +279,6 @@ contributors: Google, Ecma International
             <td>*"mundi"*</td>
             <td>-∞</td>
             <td>5500</td>
-          </tr>
-          <tr>
-            <td>*"ethioaa"*</td>
-            <td>*"aa"*</td>
-            <td>*"mundi"*</td>
-            <td>-∞</td>
-            <td>+∞</td>
           </tr>
           <tr>
             <td>*"gregory"*</td>
@@ -490,11 +490,11 @@ contributors: Google, Ecma International
             <td>*"M01L"*, *"M02L"*, *"M03L"*, *"M04L"*, *"M05L"*, *"M06L"*, *"M07L"*, *"M08L"*, *"M09L"*, *"M10L"*, *"M11L"*, *"M12L"*</td>
           </tr>
           <tr>
-            <td>*"ethiopic"*</td>
+            <td>*"ethioaa"*</td>
             <td>*"M13"*</td>
           </tr>
           <tr>
-            <td>*"ethioaa"*</td>
+            <td>*"ethiopic"*</td>
             <td>*"M13"*</td>
           </tr>
           <tr>
@@ -614,12 +614,12 @@ contributors: Google, Ecma International
             <td>0</td>
           </tr>
           <tr>
-            <td>*"ethiopic"*</td>
-            <td>7</td>
-          </tr>
-          <tr>
             <td>*"ethioaa"*</td>
             <td>-5493</td>
+          </tr>
+          <tr>
+            <td>*"ethiopic"*</td>
+            <td>7</td>
           </tr>
           <tr>
             <td>*"gregory"*</td>
