@@ -181,6 +181,7 @@ contributors: Google, Ecma International
         1. <ins>If _resolvedCalendar_ is *"islamic"* or *"islamic-rgsa"*, then</ins>
           1. <ins>Let _fallbackCalendar_ be an implementation- and locale-defined calendar type that is one of the values returned from AvailableCalendars.</ins>
           1. <ins>Set _resolvedCalendar_ to CanonicalizeUValue(*"ca"*, _fallbackCalendar_).</ins>
+          1. <ins>If the ECMAScript implementation has a mechanism for reporting diagnostic warning messages, a warning should be issued.</ins>
         1. Set _dateTimeFormat_.[[Calendar]] to _resolvedCalendar_.
         1. NOTE: Rest of algorithm unchanged.
       </emu-alg>
