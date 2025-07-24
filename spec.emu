@@ -692,7 +692,7 @@ contributors: Google, Ecma International
               The ordinal position of the date's year within its era, or *undefined* for calendars that do not have eras.<br>
               The value of this field for a calendar type _calendar_ should be the result of calling CalendarDateEraYear(_calendar_, _date_), where _date_ is a Temporal.PlainDateTime, Temporal.PlainDate, or Temporal.PlainYearMonth value corresponding to the date.
               <emu-note>
-                Era years are 1-indexed for many calendars, but not all (e.g., the eras of the Burmese calendar each start with a year 0). Years can also advance opposite the flow of time (as for BCE years in the Gregorian calendar).
+                Era years are 1-indexed for many calendars, but not all (e.g., the eras of the Burmese calendar, not currently available in CLDR, each start with a year 0). Years can also advance opposite the flow of time (as for BCE years in the Gregorian calendar).
               </emu-note>
             </td>
           </tr>
