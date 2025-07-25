@@ -574,7 +574,7 @@ contributors: Google, Ecma International
       <h1>
         CalendarDateArithmeticYear (
           _calendar_: a calendar type that is not *"iso8601"*,
-          _date_: a Temporal.PlainDateTime, Temporal.PlainDate, or Temporal.PlainYearMonth,
+          _date_: an ISO Date Record, Temporal.PlainDateTime, Temporal.PlainDate, or Temporal.PlainYearMonth,
         ): an integer
       </h1>
       <dl class="header">
@@ -582,10 +582,11 @@ contributors: Google, Ecma International
         <dd>It performs implementation-defined processing to find the year for the date corresponding to _date_ in the context of the calendar represented by _calendar_ relative to a well-defined epoch year for that calendar.</dd>
       </dl>
       <emu-alg>
-        1. Let _year_ be _date_.[[ISOYear]].
         1. Let _r_ be the row in <emu-xref href="#table-epoch-years"></emu-xref> which the value of the Calendar column is _calendar_.
         1. Let _epochYear_ be the value given in the *"Epoch ISO Year"* column of _r_.
-        1. Let _arithmeticYear_ be the number of whole years in the calendar represented by _calendar_ elapsed until the ISO year _year_ since the calendar year that started during ISO year _epochYear_, according to implementation-defined processing.
+        1. Let _epochDate_ be the first day of the calendar year starting in ISO year _epochYear_ in the calendar represented by _calendar_, according to implementation-defined processing.
+        1. Let _newYear_ be the first day of the calendar year of _date_ in the calendar represented by _calendar_, according to implementation-defined processing.
+        1. Let _arithmeticYear_ be the number of whole years between _epochDate_ and _newYear_ in the calendar represented by _calendar_, according to implementation-defined processing.
         1. Return _arithmeticYear_.
       </emu-alg>
 
