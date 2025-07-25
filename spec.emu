@@ -234,8 +234,13 @@ contributors: Google, Ecma International
         1. If _calendar_ is listed in the Calendar column of <emu-xref href="#table-eras"></emu-xref>, return *true*.
         1. Return *false*.
       </emu-alg>
+      <p><emu-xref href="#table-eras"></emu-xref> lists all possible eras for the current set of calendars, including their aliases, ranges and kinds.
+      The era kind is used by <emu-xref href="#sec-temporal-calendardatearithmeticyearforerayear">CalendarDateArithmeticYearForEraYear</emu-xref> to calculate arithmetic year ([[Year]]):
+      An *Era kind* ~epoch~ means that the era is the epoch era, so 1 Era has an arithmetic year of 1. An *Era kind* ~negative~ means that the era is a "negative" era growing
+      from the epoch, so 1 Era is an arithmetic year of 0, and larger [[EraYear]] values produce smaller, negative arithmetic years. An *Era kind* of
+      ~offset~ means that the era is "offset" by a given number (in the *Offset* column), so 1 Era has an arithmetic year of *Offset*.</p>
       <emu-table id="table-eras">
-        <emu-caption>era aliases and range of eraYear</emu-caption>
+        <emu-caption>era aliases, range of eraYear, and era kinds</emu-caption>
         <table class="real-table">
           <thead>
             <tr>
@@ -244,6 +249,8 @@ contributors: Google, Ecma International
               <th>Aliases</th>
               <th>Minimum eraYear</th>
               <th>Maximum eraYear</th>
+              <th>Era kind</th>
+              <th>Offset</th>
             </tr>
           </thead>
           <tr>
@@ -252,6 +259,8 @@ contributors: Google, Ecma International
             <td></td>
             <td>-∞</td>
             <td>+∞</td>
+            <td>~epoch~</td>
+            <td></td>
           </tr>
           <tr>
             <td>*"coptic"*</td>
@@ -259,6 +268,8 @@ contributors: Google, Ecma International
             <td></td>
             <td>-∞</td>
             <td>+∞</td>
+            <td>~epoch~</td>
+            <td></td>
           </tr>
           <tr>
             <td>*"ethioaa"*</td>
@@ -266,6 +277,8 @@ contributors: Google, Ecma International
             <td>*"mundi"*</td>
             <td>-∞</td>
             <td>+∞</td>
+            <td>~epoch~</td>
+            <td></td>
           </tr>
           <tr>
             <td>*"ethiopic"*</td>
@@ -273,6 +286,8 @@ contributors: Google, Ecma International
             <td>*"incar"*</td>
             <td>1</td>
             <td>+∞</td>
+            <td>~epoch~</td>
+            <td></td>
           </tr>
           <tr>
             <td>*"ethiopic"*</td>
@@ -280,6 +295,8 @@ contributors: Google, Ecma International
             <td>*"mundi"*</td>
             <td>-∞</td>
             <td>5500</td>
+            <td> ~offset~</td>
+            <td>-5499</td>
           </tr>
           <tr>
             <td>*"gregory"*</td>
@@ -287,6 +304,8 @@ contributors: Google, Ecma International
             <td>*"ad"*</td>
             <td>1</td>
             <td>+∞</td>
+            <td>~epoch~</td>
+            <td></td>
           </tr>
           <tr>
             <td>*"gregory"*</td>
@@ -294,6 +313,8 @@ contributors: Google, Ecma International
             <td>*"bc"*</td>
             <td>1</td>
             <td>+∞</td>
+            <td>~negative~</td>
+            <td></td>
           </tr>
           <tr>
             <td>*"hebrew"*</td>
@@ -301,6 +322,8 @@ contributors: Google, Ecma International
             <td></td>
             <td>-∞</td>
             <td>+∞</td>
+            <td>~epoch~</td>
+            <td></td>
           </tr>
           <tr>
             <td>*"indian"*</td>
@@ -308,6 +331,8 @@ contributors: Google, Ecma International
             <td></td>
             <td>-∞</td>
             <td>+∞</td>
+            <td>~epoch~</td>
+            <td></td>
           </tr>
           <tr>
             <td>*"islamic-civil"*</td>
@@ -315,6 +340,8 @@ contributors: Google, Ecma International
             <td></td>
             <td>1</td>
             <td>+∞</td>
+            <td>~epoch~</td>
+            <td></td>
           </tr>
           <tr>
             <td>*"islamic-civil"*</td>
@@ -322,6 +349,8 @@ contributors: Google, Ecma International
             <td></td>
             <td>1</td>
             <td>+∞</td>
+            <td>~negative~</td>
+            <td></td>
           </tr>
           <tr>
             <td>*"islamic-tbla"*</td>
@@ -329,6 +358,8 @@ contributors: Google, Ecma International
             <td></td>
             <td>1</td>
             <td>+∞</td>
+            <td>~epoch~</td>
+            <td></td>
           </tr>
           <tr>
             <td>*"islamic-tbla"*</td>
@@ -336,6 +367,8 @@ contributors: Google, Ecma International
             <td></td>
             <td>1</td>
             <td>+∞</td>
+            <td>~negative~</td>
+            <td></td>
           </tr>
           <tr>
             <td>*"islamic-umalqura"*</td>
@@ -343,6 +376,8 @@ contributors: Google, Ecma International
             <td></td>
             <td>1</td>
             <td>+∞</td>
+            <td>~epoch~</td>
+            <td></td>
           </tr>
           <tr>
             <td>*"islamic-umalqura"*</td>
@@ -350,6 +385,8 @@ contributors: Google, Ecma International
             <td></td>
             <td>1</td>
             <td>+∞</td>
+            <td>~negative~</td>
+            <td></td>
           </tr>
           <tr>
             <td>*"japanese"*</td>
@@ -357,6 +394,8 @@ contributors: Google, Ecma International
             <td></td>
             <td>1</td>
             <td>+∞</td>
+            <td>~offset~</td>
+            <td>2019</td>
           </tr>
           <tr>
             <td>*"japanese"*</td>
@@ -364,6 +403,8 @@ contributors: Google, Ecma International
             <td></td>
             <td>1</td>
             <td>31</td>
+            <td>~offset~</td>
+            <td>1989</td>
           </tr>
           <tr>
             <td>*"japanese"*</td>
@@ -371,6 +412,8 @@ contributors: Google, Ecma International
             <td></td>
             <td>1</td>
             <td>64</td>
+            <td>~offset~</td>
+            <td>1926</td>
           </tr>
           <tr>
             <td>*"japanese"*</td>
@@ -378,6 +421,8 @@ contributors: Google, Ecma International
             <td></td>
             <td>1</td>
             <td>15</td>
+            <td>~offset~</td>
+            <td>1912</td>
           </tr>
           <tr>
             <td>*"japanese"*</td>
@@ -385,6 +430,8 @@ contributors: Google, Ecma International
             <td></td>
             <td>1</td>
             <td>45</td>
+            <td>~offset~</td>
+            <td>1868</td>
           </tr>
           <tr>
             <td>*"japanese"*</td>
@@ -392,6 +439,8 @@ contributors: Google, Ecma International
             <td>*"ad"*</td>
             <td>1</td>
             <td>1868</td>
+            <td>~epoch~</td>
+            <td></td>
           </tr>
           <tr>
             <td>*"japanese"*</td>
@@ -399,6 +448,8 @@ contributors: Google, Ecma International
             <td>*"bc"*</td>
             <td>1</td>
             <td>+∞</td>
+            <td>~negative~</td>
+            <td></td>
           </tr>
           <tr>
             <td>*"persian"*</td>
@@ -406,6 +457,8 @@ contributors: Google, Ecma International
             <td></td>
             <td>-∞</td>
             <td>+∞</td>
+            <td>~epoch~</td>
+            <td></td>
           </tr>
           <tr>
             <td>*"roc"*</td>
@@ -413,6 +466,8 @@ contributors: Google, Ecma International
             <td>*"minguo"*</td>
             <td>1</td>
             <td>+∞</td>
+            <td>~epoch~</td>
+            <td></td>
           </tr>
           <tr>
             <td>*"roc"*</td>
@@ -420,6 +475,8 @@ contributors: Google, Ecma International
             <td>*"before-roc"*, *"minguo-qian"*</td>
             <td>1</td>
             <td>+∞</td>
+            <td>~negative~</td>
+            <td></td>
           </tr>
         </table>
       </emu-table>
@@ -676,7 +733,7 @@ contributors: Google, Ecma International
       <emu-alg>
         1. Let _era_ be CanonicalizeEraInCalendar(_calendar_, _era_).
         1: Assert: _era_ is not *undefined*.
-        1. Let _r_ be the row in <emu-xref href="#table-era-arithmetic-year-conversion"></emu-xref> in which _calendar_ is in the Calendar column and _era_ is in the Era column.
+        1. Let _r_ be the row in <emu-xref href="#table-eras"></emu-xref> in which _calendar_ is in the Calendar column and _era_ is in the Era column.
         1. Let _eraKind_ be the value given in the *"Era kind"* column of _r_.
         1. Let _offset_ be the value given in the *"Offset"* column of _r_.
         1. If _eraKind_ is ~epoch~, return _eraYear_.
@@ -685,171 +742,6 @@ contributors: Google, Ecma International
         1. Assert: _offset_ is not *undefined*.
         1. Return <emu-eqn>_offset_ + _eraYear_ - 1</emu-eqn>.
       </emu-alg>
-
-      <emu-table id="table-era-arithmetic-year-conversion">
-        <emu-caption>eras to arithmetic year</emu-caption>
-        <table class="real-table">
-          <thead>
-            <tr>
-              <th>Calendar</th>
-              <th>Era</th>
-              <th>Era kind</th>
-              <th>Offset</th>
-            </tr>
-          </thead>
-          <tr>
-            <td>*"buddhist"*</td>
-            <td>*"be"*</td>
-            <td> ~epoch~</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>*"coptic"*</td>
-            <td>*"am"*</td>
-            <td> ~epoch~</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>*"ethioaa"*</td>
-            <td>*"aa"*</td>
-            <td> ~epoch~</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>*"ethiopic"*</td>
-            <td>*"am"*</td>
-            <td> ~epoch~</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>*"ethiopic"*</td>
-            <td>*"aa"*</td>
-            <td> ~offset~</td>
-            <td>-5499</td>
-          </tr>
-          <tr>
-            <td>*"gregory"*</td>
-            <td>*"ce"*</td>
-            <td> ~epoch~</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>*"gregory"*</td>
-            <td>*"bce"*</td>
-            <td> ~negative~</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>*"hebrew"*</td>
-            <td>*"am"*</td>
-            <td> ~epoch~</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>*"indian"*</td>
-            <td>*"shaka"*</td>
-            <td> ~epoch~</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>*"islamic-civil"*</td>
-            <td>*"ah"*</td>
-            <td> ~epoch~</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>*"islamic-civil"*</td>
-            <td>*"bh"*</td>
-            <td> ~negative~</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>*"islamic-tbla"*</td>
-            <td>*"ah"*</td>
-            <td> ~epoch~</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>*"islamic-tbla"*</td>
-            <td>*"bh"*</td>
-            <td> ~negative~</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>*"islamic-umalqura"*</td>
-            <td>*"ah"*</td>
-            <td> ~epoch~</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>*"islamic-umalqura"*</td>
-            <td>*"bh"*</td>
-            <td> ~negative~</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>*"japanese"*</td>
-            <td>*"reiwa"*</td>
-            <td> ~offset~</td>
-            <td>2019</td>
-          </tr>
-          <tr>
-            <td>*"japanese"*</td>
-            <td>*"heisei"*</td>
-            <td> ~offset~</td>
-            <td>1989</td>
-          </tr>
-          <tr>
-            <td>*"japanese"*</td>
-            <td>*"showa"*</td>
-            <td> ~offset~</td>
-            <td>1926</td>
-          </tr>
-          <tr>
-            <td>*"japanese"*</td>
-            <td>*"taisho"*</td>
-            <td> ~offset~</td>
-            <td>1912</td>
-          </tr>
-          <tr>
-            <td>*"japanese"*</td>
-            <td>*"meiji"*</td>
-            <td> ~offset~</td>
-            <td>1868</td>
-          </tr>
-          <tr>
-            <td>*"japanese"*</td>
-            <td>*"ce"*</td>
-            <td> ~epoch~</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>*"japanese"*</td>
-            <td>*"bce"*</td>
-            <td>~negative~</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>*"persian"*</td>
-            <td>*"ap"*</td>
-            <td> ~epoch~</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>*"roc"*</td>
-            <td>*"roc"*</td>
-            <td> ~epoch~</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>*"roc"*</td>
-            <td>*"broc"*</td>
-            <td>~negative~</td>
-            <td></td>
-          </tr>
-        </table>
-      </emu-table>
-      </emu-table>
     </emu-clause>
 
     <emu-clause id="sup-temporal-calendar-date-records">
