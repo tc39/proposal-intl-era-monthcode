@@ -702,7 +702,7 @@ contributors: Google, Ecma International
             <td>an integer</td>
             <td>
               The date's year relative to the first day of a calendar-specific "epoch year".<br>
-              The value of this field for a calendar type _calendar_ should be the result of calling CalendarDateArithmeticYear(_calendar_, _date_), where _date_ is a Temporal.PlainDateTime, Temporal.PlainDate, or Temporal.PlainYearMonth value corresponding to the date.
+              The value of this field for a calendar type _calendar_ should be the result of calling CalendarDateArithmeticYear(_calendar_, _date_), where _date_ is the [[ISODate]] field of a Temporal.PlainDateTime, Temporal.PlainDate, or Temporal.PlainYearMonth value corresponding to the date.
               <emu-note>The year is relative to the first day of the calendar's epoch year, so if the epoch era starts in the middle of the year, the year will be the same value before and after the start date of the era.</emu-note>
             </td>
           </tr>
