@@ -937,9 +937,6 @@ contributors: Google, Ecma International
           A field always invalidates at least itself.
         </dd>
       </dl>
-      <emu-note>
-        In a _calendar_ such as *"japanese"* where eras do not start and end at year and/or month boundaries, note that the returned List should contain ~era~ and ~era-year~ if _keys_ contains ~day~, ~month~, or ~month-code~ (not only if it contains ~era~, ~era-year~, or ~year~, as in the example above) because it's possible for changing the day or month to cause a conflict with the era.
-      </emu-note>
       <p>This definition supersedes the definition provided in <emu-xref href="#sec-temporal-nonisofieldkeystoignore"></emu-xref>.</p>
       <p>It performs the following steps when called:</p>
       <emu-alg>
@@ -951,6 +948,8 @@ contributors: Google, Ecma International
             1. Append ~era~, ~era-year~, and ~year~ to _ignoredKeys_.
           1. Else,
             1. Append _key_ to _ignoredKeys_.
+          1. If _key_ is one of ~day~, ~month~, or ~month-code~ and _calendar_ is *"japanese"*, then
+            1. Append ~era~ and ~era-year~ to _ignoredKeys_.
         1. NOTE: While _ignoredKeys_ can have duplicate elements, this is not intended to be meaningful. This specification only checks whether particular keys are or are not members of the list.
         1. Return _ignoredKeys_.
       </emu-alg>
