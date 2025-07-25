@@ -822,7 +822,6 @@ contributors: Google, Ecma International
         1. Let _calendarDate_ be CalendarISOToDate(_calendar_, _isoDate_).
         1. Add _duration_.[[Years]] to _calendarDate_.
         1. (This step only matters for lunisolar calendars.) If _calendarDate_.[[MonthCode]] is a leap month that doesn't exist in the year, then:
-          1. If _overflow_ is ~reject~, throw a *RangeError* exception.
           1. Set _calendarDate_ to another date according to the cultural conventions of that calendar's users. Of the currently supported calendars: if _calendar_ is *"chinese"* or *"dangi"*, change _calendarDate_.[[MonthCode]] to the same month code but without the *"L"*. If _calendar_ is *"hebrew"*, change _calendarDate_.[[MonthCode]] from *"M05L"* to *"M06"*.
           1. Update _calendarDate_.[[Month]] accordingly.
         1. Add _duration_.[[Months]] to _calendarDate_, balancing _calendarDate_ if it goes over a year boundary.
