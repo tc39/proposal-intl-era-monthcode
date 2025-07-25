@@ -710,6 +710,12 @@ contributors: Google, Ecma International
             <td></td>
           </tr>
           <tr>
+            <td>*"ethioaa"*</td>
+            <td>*"aa"*</td>
+            <td> ~epoch~</td>
+            <td></td>
+          </tr>
+          <tr>
             <td>*"ethiopic"*</td>
             <td>*"am"*</td>
             <td> ~epoch~</td>
@@ -720,12 +726,6 @@ contributors: Google, Ecma International
             <td>*"aa"*</td>
             <td> ~offset~</td>
             <td>-5499</td>
-          </tr>
-          <tr>
-            <td>*"ethioaa"*</td>
-            <td>*"aa"*</td>
-            <td> ~epoch~</td>
-            <td></td>
           </tr>
           <tr>
             <td>*"gregory"*</td>
