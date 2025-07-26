@@ -837,6 +837,266 @@ contributors: Google, Ecma International
       </emu-alg>
     </emu-clause>
 
+    <emu-clause id="sup-temporal-integerfrommonthcode" type="implementation-defined abstract operation">
+      <h1>
+        IntegerFromMonthCode (
+          _monthCode_: a String,
+        ): an integer
+      </h1>
+      <dl class="header">
+        <dt>description</dt>
+        <dd>
+          It returns the integer number contained in _monthCode_.
+        </dd>
+      </dl>
+      <p>It performs the following steps when called:</p>
+      <emu-alg>
+        1. Assert: The length of _monthCode_ is 3 or 4.
+        1. Let _monthCodeDigits_ be the substring of _monthCode_ from 1 to 3.
+        1. Return ℝ(StringToNumber(_monthCodeDigits_)).
+      </emu-alg>
+    </emu-clause>
+
+    <emu-clause id="sup-temporal-monthcodefrominteger" type="implementation-defined abstract operation">
+      <h1>
+        MonthCodeFromInteger (
+          _integer_: an integer,
+        ): a String
+      </h1>
+      <dl class="header">
+        <dt>description</dt>
+        <dd>
+          It returns a month code for a non-leap month containing the given integer number.
+        </dd>
+      </dl>
+      <p>It performs the following steps when called:</p>
+      <emu-alg>
+        1. Let _numberPart_ be ToZeroPaddedDecimalString(_integer_, 2).
+        1. Return the string-concatenation of the code unit 0x004D (LATIN CAPITAL LETTER M) and _numberPart_.
+      </emu-alg>
+    </emu-clause>
+
+    <emu-clause id="sup-temporal-isvalidmonthcodeforcalendarinyear" type="implementation-defined abstract operation">
+      <h1>
+        IsValidMonthCodeForCalendarInYear (
+          _calendar_: a calendar type that is not *"iso8601"*,
+          _year_: an integer,
+          _monthCode_: a String,
+        ): an Boolean
+      </h1>
+      <dl class="header">
+        <dt>description</dt>
+        <dd>
+          It interprets _year_ as arithmetical value in the given _calendar_ and returns *true* if there is a month with the given _monthCode_ in that year or *false* otherwise.
+        </dd>
+      </dl>
+      <p>It performs the following steps when called:</p>
+      <emu-alg>
+        Returns an implementation-and-calendar-defined Boolean as described above.
+      </emu-alg>
+    </emu-clause>
+
+    <emu-clause id="sup-temporal-calendardatecodestoiso" type="implementation-defined abstract operation">
+      <h1>
+        CalendarDateCodesToISO (
+          _calendar_: a calendar type that is not *"iso8601"*,
+          _year_: an integer,
+          _monthCode_: a String,
+          _day_: an integer,
+        ): either a normal completion containing an ISO Date Record or a throw completion
+      </h1>
+      <dl class="header">
+        <dt>description</dt>
+        <dd>
+          It returns an ISO Date Record that, when converted to a Calendar Date Record with _calendar_ (for example, with CalendarISOToDate), contains the given _year_, _monthCode_, and _day_ values in its [[Year]], [[MonthCode]], and [[Day]] fields. If this is not possible, a RangeError is thrown.
+        </dd>
+      </dl>
+      <p>It performs the following steps when called:</p>
+      <emu-alg>
+        Returns an implementation-and-calendar-defined completion as described above.
+      </emu-alg>
+    </emu-clause>
+
+    <emu-clause id="sup-temporal-calendardaysinmonth" type="implementation-defined abstract operation">
+      <h1>
+        CalendarDaysInMonth (
+          _calendar_: a calendar type that is not *"iso8601"*,
+          _year_: an integer,
+          _month_: an integer,
+        ): an integer
+      </h1>
+      <dl class="header">
+        <dt>description</dt>
+        <dd>
+          It interprets _year_ and _month_ as arithmetical values in the given _calendar_ and returns the number of days in the corresponding month.
+        </dd>
+      </dl>
+      <p>It performs the following steps when called:</p>
+      <emu-alg>
+        Returns an implementation-and-calendar-defined integer as described above.
+      </emu-alg>
+    </emu-clause>
+
+    <emu-clause id="sup-temporal-calendarmonthsinyear" type="implementation-defined abstract operation">
+      <h1>
+        CalendarMonthsInYear (
+          _calendar_: a calendar type that is not *"iso8601"*,
+          _year_: an integer,
+        ): an integer
+      </h1>
+      <dl class="header">
+        <dt>description</dt>
+        <dd>
+          It interprets _year_ as arithmetical value in the given _calendar_ and returns the number of months in the corresponding year.
+        </dd>
+      </dl>
+      <p>It performs the following steps when called:</p>
+      <emu-alg>
+        Returns an implementation-and-calendar-defined integer as described above.
+      </emu-alg>
+    </emu-clause>
+
+    <emu-clause id="sup-temporal-regulatenonisoyearmonth" type="implementation-defined abstract operation">
+      <h1>
+        RegulateNonISOYearMonth (
+          _calendar_: a calendar type that is not *"iso8601"*,
+          _isoDate_: an ISO Date Record,
+          _years_: an integer,
+        ): a Record with fields [[Year]] (an integer) and [[Month]] (an integer)
+      </h1>
+      <dl class="header">
+        <dt>description</dt>
+        <dd>
+          Interprets _isoDate_ as a date in _calendar_, adds _years_, and returns the best-match arithmetic _year_ and _month_ according to the calendar.
+        </dd>
+      </dl>
+      <p>It performs the following steps when called:</p>
+      <emu-alg>
+        1. Let _y1_ be CalendarDateArithmeticYear(_calendar_, _isoDate_).
+        1. Let _d1_ be CalendarISOToDate(_calendar_, _isoDate_).
+        1. Let _monthCode_ be _d1_.[[MonthCode]].
+        1. Let _y2_ be _y1_ + _years_.
+        1. If _calendar_ is *"chinese"*, *"dangi"*, or *"hebrew"*, then
+          1. If _calendar_ is *"chinese"* or *"dangi"*, then
+            1. If IsValidMonthCodeForCalendarInYear(_calendar_, _y2_, _monthCode_) is *false*, then
+              1. Set _monthCode_ to MonthCodeFromInteger(IntegerFromMonthCode(_monthCode_)).
+          1. Else,
+            1. Assert: _calendar_ is *"hebrew"*.
+            1. Let _d2_ be CalendarISOToDate(_calendar_, ! CalendarDateCodesToISO(_calendar_, _y2_, *"M01"*, 1)).
+            1. If _d1_.[[InLeapYear]] is *true* and _d2_.[[InLeapYear]] is *false*, then
+              1. If _monthCode_ is *"M05L"*, then
+                1. Set _monthCode_ to *"M06"*.
+            1. Else if _d1_.[[InLeapYear]] is *false* and _d2_.[[InLeapYear]] is *true*, then
+              1. If _monthCode_ is *"M06"*, then
+                1. Set _monthCode_ to *"M05L"*.
+          1. Assert: IsValidMonthCodeForCalendarInYear(_calendar_, _y2_, _monthCode_) is *true*.
+          1. Let _month_ be CalendarISOToDate(_calendar_, ! CalendarDateCodesToISO(_calendar_, _y2_, _monthCode_, 1)).[[Month]].
+        1. Else,
+          1. Let _month_ be IntegerFromMonthCode(_monthCode_).
+        1. Return the Record { [[Year]]: _y2_, [[Month]]: _month_ }.
+      </emu-alg>
+    </emu-clause>
+
+    <emu-clause id="sup-temporal-balancenonisodate" type="implementation-defined abstract operation">
+      <h1>
+        BalanceNonISODate (
+          _calendar_: a calendar type that is not *"iso8601"*,
+          _year_: an integer,
+          _month_: an integer,
+          _day_: an integer,
+        ): a Record with fields [[Year]] (an integer), [[Month]] (an integer), and [[Day]] (an integer)
+      </h1>
+      <dl class="header">
+        <dt>description</dt>
+        <dd>
+          It interprets the given _year_ and potentially out-of-range _month_ and _day_ as arithmetical values in the given _calendar_ and returns in-range values by overflowing out-of-range _month_ or _day_ values into the next-highest unit.
+          This date may be outside the range given by ISODateTimeWithinLimits.
+        </dd>
+      </dl>
+      <p>It performs the following steps when called:</p>
+      <emu-alg>
+        1. Let _resolvedYear_ be _year_.
+        1. Let _resolvedMonth_ be _month_.
+        1. Let _monthsInYear_ be CalendarMonthsInYear(_calendar_, _resolvedYear_).
+        1. Repeat, while _resolvedMonth_ &le; 0,
+          1. Set _resolvedYear_ to _resolvedYear_ - 1.
+          1. Set _monthsInYear_ to CalendarMonthsInYear(_calendar_, _resolvedYear_).
+          1. Set _resolvedMonth_ to _resolvedMonth_ + _monthsInYear_.
+        1. Repeat, while _resolvedMonth_ &gt; _monthsInYear_,
+          1. Set _resolvedMonth_ to _resolvedMonth_ - _monthsInYear_.
+          1. Set _resolvedYear_ to _resolvedYear_ + 1.
+          1. Set _monthsInYear_ to CalendarMonthsInYear(_calendar_, _resolvedYear_).
+        1. Let _resolvedDay_ be _day_.
+        1. Let _daysInMonth_ be CalendarDaysInMonth(_calendar_, _resolvedYear_, _resolvedMonth_).
+        1. Repeat, while _resolvedDay_ &le; 0,
+          1. Set _resolvedMonth_ to _resolvedMonth_ - 1.
+          1. If _resolvedMonth_ is 0, then
+            1. Set _resolvedYear_ to _resolvedYear_ - 1.
+            1. Set _monthsInYear_ to CalendarMonthsInYear(_calendar_, _resolvedYear_).
+            1. Set _resolvedMonth_ to _monthsInYear_.
+          1. Set _daysInMonth_ to CalendarDaysInMonth(_calendar_, _resolvedYear_, _resolvedMonth_).
+          1. Set _resolvedDay_ to _day_ + _daysInMonth_.
+        1. Repeat, while _resolvedDay_ &gt; _daysInMonth_,
+          1. Set _resolvedDay_ to _resolvedDay_ - _daysInMonth_.
+          1. Set _resolvedMonth_ to _resolvedMonth_ + 1.
+          1. If _resolvedMonth_ &gt; _monthsInYear_, then
+            1. Set _resolvedYear_ to _resolvedYear_ + 1.
+            1. Set _monthsInYear_ to CalendarMonthsInYear(_calendar_, _resolvedYear_).
+            1. Set _resolvedMonth_ to 1.
+          1. Set _daysInMonth_ to CalendarDaysInMonth(_calendar_, _resolvedYear_, _resolvedMonth_).
+        1. Return the Record { [[Year]]: _resolvedYear_, [[Month]]: _resolvedMonth_, [[Day]]: _resolvedDay_ }.
+      </emu-alg>
+    </emu-clause>
+
+    <emu-clause id="sup-temporal-nonisodatesurpasses" type="implementation-defined abstract operation">
+      <h1>
+        NonISODateSurpasses (
+          _calendar_: a calendar type that is not *"iso8601"*,
+          _sign_: -1 or 1,
+          _baseDate_: an ISO Date Record,
+          _isoDate2_: an ISO Date Record,
+          _years_: an integer,
+          _months_: an integer,
+          _weeks_: an integer,
+          _days_: an integer,
+        ): a Boolean
+      </h1>
+      <dl class="header">
+        <dt>description</dt>
+        <dd>
+          The return value indicates whether the date _date1_, the result of adding the duration denoted by _years_, _months_, _weeks_, and _days_ to _baseDate_ in the calendar system denoted by _calendar_, surpasses _isoDate2_ in the direction denoted by _sign_.
+          If _weeks_ and _days_ are both zero, then _date1_ need not exist (for example, it could be February 30).
+        </dd>
+      </dl>
+      <p>It performs the following steps when called:</p>
+      <emu-alg>
+        1. Let _yearMonth_ be RegulateNonISOYearMonth(_calendar_, _baseDate_, _years_).
+        1. Let _endOfMonth_ be BalanceNonISODate(_calendar_, _yearMonth_.[[Year]], _yearMonth_.[[Month]] + _months_ + 1, 0).
+        1. Let _baseDay_ be CalendarISOToDate(_calendar_, _baseDate_).[[Day]].
+        1. If _weeks_ is not 0 or _days_ is not 0, then
+          1. If _baseDay_ &lt; _endOfMonth_.[[Day]], then
+            1. Let _regulatedDay_ be _baseDay_.
+          1. Else,
+            1. Let _regulatedDay_ be _endOfMonth_.[[Day]].
+          1. Let _balancedDate_ be BalanceNonISODate(_calendar_, _endOfMonth_.[[Year]], _endOfMonth_.[[Month]], _regulatedDay_ + 7 * _weeks_ + _days_).
+          1. Let _y1_ be _balancedDate_.[[Year]].
+          1. Let _m1_ be _balancedDate_.[[Month]].
+          1. Let _d1_ be _balancedDate_.[[Day]].
+        1. Else,
+          1. Let _y1_ be _endOfMonth_.[[Year]].
+          1. Let _m1_ be _endOfMonth_.[[Month]].
+          1. Let _d1_ be _baseDay_.
+        1. Let _calDate2_ be CalendarISOToDate(_calendar_, _isoDate2_).
+        1. If _y1_ ≠ _calDate2_.[[Year]], then
+          1. If _sign_ × (_y1_ - _calDate2_.[[Year]]) > 0, return *true*.
+        1. Else if _m1_ ≠ _calDate2_.[[Month]], then
+          1. If _sign_ × (_m1_ - _calDate2_.[[Month]]) > 0, return *true*.
+        1. Else if _d1_ ≠ _calDate2_.[[Day]], then
+          1. If _sign_ × (_d1_ - _calDate2_.[[Day]]) > 0, return *true*.
+        1. Return *false*.
+      </emu-alg>
+    </emu-clause>
+
     <emu-clause id="sup-temporal-nonisodateuntil" type="implementation-defined abstract operation">
       <h1>
         NonISODateUntil (
@@ -853,19 +1113,35 @@ contributors: Google, Ecma International
           No fields larger than _largestUnit_ will be non-zero in the resulting Date Duration Record.
         </dd>
       </dl>
-      <p>The algorithm is implementation-defined, but all calendars follow the general steps given here, which is a generalization of the precise algorithm specified in CalendarDateUntil for *"iso8601"*.</p>
       <p>This definition supersedes the definition provided in <emu-xref href="#sec-temporal-nonisodateuntil"></emu-xref>.</p>
       <p>It performs the following steps when called:</p>
       <emu-alg>
+        1. Let _sign_ be -CompareISODate(_one_, _two_).
+        1. If _sign_ = 0, return ZeroDateDuration().
+        1. Let _years_ be 0.
         1. If _largestUnit_ is ~year~, then
-          1. Add (without constraining) as many years as possible to _one_, in the direction from _one_ to _two_, without surpassing _two_. "Surpassing" here (and in all steps below) means to compare years numerically, then month codes lexicographically, then days numerically; if any of them exceed _two_ in the direction from _one_ to _two_, then _two_ is surpassed.
-          1. Constrain _one_ to a real year and month, not taking day into account. This step only matters for lunisolar calendars.
-        1. If _largestUnit_ is ~year~ or ~month~, then
-          1. Add (without constraining) as many months as possible to _one_ without surpassing _two_.
-          1. Constrain _one_ to a real year, month, and day.
-        1. If _largestUnit_ is ~week~, add as many weeks as possible to _one_ without surpassing _two_.
-        1. Add as many days as possible to _one_ until it is equal to _two_.
-        1. Return a Date Duration Record of the number of years, months, weeks, and days added.
+          1. Let _candidateYears_ be _sign_.
+          1. Repeat, while NonISODateSurpasses(_calendar_, _sign_, _one_, _two_, _candidateYears_, 0, 0, 0) is *false*,
+            1. Set _years_ to _candidateYears_.
+            1. Set _candidateYears_ to _candidateYears_ + _sign_.
+        1. Let _months_ be 0.
+        1. If _largestUnit_ is ~year~ or _largestUnit_ is ~month~, then
+          1. Let _candidateMonths_ be _sign_.
+          1. Repeat, while NonISODateSurpasses(_calendar_, _sign_, _one_, _two_, _years_, _candidateMonths_, 0, 0) is *false*,
+            1. Set _months_ to _candidateMonths_.
+            1. Set _candidateMonths_ to _candidateMonths_ + _sign_.
+        1. Let _weeks_ be 0.
+        1. If _largestUnit_ is ~week~, then
+          1. Let _candidateWeeks_ be _sign_.
+          1. Repeat, while NonISODateSurpasses(_calendar_, _sign_, _one_, _two_, _years_, _months_, _candidateWeeks_, 0) is *false*,
+            1. Set _weeks_ to _candidateWeeks_.
+            1. Set _candidateWeeks_ to _candidateWeeks_ + sign.
+        1. Let _days_ be 0.
+        1. Let _candidateDays_ be _sign_.
+        1. Repeat, while NonISODateSurpasses(_calendar_, _sign_, _one_, _two_, _years_, _months_, _weeks_, _candidateDays_) is *false*,
+          1. Set _days_ to _candidateDays_.
+          1. Set _candidateDays_ to _candidateDays_ + _sign_.
+        1. Return ! CreateDateDurationRecord(_years_, _months_, _weeks_, _days_).
       </emu-alg>
     </emu-clause>
 
