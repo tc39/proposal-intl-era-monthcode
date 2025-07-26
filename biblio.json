@@ -19,38 +19,23 @@
             },
             {
                 "type": "clause",
-                "number": "Temporal, 12.2.6",
-                "id": "sec-temporal-calendardateadd"
-            },
-            {
-                "type": "clause",
                 "number": "Temporal, 12.2.1",
                 "id": "sec-temporal-calendar-date-records"
             },
             {
-                "type": "clause",
-                "number": "Temporal, 12.2.19",
+                "type": "op",
+                "aoid": "CalendarDateToISO",
                 "id": "sec-temporal-calendardatetoiso"
             },
             {
                 "type": "clause",
-                "number": "Temporal, 12.2.7",
-                "id": "sec-temporal-calendardateuntil"
-            },
-            {
-                "type": "clause",
-                "number": "Temporal, 12.2.22",
+                "number": "Temporal, 12.2.27",
                 "id": "sec-temporal-calendarextrafields"
             },
             {
                 "type": "table",
                 "number": 19,
                 "id": "table-temporal-calendar-fields-record-fields"
-            },
-            {
-                "type": "clause",
-                "number": "Temporal, 12.2.23",
-                "id": "sec-temporal-calendarfieldkeystoignore"
             },
             {
                 "type": "op",
@@ -81,6 +66,26 @@
                 "type": "op",
                 "aoid": "ISODateSurpasses",
                 "id": "sec-temporal-isodatesurpasses"
+            },
+            {
+                "type": "clause",
+                "number": "Temporal, 12.2.21",
+                "id": "sec-temporal-nonisocalendardatetoiso"
+            },
+            {
+                "type": "clause",
+                "number": "Temporal, 12.2.6",
+                "id": "sec-temporal-nonisodateadd"
+            },
+            {
+                "type": "clause",
+                "number": "Temporal, 12.2.8",
+                "id": "sec-temporal-nonisodateuntil"
+            },
+                        {
+                "type": "clause",
+                "number": "Temporal, 12.2.28",
+                "id": "sec-temporal-nonisofieldkeystoignore"
             },
             {
                 "type": "op",
