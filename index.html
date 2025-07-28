@@ -1915,23 +1915,6 @@ body.oldtoc {
   margin: 0 auto;
 }
 
-#metadata-block {
-  margin: 4em 0;
-  padding: 10px;
-  border: 1px solid #ee8421;
-}
-
-#metadata-block h1 {
-  font-size: 1.5em;
-  margin-top: 0;
-}
-
-#metadata-block > ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
 span[aria-hidden='true'] {
   font-size: 0;
   white-space: pre;
@@ -3270,7 +3253,6 @@ emu-normative-optional,
 
 #ecma-logo {
   background: var(--figure-background);
-  width: 500px;
 }
 </style><style>@media print {
 @font-face {
@@ -3344,7 +3326,6 @@ emu-normative-optional,
 
 :root {
   --page-number-style: decimal;
-  -prince-change-line-breaks-for-pagination: yes; /* see https://www.princexml.com/doc/prince-for-books/#pagination-fine-tuning */
 }
 
 @page {
@@ -3353,16 +3334,16 @@ emu-normative-optional,
   margin-bottom: 20mm;
   margin-inside: 19mm;
   margin-outside: 13mm;
-  -prince-page-fill: prefer-balance; /* see https://www.princexml.com/doc/prince-for-books/#the-property--prince-page-fill */
+  -prince-page-fill: prefer-fill;
 
-  /* Uncomment when producing WIP versions of final standards, see https://www.princexml.com/doc/paged/#page-regions */
+  /* Uncomment when producing WIP versions of final standards */
   /*
   @prince-overlay {
     color: rgba(0,0,0,0.15);
-    content: "DRAFT";
+    content: "WORK IN PROGRESS";
     font-family: Arial;
     font-weight: bolder;
-    font-size: 200pt;
+    font-size: 100pt;
     transform: rotate(-60deg);
   }
   */
@@ -3472,7 +3453,7 @@ body {
   line-height: 1.15;
 }
 
-h1, h2, h3, h4, h5, h6 { -prince-bookmark-level: none } /* see https://www.princexml.com/doc/prince-output/#pdf-bookmarks */
+h1, h2, h3, h4, h5, h6 { -prince-bookmark-level: none }
 
 .copyright-notice + h1.title {
   break-before: recto;
@@ -3492,22 +3473,13 @@ p {
   text-wrap: pretty;
   overflow-wrap: break-word;
   hyphens: auto;
-  orphans: 2, -prince-prefer 3; /* see https://www.princexml.com/doc/prince-for-books/#pagination-goals */
-  widows: 2, -prince-prefer 3;
+  orphans: 2;
+  widows: 2;
 }
 
 h1 {
   text-wrap: balance;
   line-height: 1.4;
-}
-
-pre:has(> code) {
-  margin: 0;
-}
-
-p + pre:has(+ p) {
-  padding-top: 0;
-  padding-bottom: 0;
 }
 
 emu-alg {
@@ -3548,10 +3520,6 @@ emu-alg ol li:last-child {
   break-after: initial; /* it's okay to break after the last item in a list, even if it's also the first item in the list */
 }
 
-emu-normative-optional {
-  break-inside: avoid;
-}
-
 emu-normative-optional emu-clause[id] {
   margin-top: 0;
 }
@@ -3568,10 +3536,6 @@ emu-note {
 emu-note .note {
   font-size: 9pt;
   min-width: 4.5em;
-}
-
-emu-note table td {
-  background-color: white;
 }
 
 emu-note p,
@@ -3602,6 +3566,7 @@ emu-intro, emu-clause, emu-annex {
 }
 
 emu-clause p:first-of-type {
+  margin-bottom: 0;
   orphans: 3;
 }
 
@@ -3721,7 +3686,7 @@ caption, table > figcaption {
 }
 
 caption {
-  -prince-caption-page: first; /* see https://www.princexml.com/doc/css-props/#prop-prince-caption-page */
+  -prince-caption-page: first;
 }
 
 /* do not break inside of small tables */
@@ -3760,11 +3725,6 @@ emu-figure img {
   margin-top: 1ex;
   max-width: 100%;
   height: auto;
-}
-
-.attributes-tag {
-  break-before: avoid-page;
-  break-after: avoid-page;
 }
 
 #spec-container {
@@ -3862,8 +3822,8 @@ emu-annex > h1 .secnum {
   border: 1px solid black;
   padding: 1em;
   page: copyright;
-  break-before: page;
-  break-after: page;
+  page-break-before: always;
+  page-break-after: always;
 }
 
 .secnum {
@@ -3991,7 +3951,7 @@ p.ECMAaddress {
 </ul></div><div id="menu-toggle"><svg xmlns="http://www.w3.org/2000/svg" style="width:100%; height:100%; stroke:currentColor" viewBox="0 0 120 120" width="54" height="54">
       <title>Menu</title>
       <path stroke-width="10" stroke-linecap="round" d="M30,60 h60  M30,30 m0,5 h60  M30,90 m0,-5 h60"></path>
-    </svg></div><div id="menu-spacer" class="menu-spacer"></div><div id="menu"><div id="menu-search"><input type="text" id="menu-search-box" placeholder="Search..."><div id="menu-search-results" class="inactive"></div></div><div id="menu-pins"><div class="menu-pane-header">Pins<button class="unpin-all">clear</button></div><ul id="menu-pins-list"></ul></div><div class="menu-pane-header">Table of Contents</div><div id="menu-toc"><ol class="toc"><li><span class="item-toggle">+</span><a href="#ecma402-locales-currencies-tz" title="Identification of Locales, Currencies, Time Zones, Measurement Units, Numbering Systems, Collations, and Calendars"><span class="secnum">1</span> Identification of Locales, Currencies, Time Zones, Measurement Units, Numbering Systems, Collations, and Calendars</a><ol class="toc"><li><span class="item-toggle">+</span><a href="#sec-ecma402-calendar-types" title="Calendar Types"><span class="secnum">1.1</span> Calendar Types</a><ol class="toc"><li><span class="item-toggle-none"></span><a href="#sup-availablecalendars" title="AvailableCalendars ( )"><span class="secnum">1.1.1</span> AvailableCalendars ( )</a></li></ol></li></ol></li><li><span class="item-toggle">+</span><a href="#locale-and-parameter-negotiation" title="Locale and Parameter Negotiation"><span class="secnum">2</span> Locale and Parameter Negotiation</a><ol class="toc"><li><span class="item-toggle-none"></span><a href="#sec-internal-slots" title="Internal slots of Service Constructors"><span class="secnum">2.1</span> Internal slots of Service Constructors</a></li></ol></li><li><span class="item-toggle">+</span><a href="#ecma402-datetimeformat-objects" title="DateTimeFormat Objects"><span class="secnum">3</span> DateTimeFormat Objects</a><ol class="toc"><li><span class="item-toggle">+</span><a href="#sec-ecma402-intl-datetimeformat-constructor" title="The Intl.DateTimeFormat Constructor"><span class="secnum">3.1</span> The Intl.DateTimeFormat Constructor</a><ol class="toc"><li><span class="item-toggle-none"></span><a href="#sec-createdatetimeformat" title="CreateDateTimeFormat ( newTarget, locales, options, required, defaults )"><span class="secnum">3.1.1</span> CreateDateTimeFormat ( <var>newTarget</var>, <var>locales</var>, <var>options</var>, <var>required</var>, <var>defaults</var> )</a></li></ol></li><li><span class="item-toggle">+</span><a href="#sec-ecma402-properties-of-intl-datetimeformat-constructor" title="Properties of the Intl.DateTimeFormat Constructor"><span class="secnum">3.2</span> Properties of the Intl.DateTimeFormat Constructor</a><ol class="toc"><li><span class="item-toggle-none"></span><a href="#sec-ecma402-intl.datetimeformat-internal-slots" title="Internal slots"><span class="secnum">3.2.1</span> Internal slots</a></li></ol></li></ol></li><li><span class="item-toggle">+</span><a href="#ecma402-locale-sensitive-functions" title="Locale Sensitive Functions of the ECMAScript Language Specification"><span class="secnum">4</span> Locale Sensitive Functions of the ECMAScript Language Specification</a><ol class="toc"><li><span class="item-toggle">+</span><a href="#sec-calendar-abstract-ops" title="Abstract Operations for Calendar Calculations"><span class="secnum">4.1</span> Abstract Operations for Calendar Calculations</a><ol class="toc"><li><span class="item-toggle-none"></span><a href="#sec-temporal-calendarsupportsera" title="CalendarSupportsEra ( calendar )"><span class="secnum">4.1.1</span> CalendarSupportsEra ( <var>calendar</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sec-temporal-canonicalizeeraincalendar" title="CanonicalizeEraInCalendar ( calendar, era )"><span class="secnum">4.1.2</span> CanonicalizeEraInCalendar ( <var>calendar</var>, <var>era</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sec-temporal-isvalidmonthcodeforcalendar" title="IsValidMonthCodeForCalendar ( calendar, monthCode )"><span class="secnum">4.1.3</span> IsValidMonthCodeForCalendar ( <var>calendar</var>, <var>monthCode</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sec-temporal-isvaliderayearforcalendar" title="IsValidEraYearForCalendar ( calendar, era, eraYear )"><span class="secnum">4.1.4</span> IsValidEraYearForCalendar ( <var>calendar</var>, <var>era</var>, <var>eraYear</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sec-temporal-calendardateera" title="CalendarDateEra ( calendar, date )"><span class="secnum">4.1.5</span> CalendarDateEra ( <var>calendar</var>, <var>date</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sec-temporal-calendardateerayear" title="CalendarDateEraYear ( calendar, date )"><span class="secnum">4.1.6</span> CalendarDateEraYear ( <var>calendar</var>, <var>date</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sec-temporal-calendardatearithmeticyear" title="CalendarDateArithmeticYear ( calendar, date )"><span class="secnum">4.1.7</span> CalendarDateArithmeticYear ( <var>calendar</var>, <var>date</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sup-temporal-calendar-date-records" title="Calendar Date Records"><span class="secnum">4.1.8</span> Calendar Date Records</a></li><li><span class="item-toggle-none"></span><a href="#sup-temporal-nonisodateadd" title="NonISODateAdd ( calendar, isoDate, duration, overflow )"><span class="secnum">4.1.9</span> NonISODateAdd ( <var>calendar</var>, <var>isoDate</var>, <var>duration</var>, <var>overflow</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sup-temporal-nonisodateuntil" title="NonISODateUntil ( calendar, one, two, largestUnit )"><span class="secnum">4.1.10</span> NonISODateUntil ( <var>calendar</var>, <var>one</var>, <var>two</var>, <var>largestUnit</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sup-temporal-nonisocalendardatetoiso" title="NonISOCalendarDateToISO ( calendar, fields, overflow )"><span class="secnum">4.1.11</span> NonISOCalendarDateToISO ( <var>calendar</var>, <var>fields</var>, <var>overflow</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sup-temporal-calendarextrafields" title="CalendarExtraFields ( calendar, fields )"><span class="secnum">4.1.12</span> CalendarExtraFields ( <var>calendar</var>, <var>fields</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sup-temporal-nonisofieldkeystoignore" title="NonISOFieldKeysToIgnore ( calendar, keys )"><span class="secnum">4.1.13</span> NonISOFieldKeysToIgnore ( <var>calendar</var>, <var>keys</var> )</a></li></ol></li></ol></li><li><span class="item-toggle-none"></span><a href="#sec-copyright-and-software-license" title="Copyright &amp; Software License">Copyright &amp; Software License</a></li></ol></div></div><div id="spec-container"><h1 class="version">Stage 2 Draft / July 26, 2025</h1><h1 class="title">Intl era and monthCode Proposal</h1>
+    </svg></div><div id="menu-spacer" class="menu-spacer"></div><div id="menu"><div id="menu-search"><input type="text" id="menu-search-box" placeholder="Search..."><div id="menu-search-results" class="inactive"></div></div><div id="menu-pins"><div class="menu-pane-header">Pins<button class="unpin-all">clear</button></div><ul id="menu-pins-list"></ul></div><div class="menu-pane-header">Table of Contents</div><div id="menu-toc"><ol class="toc"><li><span class="item-toggle">+</span><a href="#ecma402-locales-currencies-tz" title="Identification of Locales, Currencies, Time Zones, Measurement Units, Numbering Systems, Collations, and Calendars"><span class="secnum">1</span> Identification of Locales, Currencies, Time Zones, Measurement Units, Numbering Systems, Collations, and Calendars</a><ol class="toc"><li><span class="item-toggle">+</span><a href="#sec-ecma402-calendar-types" title="Calendar Types"><span class="secnum">1.1</span> Calendar Types</a><ol class="toc"><li><span class="item-toggle-none"></span><a href="#sup-availablecalendars" title="AvailableCalendars ( )"><span class="secnum">1.1.1</span> AvailableCalendars ( )</a></li></ol></li></ol></li><li><span class="item-toggle">+</span><a href="#locale-and-parameter-negotiation" title="Locale and Parameter Negotiation"><span class="secnum">2</span> Locale and Parameter Negotiation</a><ol class="toc"><li><span class="item-toggle-none"></span><a href="#sec-internal-slots" title="Internal slots of Service Constructors"><span class="secnum">2.1</span> Internal slots of Service Constructors</a></li></ol></li><li><span class="item-toggle">+</span><a href="#ecma402-datetimeformat-objects" title="DateTimeFormat Objects"><span class="secnum">3</span> DateTimeFormat Objects</a><ol class="toc"><li><span class="item-toggle">+</span><a href="#sec-ecma402-intl-datetimeformat-constructor" title="The Intl.DateTimeFormat Constructor"><span class="secnum">3.1</span> The Intl.DateTimeFormat Constructor</a><ol class="toc"><li><span class="item-toggle-none"></span><a href="#sec-createdatetimeformat" title="CreateDateTimeFormat ( newTarget, locales, options, required, defaults )"><span class="secnum">3.1.1</span> CreateDateTimeFormat ( <var>newTarget</var>, <var>locales</var>, <var>options</var>, <var>required</var>, <var>defaults</var> )</a></li></ol></li><li><span class="item-toggle">+</span><a href="#sec-ecma402-properties-of-intl-datetimeformat-constructor" title="Properties of the Intl.DateTimeFormat Constructor"><span class="secnum">3.2</span> Properties of the Intl.DateTimeFormat Constructor</a><ol class="toc"><li><span class="item-toggle-none"></span><a href="#sec-ecma402-intl.datetimeformat-internal-slots" title="Internal slots"><span class="secnum">3.2.1</span> Internal slots</a></li></ol></li></ol></li><li><span class="item-toggle">+</span><a href="#ecma402-locale-sensitive-functions" title="Locale Sensitive Functions of the ECMAScript Language Specification"><span class="secnum">4</span> Locale Sensitive Functions of the ECMAScript Language Specification</a><ol class="toc"><li><span class="item-toggle">+</span><a href="#sec-calendar-abstract-ops" title="Abstract Operations for Calendar Calculations"><span class="secnum">4.1</span> Abstract Operations for Calendar Calculations</a><ol class="toc"><li><span class="item-toggle-none"></span><a href="#sec-temporal-calendarsupportsera" title="CalendarSupportsEra ( calendar )"><span class="secnum">4.1.1</span> CalendarSupportsEra ( <var>calendar</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sec-temporal-canonicalizeeraincalendar" title="CanonicalizeEraInCalendar ( calendar, era )"><span class="secnum">4.1.2</span> CanonicalizeEraInCalendar ( <var>calendar</var>, <var>era</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sec-temporal-isvalidmonthcodeforcalendar" title="IsValidMonthCodeForCalendar ( calendar, monthCode )"><span class="secnum">4.1.3</span> IsValidMonthCodeForCalendar ( <var>calendar</var>, <var>monthCode</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sec-temporal-isvaliderayearforcalendar" title="IsValidEraYearForCalendar ( calendar, era, eraYear )"><span class="secnum">4.1.4</span> IsValidEraYearForCalendar ( <var>calendar</var>, <var>era</var>, <var>eraYear</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sec-temporal-calendardateera" title="CalendarDateEra ( calendar, date )"><span class="secnum">4.1.5</span> CalendarDateEra ( <var>calendar</var>, <var>date</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sec-temporal-calendardateerayear" title="CalendarDateEraYear ( calendar, date )"><span class="secnum">4.1.6</span> CalendarDateEraYear ( <var>calendar</var>, <var>date</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sec-temporal-calendardatearithmeticyear" title="CalendarDateArithmeticYear ( calendar, date )"><span class="secnum">4.1.7</span> CalendarDateArithmeticYear ( <var>calendar</var>, <var>date</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sup-temporal-calendar-date-records" title="Calendar Date Records"><span class="secnum">4.1.8</span> Calendar Date Records</a></li><li><span class="item-toggle-none"></span><a href="#sup-temporal-nonisodateadd" title="NonISODateAdd ( calendar, isoDate, duration, overflow )"><span class="secnum">4.1.9</span> NonISODateAdd ( <var>calendar</var>, <var>isoDate</var>, <var>duration</var>, <var>overflow</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sup-temporal-nonisodateuntil" title="NonISODateUntil ( calendar, one, two, largestUnit )"><span class="secnum">4.1.10</span> NonISODateUntil ( <var>calendar</var>, <var>one</var>, <var>two</var>, <var>largestUnit</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sup-temporal-nonisocalendardatetoiso" title="NonISOCalendarDateToISO ( calendar, fields, overflow )"><span class="secnum">4.1.11</span> NonISOCalendarDateToISO ( <var>calendar</var>, <var>fields</var>, <var>overflow</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sup-temporal-calendarextrafields" title="CalendarExtraFields ( calendar, fields )"><span class="secnum">4.1.12</span> CalendarExtraFields ( <var>calendar</var>, <var>fields</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sup-temporal-nonisofieldkeystoignore" title="NonISOFieldKeysToIgnore ( calendar, keys )"><span class="secnum">4.1.13</span> NonISOFieldKeysToIgnore ( <var>calendar</var>, <var>keys</var> )</a></li></ol></li></ol></li><li><span class="item-toggle-none"></span><a href="#sec-copyright-and-software-license" title="Copyright &amp; Software License">Copyright &amp; Software License</a></li></ol></div></div><div id="spec-container"><h1 class="version">Stage 2 Draft / July 28, 2025</h1><h1 class="title">Intl era and monthCode Proposal</h1>
 
 
 <emu-clause id="ecma402-locales-currencies-tz">
@@ -4665,7 +4625,7 @@ p.ECMAaddress {
       <p>The behaviour is <emu-xref href="#implementation-defined"><a href="https://tc39.es/ecma262/#implementation-defined">implementation-defined</a></emu-xref>, but all calendars follow the general steps given here, which is a generalization of the precise algorithm specified in CalendarDateAdd for <emu-val>"iso8601"</emu-val>.</p>
       <p>This definition supersedes the definition provided in <emu-xref href="#sec-temporal-nonisodateadd"><a href="https://tc39.es/proposal-temporal/#sec-temporal-nonisodateadd">Temporal, 12.2.6</a></emu-xref>.</p>
       <p>It performs the following steps when called:</p>
-      <emu-alg><ol><li>Let <var>calendarDate</var> be <emu-xref aoid="CalendarISOToDate"><a href="https://tc39.es/proposal-temporal/#sec-temporal-calendarisotodate">CalendarISOToDate</a></emu-xref>(<var>calendar</var>, <var>isoDate</var>).</li><li>Add <var>duration</var>.<var class="field">[[Years]]</var> to <var>calendarDate</var>.</li><li>(This step only matters for lunisolar calendars.) If <var>calendarDate</var>.<var class="field">[[MonthCode]]</var> is a leap month that doesn't exist in the year, then:<ol><li>If <var>overflow</var> is <emu-const>reject</emu-const>, throw a <emu-val>RangeError</emu-val> exception.</li><li>Set <var>calendarDate</var> to another date according to the cultural conventions of that calendar's users. Of the currently supported calendars: if <var>calendar</var> is <emu-val>"chinese"</emu-val> or <emu-val>"dangi"</emu-val>, change <var>calendarDate</var>.<var class="field">[[MonthCode]]</var> to the same month code but without the <emu-val>"L"</emu-val>. If <var>calendar</var> is <emu-val>"hebrew"</emu-val>, change <var>calendarDate</var>.<var class="field">[[MonthCode]]</var> from <emu-val>"M05L"</emu-val> to <emu-val>"M06"</emu-val>.</li><li>Update <var>calendarDate</var>.<var class="field">[[Month]]</var> accordingly.</li></ol></li><li>Add <var>duration</var>.<var class="field">[[Months]]</var> to <var>calendarDate</var>, balancing <var>calendarDate</var> if it goes over a year boundary.</li><li>If the date described by <var>calendarDate</var> does not exist, then<ol><li>If <var>overflow</var> is <emu-const>reject</emu-const>, throw a <emu-val>RangeError</emu-val> exception.</li><li>If <var>calendarDate</var>.<var class="field">[[MonthCode]]</var> is a valid month code for <var>calendarDate</var>.<var class="field">[[Year]]</var>, but the date described by <var>calendarDate</var> does not exist, set <var>calendarDate</var>.<var class="field">[[Day]]</var> to the closest day in the same month. If there are two equally-close dates in the same month, pick the later one.</li><li>(This step does not apply to any currently supported calendars.) If the date described by <var>calendarDate</var> still does not exist, set <var>calendarDate</var> to the closest date in the same year. If there are two equally-close dates in that year, pick the later one.</li></ol></li><li>Add <var>duration</var>.<var class="field">[[Weeks]]</var> and <var>duration</var>.<var class="field">[[Days]]</var> to <var>calendarDate</var>, balancing <var>calendarDate</var> if it goes over a month or year boundary.</li><li>Let <var>result</var> be ?&nbsp;<emu-xref aoid="CalendarDateToISO"><a href="https://tc39.es/proposal-temporal/#sec-temporal-calendardatetoiso">CalendarDateToISO</a></emu-xref>(<var>calendar</var>, <var>calendarDate</var>, <var>overflow</var>).</li><li>If <emu-xref aoid="ISODateWithinLimits"><a href="https://tc39.es/proposal-temporal/#sec-temporal-isodatewithinlimits">ISODateWithinLimits</a></emu-xref>(<var>result</var>) is <emu-val>false</emu-val>, throw a <emu-val>RangeError</emu-val> exception.</li><li>Return <var>result</var>.</li></ol></emu-alg>
+      <emu-alg><ol><li>Let <var>calendarDate</var> be <emu-xref aoid="CalendarISOToDate"><a href="https://tc39.es/proposal-temporal/#sec-temporal-calendarisotodate">CalendarISOToDate</a></emu-xref>(<var>calendar</var>, <var>isoDate</var>).</li><li>Add <var>duration</var>.<var class="field">[[Years]]</var> to <var>calendarDate</var>.</li><li>(This step only matters for lunisolar calendars.) If <var>calendarDate</var>.<var class="field">[[MonthCode]]</var> is a leap month that doesn't exist in the year, then:<ol><li>Set <var>calendarDate</var> to another date according to the cultural conventions of that calendar's users. Of the currently supported calendars: if <var>calendar</var> is <emu-val>"chinese"</emu-val> or <emu-val>"dangi"</emu-val>, change <var>calendarDate</var>.<var class="field">[[MonthCode]]</var> to the same month code but without the <emu-val>"L"</emu-val>. If <var>calendar</var> is <emu-val>"hebrew"</emu-val>, change <var>calendarDate</var>.<var class="field">[[MonthCode]]</var> from <emu-val>"M05L"</emu-val> to <emu-val>"M06"</emu-val>.</li><li>Update <var>calendarDate</var>.<var class="field">[[Month]]</var> accordingly.</li></ol></li><li>Add <var>duration</var>.<var class="field">[[Months]]</var> to <var>calendarDate</var>, balancing <var>calendarDate</var> if it goes over a year boundary.</li><li>If the date described by <var>calendarDate</var> does not exist, then<ol><li>If <var>overflow</var> is <emu-const>reject</emu-const>, throw a <emu-val>RangeError</emu-val> exception.</li><li>If <var>calendarDate</var>.<var class="field">[[MonthCode]]</var> is a valid month code for <var>calendarDate</var>.<var class="field">[[Year]]</var>, but the date described by <var>calendarDate</var> does not exist, set <var>calendarDate</var>.<var class="field">[[Day]]</var> to the closest day in the same month. If there are two equally-close dates in the same month, pick the later one.</li><li>(This step does not apply to any currently supported calendars.) If the date described by <var>calendarDate</var> still does not exist, set <var>calendarDate</var> to the closest date in the same year. If there are two equally-close dates in that year, pick the later one.</li></ol></li><li>Add <var>duration</var>.<var class="field">[[Weeks]]</var> and <var>duration</var>.<var class="field">[[Days]]</var> to <var>calendarDate</var>, balancing <var>calendarDate</var> if it goes over a month or year boundary.</li><li>Let <var>result</var> be ?&nbsp;<emu-xref aoid="CalendarDateToISO"><a href="https://tc39.es/proposal-temporal/#sec-temporal-calendardatetoiso">CalendarDateToISO</a></emu-xref>(<var>calendar</var>, <var>calendarDate</var>, <var>overflow</var>).</li><li>If <emu-xref aoid="ISODateWithinLimits"><a href="https://tc39.es/proposal-temporal/#sec-temporal-isodatewithinlimits">ISODateWithinLimits</a></emu-xref>(<var>result</var>) is <emu-val>false</emu-val>, throw a <emu-val>RangeError</emu-val> exception.</li><li>Return <var>result</var>.</li></ol></emu-alg>
     </emu-clause>
 
     <emu-clause id="sup-temporal-nonisodateuntil" type="implementation-defined abstract operation" aoid="NonISODateUntil">
