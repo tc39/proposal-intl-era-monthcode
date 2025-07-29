@@ -886,7 +886,7 @@ contributors: Google, Ecma International
       <h1>
         ParseMonthCode (
           _monthCode_: a String,
-        ): an Record with fields [[Number]] (an integer) and [[IsLeap]] (a boolean)
+        ): an Record with fields [[Number]] (an integer) and [[IsLeap]] (a Boolean)
       </h1>
       <dl class="header">
         <dt>description</dt>
