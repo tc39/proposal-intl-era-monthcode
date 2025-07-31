@@ -1010,19 +1010,19 @@ contributors: Google, Ecma International
         CalendarDateArithmeticalToISO (
           _calendar_: a calendar type that is not *"iso8601"*,
           _year_: an integer,
-          _month_: an integer,
+          _arithmeticalMonth_: an integer,
           _day_: an integer,
         ): either a normal completion containing an ISO Date Record or a throw completion
       </h1>
       <dl class="header">
         <dt>description</dt>
         <dd>
-          It returns an ISO Date Record that, when converted to a Calendar Date Record with _calendar_ (for example, with CalendarISOToDate), contains the given _year_, _month_, and _day_ values in its [[Year]], [[Month]], and [[Day]] fields. If this is not possible, a RangeError is thrown.
+          It returns an ISO Date Record that, when converted to a Calendar Date Record with _calendar_ (for example, with CalendarISOToDate), contains the given _year_, _arithmeticalMonth_, and _day_ values in its [[Year]], [[Month]], and [[Day]] fields. If this is not possible, a RangeError is thrown.
         </dd>
       </dl>
       <p>It performs the following steps when called:</p>
       <emu-alg>
-        1. If _year_, _month_, and _day_ do not form a valid date in _calendar_, throw a RangeError exception.
+        1. If _year_, _arithmeticalMonth_, and _day_ do not form a valid date in _calendar_, throw a RangeError exception.
         1. Return a calendar-dependent ISO Date Record as described above.
       </emu-alg>
     </emu-clause>
@@ -1032,13 +1032,13 @@ contributors: Google, Ecma International
         CalendarDaysInMonth (
           _calendar_: a calendar type that is not *"iso8601"*,
           _year_: an integer,
-          _month_: an integer,
+          _arithmeticalMonth_: an integer,
         ): an integer
       </h1>
       <dl class="header">
         <dt>description</dt>
         <dd>
-          It interprets _year_ and _month_ as arithmetical values in the given _calendar_ and returns the number of days in the corresponding month.
+          It interprets _year_ and _arithmeticalMonth_ as arithmetical values in the given _calendar_ and returns the number of days in the corresponding month.
         </dd>
       </dl>
       <p>It performs the following steps when called:</p>
@@ -1071,21 +1071,21 @@ contributors: Google, Ecma International
         BalanceNonISODate (
           _calendar_: a calendar type that is not *"iso8601"*,
           _year_: an integer,
-          _month_: an integer,
+          _arithmeticalMonth_: an integer,
           _day_: an integer,
         ): a Record with fields [[Year]] (an integer), [[Month]] (an integer), and [[Day]] (an integer)
       </h1>
       <dl class="header">
         <dt>description</dt>
         <dd>
-          It interprets the given _year_ and potentially out-of-range _month_ and _day_ as arithmetical values in the given _calendar_ and returns in-range values by overflowing out-of-range _month_ or _day_ values into the next-highest unit.
+          It interprets the given _year_ and potentially out-of-range _arithmeticalMonth_ and _day_ as arithmetical values in the given _calendar_ and returns in-range values by overflowing out-of-range _arithmeticalMonth_ or _day_ values into the next-highest unit.
           This date may be outside the range given by ISODateTimeWithinLimits.
         </dd>
       </dl>
       <p>It performs the following steps when called:</p>
       <emu-alg>
         1. Let _resolvedYear_ be _year_.
-        1. Let _resolvedMonth_ be _month_.
+        1. Let _resolvedMonth_ be _arithmeticalMonth_.
         1. Let _monthsInYear_ be CalendarMonthsInYear(_calendar_, _resolvedYear_).
         1. Repeat, while _resolvedMonth_ &le; 0,
           1. Set _resolvedYear_ to _resolvedYear_ - 1.
@@ -1283,19 +1283,19 @@ contributors: Google, Ecma International
           1. Let _year_ be _fields_.[[Year]].
         1. If _fields_.[[MonthCode]] is not ~unset~, then
           1. If IsValidMonthCodeForCalendar(_calendar_, _fields_.[[MonthCode]]) is *false*, throw a *RangeError* exception.
-          1. Let _month_ be ? ConstrainMonthCodeToArithmeticalMonth(_calendar_, _year_, _fields_.[[MonthCode]], _overflow_).
+          1. Let _arithmeticalMonth_ be ? ConstrainMonthCodeToArithmeticalMonth(_calendar_, _year_, _fields_.[[MonthCode]], _overflow_).
         1. Else,
           1. Assert: _fields_.[[Month]] is not ~unset~.
-          1. Let _month_ be _fields_.[[Month]].
+          1. Let _arithmeticalMonth_ be _fields_.[[Month]].
         1. Let _day_ be _fields_.[[Day]].
         1. Assert: _day_ is not ~unset~.
-        1. Let _daysInMonth_ be CalendarDaysInMonth(_calendar_, _year_, _month_).
+        1. Let _daysInMonth_ be CalendarDaysInMonth(_calendar_, _year_, _arithmeticalMonth_).
         1. If _daysInMonth_ &le; _day_, then
           1. If _overflow_ is ~reject~, throw a *RangeError* exception.
           1. Let _regulatedDay_ be _daysInMonth_.
         1. Else,
           1. Let _regulatedDay_ be _day_.
-        1. Return ? CalendarDateArithmeticalToISO(_calendar_, _year_, _month_, _regulatedDay_).
+        1. Return ? CalendarDateArithmeticalToISO(_calendar_, _year_, _arithmeticalMonth_, _regulatedDay_).
       </emu-alg>
     </emu-clause>
 
