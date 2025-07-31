@@ -577,7 +577,7 @@ contributors: Google, Ecma International
           _year_: an integer,
           _monthCode_: a String,
           _overflow_: ~constrain~ or ~reject~,
-        ): either a normal completion containing an integer or a throw completion
+        ): either a normal completion containing a positive integer or a throw completion
       </h1>
       <dl class="header">
         <dt>description</dt>
@@ -1010,7 +1010,7 @@ contributors: Google, Ecma International
         CalendarDateArithmeticalToISO (
           _calendar_: a calendar type that is not *"iso8601"*,
           _year_: an integer,
-          _arithmeticalMonth_: an integer,
+          _arithmeticalMonth_: a positive integer,
           _day_: an integer,
         ): either a normal completion containing an ISO Date Record or a throw completion
       </h1>
@@ -1032,7 +1032,7 @@ contributors: Google, Ecma International
         CalendarDaysInMonth (
           _calendar_: a calendar type that is not *"iso8601"*,
           _year_: an integer,
-          _arithmeticalMonth_: an integer,
+          _arithmeticalMonth_: a positive integer,
         ): an integer
       </h1>
       <dl class="header">
