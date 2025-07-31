@@ -1122,8 +1122,8 @@ contributors: Google, Ecma International
         NonISODateSurpasses (
           _calendar_: a calendar type that is not *"iso8601"*,
           _sign_: -1 or 1,
-          _baseDate_: an ISO Date Record,
-          _isoDate2_: an ISO Date Record,
+          _fromIsoDate_: an ISO Date Record,
+          _toIsoDate_: an ISO Date Record,
           _years_: an integer,
           _months_: an integer,
           _weeks_: an integer,
@@ -1133,13 +1133,13 @@ contributors: Google, Ecma International
       <dl class="header">
         <dt>description</dt>
         <dd>
-          The return value indicates whether the date _date1_, the result of adding the duration denoted by _years_, _months_, _weeks_, and _days_ to _baseDate_ in the calendar system denoted by _calendar_, surpasses _isoDate2_ in the direction denoted by _sign_.
+          The return value indicates whether the date _date1_, the result of adding the duration denoted by _years_, _months_, _weeks_, and _days_ to _fromIsoDate_ in the calendar system denoted by _calendar_, surpasses _toIsoDate_ in the direction denoted by _sign_.
           If _weeks_ and _days_ are both zero, then _date1_ need not exist (for example, it could be February 30).
         </dd>
       </dl>
       <p>It performs the following steps when called:</p>
       <emu-alg>
-        1. Let _parts_ be CalendarISOToDate(_calendar_, _baseDate_).
+        1. Let _parts_ be CalendarISOToDate(_calendar_, _fromIsoDate_).
         1. Let _y0_ be _parts_.[[Year]] + _years_.
         1. Let _m0_ be ! ConstrainMonthCodeToArithmeticalMonth(_calendar_, _y0_, _parts_.[[MonthCode]], ~constrain~).
         1. Let _endOfMonth_ be BalanceNonISODate(_calendar_, _y0_, _m0_ + _months_ + 1, 0).
@@ -1157,7 +1157,7 @@ contributors: Google, Ecma International
           1. Let _y1_ be _endOfMonth_.[[Year]].
           1. Let _m1_ be _endOfMonth_.[[Month]].
           1. Let _d1_ be _baseDay_.
-        1. Let _calDate2_ be CalendarISOToDate(_calendar_, _isoDate2_).
+        1. Let _calDate2_ be CalendarISOToDate(_calendar_, _toIsoDate_).
         1. If _y1_ ≠ _calDate2_.[[Year]], then
           1. If _sign_ × (_y1_ - _calDate2_.[[Year]]) > 0, return *true*.
         1. Else if _m1_ ≠ _calDate2_.[[Month]], then
