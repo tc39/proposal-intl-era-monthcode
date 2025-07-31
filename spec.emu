@@ -533,34 +533,109 @@ contributors: Google, Ecma International
             <tr>
               <th>Calendar</th>
               <th>Additional Month Codes</th>
+              <th>Leap to Common Month Transformation</th>
             </tr>
           </thead>
           <tr>
             <td>*"chinese"*</td>
             <td>*"M01L"*, *"M02L"*, *"M03L"*, *"M04L"*, *"M05L"*, *"M06L"*, *"M07L"*, *"M08L"*, *"M09L"*, *"M10L"*, *"M11L"*, *"M12L"*</td>
+            <td>Remove the *"L"*</td>
           </tr>
           <tr>
             <td>*"coptic"*</td>
             <td>*"M13"*</td>
+            <td></td>
           </tr>
           <tr>
             <td>*"dangi"*</td>
             <td>*"M01L"*, *"M02L"*, *"M03L"*, *"M04L"*, *"M05L"*, *"M06L"*, *"M07L"*, *"M08L"*, *"M09L"*, *"M10L"*, *"M11L"*, *"M12L"*</td>
+            <td>Remove the *"L"*</td>
           </tr>
           <tr>
             <td>*"ethioaa"*</td>
             <td>*"M13"*</td>
+            <td></td>
           </tr>
           <tr>
             <td>*"ethiopic"*</td>
             <td>*"M13"*</td>
+            <td></td>
           </tr>
           <tr>
             <td>*"hebrew"*</td>
             <td>*"M05L"*</td>
+            <td>Change *"M05L"* to *"M06"*</td>
           </tr>
         </table>
       </emu-table>
+    </emu-clause>
+
+    <emu-clause id="sec-temporal-constrainmonthcodetoarithmeticalmonth" type="abstract operation">
+      <h1>
+        ConstrainMonthCodeToArithmeticalMonth (
+          _calendar_: a calendar type that is not *"iso8601"*,
+          _year_: an integer,
+          _monthCode_: a String,
+          _overflow_: ~constrain~ or ~reject~,
+        ): either a normal completion containing a positive integer or a throw completion
+      </h1>
+      <dl class="header">
+        <dt>description</dt>
+        <dd>
+          It returns the arithmetical month in _year_ that best matches the given _monthCode_ in _calendar_. If _monthCode_ does not exist in _year_, it is constrained to the best common month if _overflow_ is ~constrain~, or an error is thrown if _overflow_ is ~reject~.
+        </dd>
+      </dl>
+      <p>It performs the following steps when called:</p>
+      <emu-alg>
+        1. Assert: IsValidMonthCodeForCalendar(_calendar_, _monthCode_) is *true*.
+        1. Let _monthCodeParts_ be ParseMonthCode(_monthCode_).
+        1. If _calendar_ is not listed in the Calendar column of <emu-xref href="#table-additional-month-codes"></emu-xref>, return _monthCodeParts_.[[Number]].
+        1. Let _r_ be the row in <emu-xref href="#table-additional-month-codes"></emu-xref> which the _calendar_ is in the Calendar column.
+        1. If the *"Leap to Common Month Transformation"* column of _r_ is empty, return _monthCodeParts_.[[Number]].
+        1. If YearContainsMonthCode(_calendar_, _year_, _monthCode_) is *false*, then
+          1. If _overflow_ is ~reject~, throw a *RangeError* exception.
+          1. Let _resolvedMonthCode_ be the result of applying the algorithm described in the *"Leap to Common Month Transformation"* column of _r_ to _monthCode_.
+        1. Else,
+          1. Let _resolvedMonthCode_ be _monthCode_.
+        1. Let _monthsBefore_ be 0.
+        1. Let _number_ be 1.
+        1. Let _isLeap_ be *false*.
+        1. Assert: The *"Additional Month Codes"* column of _r_ does not contain *"M00"* or *"M13"*.
+        1. Repeat, while _number_ &le; 12,
+          1. Let _currentMonthCode_ be CreateMonthCode(_number_, _isLeap_).
+          1. If YearContainsMonthCode(_calendar_, _year_, _currentMonthCode_), then
+            1. Set _monthsBefore_ to _monthsBefore_ + 1.
+          1. If _currentMonthCode_ is _resolvedMonthCode_, then
+            1. Return _monthsBefore_.
+          1. If _isLeap_ is *false*, then
+            1. Set _isLeap_ to *true*.
+          1. Else,
+            1. Set _isLeap_ to *false*.
+            1. Set _number_ to _number_ + 1.
+        1. Assert: The above loop should have returned before terminating.
+      </emu-alg>
+    </emu-clause>
+
+    <emu-clause id="sec-temporal-yearcontainsmonthcode" type="abstract operation">
+      <h1>
+        YearContainsMonthCode (
+          _calendar_: a calendar type that is not *"iso8601"*,
+          _year_: an integer,
+          _monthCode_: a String,
+        ): a Boolean
+      </h1>
+      <dl class="header">
+        <dt>description</dt>
+        <dd>
+          It returns whether the given _monthCode_ exists in _year_ of _calendar_.
+        </dd>
+      </dl>
+      <p>It performs the following steps when called:</p>
+      <emu-alg>
+        1. Assert: IsValidMonthCodeForCalendar(_calendar_, _monthCode_) is *true*.
+        1. If ParseMonthCode(_monthCode_).[[IsLeap]] is *false*, return *true*.
+        1. Return whether the leap month indicated by _monthCode_ exists in the arithmetical year _year_ in _calendar_, using calendar-dependent behaviour.
+      </emu-alg>
     </emu-clause>
 
     <emu-clause id="sec-temporal-isvaliderayearforcalendar" type="abstract operation">
@@ -729,7 +804,7 @@ contributors: Google, Ecma International
       </h1>
       <dl class="header">
         <dt>description</dt>
-        <dd>It produces the year relative to the epoch year (the arithmetic year) for a given set of era, eraYear for a calendar that has eras.</dd>
+        <dd>It produces the year relative to the epoch year (the arithmetic year) for a given set of _era_, _eraYear_ in _calendar_, a calendar that includes an era named _era_.</dd>
       </dl>
       <emu-alg>
         1. Let _era_ be CanonicalizeEraInCalendar(_calendar_, _era_).
@@ -882,6 +957,217 @@ contributors: Google, Ecma International
       </emu-table>
     </emu-clause>
 
+    <emu-clause id="sec-temporal-parsemonthcode" type="implementation-defined abstract operation">
+      <h1>
+        ParseMonthCode (
+          _monthCode_: a String,
+        ): an Record with fields [[Number]] (an integer) and [[IsLeap]] (a Boolean)
+      </h1>
+      <dl class="header">
+        <dt>description</dt>
+        <dd>
+          It parses a valid month code string (such as one returned by ToMonthCode or CreateMonthCode) into its parts.
+        </dd>
+      </dl>
+      <p>It performs the following steps when called:</p>
+      <emu-alg>
+        1. If the length of _monthCode_ is 3, then
+          1. Let _isLeap_ be *false*.
+        1. Else,
+          1. Assert: The length of _monthCode_ is 4.
+          1. Let _isLeap_ be *true*.
+        1. Let _monthCodeDigits_ be the substring of _monthCode_ from 1 to 3.
+        1. Let _number_ be ℝ(StringToNumber(_monthCodeDigits_)).
+        1. Return the Record { [[Number]]: _number_, [[IsLeap]]: _isLeap_ }.
+      </emu-alg>
+    </emu-clause>
+
+    <emu-clause id="sec-temporal-createmonthcode" type="implementation-defined abstract operation">
+      <h1>
+        CreateMonthCode (
+          _number_: an integer,
+          _isLeap_: a Boolean,
+        ): a String
+      </h1>
+      <dl class="header">
+        <dt>description</dt>
+        <dd>
+          It creates a month code with the given month number and leap month flag.
+        </dd>
+      </dl>
+      <p>It performs the following steps when called:</p>
+      <emu-alg>
+        1. Let _numberPart_ be ToZeroPaddedDecimalString(_number_, 2).
+        1. If _isLeap_ is *true*, then
+          1. Return the string-concatenation of the code unit 0x004D (LATIN CAPITAL LETTER M), _numberPart_, and the code unit 0x004C (LATIN CAPITAL LETTER L).
+        1. Else,
+          1. Return the string-concatenation of the code unit 0x004D (LATIN CAPITAL LETTER M) and _numberPart_.
+      </emu-alg>
+    </emu-clause>
+
+    <emu-clause id="sec-temporal-calendardatearithmeticaltoiso" type="implementation-defined abstract operation">
+      <h1>
+        CalendarDateArithmeticalToISO (
+          _calendar_: a calendar type that is not *"iso8601"*,
+          _year_: an integer,
+          _arithmeticalMonth_: a positive integer,
+          _day_: an integer,
+        ): either a normal completion containing an ISO Date Record or a throw completion
+      </h1>
+      <dl class="header">
+        <dt>description</dt>
+        <dd>
+          It returns an ISO Date Record that, when converted to a Calendar Date Record with _calendar_ (for example, with CalendarISOToDate), contains the given _year_, _arithmeticalMonth_, and _day_ values in its [[Year]], [[Month]], and [[Day]] fields. If this is not possible, a RangeError is thrown.
+        </dd>
+      </dl>
+      <p>It performs the following steps when called:</p>
+      <emu-alg>
+        1. If _year_, _arithmeticalMonth_, and _day_ do not form a valid date in _calendar_, throw a RangeError exception.
+        1. Return a calendar-dependent ISO Date Record as described above.
+      </emu-alg>
+    </emu-clause>
+
+    <emu-clause id="sec-temporal-calendardaysinmonth" type="implementation-defined abstract operation">
+      <h1>
+        CalendarDaysInMonth (
+          _calendar_: a calendar type that is not *"iso8601"*,
+          _year_: an integer,
+          _arithmeticalMonth_: a positive integer,
+        ): an integer
+      </h1>
+      <dl class="header">
+        <dt>description</dt>
+        <dd>
+          It interprets _year_ and _arithmeticalMonth_ as arithmetical values in the given _calendar_ and returns the number of days in the corresponding month.
+        </dd>
+      </dl>
+      <p>It performs the following steps when called:</p>
+      <emu-alg>
+        1. Return a calendar-dependent integer as described above.
+      </emu-alg>
+    </emu-clause>
+
+    <emu-clause id="sec-temporal-calendarmonthsinyear" type="implementation-defined abstract operation">
+      <h1>
+        CalendarMonthsInYear (
+          _calendar_: a calendar type that is not *"iso8601"*,
+          _year_: an integer,
+        ): an integer
+      </h1>
+      <dl class="header">
+        <dt>description</dt>
+        <dd>
+          It interprets _year_ as arithmetical value in the given _calendar_ and returns the number of months in the corresponding year.
+        </dd>
+      </dl>
+      <p>It performs the following steps when called:</p>
+      <emu-alg>
+        1. Return a calendar-dependent integer as described above.
+      </emu-alg>
+    </emu-clause>
+
+    <emu-clause id="sec-temporal-balancenonisodate" type="implementation-defined abstract operation">
+      <h1>
+        BalanceNonISODate (
+          _calendar_: a calendar type that is not *"iso8601"*,
+          _year_: an integer,
+          _arithmeticalMonth_: an integer,
+          _day_: an integer,
+        ): a Record with fields [[Year]] (an integer), [[Month]] (an integer), and [[Day]] (an integer)
+      </h1>
+      <dl class="header">
+        <dt>description</dt>
+        <dd>
+          It interprets the given _year_ and potentially out-of-range _arithmeticalMonth_ and _day_ as arithmetical values in the given _calendar_ and returns in-range values by overflowing out-of-range _arithmeticalMonth_ or _day_ values into the next-highest unit.
+          This date may be outside the range given by ISODateTimeWithinLimits.
+        </dd>
+      </dl>
+      <p>It performs the following steps when called:</p>
+      <emu-alg>
+        1. Let _resolvedYear_ be _year_.
+        1. Let _resolvedMonth_ be _arithmeticalMonth_.
+        1. Let _monthsInYear_ be CalendarMonthsInYear(_calendar_, _resolvedYear_).
+        1. Repeat, while _resolvedMonth_ &le; 0,
+          1. Set _resolvedYear_ to _resolvedYear_ - 1.
+          1. Set _monthsInYear_ to CalendarMonthsInYear(_calendar_, _resolvedYear_).
+          1. Set _resolvedMonth_ to _resolvedMonth_ + _monthsInYear_.
+        1. Repeat, while _resolvedMonth_ &gt; _monthsInYear_,
+          1. Set _resolvedMonth_ to _resolvedMonth_ - _monthsInYear_.
+          1. Set _resolvedYear_ to _resolvedYear_ + 1.
+          1. Set _monthsInYear_ to CalendarMonthsInYear(_calendar_, _resolvedYear_).
+        1. Let _resolvedDay_ be _day_.
+        1. Let _daysInMonth_ be CalendarDaysInMonth(_calendar_, _resolvedYear_, _resolvedMonth_).
+        1. Repeat, while _resolvedDay_ &le; 0,
+          1. Set _resolvedMonth_ to _resolvedMonth_ - 1.
+          1. If _resolvedMonth_ is 0, then
+            1. Set _resolvedYear_ to _resolvedYear_ - 1.
+            1. Set _monthsInYear_ to CalendarMonthsInYear(_calendar_, _resolvedYear_).
+            1. Set _resolvedMonth_ to _monthsInYear_.
+          1. Set _daysInMonth_ to CalendarDaysInMonth(_calendar_, _resolvedYear_, _resolvedMonth_).
+          1. Set _resolvedDay_ to _day_ + _daysInMonth_.
+        1. Repeat, while _resolvedDay_ &gt; _daysInMonth_,
+          1. Set _resolvedDay_ to _resolvedDay_ - _daysInMonth_.
+          1. Set _resolvedMonth_ to _resolvedMonth_ + 1.
+          1. If _resolvedMonth_ &gt; _monthsInYear_, then
+            1. Set _resolvedYear_ to _resolvedYear_ + 1.
+            1. Set _monthsInYear_ to CalendarMonthsInYear(_calendar_, _resolvedYear_).
+            1. Set _resolvedMonth_ to 1.
+          1. Set _daysInMonth_ to CalendarDaysInMonth(_calendar_, _resolvedYear_, _resolvedMonth_).
+        1. Return the Record { [[Year]]: _resolvedYear_, [[Month]]: _resolvedMonth_, [[Day]]: _resolvedDay_ }.
+      </emu-alg>
+    </emu-clause>
+
+    <emu-clause id="sec-temporal-nonisodatesurpasses" type="implementation-defined abstract operation">
+      <h1>
+        NonISODateSurpasses (
+          _calendar_: a calendar type that is not *"iso8601"*,
+          _sign_: -1 or 1,
+          _fromIsoDate_: an ISO Date Record,
+          _toIsoDate_: an ISO Date Record,
+          _years_: an integer,
+          _months_: an integer,
+          _weeks_: an integer,
+          _days_: an integer,
+        ): a Boolean
+      </h1>
+      <dl class="header">
+        <dt>description</dt>
+        <dd>
+          The return value indicates whether the date _date1_, the result of adding the duration denoted by _years_, _months_, _weeks_, and _days_ to _fromIsoDate_ in the calendar system denoted by _calendar_, surpasses _toIsoDate_ in the direction denoted by _sign_.
+          If _weeks_ and _days_ are both zero, then _date1_ need not exist (for example, it could be February 30).
+        </dd>
+      </dl>
+      <p>It performs the following steps when called:</p>
+      <emu-alg>
+        1. Let _parts_ be CalendarISOToDate(_calendar_, _fromIsoDate_).
+        1. Let _y0_ be _parts_.[[Year]] + _years_.
+        1. Let _m0_ be ! ConstrainMonthCodeToArithmeticalMonth(_calendar_, _y0_, _parts_.[[MonthCode]], ~constrain~).
+        1. Let _endOfMonth_ be BalanceNonISODate(_calendar_, _y0_, _m0_ + _months_ + 1, 0).
+        1. Let _baseDay_ be _parts_.[[Day]].
+        1. If _weeks_ is not 0 or _days_ is not 0, then
+          1. If _baseDay_ &lt; _endOfMonth_.[[Day]], then
+            1. Let _regulatedDay_ be _baseDay_.
+          1. Else,
+            1. Let _regulatedDay_ be _endOfMonth_.[[Day]].
+          1. Let _balancedDate_ be BalanceNonISODate(_calendar_, _endOfMonth_.[[Year]], _endOfMonth_.[[Month]], _regulatedDay_ + 7 * _weeks_ + _days_).
+          1. Let _y1_ be _balancedDate_.[[Year]].
+          1. Let _m1_ be _balancedDate_.[[Month]].
+          1. Let _d1_ be _balancedDate_.[[Day]].
+        1. Else,
+          1. Let _y1_ be _endOfMonth_.[[Year]].
+          1. Let _m1_ be _endOfMonth_.[[Month]].
+          1. Let _d1_ be _baseDay_.
+        1. Let _calDate2_ be CalendarISOToDate(_calendar_, _toIsoDate_).
+        1. If _y1_ ≠ _calDate2_.[[Year]], then
+          1. If _sign_ × (_y1_ - _calDate2_.[[Year]]) > 0, return *true*.
+        1. Else if _m1_ ≠ _calDate2_.[[Month]], then
+          1. If _sign_ × (_m1_ - _calDate2_.[[Month]]) > 0, return *true*.
+        1. Else if _d1_ ≠ _calDate2_.[[Day]], then
+          1. If _sign_ × (_d1_ - _calDate2_.[[Day]]) > 0, return *true*.
+        1. Return *false*.
+      </emu-alg>
+    </emu-clause>
+
     <emu-clause id="sup-temporal-nonisodateadd" type="implementation-defined abstract operation">
       <h1>
         NonISODateAdd (
@@ -898,22 +1184,22 @@ contributors: Google, Ecma International
           It may throw a *RangeError* exception if _overflow_ is ~reject~ and the resulting month or day would need to be clamped in order to form a valid date in _calendar_.
         </dd>
       </dl>
-      <p>The behaviour is implementation-defined, but all calendars follow the general steps given here, which is a generalization of the precise algorithm specified in CalendarDateAdd for *"iso8601"*.</p>
+      <p>All calendars follow the steps given here, which is a generalization of the precise algorithm specified in CalendarDateAdd for *"iso8601"*.</p>
       <p>This definition supersedes the definition provided in <emu-xref href="#sec-temporal-nonisodateadd"></emu-xref>.</p>
       <p>It performs the following steps when called:</p>
       <emu-alg>
-        1. Let _calendarDate_ be CalendarISOToDate(_calendar_, _isoDate_).
-        1. Add _duration_.[[Years]] to _calendarDate_.
-        1. (This step only matters for lunisolar calendars.) If _calendarDate_.[[MonthCode]] is a leap month that doesn't exist in the year, then:
-          1. Set _calendarDate_ to another date according to the cultural conventions of that calendar's users. Of the currently supported calendars: if _calendar_ is *"chinese"* or *"dangi"*, change _calendarDate_.[[MonthCode]] to the same month code but without the *"L"*. If _calendar_ is *"hebrew"*, change _calendarDate_.[[MonthCode]] from *"M05L"* to *"M06"*.
-          1. Update _calendarDate_.[[Month]] accordingly.
-        1. Add _duration_.[[Months]] to _calendarDate_, balancing _calendarDate_ if it goes over a year boundary.
-        1. If the date described by _calendarDate_ does not exist, then
+        1. Let _parts_ be CalendarISOToDate(_calendar_, _isoDate_).
+        1. Let _y0_ be _parts_.[[Year]] + _duration_.[[Years]].
+        1. Let _m0_ be ! ConstrainMonthCodeToArithmeticalMonth(_calendar_, _y0_, _parts_.[[MonthCode]], ~constrain~).
+        1. Let _endOfMonth_ be BalanceNonISODate(_calendar_, _y0_, _m0_ + _duration_.[[Months]] + 1, 0).
+        1. Let _baseDay_ be _parts_.[[Day]].
+        1. If _endOfMonth_.[[Day]] &lt; _baseDay_, then
           1. If _overflow_ is ~reject~, throw a *RangeError* exception.
-          1. If _calendarDate_.[[MonthCode]] is a valid month code for _calendarDate_.[[Year]], but the date described by _calendarDate_ does not exist, set _calendarDate_.[[Day]] to the closest day in the same month. If there are two equally-close dates in the same month, pick the later one.
-          1. (This step does not apply to any currently supported calendars.) If the date described by _calendarDate_ still does not exist, set _calendarDate_ to the closest date in the same year. If there are two equally-close dates in that year, pick the later one.
-        1. Add _duration_.[[Weeks]] and _duration_.[[Days]] to _calendarDate_, balancing _calendarDate_ if it goes over a month or year boundary.
-        1. Let _result_ be ? CalendarDateToISO(_calendar_, _calendarDate_, _overflow_).
+          1. Let _regulatedDay_ be _endOfMonth_.[[Day]].
+        1. Else,
+          1. Let _regulatedDay_ be _baseDay_.
+        1. Let _balancedDate_ be BalanceNonISODate(_calendar_, _endOfMonth_.[[Year]], _endOfMonth_.[[Month]], _regulatedDay_ + 7 * _duration_.[[Weeks]] + _duration_.[[Days]]).
+        1. Let _result_ be ? CalendarDateArithmeticalToISO(_calendar_, _balancedDate_.[[Year]], _balancedDate_.[[Month]], _balancedDate_.[[Day]]).
         1. If ISODateWithinLimits(_result_) is *false*, throw a *RangeError* exception.
         1. Return _result_.
       </emu-alg>
@@ -935,19 +1221,36 @@ contributors: Google, Ecma International
           No fields larger than _largestUnit_ will be non-zero in the resulting Date Duration Record.
         </dd>
       </dl>
-      <p>The algorithm is implementation-defined, but all calendars follow the general steps given here, which is a generalization of the precise algorithm specified in CalendarDateUntil for *"iso8601"*.</p>
+      <p>All calendars follow the steps given here, which is a generalization of the precise algorithm specified in CalendarDateUntil for *"iso8601"*.</p>
       <p>This definition supersedes the definition provided in <emu-xref href="#sec-temporal-nonisodateuntil"></emu-xref>.</p>
       <p>It performs the following steps when called:</p>
       <emu-alg>
+        1. Let _sign_ be -CompareISODate(_one_, _two_).
+        1. If _sign_ = 0, return ZeroDateDuration().
+        1. Let _years_ be 0.
         1. If _largestUnit_ is ~year~, then
-          1. Add (without constraining) as many years as possible to _one_, in the direction from _one_ to _two_, without surpassing _two_. "Surpassing" here (and in all steps below) means to compare years numerically, then month codes lexicographically, then days numerically; if any of them exceed _two_ in the direction from _one_ to _two_, then _two_ is surpassed.
-          1. Constrain _one_ to a real year and month, not taking day into account. This step only matters for lunisolar calendars.
-        1. If _largestUnit_ is ~year~ or ~month~, then
-          1. Add (without constraining) as many months as possible to _one_ without surpassing _two_.
-          1. Constrain _one_ to a real year, month, and day.
-        1. If _largestUnit_ is ~week~, add as many weeks as possible to _one_ without surpassing _two_.
-        1. Add as many days as possible to _one_ until it is equal to _two_.
-        1. Return a Date Duration Record of the number of years, months, weeks, and days added.
+          1. Let _candidateYears_ be _sign_.
+          1. Repeat, while NonISODateSurpasses(_calendar_, _sign_, _one_, _two_, _candidateYears_, 0, 0, 0) is *false*,
+            1. Set _years_ to _candidateYears_.
+            1. Set _candidateYears_ to _candidateYears_ + _sign_.
+        1. Let _months_ be 0.
+        1. If _largestUnit_ is ~year~ or _largestUnit_ is ~month~, then
+          1. Let _candidateMonths_ be _sign_.
+          1. Repeat, while NonISODateSurpasses(_calendar_, _sign_, _one_, _two_, _years_, _candidateMonths_, 0, 0) is *false*,
+            1. Set _months_ to _candidateMonths_.
+            1. Set _candidateMonths_ to _candidateMonths_ + _sign_.
+        1. Let _weeks_ be 0.
+        1. If _largestUnit_ is ~week~, then
+          1. Let _candidateWeeks_ be _sign_.
+          1. Repeat, while NonISODateSurpasses(_calendar_, _sign_, _one_, _two_, _years_, _months_, _candidateWeeks_, 0) is *false*,
+            1. Set _weeks_ to _candidateWeeks_.
+            1. Set _candidateWeeks_ to _candidateWeeks_ + sign.
+        1. Let _days_ be 0.
+        1. Let _candidateDays_ be _sign_.
+        1. Repeat, while NonISODateSurpasses(_calendar_, _sign_, _one_, _two_, _years_, _months_, _weeks_, _candidateDays_) is *false*,
+          1. Set _days_ to _candidateDays_.
+          1. Set _candidateDays_ to _candidateDays_ + _sign_.
+        1. Return ! CreateDateDurationRecord(_years_, _months_, _weeks_, _days_).
       </emu-alg>
     </emu-clause>
 
@@ -972,16 +1275,27 @@ contributors: Google, Ecma International
       <p>This definition supersedes the definition provided in <emu-xref href="#sec-temporal-nonisocalendardatetoiso"></emu-xref>.</p>
       <p>It performs the following steps when called:</p>
       <emu-alg>
-        1. If _fields_.[[Era]] and _fields_.[[EraYear]] are not ~unset~ and IsValidEraYearForCalendar(_calendar_, _fields_.[[Era]], _fields_.[[EraYear]]) is *false*, throw a *RangeError* exception.
-        1. If _fields_.[[MonthCode]] is not ~unset~ and IsValidMonthCodeForCalendar(_calendar_, _fields_.[[MonthCode]]) is *false*, throw a *RangeError* exception.
-        1. If _fields_ describes an existing date in _calendar_, return an implementation-defined ISO Date Record that corresponds to the date described by _fields_.
-        1. If _overflow_ is ~reject~, throw a *RangeError* exception.
-        1. (This step only matters for lunisolar calendars.) If _fields_.[[MonthCode]] is a leap month that doesn't exist in the year, then:
-          1. Set _fields_ to another date according to the cultural conventions of that calendar's users. Of the currently supported calendars: if _calendar_ is *"chinese"* or *"dangi"*, change _fields_.[[MonthCode]] to the same month code but without the *"L"*. If _calendar_ is *"hebrew"*, change _fields_.[[MonthCode]] from *"M05L"* to *"M06"*.
-          1. Update _fields_.[[Month]] accordingly.
-        1. If _fields_.[[MonthCode]] is a valid month code for _fields_.[[Year]], but the date described by _fields_ does not exist, set _fields_.[[Day]] to the closest day in the same month. If there are two equally-close dates in the same month, pick the later one.
-        1. (This step does not apply to any currently supported calendars.) If the date described by _fields_ still does not exist, set _fields_ to the closest date in the same year. If there are two equally-close dates in that year, pick the later one.
-        1. Return an implementation-defined ISO Date Record that corresponds to the date described by _fields_.
+        1. If _fields_.[[Era]] and _fields_.[[EraYear]] are not ~unset~, then
+          1. If IsValidEraYearForCalendar(_calendar_, _fields_.[[Era]], _fields_.[[EraYear]]) is *false*, throw a *RangeError* exception.
+          1. Let _year_ be CalendarDateArithmeticYearForEraYear(_calendar_, _fields_.[[Era]], _fields_.[[EraYear]]).
+        1. Else,
+          1. Assert: _fields_.[[Year]] is not ~unset~.
+          1. Let _year_ be _fields_.[[Year]].
+        1. If _fields_.[[MonthCode]] is not ~unset~, then
+          1. If IsValidMonthCodeForCalendar(_calendar_, _fields_.[[MonthCode]]) is *false*, throw a *RangeError* exception.
+          1. Let _arithmeticalMonth_ be ? ConstrainMonthCodeToArithmeticalMonth(_calendar_, _year_, _fields_.[[MonthCode]], _overflow_).
+        1. Else,
+          1. Assert: _fields_.[[Month]] is not ~unset~.
+          1. Let _arithmeticalMonth_ be _fields_.[[Month]].
+        1. Let _day_ be _fields_.[[Day]].
+        1. Assert: _day_ is not ~unset~.
+        1. Let _daysInMonth_ be CalendarDaysInMonth(_calendar_, _year_, _arithmeticalMonth_).
+        1. If _daysInMonth_ &le; _day_, then
+          1. If _overflow_ is ~reject~, throw a *RangeError* exception.
+          1. Let _regulatedDay_ be _daysInMonth_.
+        1. Else,
+          1. Let _regulatedDay_ be _day_.
+        1. Return ? CalendarDateArithmeticalToISO(_calendar_, _year_, _arithmeticalMonth_, _regulatedDay_).
       </emu-alg>
     </emu-clause>
 

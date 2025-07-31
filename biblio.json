@@ -123,5 +123,15 @@
                 "id": "sec-temporal-zerodateduration"
             }
         ]
+    },
+    {
+        "location": "https://tc39.es/ecma262/",
+        "entries": [
+            {
+                "type": "op",
+                "aoid": "ℝ",
+                "id": "ℝ"
+            }
+        ]
     }
 ]
