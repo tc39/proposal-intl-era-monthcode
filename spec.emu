@@ -539,7 +539,7 @@ contributors: Google, Ecma International
           <tr>
             <td>*"chinese"*</td>
             <td>*"M01L"*, *"M02L"*, *"M03L"*, *"M04L"*, *"M05L"*, *"M06L"*, *"M07L"*, *"M08L"*, *"M09L"*, *"M10L"*, *"M11L"*, *"M12L"*</td>
-            <td>Remove the *"L"*</td>
+            <td>~shift-backward~</td>
           </tr>
           <tr>
             <td>*"coptic"*</td>
@@ -549,7 +549,7 @@ contributors: Google, Ecma International
           <tr>
             <td>*"dangi"*</td>
             <td>*"M01L"*, *"M02L"*, *"M03L"*, *"M04L"*, *"M05L"*, *"M06L"*, *"M07L"*, *"M08L"*, *"M09L"*, *"M10L"*, *"M11L"*, *"M12L"*</td>
-            <td>Remove the *"L"*</td>
+            <td>~shift-backward~</td>
           </tr>
           <tr>
             <td>*"ethioaa"*</td>
@@ -564,7 +564,7 @@ contributors: Google, Ecma International
           <tr>
             <td>*"hebrew"*</td>
             <td>*"M05L"*</td>
-            <td>Change *"M05L"* to *"M06"*</td>
+            <td>~shift-forward~</td>
           </tr>
         </table>
       </emu-table>
@@ -610,13 +610,16 @@ contributors: Google, Ecma International
       <p>It performs the following steps when called:</p>
       <emu-alg>
         1. Assert: IsValidMonthCodeForCalendar(_calendar_, _monthCode_) is *true*.
-        1. Let _monthCodeParts_ be ParseMonthCode(_monthCode_).
-        1. If _calendar_ is not listed in the Calendar column of <emu-xref href="#table-additional-month-codes"></emu-xref>, return _monthCode_.
         1. If YearContainsMonthCode(_calendar_, _arithmeticYear_, _monthCode_) is *true*, return _monthCode_.
         1. If _overflow_ is ~reject~, throw a *RangeError* exception.
+        1. Assert: _calendar_ is listed in the Calendar column of <emu-xref href="#table-additional-month-codes"></emu-xref>.
         1. Let _r_ be the row in <emu-xref href="#table-additional-month-codes"></emu-xref> which the _calendar_ is in the Calendar column.
-        1. Let _resolvedMonthCode_ be the result of applying the algorithm described in the *"Leap to Common Month Transformation"* column of _r_ to _monthCode_.
-        1. Return _resolvedMonthCode_.
+        1. Let _shiftType_ be the value given in the *"Leap to Common Month Transformation"* column of _r_.
+        1. If _shiftType_ is ~shift-backward~, then
+          1. Return CreateMonthCode(ParseMonthCode(_monthCode_).[[MonthNumber]], *false*).
+        1. Else,
+          1. Assert: _monthCode_ is *"M05L"*.
+          1. Return *"M06L"*.
       </emu-alg>
     </emu-clause>
 
@@ -642,7 +645,7 @@ contributors: Google, Ecma International
         1. Let _isLeap_ be *false*.
         1. Let _r_ be the row in <emu-xref href="#table-additional-month-codes"></emu-xref> which the _calendar_ is in the Calendar column.
         1. If the *"Leap to Common Month Transformation"* column of _r_ is empty, then
-          1. Return ParseMonthCode(_monthCode_).[[Number]].
+          1. Return ParseMonthCode(_monthCode_).[[MonthNumber]].
         1. Assert: The *"Additional Month Codes"* column of _r_ does not contain *"M00L"* or *"M13"*.
         1. Assert: The following loop will terminate.
         1. Repeat, while _number_ &le; 12,
