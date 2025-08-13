@@ -121,6 +121,16 @@
                 "type": "op",
                 "aoid": "ZeroDateDuration",
                 "id": "sec-temporal-zerodateduration"
+            },
+            {
+                "type": "op",
+                "aoid": "ParseMonthCode",
+                "id": "sec-temporal-parsemonthcode"
+            },
+            {
+                "type": "op",
+                "aoid": "CreateMonthCode",
+                "id": "sec-temporal-createmonthcode"
             }
         ]
     }
