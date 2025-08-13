@@ -574,21 +574,21 @@ contributors: Google, Ecma International
       <h1>
         YearContainsMonthCode (
           _calendar_: a calendar type that is not *"iso8601"*,
-          _year_: an integer,
+          _arithmeticYear_: an integer,
           _monthCode_: a String,
         ): a Boolean
       </h1>
       <dl class="header">
         <dt>description</dt>
         <dd>
-          It returns whether the given _monthCode_ exists in _year_ of _calendar_.
+          It returns whether the given _monthCode_ exists in _arithmeticYear_ of _calendar_.
         </dd>
       </dl>
       <p>It performs the following steps when called:</p>
       <emu-alg>
         1. Assert: IsValidMonthCodeForCalendar(_calendar_, _monthCode_) is *true*.
         1. If ParseMonthCode(_monthCode_).[[IsLeap]] is *false*, return *true*.
-        1. Return whether the leap month indicated by _monthCode_ exists in the arithmetical year _year_ in _calendar_, using calendar-dependent behaviour.
+        1. Return whether the leap month indicated by _monthCode_ exists in the arithmetical year _arithmeticYear_ in _calendar_, using calendar-dependent behaviour.
       </emu-alg>
     </emu-clause>
 
@@ -596,7 +596,7 @@ contributors: Google, Ecma International
       <h1>
         ConstrainMonthCode (
           _calendar_: a calendar type that is not *"iso8601"*,
-          _year_: an integer,
+          _arithmeticYear_: an integer,
           _monthCode_: a month code,
           _overflow_: ~constrain~ or ~reject~,
         ): either a normal completion containing a month code or a throw completion
@@ -604,7 +604,7 @@ contributors: Google, Ecma International
       <dl class="header">
         <dt>description</dt>
         <dd>
-          It returns the month code in _year_ of _calendar_ that best matches the given _monthCode_. If _monthCode_ does not exist in _year_, it is constrained to the best common month if _overflow_ is ~constrain~, or an error is thrown if _overflow_ is ~reject~.
+          It returns the month code in _arithmeticYear_ of _calendar_ that best matches the given _monthCode_. If _monthCode_ does not exist in _arithmeticYear_, it is constrained to the best common month if _overflow_ is ~constrain~, or an error is thrown if _overflow_ is ~reject~.
         </dd>
       </dl>
       <p>It performs the following steps when called:</p>
@@ -612,7 +612,7 @@ contributors: Google, Ecma International
         1. Assert: IsValidMonthCodeForCalendar(_calendar_, _monthCode_) is *true*.
         1. Let _monthCodeParts_ be ParseMonthCode(_monthCode_).
         1. If _calendar_ is not listed in the Calendar column of <emu-xref href="#table-additional-month-codes"></emu-xref>, return _monthCodeParts_.[[Number]].
-        1. If YearContainsMonthCode(_calendar_, _year_, _monthCode_) is *false*, then
+        1. If YearContainsMonthCode(_calendar_, _arithmeticYear_, _monthCode_) is *false*, then
           1. If _overflow_ is ~reject~, throw a *RangeError* exception.
           1. Let _r_ be the row in <emu-xref href="#table-additional-month-codes"></emu-xref> which the _calendar_ is in the Calendar column.
           1. Let _resolvedMonthCode_ be the result of applying the algorithm described in the *"Leap to Common Month Transformation"* column of _r_ to _monthCode_.
@@ -626,19 +626,19 @@ contributors: Google, Ecma International
       <h1>
         MonthCodeToOrdinal (
           _calendar_: a calendar type that is not *"iso8601"*,
-          _year_: an integer,
+          _arithmeticYear_: an integer,
           _monthCode_: a month code,
         ): an integer
       </h1>
       <dl class="header">
         <dt>description</dt>
         <dd>
-          It returns the ordinal month number for _monthCode_ in _year_ of _calendar_. The given _monthCode_ must exist in the given year.
+          It returns the ordinal month number for _monthCode_ in _arithmeticYear_ of _calendar_. The given _monthCode_ must exist in the given year.
         </dd>
       </dl>
       <p>It performs the following steps when called:</p>
       <emu-alg>
-        1. Assert: YearContainsMonthCode(_calendar_, _year_, _monthCode_) is *true*.
+        1. Assert: YearContainsMonthCode(_calendar_, _arithmeticYear_, _monthCode_) is *true*.
         1. Let _monthsBefore_ be 0.
         1. Let _number_ be 1.
         1. Let _isLeap_ be *false*.
@@ -648,7 +648,7 @@ contributors: Google, Ecma International
         1. Assert: The *"Additional Month Codes"* column of _r_ does not contain *"M00L"* or *"M13"*.
         1. Repeat, while _number_ &le; 12,
           1. Let _currentMonthCode_ be CreateMonthCode(_number_, _isLeap_).
-          1. If YearContainsMonthCode(_calendar_, _year_, _currentMonthCode_), then
+          1. If YearContainsMonthCode(_calendar_, _arithmeticYear_, _currentMonthCode_), then
             1. Set _monthsBefore_ to _monthsBefore_ + 1.
           1. If _currentMonthCode_ is _monthCode_, then
             1. Return _monthsBefore_.
