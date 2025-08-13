@@ -611,13 +611,11 @@ contributors: Google, Ecma International
       <emu-alg>
         1. Assert: IsValidMonthCodeForCalendar(_calendar_, _monthCode_) is *true*.
         1. Let _monthCodeParts_ be ParseMonthCode(_monthCode_).
-        1. If _calendar_ is not listed in the Calendar column of <emu-xref href="#table-additional-month-codes"></emu-xref>, return _monthCodeParts_.[[Number]].
-        1. If YearContainsMonthCode(_calendar_, _arithmeticYear_, _monthCode_) is *false*, then
-          1. If _overflow_ is ~reject~, throw a *RangeError* exception.
-          1. Let _r_ be the row in <emu-xref href="#table-additional-month-codes"></emu-xref> which the _calendar_ is in the Calendar column.
-          1. Let _resolvedMonthCode_ be the result of applying the algorithm described in the *"Leap to Common Month Transformation"* column of _r_ to _monthCode_.
-        1. Else,
-          1. Let _resolvedMonthCode_ be _monthCode_.
+        1. If _calendar_ is not listed in the Calendar column of <emu-xref href="#table-additional-month-codes"></emu-xref>, return _monthCode_.
+        1. If YearContainsMonthCode(_calendar_, _arithmeticYear_, _monthCode_) is *true*, return _monthCode_.
+        1. If _overflow_ is ~reject~, throw a *RangeError* exception.
+        1. Let _r_ be the row in <emu-xref href="#table-additional-month-codes"></emu-xref> which the _calendar_ is in the Calendar column.
+        1. Let _resolvedMonthCode_ be the result of applying the algorithm described in the *"Leap to Common Month Transformation"* column of _r_ to _monthCode_.
         1. Return _resolvedMonthCode_.
       </emu-alg>
     </emu-clause>
@@ -646,6 +644,7 @@ contributors: Google, Ecma International
         1. If the *"Leap to Common Month Transformation"* column of _r_ is empty, then
           1. Return ParseMonthCode(_monthCode_).[[Number]].
         1. Assert: The *"Additional Month Codes"* column of _r_ does not contain *"M00L"* or *"M13"*.
+        1. Assert: The following loop will terminate.
         1. Repeat, while _number_ &le; 12,
           1. Let _currentMonthCode_ be CreateMonthCode(_number_, _isLeap_).
           1. If YearContainsMonthCode(_calendar_, _arithmeticYear_, _currentMonthCode_), then
@@ -657,7 +656,6 @@ contributors: Google, Ecma International
           1. Else,
             1. Set _isLeap_ to *false*.
             1. Set _number_ to _number_ + 1.
-        1. Assert: The above loop should have returned before terminating.
       </emu-alg>
     </emu-clause>
 
