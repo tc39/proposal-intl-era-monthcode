@@ -570,7 +570,7 @@ contributors: Google, Ecma International
       </emu-table>
     </emu-clause>
 
-    <emu-clause id="sec-temporal-yearcontainsmonthcode" type="abstract operation">
+    <emu-clause id="sec-temporal-yearcontainsmonthcode" type="implementation-defined abstract operation">
       <h1>
         YearContainsMonthCode (
           _calendar_: a calendar type that is not *"iso8601"*,
@@ -588,7 +588,7 @@ contributors: Google, Ecma International
       <emu-alg>
         1. Assert: IsValidMonthCodeForCalendar(_calendar_, _monthCode_) is *true*.
         1. If ParseMonthCode(_monthCode_).[[IsLeap]] is *false*, return *true*.
-        1. Return whether the leap month indicated by _monthCode_ exists in the arithmetical year _arithmeticYear_ in _calendar_, using calendar-dependent behaviour.
+        1. Return whether the leap month indicated by _monthCode_ exists in the year _arithmeticYear_ in _calendar_, using calendar-dependent behaviour.
       </emu-alg>
     </emu-clause>
 
