@@ -575,7 +575,7 @@ contributors: Google, Ecma International
         YearContainsMonthCode (
           _calendar_: a calendar type that is not *"iso8601"*,
           _arithmeticYear_: an integer,
-          _monthCode_: a String,
+          _monthCode_: a month code,
         ): a Boolean
       </h1>
       <dl class="header">
@@ -587,7 +587,7 @@ contributors: Google, Ecma International
       <p>It performs the following steps when called:</p>
       <emu-alg>
         1. Assert: IsValidMonthCodeForCalendar(_calendar_, _monthCode_) is *true*.
-        1. If ParseMonthCode(_monthCode_).[[IsLeap]] is *false*, return *true*.
+        1. If ! ParseMonthCode(_monthCode_).[[IsLeap]] is *false*, return *true*.
         1. Return whether the leap month indicated by _monthCode_ exists in the year _arithmeticYear_ in _calendar_, using calendar-dependent behaviour.
       </emu-alg>
     </emu-clause>
@@ -616,7 +616,7 @@ contributors: Google, Ecma International
         1. Let _r_ be the row in <emu-xref href="#table-additional-month-codes"></emu-xref> which the _calendar_ is in the Calendar column.
         1. Let _shiftType_ be the value given in the *"Leap to Common Month Transformation"* column of _r_.
         1. If _shiftType_ is ~skip-backward~, then
-          1. Return CreateMonthCode(ParseMonthCode(_monthCode_).[[MonthNumber]], *false*).
+          1. Return CreateMonthCode(! ParseMonthCode(_monthCode_).[[MonthNumber]], *false*).
         1. Else,
           1. Assert: _monthCode_ is *"M05L"*.
           1. Return *"M06"*.
@@ -645,7 +645,7 @@ contributors: Google, Ecma International
         1. Let _isLeap_ be *false*.
         1. Let _r_ be the row in <emu-xref href="#table-additional-month-codes"></emu-xref> which the _calendar_ is in the Calendar column.
         1. If the *"Leap to Common Month Transformation"* column of _r_ is empty, then
-          1. Return ParseMonthCode(_monthCode_).[[MonthNumber]].
+          1. Return ! ParseMonthCode(_monthCode_).[[MonthNumber]].
         1. Assert: The *"Additional Month Codes"* column of _r_ does not contain *"M00L"* or *"M13"*.
         1. Assert: The following loop will terminate.
         1. Repeat, while _number_ &le; 12,
