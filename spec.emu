@@ -993,13 +993,14 @@ contributors: Google, Ecma International
       <dl class="header">
         <dt>description</dt>
         <dd>
-          It returns an ISO Date Record that, when converted to a Calendar Date Record with _calendar_ (for example, with CalendarISOToDate), contains the given _arithmeticYear_, _ordinalMonth_, and _day_ values in its [[Year]], [[Month]], and [[Day]] fields. If this is not possible, a RangeError is thrown.
+          It returns an ISO Date Record that corresponds with the given _calendar_-specific _arithmeticYear_, _ordinalMonth_, and _day_.
         </dd>
       </dl>
       <p>It performs the following steps when called:</p>
       <emu-alg>
         1. If _arithmeticYear_, _ordinalMonth_, and _day_ do not form a valid date in _calendar_, throw a RangeError exception.
-        1. Return a calendar-dependent ISO Date Record as described above.
+        1. Let _isoDate_ be an ISO Date Record such that CalendarISOToDate(_calendar_, _isoDate_) returns a Calendar Date Record whose [[Year]], [[Month]], and [[Day]] field values respectively equal _arithmeticYear_, _ordinalMonth_, and _day_.
+        1. Return _isoDate_.
       </emu-alg>
     </emu-clause>
 
@@ -1034,11 +1035,12 @@ contributors: Google, Ecma International
         <dt>description</dt>
         <dd>
           It interprets _arithmeticYear_ as arithmetical value in the given _calendar_ and returns the number of months in the corresponding year.
+          It returns the number of months in the _calendar_-specific _arithmeticYear_.
         </dd>
       </dl>
       <p>It performs the following steps when called:</p>
       <emu-alg>
-        1. Return a calendar-dependent integer as described above.
+        1. Return the number of months in arithmetic year _arithmeticYear_ of calendar _calendar_.
       </emu-alg>
     </emu-clause>
 
@@ -1169,7 +1171,11 @@ contributors: Google, Ecma International
         1. Let _m0_ be MonthCodeToOrdinal(_calendar_, _y0_, ! ConstrainMonthCode(_calendar_, _y0_, _parts_.[[MonthCode]], ~constrain~)).
         1. Let _endOfMonth_ be BalanceNonISODate(_calendar_, _y0_, _m0_ + _duration_.[[Months]] + 1, 0).
         1. Let _baseDay_ be _parts_.[[Day]].
-        1. If _endOfMonth_.[[Day]] &lt; _baseDay_, then
+        1. If _baseDay_ &lt; _endOfMonth_.[[Day]], then
+          1. Let _regulatedDay_ be _baseDay_.
+        1. Else,
+          1. If _overflow_ is ~reject~, throw a *RangeError* exception.
+          1. Let _regulatedDay_ be _endOfMonth_.[[Day]].
           1. If _overflow_ is ~reject~, throw a *RangeError* exception.
           1. Let _regulatedDay_ be _endOfMonth_.[[Day]].
         1. Else,
@@ -1201,7 +1207,7 @@ contributors: Google, Ecma International
       <p>This definition supersedes the definition provided in <emu-xref href="#sec-temporal-nonisodateuntil"></emu-xref>.</p>
       <p>It performs the following steps when called:</p>
       <emu-alg>
-        1. Let _sign_ be -CompareISODate(_one_, _two_).
+        1. Let _sign_ be -1 × CompareISODate(_one_, _two_).
         1. If _sign_ = 0, return ZeroDateDuration().
         1. Let _years_ be 0.
         1. If _largestUnit_ is ~year~, then
