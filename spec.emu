@@ -54,7 +54,7 @@ contributors: Google, Ecma International
           </thead>
           <tr>
             <td>*"buddhist"*</td>
-            <td>Thai Buddhist calendar, proleptic. Month numbers, month codes, and days are the same as in the ISO 8601 calendar, but the epoch year is different. There is one era.</td>
+            <td>Thai Buddhist calendar, proleptic. Month numbers, month codes, and days are identical to ISO 8601, but the epoch year differs. All years are treated as having 12 months. Dates prior to ISO year 1941 (2484 BE) are defined but may not correspond to historically accurate values due to the calendar reforms of 1940 and earlier. There is one era.</td>
           </tr>
           <tr>
             <td>*"chinese"*</td>
