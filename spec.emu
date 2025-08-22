@@ -870,7 +870,7 @@ contributors: Google, Ecma International
           _calendar_: a calendar type that is not *"iso8601"*,
           _arithmeticYear_: an integer,
           _ordinalMonth_: a positive integer,
-          _day_: an integer,
+          _day_: a positive integer,
         ): either a normal completion containing an ISO Date Record or a throw completion
       </h1>
       <dl class="header">
@@ -1134,6 +1134,9 @@ contributors: Google, Ecma International
         1. If _daysInMonth_ &lt; _day_, then
           1. If _overflow_ is ~reject~, throw a *RangeError* exception.
           1. Let _regulatedDay_ be _daysInMonth_.
+        1. Else if _day_ &lt; 1, then
+          1. If _overflow_ is ~reject~, throw a *RangeError* exception.
+          1. Let _regulatedDay_ be 1.
         1. Else,
           1. Let _regulatedDay_ be _day_.
         1. Return ? CalendarIntegersToISO(_calendar_, _arithmeticYear_, _ordinalMonth_, _regulatedDay_).
