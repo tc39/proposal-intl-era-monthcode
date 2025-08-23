@@ -511,7 +511,7 @@ contributors: Google, Ecma International
       <h1>
         CalendarHasMidYearEras (
           _calendar_: a calendar type that is not *"iso8601"*,
-        ): a String or *undefined*
+        ): a Boolean
       </h1>
       <dl class="header">
         <dt>description</dt>
