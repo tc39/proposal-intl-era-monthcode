@@ -15,6 +15,7 @@ During the Feb 1 2023 TC39 meeting, the following members agree to serve as the 
 ## Presentation:
 * [Intl era and monthCode proposal for Stage 1, TC39 Nov 2022 Meeting, Nov 29-Dec 1, 2022](https://docs.google.com/presentation/d/1hoQUYL_mfdLXMHRsNcG27aJirukuDGsVbqntd_tcR0A)
 * [Intl era and monthCode proposal for Stage 2, TC39 Jan 2023 Meeting, Jan 23-Jan 26, 2023](https://docs.google.com/presentation/d/1TlhwLfCBsH9MjJTZYpQxfGs4jVnsMX0U8X0hi8WSoxc)
+* [Intl era and monthCode proposal for Stage 2.7, TC39 July 2025 Meeting, Jul 28-Jul 31](https://docs.google.com/presentation/d/1dAbacNvhPL_iUJKZNPDbQVyfg8a6-OHUuh2OiftMu1A/edit?slide=id.p#slide=id.p)
 ## References:
 * [Draft Spec](https://tc39.es/proposal-intl-era-monthcode/)
 * [Study of modles of year and era in ICU Calendar](https://docs.google.com/presentation/d/1WFRajsWR2Nh_SPQPzEe7yXpjj-EDvUweUrikNV_jzI4/edit#slide=id.g153d52938b6_0_619)
