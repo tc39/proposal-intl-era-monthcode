@@ -848,7 +848,7 @@ contributors: Google, Ecma International
       </dl>
       <emu-alg>
         1. Let _era_ be CanonicalizeEraInCalendar(_calendar_, _era_).
-        1: Assert: _era_ is not *undefined*.
+        1. Assert: _era_ is not *undefined*.
         1. Let _r_ be the row in <emu-xref href="#table-eras"></emu-xref> in which _calendar_ is in the Calendar column and _era_ is in the Era column.
         1. Let _eraKind_ be the value given in the *"Era kind"* column of _r_.
         1. Let _offset_ be the value given in the *"Offset"* column of _r_.
