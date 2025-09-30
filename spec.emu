@@ -507,6 +507,22 @@ contributors: Google, Ecma International
       </emu-alg>
     </emu-clause>
 
+    <emu-clause id="sec-temporal-calendarhasmidyeareras" type="abstract operation">
+      <h1>
+        CalendarHasMidYearEras (
+          _calendar_: a calendar type that is not *"iso8601"*,
+        ): a Boolean
+      </h1>
+      <dl class="header">
+        <dt>description</dt>
+        <dd>It returns *true* if the calendar has eras that start in the middle of the year, or *false* if all eras start on a year boundary.</dd>
+      </dl>
+      <emu-alg>
+        1. If _calendar_ is *"japanese"*, return *true*.
+        1. Return *false*.
+      </emu-alg>
+    </emu-clause>
+
     <emu-clause id="sec-temporal-isvalidmonthcodeforcalendar" type="abstract operation">
       <h1>
         IsValidMonthCodeForCalendar (
@@ -659,6 +675,26 @@ contributors: Google, Ecma International
           1. Else,
             1. Set _isLeap_ to *false*.
             1. Set _number_ to _number_ + 1.
+      </emu-alg>
+    </emu-clause>
+
+    <emu-clause id="sec-temporal-calendardaysinmonth" type="implementation-defined abstract operation">
+      <h1>
+        CalendarDaysInMonth (
+          _calendar_: a calendar type that is not *"iso8601"*,
+          _arithmeticYear_: an integer,
+          _ordinalMonth_: a positive integer,
+        ): an integer
+      </h1>
+      <dl class="header">
+        <dt>description</dt>
+        <dd>
+          It returns the number of days in the _calendar_-specific _arithmeticYear_ and _ordinalMonth_.
+        </dd>
+      </dl>
+      <p>It performs the following steps when called:</p>
+      <emu-alg>
+        1. Return the number of days in the month of _calendar_ corresponding to _arithmeticYear_ and _ordinalMonth_.
       </emu-alg>
     </emu-clause>
 
@@ -832,7 +868,7 @@ contributors: Google, Ecma International
       </dl>
       <emu-alg>
         1. Let _era_ be CanonicalizeEraInCalendar(_calendar_, _era_).
-        1: Assert: _era_ is not *undefined*.
+        1. Assert: _era_ is not *undefined*.
         1. Let _r_ be the row in <emu-xref href="#table-eras"></emu-xref> in which _calendar_ is in the Calendar column and _era_ is in the Era column.
         1. Let _eraKind_ be the value given in the *"Era kind"* column of _r_.
         1. Let _offset_ be the value given in the *"Offset"* column of _r_.
@@ -841,6 +877,29 @@ contributors: Google, Ecma International
         1. Assert: _eraKind_ is ~offset~.
         1. Assert: _offset_ is not *undefined*.
         1. Return <emu-eqn>_offset_ + _eraYear_ - 1</emu-eqn>.
+      </emu-alg>
+    </emu-clause>
+
+    <emu-clause id="sec-temporal-calendarintegerstoiso" type="implementation-defined abstract operation">
+      <h1>
+        CalendarIntegersToISO (
+          _calendar_: a calendar type that is not *"iso8601"*,
+          _arithmeticYear_: an integer,
+          _ordinalMonth_: a positive integer,
+          _day_: a positive integer,
+        ): either a normal completion containing an ISO Date Record or a throw completion
+      </h1>
+      <dl class="header">
+        <dt>description</dt>
+        <dd>
+          It returns an ISO Date Record that corresponds with the given _calendar_-specific _arithmeticYear_, _ordinalMonth_, and _day_.
+        </dd>
+      </dl>
+      <p>It performs the following steps when called:</p>
+      <emu-alg>
+        1. If _arithmeticYear_, _ordinalMonth_, and _day_ do not form a valid date in _calendar_, throw a RangeError exception.
+        1. Let _isoDate_ be an ISO Date Record such that CalendarISOToDate(_calendar_, _isoDate_) returns a Calendar Date Record whose [[Year]], [[Month]], and [[Day]] field values respectively equal _arithmeticYear_, _ordinalMonth_, and _day_.
+        1. Return _isoDate_.
       </emu-alg>
     </emu-clause>
 
@@ -1273,12 +1332,13 @@ contributors: Google, Ecma International
         1. Let _day_ be _fields_.[[Day]].
         1. Assert: _day_ is not ~unset~.
         1. Let _daysInMonth_ be CalendarDaysInMonth(_calendar_, _arithmeticYear_, _ordinalMonth_).
-        1. If _daysInMonth_ &le; _day_, then
+        1. If _daysInMonth_ &lt; _day_, then
           1. If _overflow_ is ~reject~, throw a *RangeError* exception.
           1. Let _regulatedDay_ be _daysInMonth_.
         1. Else,
+          1. Assert: _day_ ≥ 1.
           1. Let _regulatedDay_ be _day_.
-        1. Return ? CalendarDateArithmeticalToISO(_calendar_, _arithmeticYear_, _ordinalMonth_, _regulatedDay_).
+        1. Return ? CalendarIntegersToISO(_calendar_, _arithmeticYear_, _ordinalMonth_, _regulatedDay_).
       </emu-alg>
     </emu-clause>
 
@@ -1327,7 +1387,7 @@ contributors: Google, Ecma International
             1. Append ~era~, ~era-year~, and ~year~ to _ignoredKeys_.
           1. Else,
             1. Append _key_ to _ignoredKeys_.
-          1. If _key_ is one of ~day~, ~month~, or ~month-code~ and _calendar_ is *"japanese"*, then
+          1. If _key_ is one of ~day~, ~month~, or ~month-code~ and CalendarHasMidYearEras(_calendar_) is *true*, then
             1. Append ~era~ and ~era-year~ to _ignoredKeys_.
         1. NOTE: While _ignoredKeys_ can have duplicate elements, this is not intended to be meaningful. This specification only checks whether particular keys are or are not members of the list.
         1. Return _ignoredKeys_.
