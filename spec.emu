@@ -1040,29 +1040,6 @@ contributors: Google, Ecma International
       </emu-table>
     </emu-clause>
 
-    <emu-clause id="sec-temporal-calendardatearithmeticaltoiso" type="implementation-defined abstract operation">
-      <h1>
-        CalendarDateArithmeticalToISO (
-          _calendar_: a calendar type that is not *"iso8601"*,
-          _arithmeticYear_: an integer,
-          _ordinalMonth_: a positive integer,
-          _day_: an integer,
-        ): either a normal completion containing an ISO Date Record or a throw completion
-      </h1>
-      <dl class="header">
-        <dt>description</dt>
-        <dd>
-          It returns an ISO Date Record that corresponds with the given _calendar_-specific _arithmeticYear_, _ordinalMonth_, and _day_.
-        </dd>
-      </dl>
-      <p>It performs the following steps when called:</p>
-      <emu-alg>
-        1. If _arithmeticYear_, _ordinalMonth_, and _day_ do not form a valid date in _calendar_, throw a RangeError exception.
-        1. Let _isoDate_ be an ISO Date Record such that CalendarISOToDate(_calendar_, _isoDate_) returns a Calendar Date Record whose [[Year]], [[Month]], and [[Day]] field values respectively equal _arithmeticYear_, _ordinalMonth_, and _day_.
-        1. Return _isoDate_.
-      </emu-alg>
-    </emu-clause>
-
     <emu-clause id="sec-temporal-calendardaysinmonth" type="implementation-defined abstract operation">
       <h1>
         CalendarDaysInMonth (
@@ -1240,7 +1217,7 @@ contributors: Google, Ecma International
         1. Else,
           1. Let _regulatedDay_ be _baseDay_.
         1. Let _balancedDate_ be BalanceNonISODate(_calendar_, _endOfMonth_.[[Year]], _endOfMonth_.[[Month]], _regulatedDay_ + 7 * _duration_.[[Weeks]] + _duration_.[[Days]]).
-        1. Let _result_ be ? CalendarDateArithmeticalToISO(_calendar_, _balancedDate_.[[Year]], _balancedDate_.[[Month]], _balancedDate_.[[Day]]).
+        1. Let _result_ be ? CalendarIntegersToISO(_calendar_, _balancedDate_.[[Year]], _balancedDate_.[[Month]], _balancedDate_.[[Day]]).
         1. If ISODateWithinLimits(_result_) is *false*, throw a *RangeError* exception.
         1. Return _result_.
       </emu-alg>
