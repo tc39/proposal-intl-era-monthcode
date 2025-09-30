@@ -1040,26 +1040,6 @@ contributors: Google, Ecma International
       </emu-table>
     </emu-clause>
 
-    <emu-clause id="sec-temporal-calendardaysinmonth" type="implementation-defined abstract operation">
-      <h1>
-        CalendarDaysInMonth (
-          _calendar_: a calendar type that is not *"iso8601"*,
-          _arithmeticYear_: an integer,
-          _ordinalMonth_: a positive integer,
-        ): an integer
-      </h1>
-      <dl class="header">
-        <dt>description</dt>
-        <dd>
-          It interprets _arithmeticYear_ and _ordinalMonth_ as arithmetical values in the given _calendar_ and returns the number of days in the corresponding month.
-        </dd>
-      </dl>
-      <p>It performs the following steps when called:</p>
-      <emu-alg>
-        1. Return a calendar-dependent integer as described above.
-      </emu-alg>
-    </emu-clause>
-
     <emu-clause id="sec-temporal-calendarmonthsinyear" type="implementation-defined abstract operation">
       <h1>
         CalendarMonthsInYear (
