@@ -1098,7 +1098,7 @@ contributors: Google, Ecma International
             1. Set _monthsInYear_ to CalendarMonthsInYear(_calendar_, _resolvedYear_).
             1. Set _resolvedMonth_ to _monthsInYear_.
           1. Set _daysInMonth_ to CalendarDaysInMonth(_calendar_, _resolvedYear_, _resolvedMonth_).
-          1. Set _resolvedDay_ to _day_ + _daysInMonth_.
+          1. Set _resolvedDay_ to _resolvedDay_ + _daysInMonth_.
         1. Repeat, while _resolvedDay_ &gt; _daysInMonth_,
           1. Set _resolvedDay_ to _resolvedDay_ - _daysInMonth_.
           1. Set _resolvedMonth_ to _resolvedMonth_ + 1.
