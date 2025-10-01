@@ -871,7 +871,7 @@ let referencePane = {
     this.$pane.appendChild(this.$tableContainer);
 
     if (menu != null) {
-      menu.$specContainer.appendChild(this.$container);
+      menu.$specContainer.after(this.$container);
     }
   },
 
@@ -1203,6 +1203,9 @@ function doShortcut(e) {
     document.documentElement.classList.toggle('show-ao-annotations');
   } else if (e.key === '?') {
     document.getElementById('shortcuts-help').classList.toggle('active');
+  } else if (e.key === ';') {
+    let el = document.getElementById('bd75b99add5f');
+    if (el != null) el.remove();
   }
 }
 
@@ -2250,7 +2253,7 @@ emu-oneof {
 }
 
 emu-nt {
-  display: inline;
+  display: inline-block;
   font-style: italic;
   white-space: nowrap;
   text-indent: 0;
@@ -2590,7 +2593,7 @@ table.real-table th {
 }
 
 emu-table td {
-  background: var(--background-color);
+  background: transparent;
 }
 
 td[colspan]:not([colspan="1"]), th[colspan]:not([colspan="1"]) {
@@ -2697,7 +2700,7 @@ tr.del > td {
   height: 100vh;
   max-width: 500px;
   box-sizing: border-box;
-  background-color: var(--control-background-color);
+  background: var(--control-background-color);
   overflow: hidden;
   transition: opacity 0.1s linear;
   padding: 0 5px;
@@ -3138,7 +3141,7 @@ li.menu-search-result-term::before {
 
 .toolbox::after {
   border-color: var(--toolbox-tail-background-outside-color);
-  border-top-color: var(--control-background-color);
+  border-top-color: var(--control-border-color);
   border-width: 10px;
   margin-left: -10px;
 }
@@ -3155,7 +3158,7 @@ li.menu-search-result-term::before {
   left: 0;
   right: 0;
   display: none;
-  background-color: var(--control-background-color);
+  background: var(--control-background-color);
   z-index: 1;
 }
 
@@ -3196,6 +3199,17 @@ li.menu-search-result-term::before {
   padding-right: 5px;
 }
 
+emu-normative-optional {
+  display: block;
+}
+
+emu-normative-optional::before {
+  display: block;
+  color: var(--attributes-tag-foreground-color);
+  content: "NORMATIVE OPTIONAL";
+}
+
+emu-normative-optional,
 [normative-optional],
 [deprecated],
 [legacy] {
@@ -3228,7 +3242,7 @@ li.menu-search-result-term::before {
   outline: solid 10000px var(--control-dialog-fade-color);
   border-radius: 5px;
   border-width: 1px 1px 0 1px;
-  background-color: var(--control-background-color);
+  background: var(--control-background-color);
   display: none;
 }
 
@@ -3532,6 +3546,18 @@ figcaption:has(+ emu-table) {
 emu-alg ol li:last-child {
   break-before: avoid;
   break-after: initial; /* it's okay to break after the last item in a list, even if it's also the first item in the list */
+}
+
+emu-normative-optional {
+  break-inside: avoid;
+}
+
+emu-normative-optional emu-clause[id] {
+  margin-top: 0;
+}
+
+emu-normative-optional emu-alg > ol {
+  margin-bottom: 0;
 }
 
 emu-note {
@@ -4718,7 +4744,12 @@ p.ECMAaddress {
           <tr>
             <td><var class="field">[[DaysInWeek]]</var></td>
             <td>a positive <emu-xref href="#integer"><a href="https://tc39.es/ecma262/#integer">integer</a></emu-xref></td>
-            <td>The number of days in the date's week.</td>
+            <td>
+              <p>The number of days in the primary notion of week used by the calendar. For all calendars currently supported by this specification, this number is 7.</p>
+              <emu-note><span class="note">Note 6</span><div class="note-contents">
+                Some calendars have alternate cyclic notions that are similar to the 7-day week; many of them have multiple (like the Javanese calendar). This specification does not cover such calendars but can be extended to do so in the future.
+              </div></emu-note>
+            </td>
           </tr>
           <tr>
             <td><var class="field">[[DaysInMonth]]</var></td>
@@ -4740,7 +4771,7 @@ p.ECMAaddress {
             <td>a Boolean</td>
             <td>
               <emu-val>true</emu-val> if the date falls within a leap year, and <emu-val>false</emu-val> otherwise.
-              <emu-note><span class="note">Note 6</span><div class="note-contents">
+              <emu-note><span class="note">Note 7</span><div class="note-contents">
                 A "leap year" is a year that contains more days than other years (for solar or lunar calendars) or more months than other years (for lunisolar calendars like Hebrew or Chinese).
                 Some calendars, especially lunisolar ones, have further variation in year length that is not represented in the output of this operation (e.g., the Hebrew calendar includes common years with 353, 354, or 355 days and leap years with 383, 384, or 385 days).
               </div></emu-note>
