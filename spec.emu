@@ -1008,7 +1008,12 @@ contributors: Google, Ecma International
           <tr>
             <td>[[DaysInWeek]]</td>
             <td>a positive integer</td>
-            <td>The number of days in the date's week.</td>
+            <td>
+              <p>The number of days in the primary notion of week used by the calendar. For all calendars currently supported by this specification, this number is 7.</p>
+              <emu-note>
+                Some calendars have alternate cyclic notions that are similar to the 7-day week; many of them have multiple (like the Javanese calendar). This specification does not cover such calendars but can be extended to do so in the future.
+              </emu-note>
+            </td>
           </tr>
           <tr>
             <td>[[DaysInMonth]]</td>
