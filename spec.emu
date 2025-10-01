@@ -1064,7 +1064,7 @@ contributors: Google, Ecma International
         1. Add _duration_.[[Years]] to _calendarDate_ without changing any less-significant fields.
         1. If YearContainsMonthCode(_calendar_, _calendarDate_.[[Year]], _calendarDate_.[[MonthCode]]) is *false*, then
           1. NOTE: This only happens in lunisolar calendars.
-          1. Set _calendarDate_.[[MonthCode]] to ! ConstrainMonthCode(_calendar_, _calendarDate_.[[Year]], _calendarDate_.[[MonthCode]], ~constrain~).
+          1. Set _calendarDate_.[[MonthCode]] to ! ConstrainMonthCode(_calendar_, _calendarDate_.[[Year]], _calendarDate_.[[MonthCode]], _overflow_).
           1. Set _calendarDate_.[[Month]] to MonthCodeToOrdinal(_calendar_, _calendarDate_.[[Year]], _calendarDate_.[[MonthCode]]).
         1. Add _duration_.[[Months]] to _calendarDate_, balancing _calendarDate_ if it goes over a year boundary.
         1. If the date described by _calendarDate_ does not exist, then
