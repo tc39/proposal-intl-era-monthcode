@@ -1184,7 +1184,7 @@ contributors: Google, Ecma International
       <emu-alg>
         1. Let _parts_ be CalendarISOToDate(_calendar_, _isoDate_).
         1. Let _y0_ be _parts_.[[Year]] + _duration_.[[Years]].
-        1. Let _m0_ be MonthCodeToOrdinal(_calendar_, _y0_, ! ConstrainMonthCode(_calendar_, _y0_, _parts_.[[MonthCode]], ~constrain~)).
+        1. Let _m0_ be MonthCodeToOrdinal(_calendar_, _y0_, ! ConstrainMonthCode(_calendar_, _y0_, _parts_.[[MonthCode]], _overflow_)).
         1. Let _endOfMonth_ be BalanceNonISODate(_calendar_, _y0_, _m0_ + _duration_.[[Months]] + 1, 0).
         1. Let _baseDay_ be _parts_.[[Day]].
         1. If _baseDay_ &lt; _endOfMonth_.[[Day]], then
