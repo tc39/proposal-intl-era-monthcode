@@ -114,7 +114,7 @@ contributors: Google, Ecma International
           </tr>
           <tr>
             <td>*"japanese"*</td>
-            <td>Japanese Imperial calendar, era system hybridised with *"gregory"*. Month numbers, month codes, and days are the same as in the ISO 8601 calendar, extended proleptically before their introduction in ISO year 1873. Imperial era names only extend as far back as the Meiji period (starting in ISO year 1868) during which calendar reforms took place. All era names are as defined by CLDR. The arithmetic year, and the years and eras before ISO year 1868, are identical to *"gregory"*.</td>
+            <td>Japanese Imperial calendar, era system hybridised with *"gregory"*. Month numbers, month codes, and days are the same as in the ISO 8601 calendar, extended proleptically before their introduction in ISO year 1873. Imperial era names only extend as far back as the Meiji period (starting in ISO year 1868) during which calendar reforms took place. All era ranges are defined by the Japanese government. The arithmetic year, and the years and eras before ISO year 1868, are identical to *"gregory"*.</td>
           </tr>
           <tr>
             <td>*"persian"*</td>
