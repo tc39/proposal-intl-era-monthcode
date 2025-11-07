@@ -1070,7 +1070,7 @@ contributors: Google, Ecma International
           _calendar_: a calendar type that is not *"iso8601"*,
           _arithmeticYear_: an integer,
           _ordinalMonth_: a positive integer,
-          _day_: a positive integer,
+          _day_: an integer,
         ): a Record with fields [[Year]] (an integer), [[Month]] (a positive integer), and [[Day]] (a positive integer)
       </h1>
       <dl class="header">
