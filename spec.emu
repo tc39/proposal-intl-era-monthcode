@@ -698,32 +698,6 @@ contributors: Google, Ecma International
       </emu-alg>
     </emu-clause>
 
-    <emu-clause id="sec-temporal-isvaliderayearforcalendar" type="abstract operation">
-      <h1>
-        IsValidEraYearForCalendar (
-          _calendar_: a calendar type that is not *"iso8601"*,
-          _era_: a String,
-          _eraYear_: an integer,
-        ): a Boolean
-      </h1>
-      <dl class="header">
-        <dt>description</dt>
-        <dd>
-          The following algorithm refers to the era data from <a href="https://unicode.org/reports/tr35/tr35-dates.html#Calendar_Data">UTS 35's Supplemental Calendar Data</a>.
-        </dd>
-      </dl>
-      <emu-alg>
-        1. Let _era_ be CanonicalizeEraInCalendar(_calendar_, _era_).
-        1. If _era_ is *undefined*, return *false*.
-        1. Let _r_ be the row in <emu-xref href="#table-eras"></emu-xref> in which _calendar_ is in the Calendar column and _era_ is in the Era column.
-        1. Let _min_ be the value given in the *"Minimum eraYear"* column of _r_.
-        1. Let _max_ be the value given in the *"Maximum eraYear"* column of _r_.
-        1. If _eraYear_ &lt; _min_, return *false*.
-        1. If _eraYear_ > _max_, return *false*.
-        1. Return *true*.
-      </emu-alg>
-    </emu-clause>
-
     <emu-clause id="sec-temporal-calendardateera" type="abstract operation">
       <h1>
         CalendarDateEra (
@@ -1275,7 +1249,7 @@ contributors: Google, Ecma International
       <p>It performs the following steps when called:</p>
       <emu-alg>
         1. If _fields_.[[Era]] and _fields_.[[EraYear]] are not ~unset~, then
-          1. If IsValidEraYearForCalendar(_calendar_, _fields_.[[Era]], _fields_.[[EraYear]]) is *false*, throw a *RangeError* exception.
+          1. If CanonicalizeEraInCalendar(_calendar_, _fields_.[[Era]]) is *undefined*, throw a *RangeError* exception.
           1. Let _arithmeticYear_ be CalendarDateArithmeticYearForEraYear(_calendar_, _fields_.[[Era]], _fields_.[[EraYear]]).
         1. Else,
           1. Assert: _fields_.[[Year]] is not ~unset~.
