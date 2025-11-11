@@ -58,7 +58,7 @@ contributors: Google, Ecma International
           </tr>
           <tr>
             <td>*"chinese"*</td>
-            <td>Traditional Chinese calendar, proleptic. Lunisolar calendar using months based on GB/T 33661-2017 between 1900 and 2100, falling back to an implementation-defined approximation outside that range. The arithmetic year is identical to *"gregory"*, and there are no eras.</td>
+            <td>Traditional Chinese calendar, proleptic. Lunisolar calendar used in China based on data published by the Purple Mountain Observatory between 1900 and 2100 (which compiles with GB/T 33661-2017 between 1912 and 2100), falling back to an implementation-defined approximation outside that range. The arithmetic year is identical to *"gregory"*, and there are no eras.</td>
           </tr>
           <tr>
             <td>*"coptic"*</td>
