@@ -745,7 +745,7 @@ contributors: Google, Ecma International
       </h1>
       <dl class="header">
         <dt>description</dt>
-        <dd>It performs implementation-defined processing to find the year for the date corresponding to _date_ in the context of the calendar represented by _calendar_ relative to a well-defined epoch year for that calendar.</dd>
+        <dd>It performs implementation-defined processing to find the arithmetic year for the date corresponding to _date_ in the context of the calendar represented by _calendar_.</dd>
       </dl>
       <emu-alg>
         1. Let _r_ be the row in <emu-xref href="#table-epoch-years"></emu-xref> which the value of the Calendar column is _calendar_.
@@ -757,7 +757,7 @@ contributors: Google, Ecma International
       </emu-alg>
 
       <emu-table id="table-epoch-years">
-        <emu-caption>epoch years</emu-caption>
+        <emu-caption>Epoch years</emu-caption>
         <table class="real-table">
           <thead>
             <tr>
@@ -828,6 +828,7 @@ contributors: Google, Ecma International
         </table>
       </emu-table>
     </emu-clause>
+
     <emu-clause id="sec-temporal-calendardatearithmeticyearforerayear" type="abstract operation">
       <h1>
         CalendarDateArithmeticYearForEraYear (
@@ -838,7 +839,7 @@ contributors: Google, Ecma International
       </h1>
       <dl class="header">
         <dt>description</dt>
-        <dd>It produces the year relative to the epoch year (the arithmetic year) for a given set of _era_, _eraYear_ in _calendar_, a calendar that includes an era named _era_.</dd>
+        <dd>It produces the arithmetic year for a given set of _era_, _eraYear_ in _calendar_, a calendar that includes an era named _era_.</dd>
       </dl>
       <emu-alg>
         1. Let _era_ be CanonicalizeEraInCalendar(_calendar_, _era_).
@@ -915,9 +916,9 @@ contributors: Google, Ecma International
             <td>[[Year]]</td>
             <td>an integer</td>
             <td>
-              The date's year relative to the first day of a calendar-specific "epoch year".<br>
+              The date's <dfn>arithmetic year</dfn>, which is the year relative to the first day of a calendar-specific <dfn>epoch year</dfn>, given in <emu-xref href="#table-epoch-years"></emu-xref>.<br>
               The value of this field for a calendar type _calendar_ should be the result of calling CalendarDateArithmeticYear(_calendar_, _date_), where _date_ is the [[ISODate]] field of a Temporal.PlainDateTime, Temporal.PlainDate, or Temporal.PlainYearMonth value corresponding to the date.
-              <emu-note>The year is relative to the first day of the calendar's epoch year, so if the epoch era starts in the middle of the year, the year will be the same value before and after the start date of the era.</emu-note>
+              <emu-note>The arithmetic year is relative to the first day of the calendar's epoch year, so if the epoch era starts in the middle of the year, the year will be the same value before and after the start date of the era.</emu-note>
             </td>
           </tr>
           <tr>
@@ -967,7 +968,7 @@ contributors: Google, Ecma International
             <td>
               <p>The date's <em>calendar week of year</em>, and the corresponding <em>week calendar year</em>.</p>
               <p>The Year-Week Record's [[Week]] field should be 1-based.</p>
-              <p>The Year-Week Record's [[Year]] field is relative to the first day of a calendar-specific "epoch year", as in the Calendar Date Record's [[Year]] field, not relative to an era as in [[EraYear]].</p>
+              <p>The Year-Week Record's [[Year]] field is an arithmetic year as in the Calendar Date Record's [[Year]] field, not relative to an era as in [[EraYear]].</p>
               <p>
                 Usually the Year-Week Record's [[Year]] field will contain the same value as the Calendar Date Record's [[Year]] field, but may contain the previous or next year if the week number in the Year-Week Record's [[Week]] field overlaps two different years.
                 See also ISOWeekOfYear.
