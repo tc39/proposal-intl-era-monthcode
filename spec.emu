@@ -227,7 +227,7 @@ contributors: Google, Ecma International
       <dl class="header">
         <dt>description</dt>
         <dd>
-          The following algorithm refers to the era data from <a href="https://unicode.org/reports/tr35/tr35-dates.html#Calendar_Data">UTS 35's Supplemental Calendar Data</a>.
+          The following algorithm refers (via <emu-xref href="#table-eras"></emu-xref>) to the era data from <a href="https://unicode.org/reports/tr35/tr35-dates.html#Calendar_Data">UTS 35's Supplemental Calendar Data</a>.
         </dd>
       </dl>
       <emu-alg>
@@ -235,8 +235,11 @@ contributors: Google, Ecma International
         1. If _calendar_ is listed in the Calendar Type column of <emu-xref href="#table-calendar-types"></emu-xref>, return *false*.
         1. Return an implementation-defined value.
       </emu-alg>
-      <p><emu-xref href="#table-eras"></emu-xref> lists all possible eras for the current set of calendars, including their aliases, ranges and kinds.
-      The era kind is used by <emu-xref href="#sec-temporal-calendardatearithmeticyearforerayear">CalendarDateArithmeticYearForEraYear</emu-xref> to calculate arithmetic year ([[Year]]):
+      <p>
+        <emu-xref href="#table-eras"></emu-xref> lists all currently known eras for the current set of calendars, including their aliases, ranges and kinds.
+        The canonical source for this table is the data described in <a href="https://unicode.org/reports/tr35/tr35-dates.html#Calendar_Data">Unicode Technical Standard #35 Part 4 Dates, Calendar Data</a>.
+      </p>
+      <p>The era kind is used by <emu-xref href="#sec-temporal-calendardatearithmeticyearforerayear">CalendarDateArithmeticYearForEraYear</emu-xref> to calculate arithmetic year ([[Year]]):
       An *Era kind* ~epoch~ means that the era is the epoch era, so 1 Era has an arithmetic year of 1. An *Era kind* ~negative~ means that the era is a "negative" era growing
       from the epoch, so 1 Era is an arithmetic year of 0, and larger [[EraYear]] values produce smaller, negative arithmetic years. An *Era kind* of
       ~offset~ means that the era is "offset" by a given number (in the *Offset* column), so 1 Era has an arithmetic year of *Offset*.</p>
@@ -1338,4 +1341,63 @@ contributors: Google, Ecma International
       </emu-alg>
     </emu-clause>
   </emu-clause>
+</emu-clause>
+
+<emu-clause id="normative-references">
+  <h1>Normative References</h1>
+  <p>The following referenced documents are required for the application of this document. For dated references, only the edition cited applies. For undated references, the latest edition of the referenced document (including any amendments) applies.</p>
+
+  <p>
+    ECMAScript 2026 Language Specification (<dfn id="ecma262">ECMA-262</dfn> 17<sup>th</sup> Edition, or successor).<br>
+    <a href="https://www.ecma-international.org/publications/standards/Ecma-262.htm">https://www.ecma-international.org/publications/standards/Ecma-262.htm</a>
+  </p>
+
+  <ul>
+    <li>
+      ISO/IEC 10646:2014: Information Technology – Universal Multiple-Octet Coded Character Set (UCS) plus Amendment 1:2015 and Amendment 2, plus additional amendments and corrigenda, or successor
+      <ul>
+        <li><a href="https://www.iso.org/iso/catalogue_detail.htm?csnumber=63182">https://www.iso.org/iso/catalogue_detail.htm?csnumber=63182</a></li>
+        <li><a href="https://www.iso.org/iso/catalogue_detail.htm?csnumber=65047">https://www.iso.org/iso/catalogue_detail.htm?csnumber=65047</a></li>
+        <li><a href="https://www.iso.org/iso/catalogue_detail.htm?csnumber=66791">https://www.iso.org/iso/catalogue_detail.htm?csnumber=66791</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=64758">ISO 4217:2015, Codes for the representation of currencies and funds, or successor</a>
+    </li>
+    <li>
+      <a href="https://tools.ietf.org/html/rfc4647">IETF RFC 4647, Matching of Language Tags, or successor</a>
+    </li>
+    <li>
+      <a href="https://www.iana.org/time-zones/">IANA Time Zone Database</a>
+    </li>
+    <li>
+      <a href="https://unicode.org/versions/latest">The Unicode Standard</a>
+    </li>
+    <li>
+      <a href="https://unicode.org/reports/tr29/">Unicode Standard Annex #29: Unicode Text Segmentation</a>
+    </li>
+    <li>
+      <a href="https://unicode.org/reports/tr10/">Unicode Technical Standard #10: Unicode Collation Algorithm</a>
+    </li>
+    <li>
+      <a href="https://unicode.org/reports/tr35/">Unicode Technical Standard #35: Unicode Locale Data Markup Language (LDML)</a>
+      <ul>
+        <li>
+          <a href="https://unicode.org/reports/tr35/#Unicode_Language_and_Locale_Identifiers">Part 1 Core, Section 3 Unicode Language and Locale Identifiers</a>
+        </li>
+        <li>
+          <a href="https://unicode.org/reports/tr35/tr35-general.html#Unit_Identifiers">Part 2 General, Section 6.2 Unit Identifiers</a>
+        </li>
+        <li>
+          <a href="https://unicode.org/reports/tr35/tr35-numbers.html#Operands">Part 3 Numbers, Section 5.1.1 Operands</a>
+        </li>
+        <li>
+          <ins><a href="https://unicode.org/reports/tr35/tr35-dates.html#Calendar_Data">Part 4 Dates, Calendar Data</a></ins>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <emu-note>
+    Sections of this specification that depend on these references are updated on a best-effort basis, but are not guaranteed to be up-to-date with those standards.
+  </emu-note>
 </emu-clause>
