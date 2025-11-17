@@ -244,7 +244,7 @@ contributors: Google, Ecma International
       from the epoch, so 1 Era is an arithmetic year of 0, and larger [[EraYear]] values produce smaller, negative arithmetic years. An *Era kind* of
       ~offset~ means that the era is "offset" by a given number (in the *Offset* column), so 1 Era has an arithmetic year of *Offset*.</p>
       <emu-table id="table-eras">
-        <emu-caption>era aliases, range of eraYear, and era kinds</emu-caption>
+        <emu-caption>Eras</emu-caption>
         <table class="real-table">
           <thead>
             <tr>
