@@ -199,7 +199,7 @@ contributors: Google, Ecma International
       <p>The value of the [[LocaleData]] internal slot is implementation-defined within the constraints described in <emu-xref href="#sec-internal-slots"></emu-xref> and the following additional constraints, for all locale values _locale_:</p>
 
       <ul>
-        <li><ins>[[LocaleData]].[[&lt;_locale_>]].[[ca]] must be a List consisting of values from the Calendar Type column of <emu-xref href="#table-calendar-types"></emu-xref>. The list may also include *"islamic"* and *"islamic-rgsa"*.</ins></li>
+        <li><ins>[[LocaleData]].[[&lt;_locale_>]].[[ca]] must be a List consisting of calendar types. Specifically, even if supporting only the calendars from <emu-xref href="#table-calendar-types"></emu-xref>, the list may also include *"islamic"* and *"islamic-rgsa"*.</ins></li>
         <li>
           [[LocaleData]].[[&lt;_locale_>]].[[nu]] must be a List that does not include the values *"native"*, *"traditio"*, or *"finance"*.
         </li>
@@ -227,20 +227,24 @@ contributors: Google, Ecma International
       <dl class="header">
         <dt>description</dt>
         <dd>
-          The following algorithm refers to the era data from <a href="https://unicode.org/reports/tr35/tr35-dates.html#Calendar_Data">UTS 35's Supplemental Calendar Data</a>.
+          The following algorithm refers (via <emu-xref href="#table-eras"></emu-xref>) to the era data from <a href="https://unicode.org/reports/tr35/tr35-dates.html#Calendar_Data">UTS 35's Supplemental Calendar Data</a>.
         </dd>
       </dl>
       <emu-alg>
         1. If _calendar_ is listed in the Calendar column of <emu-xref href="#table-eras"></emu-xref>, return *true*.
-        1. Return *false*.
+        1. If _calendar_ is listed in the Calendar Type column of <emu-xref href="#table-calendar-types"></emu-xref>, return *false*.
+        1. Return an implementation-defined value.
       </emu-alg>
-      <p><emu-xref href="#table-eras"></emu-xref> lists all possible eras for the current set of calendars, including their aliases, ranges and kinds.
-      The era kind is used by <emu-xref href="#sec-temporal-calendardatearithmeticyearforerayear">CalendarDateArithmeticYearForEraYear</emu-xref> to calculate arithmetic year ([[Year]]):
+      <p>
+        <emu-xref href="#table-eras"></emu-xref> lists all currently known eras for the current set of calendars, including their aliases, ranges and kinds.
+        The canonical source for this table is the data described in <a href="https://unicode.org/reports/tr35/tr35-dates.html#Calendar_Data">Unicode Technical Standard #35 Part 4 Dates, Calendar Data</a>.
+      </p>
+      <p>The era kind is used by <emu-xref href="#sec-temporal-calendardatearithmeticyearforerayear">CalendarDateArithmeticYearForEraYear</emu-xref> to calculate arithmetic year ([[Year]]):
       An *Era kind* ~epoch~ means that the era is the epoch era, so 1 Era has an arithmetic year of 1. An *Era kind* ~negative~ means that the era is a "negative" era growing
       from the epoch, so 1 Era is an arithmetic year of 0, and larger [[EraYear]] values produce smaller, negative arithmetic years. An *Era kind* of
       ~offset~ means that the era is "offset" by a given number (in the *Offset* column), so 1 Era has an arithmetic year of *Offset*.</p>
       <emu-table id="table-eras">
-        <emu-caption>era aliases, range of eraYear, and era kinds</emu-caption>
+        <emu-caption>Eras</emu-caption>
         <table class="real-table">
           <thead>
             <tr>
@@ -503,7 +507,8 @@ contributors: Google, Ecma International
             1. If _canonicalName_ is equal to _era_, return _canonicalName_.
             1. Let _aliases_ be a List whose elements are the strings given in the Aliases column of the row.
             1. If _aliases_ contains _era_, return _canonicalName_.
-        1. Return *undefined*.
+        1. If _calendar_ is listed in the Calendar Type column of <emu-xref href="#table-calendar-types"></emu-xref>, return *undefined*.
+        1. Return an implementation-defined value.
       </emu-alg>
     </emu-clause>
 
@@ -519,7 +524,8 @@ contributors: Google, Ecma International
       </dl>
       <emu-alg>
         1. If _calendar_ is *"japanese"*, return *true*.
-        1. Return *false*.
+        1. If _calendar_ is listed in the Calendar Type column of <emu-xref href="#table-calendar-types"></emu-xref>, return *false*.
+        1. Return an implementation-defined value.
       </emu-alg>
     </emu-clause>
 
@@ -535,11 +541,13 @@ contributors: Google, Ecma International
       <emu-alg>
         1. Let _commonMonthCodes_ be « *"M01"*, *"M02"*, *"M03"*, *"M04"*, *"M05"*, *"M06"*, *"M07"*, *"M08"*, *"M09"*, *"M10"*, *"M11"*, *"M12"* ».
         1. If _commonMonthCodes_ contains _monthCode_, return *true*.
-        1. If _calendar_ is not listed in the Calendar column of <emu-xref href="#table-additional-month-codes"></emu-xref>, return *false*.
-        1. Let _r_ be the row in <emu-xref href="#table-additional-month-codes"></emu-xref> which the _calendar_ is in the Calendar column.
-        1. Let _specialMonthCodes_ be a List whose elements are the strings given in the *"Additional Month Codes"* column of _r_.
-        1. If _specialMonthCodes_ contains _monthCode_, return *true*.
-        1. Return *false*.
+        1. If _calendar_ is listed in the Calendar column of <emu-xref href="#table-additional-month-codes"></emu-xref>, then
+          1. Let _r_ be the row in <emu-xref href="#table-additional-month-codes"></emu-xref> which the _calendar_ is in the Calendar column.
+          1. Let _specialMonthCodes_ be a List whose elements are the strings given in the *"Additional Month Codes"* column of _r_.
+          1. If _specialMonthCodes_ contains _monthCode_, return *true*.
+          1. Return *false*.
+        1. If _calendar_ is listed in the Calendar Type column of <emu-xref href="#table-calendar-types"></emu-xref>, return *false*.
+        1. Return an implementation-defined value.
       </emu-alg>
 
       <emu-table id="table-additional-month-codes">
@@ -628,6 +636,7 @@ contributors: Google, Ecma International
         1. Assert: IsValidMonthCodeForCalendar(_calendar_, _monthCode_) is *true*.
         1. If YearContainsMonthCode(_calendar_, _arithmeticYear_, _monthCode_) is *true*, return _monthCode_.
         1. If _overflow_ is ~reject~, throw a *RangeError* exception.
+        1. If _calendar_ is not listed in the Calendar Type column of <emu-xref href="#table-calendar-types"></emu-xref>, return an implementation-defined value.
         1. Assert: _calendar_ is listed in the Calendar column of <emu-xref href="#table-additional-month-codes"></emu-xref>.
         1. Let _r_ be the row in <emu-xref href="#table-additional-month-codes"></emu-xref> which the _calendar_ is in the Calendar column.
         1. Let _shiftType_ be the value given in the *"Leap to Common Month Transformation"* column of _r_.
@@ -659,6 +668,7 @@ contributors: Google, Ecma International
         1. Let _monthsBefore_ be 0.
         1. Let _number_ be 1.
         1. Let _isLeap_ be *false*.
+        1. If _calendar_ is not listed in the Calendar Type column of <emu-xref href="#table-calendar-types"></emu-xref>, return an implementation-defined value.
         1. Let _r_ be the row in <emu-xref href="#table-additional-month-codes"></emu-xref> which the _calendar_ is in the Calendar column.
         1. If the *"Leap to Common Month Transformation"* column of _r_ is empty, then
           1. Return ! ParseMonthCode(_monthCode_).[[MonthNumber]].
@@ -745,9 +755,10 @@ contributors: Google, Ecma International
       </h1>
       <dl class="header">
         <dt>description</dt>
-        <dd>It performs implementation-defined processing to find the year for the date corresponding to _date_ in the context of the calendar represented by _calendar_ relative to a well-defined epoch year for that calendar.</dd>
+        <dd>It performs implementation-defined processing to find the arithmetic year for the date corresponding to _date_ in the context of the calendar represented by _calendar_.</dd>
       </dl>
       <emu-alg>
+        1. If _calendar_ is not listed in the Calendar Type column of <emu-xref href="#table-calendar-types"></emu-xref>, return an implementation-defined value.
         1. Let _r_ be the row in <emu-xref href="#table-epoch-years"></emu-xref> which the value of the Calendar column is _calendar_.
         1. Let _epochYear_ be the value given in the *"Epoch ISO Year"* column of _r_.
         1. Let _epochDate_ be the first day of the calendar year starting in ISO year _epochYear_ in the calendar represented by _calendar_, according to implementation-defined processing.
@@ -757,7 +768,7 @@ contributors: Google, Ecma International
       </emu-alg>
 
       <emu-table id="table-epoch-years">
-        <emu-caption>epoch years</emu-caption>
+        <emu-caption>Epoch years</emu-caption>
         <table class="real-table">
           <thead>
             <tr>
@@ -828,6 +839,7 @@ contributors: Google, Ecma International
         </table>
       </emu-table>
     </emu-clause>
+
     <emu-clause id="sec-temporal-calendardatearithmeticyearforerayear" type="abstract operation">
       <h1>
         CalendarDateArithmeticYearForEraYear (
@@ -838,11 +850,12 @@ contributors: Google, Ecma International
       </h1>
       <dl class="header">
         <dt>description</dt>
-        <dd>It produces the year relative to the epoch year (the arithmetic year) for a given set of _era_, _eraYear_ in _calendar_, a calendar that includes an era named _era_.</dd>
+        <dd>It produces the arithmetic year for a given set of _era_, _eraYear_ in _calendar_, a calendar that includes an era named _era_.</dd>
       </dl>
       <emu-alg>
         1. Let _era_ be CanonicalizeEraInCalendar(_calendar_, _era_).
         1. Assert: _era_ is not *undefined*.
+        1. If _calendar_ is not listed in the Calendar Type column of <emu-xref href="#table-calendar-types"></emu-xref>, return an implementation-defined value.
         1. Let _r_ be the row in <emu-xref href="#table-eras"></emu-xref> in which _calendar_ is in the Calendar column and _era_ is in the Era column.
         1. Let _eraKind_ be the value given in the *"Era kind"* column of _r_.
         1. Let _offset_ be the value given in the *"Offset"* column of _r_.
@@ -915,9 +928,9 @@ contributors: Google, Ecma International
             <td>[[Year]]</td>
             <td>an integer</td>
             <td>
-              The date's year relative to the first day of a calendar-specific "epoch year".<br>
+              The date's <dfn>arithmetic year</dfn>, which is the year relative to the first day of a calendar-specific <dfn>epoch year</dfn>, given in <emu-xref href="#table-epoch-years"></emu-xref>.<br>
               The value of this field for a calendar type _calendar_ should be the result of calling CalendarDateArithmeticYear(_calendar_, _date_), where _date_ is the [[ISODate]] field of a Temporal.PlainDateTime, Temporal.PlainDate, or Temporal.PlainYearMonth value corresponding to the date.
-              <emu-note>The year is relative to the first day of the calendar's epoch year, so if the epoch era starts in the middle of the year, the year will be the same value before and after the start date of the era.</emu-note>
+              <emu-note>The arithmetic year is relative to the first day of the calendar's epoch year, so if the epoch era starts in the middle of the year, the year will be the same value before and after the start date of the era.</emu-note>
             </td>
           </tr>
           <tr>
@@ -967,7 +980,7 @@ contributors: Google, Ecma International
             <td>
               <p>The date's <em>calendar week of year</em>, and the corresponding <em>week calendar year</em>.</p>
               <p>The Year-Week Record's [[Week]] field should be 1-based.</p>
-              <p>The Year-Week Record's [[Year]] field is relative to the first day of a calendar-specific "epoch year", as in the Calendar Date Record's [[Year]] field, not relative to an era as in [[EraYear]].</p>
+              <p>The Year-Week Record's [[Year]] field is an arithmetic year as in the Calendar Date Record's [[Year]] field, not relative to an era as in [[EraYear]].</p>
               <p>
                 Usually the Year-Week Record's [[Year]] field will contain the same value as the Calendar Date Record's [[Year]] field, but may contain the previous or next year if the week number in the Year-Week Record's [[Week]] field overlaps two different years.
                 See also ISOWeekOfYear.
@@ -1288,6 +1301,7 @@ contributors: Google, Ecma International
       <p>This definition supersedes the definition provided in <emu-xref href="#sec-temporal-calendarextrafields"></emu-xref>.</p>
       <p>It performs the following steps when called:</p>
       <emu-alg>
+        1. If _calendar_ is not listed in the Calendar Type column of <emu-xref href="#table-calendar-types"></emu-xref>, return an implementation-defined value.
         1. If _fields_ contains an element equal to ~year~ and CalendarSupportsEra(_calendar_) is *true*, then
           1. Append ~era~ and ~era-year~ to _fields_.
         1. Return _fields_.
@@ -1311,6 +1325,7 @@ contributors: Google, Ecma International
       <p>This definition supersedes the definition provided in <emu-xref href="#sec-temporal-nonisofieldkeystoignore"></emu-xref>.</p>
       <p>It performs the following steps when called:</p>
       <emu-alg>
+        1. If _calendar_ is not listed in the Calendar Type column of <emu-xref href="#table-calendar-types"></emu-xref>, return an implementation-defined value.
         1. Let _ignoredKeys_ be an empty List.
         1. For each element _key_ of _keys_, do
           1. If _key_ is ~month~, append ~month-code~ to _ignoredKeys_.
@@ -1326,4 +1341,63 @@ contributors: Google, Ecma International
       </emu-alg>
     </emu-clause>
   </emu-clause>
+</emu-clause>
+
+<emu-clause id="normative-references">
+  <h1>Normative References</h1>
+  <p>The following referenced documents are required for the application of this document. For dated references, only the edition cited applies. For undated references, the latest edition of the referenced document (including any amendments) applies.</p>
+
+  <p>
+    ECMAScript 2026 Language Specification (<dfn id="ecma262">ECMA-262</dfn> 17<sup>th</sup> Edition, or successor).<br>
+    <a href="https://www.ecma-international.org/publications/standards/Ecma-262.htm">https://www.ecma-international.org/publications/standards/Ecma-262.htm</a>
+  </p>
+
+  <ul>
+    <li>
+      ISO/IEC 10646:2014: Information Technology – Universal Multiple-Octet Coded Character Set (UCS) plus Amendment 1:2015 and Amendment 2, plus additional amendments and corrigenda, or successor
+      <ul>
+        <li><a href="https://www.iso.org/iso/catalogue_detail.htm?csnumber=63182">https://www.iso.org/iso/catalogue_detail.htm?csnumber=63182</a></li>
+        <li><a href="https://www.iso.org/iso/catalogue_detail.htm?csnumber=65047">https://www.iso.org/iso/catalogue_detail.htm?csnumber=65047</a></li>
+        <li><a href="https://www.iso.org/iso/catalogue_detail.htm?csnumber=66791">https://www.iso.org/iso/catalogue_detail.htm?csnumber=66791</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=64758">ISO 4217:2015, Codes for the representation of currencies and funds, or successor</a>
+    </li>
+    <li>
+      <a href="https://tools.ietf.org/html/rfc4647">IETF RFC 4647, Matching of Language Tags, or successor</a>
+    </li>
+    <li>
+      <a href="https://www.iana.org/time-zones/">IANA Time Zone Database</a>
+    </li>
+    <li>
+      <a href="https://unicode.org/versions/latest">The Unicode Standard</a>
+    </li>
+    <li>
+      <a href="https://unicode.org/reports/tr29/">Unicode Standard Annex #29: Unicode Text Segmentation</a>
+    </li>
+    <li>
+      <a href="https://unicode.org/reports/tr10/">Unicode Technical Standard #10: Unicode Collation Algorithm</a>
+    </li>
+    <li>
+      <a href="https://unicode.org/reports/tr35/">Unicode Technical Standard #35: Unicode Locale Data Markup Language (LDML)</a>
+      <ul>
+        <li>
+          <a href="https://unicode.org/reports/tr35/#Unicode_Language_and_Locale_Identifiers">Part 1 Core, Section 3 Unicode Language and Locale Identifiers</a>
+        </li>
+        <li>
+          <a href="https://unicode.org/reports/tr35/tr35-general.html#Unit_Identifiers">Part 2 General, Section 6.2 Unit Identifiers</a>
+        </li>
+        <li>
+          <a href="https://unicode.org/reports/tr35/tr35-numbers.html#Operands">Part 3 Numbers, Section 5.1.1 Operands</a>
+        </li>
+        <li>
+          <ins><a href="https://unicode.org/reports/tr35/tr35-dates.html#Calendar_Data">Part 4 Dates, Calendar Data</a></ins>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <emu-note>
+    Sections of this specification that depend on these references are updated on a best-effort basis, but are not guaranteed to be up-to-date with those standards.
+  </emu-note>
 </emu-clause>
