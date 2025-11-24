@@ -1179,7 +1179,7 @@ contributors: Google, Ecma International
         1. Let _m0_ be MonthCodeToOrdinal(_calendar_, _y0_, ? ConstrainMonthCode(_calendar_, _y0_, _parts_.[[MonthCode]], _overflow_)).
         1. Let _endOfMonth_ be BalanceNonISODate(_calendar_, _y0_, _m0_ + _duration_.[[Months]] + 1, 0).
         1. Let _baseDay_ be _parts_.[[Day]].
-        1. If _baseDay_ &lt; _endOfMonth_.[[Day]], then
+        1. If _baseDay_ &le; _endOfMonth_.[[Day]], then
           1. Let _regulatedDay_ be _baseDay_.
         1. Else,
           1. If _overflow_ is ~reject~, throw a *RangeError* exception.
