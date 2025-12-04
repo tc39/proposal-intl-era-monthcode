@@ -172,6 +172,8 @@ contributors: Google, Ecma International
           1. Set _hour12_ to _options_.[[hour12]].
           1. Remove field [[hour12]] from _options_.
           1. If _hour12_ is not *undefined*, set _options_.[[hc]] to *null*.
+        1. If _modifyResolutionOptions_.[[ca]] is *"islamic-rgsa"*, then
+          1. Remove field [[ca]] from _modifyResolutionOptions_.
         1. Let _optionsResolution_ be ? ResolveOptions(%Intl.DateTimeFormat%, %Intl.DateTimeFormat%.[[LocaleData]], _locales_, _options_, « ~coerce-options~ », _modifyResolutionOptions_).
         1. Set _options_ to _optionsResolution_.[[Options]].
         1. Let _r_ be _optionsResolution_.[[ResolvedLocale]].
