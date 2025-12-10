@@ -37,7 +37,7 @@ contributors: Google, Ecma International
       <h1>AvailableCalendars ( ): a List of calendar types</h1>
       <dl class="header">
         <dt>description</dt>
-        <dd>The returned List is sorted according to lexicographic code unit order, and contains unique calendar types in canonical form (<emu-xref href="#sec-calendar-types"></emu-xref>) identifying the calendars for which the implementation provides the functionality of Intl.DateTimeFormat objects, including their aliases (e.g., <del>either</del> both <del>or neither of</del> *"islamicc"* and *"islamic-civil"*). The List must include <del>*"iso8601"*</del><ins>the "Calendar Type" value of every row of <emu-xref href="#table-calendar-types"></emu-xref>, except the header row</ins>.</dd>
+        <dd>The returned List is sorted according to lexicographic code unit order, and contains unique calendar types in canonical form (<emu-xref href="#sec-calendar-types"></emu-xref>) identifying the calendars for which the implementation provides the functionality of Intl.DateTimeFormat objects, including their aliases (e.g., <del>either</del> both <del>or neither of</del> *"islamicc"* and *"islamic-civil"*). The List must consist of <del>*"iso8601"*</del><ins>the "Calendar Type" value of every row of <emu-xref href="#table-calendar-types"></emu-xref>, except the header row</ins>.</dd>
       </dl>
     </emu-clause>
 
@@ -172,16 +172,13 @@ contributors: Google, Ecma International
           1. Set _hour12_ to _options_.[[hour12]].
           1. Remove field [[hour12]] from _options_.
           1. If _hour12_ is not *undefined*, set _options_.[[hc]] to *null*.
-        1. If _modifyResolutionOptions_.[[ca]] is *"islamic-rgsa"*, then
-          1. Remove field [[ca]] from _modifyResolutionOptions_.
         1. Let _optionsResolution_ be ? ResolveOptions(%Intl.DateTimeFormat%, %Intl.DateTimeFormat%.[[LocaleData]], _locales_, _options_, « ~coerce-options~ », _modifyResolutionOptions_).
         1. Set _options_ to _optionsResolution_.[[Options]].
         1. Let _r_ be _optionsResolution_.[[ResolvedLocale]].
         1. Set _dateTimeFormat_.[[Locale]] to _r_.[[Locale]].
         1. Let _resolvedCalendar_ be _r_.[[ca]].
-        1. <ins>If _resolvedCalendar_ is *"islamic"* or *"islamic-rgsa"*, then</ins>
-          1. <ins>Let _fallbackCalendar_ be an implementation- and locale-defined calendar type that is one of the values returned from AvailableCalendars.</ins>
-          1. <ins>Set _resolvedCalendar_ to CanonicalizeUValue(*"ca"*, _fallbackCalendar_).</ins>
+        1. <ins>If _resolvedCalendar_ is *"islamic"*, then</ins>
+          1. <ins>Set _resolvedCalendar_ to *"islamic-tbla"*.</ins>
           1. <ins>If the ECMAScript implementation has a mechanism for reporting diagnostic warning messages, a warning should be issued.</ins>
         1. Set _dateTimeFormat_.[[Calendar]] to _resolvedCalendar_.
         1. NOTE: Rest of algorithm unchanged.
