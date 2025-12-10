@@ -59,6 +59,11 @@
             },
             {
                 "type": "op",
+                "aoid": "CompareSurpasses",
+                "id": "sec-temporal-comparesurpasses"
+            },
+            {
+                "type": "op",
                 "aoid": "CreateDateDurationRecord",
                 "id": "sec-temporal-createdatedurationrecord"
             },
