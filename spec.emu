@@ -884,7 +884,7 @@ contributors: Google, Ecma International
       </dl>
       <p>It performs the following steps when called:</p>
       <emu-alg>
-        1. If _arithmeticYear_, _ordinalMonth_, and _day_ do not form a valid date in _calendar_, throw a RangeError exception.
+        1. If _arithmeticYear_, _ordinalMonth_, and _day_ do not form a valid date in _calendar_, throw a *RangeError* exception.
         1. Let _isoDate_ be an ISO Date Record such that CalendarISOToDate(_calendar_, _isoDate_) returns a Calendar Date Record whose [[Year]], [[Month]], and [[Day]] field values respectively equal _arithmeticYear_, _ordinalMonth_, and _day_.
         1. Return _isoDate_.
       </emu-alg>
