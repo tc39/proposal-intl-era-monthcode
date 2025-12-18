@@ -543,7 +543,7 @@ contributors: Google, Ecma International
         1. If _commonMonthCodes_ contains _monthCode_, return *true*.
         1. If _calendar_ is listed in the Calendar column of <emu-xref href="#table-additional-month-codes"></emu-xref>, then
           1. Let _r_ be the row in <emu-xref href="#table-additional-month-codes"></emu-xref> with a value in the Calendar column matching _calendar_.
-          1. Let _specialMonthCodes_ be a List whose elements are the strings given in the *"Additional Month Codes"* column of _r_.
+          1. Let _specialMonthCodes_ be a List whose elements are the strings given in the Additional Month Codes column of _r_.
           1. If _specialMonthCodes_ contains _monthCode_, return *true*.
           1. Return *false*.
         1. If _calendar_ is listed in the Calendar Type column of <emu-xref href="#table-calendar-types"></emu-xref>, return *false*.
@@ -639,7 +639,7 @@ contributors: Google, Ecma International
         1. If _calendar_ is not listed in the Calendar Type column of <emu-xref href="#table-calendar-types"></emu-xref>, return an implementation-defined value.
         1. Assert: _calendar_ is listed in the Calendar column of <emu-xref href="#table-additional-month-codes"></emu-xref>.
         1. Let _r_ be the row in <emu-xref href="#table-additional-month-codes"></emu-xref> with a value in the Calendar column matching _calendar_.
-        1. Let _shiftType_ be the value given in the *"Leap to Common Month Transformation"* column of _r_.
+        1. Let _shiftType_ be the value given in the Leap to Common Month Transformation column of _r_.
         1. If _shiftType_ is ~skip-backward~, then
           1. Return CreateMonthCode(! ParseMonthCode(_monthCode_).[[MonthNumber]], *false*).
         1. Else,
@@ -670,9 +670,9 @@ contributors: Google, Ecma International
         1. Let _isLeap_ be *false*.
         1. If _calendar_ is not listed in the Calendar Type column of <emu-xref href="#table-calendar-types"></emu-xref>, return an implementation-defined value.
         1. Let _r_ be the row in <emu-xref href="#table-additional-month-codes"></emu-xref> with a value in the Calendar column matching _calendar_.
-        1. If the *"Leap to Common Month Transformation"* column of _r_ is empty, then
+        1. If the Leap to Common Month Transformation column of _r_ is empty, then
           1. Return ! ParseMonthCode(_monthCode_).[[MonthNumber]].
-        1. Assert: The *"Additional Month Codes"* column of _r_ does not contain *"M00L"* or *"M13"*.
+        1. Assert: The Additional Month Codes column of _r_ does not contain *"M00L"* or *"M13"*.
         1. Assert: The following loop will terminate.
         1. Repeat, while _number_ &le; 12,
           1. Let _currentMonthCode_ be CreateMonthCode(_number_, _isLeap_).
@@ -760,7 +760,7 @@ contributors: Google, Ecma International
       <emu-alg>
         1. If _calendar_ is not listed in the Calendar Type column of <emu-xref href="#table-calendar-types"></emu-xref>, return an implementation-defined value.
         1. Let _r_ be the row in <emu-xref href="#table-epoch-years"></emu-xref> with a value in the Calendar column matching _calendar_.
-        1. Let _epochYear_ be the value given in the *"Epoch ISO Year"* column of _r_.
+        1. Let _epochYear_ be the value given in the Epoch ISO Year column of _r_.
         1. Let _epochDate_ be the first day of the calendar year starting in ISO year _epochYear_ in the calendar represented by _calendar_, according to implementation-defined processing.
         1. Let _newYear_ be the first day of the calendar year of _date_ in the calendar represented by _calendar_, according to implementation-defined processing.
         1. Let _arithmeticYear_ be the number of whole years between _epochDate_ and _newYear_ in the calendar represented by _calendar_, according to implementation-defined processing.
@@ -857,8 +857,8 @@ contributors: Google, Ecma International
         1. Assert: _era_ is not *undefined*.
         1. If _calendar_ is not listed in the Calendar Type column of <emu-xref href="#table-calendar-types"></emu-xref>, return an implementation-defined value.
         1. Let _r_ be the row in <emu-xref href="#table-eras"></emu-xref> with a value in the Calendar column matching _calendar_ and a value in the Era column matching _era_.
-        1. Let _eraKind_ be the value given in the *"Era kind"* column of _r_.
-        1. Let _offset_ be the value given in the *"Offset"* column of _r_.
+        1. Let _eraKind_ be the value given in the Era kind column of _r_.
+        1. Let _offset_ be the value given in the Offset column of _r_.
         1. If _eraKind_ is ~epoch~, return _eraYear_.
         1. If _eraKind_ is ~negative~, return <emu-eqn>1 - _eraYear_</emu-eqn>.
         1. Assert: _eraKind_ is ~offset~.
