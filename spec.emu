@@ -712,7 +712,7 @@ contributors: Google, Ecma International
       <h1>
         CalendarDateEra (
           _calendar_: a calendar type that is not *"iso8601"*,
-          _date_: a Temporal.PlainDateTime, Temporal.PlainDate, or Temporal.PlainYearMonth,
+          _date_: an ISO Date Record,
         ): a String or *undefined*
       </h1>
       <dl class="header">
@@ -730,7 +730,7 @@ contributors: Google, Ecma International
       <h1>
         CalendarDateEraYear (
           _calendar_: a calendar type that is not *"iso8601"*,
-          _date_: a Temporal.PlainDateTime, Temporal.PlainDate, or Temporal.PlainYearMonth,
+          _date_: an ISO Date Record,
         ): an integer or *undefined*
       </h1>
       <dl class="header">
@@ -750,7 +750,7 @@ contributors: Google, Ecma International
       <h1>
         CalendarDateArithmeticYear (
           _calendar_: a calendar type that is not *"iso8601"*,
-          _date_: an ISO Date Record, Temporal.PlainDateTime, Temporal.PlainDate, or Temporal.PlainYearMonth,
+          _date_: an ISO Date Record,
         ): an integer
       </h1>
       <dl class="header">
