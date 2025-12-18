@@ -236,10 +236,10 @@ contributors: Google, Ecma International
         1. Return an implementation-defined value.
       </emu-alg>
       <p>
-        <emu-xref href="#table-eras"></emu-xref> lists all currently known eras for the current set of calendars, including their aliases, ranges and kinds.
+        <emu-xref href="#table-eras"></emu-xref> lists all currently known eras for the current set of calendars, including their aliases, ranges, and kinds.
         The canonical source for this table is the data described in <a href="https://unicode.org/reports/tr35/tr35-dates.html#Calendar_Data">Unicode Technical Standard #35 Part 4 Dates, Calendar Data</a>.
       </p>
-      <p>The era kind is used by <emu-xref href="#sec-temporal-calendardatearithmeticyearforerayear">CalendarDateArithmeticYearForEraYear</emu-xref> to calculate arithmetic year ([[Year]]):
+      <p>The era kind is used by <emu-xref href="#sec-temporal-calendardatearithmeticyearforerayear">CalendarDateArithmeticYearForEraYear</emu-xref> to calculate the arithmetic year ([[Year]]):
       An *Era kind* ~epoch~ means that the era is the epoch era, so 1 Era has an arithmetic year of 1. An *Era kind* ~negative~ means that the era is a "negative" era growing
       from the epoch, so 1 Era is an arithmetic year of 0, and larger [[EraYear]] values produce smaller, negative arithmetic years. An *Era kind* of
       ~offset~ means that the era is "offset" by a given number (in the *Offset* column), so 1 Era has an arithmetic year of *Offset*.</p>
