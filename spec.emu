@@ -240,8 +240,8 @@ contributors: Google, Ecma International
         The canonical source for this table is the data described in <a href="https://unicode.org/reports/tr35/tr35-dates.html#Calendar_Data">Unicode Technical Standard #35 Part 4 Dates, Calendar Data</a>.
       </p>
       <p>The era kind is used by <emu-xref href="#sec-temporal-calendardatearithmeticyearforerayear">CalendarDateArithmeticYearForEraYear</emu-xref> to calculate the arithmetic year ([[Year]]):
-      An *Era kind* ~epoch~ means that the era is the epoch era, so 1 Era has an arithmetic year of 1. An *Era kind* ~negative~ means that the era is a "negative" era growing
-      from the epoch, so 1 Era is an arithmetic year of 0, and larger [[EraYear]] values produce smaller, negative arithmetic years. An *Era kind* of
+      An *Era Kind* ~epoch~ means that the era is the epoch era, so 1 Era has an arithmetic year of 1. An *Era Kind* ~negative~ means that the era is a "negative" era growing
+      from the epoch, so 1 Era is an arithmetic year of 0, and larger [[EraYear]] values produce smaller, negative arithmetic years. An *Era Kind* of
       ~offset~ means that the era is "offset" by a given number (in the *Offset* column), so 1 Era has an arithmetic year of *Offset*.</p>
       <emu-table id="table-eras">
         <emu-caption>Eras</emu-caption>
@@ -253,7 +253,7 @@ contributors: Google, Ecma International
               <th>Aliases</th>
               <th>Minimum eraYear</th>
               <th>Maximum eraYear</th>
-              <th>Era kind</th>
+              <th>Era Kind</th>
               <th>Offset</th>
             </tr>
           </thead>
@@ -857,7 +857,7 @@ contributors: Google, Ecma International
         1. Assert: _era_ is not *undefined*.
         1. If _calendar_ is not listed in the "Calendar Type" column of <emu-xref href="#table-calendar-types"></emu-xref>, return an implementation-defined value.
         1. Let _r_ be the row in <emu-xref href="#table-eras"></emu-xref> with a value in the Calendar column matching _calendar_ and a value in the Era column matching _era_.
-        1. Let _eraKind_ be the value given in the "Era kind" column of _r_.
+        1. Let _eraKind_ be the value given in the "Era Kind" column of _r_.
         1. Let _offset_ be the value given in the "Offset" column of _r_.
         1. If _eraKind_ is ~epoch~, return _eraYear_.
         1. If _eraKind_ is ~negative~, return <emu-eqn>1 - _eraYear_</emu-eqn>.
