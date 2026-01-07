@@ -1303,8 +1303,8 @@ contributors: Google, Ecma International
       <emu-alg>
         1. If _calendar_ is not listed in the "Calendar Type" column of <emu-xref href="#table-calendar-types"></emu-xref>, return an implementation-defined value.
         1. If _fields_ contains an element equal to ~year~ and CalendarSupportsEra(_calendar_) is *true*, then
-          1. Append ~era~ and ~era-year~ to _fields_.
-        1. Return _fields_.
+          1. Return « ~era~, ~era-year~ ».
+        1. Return an empty List.
       </emu-alg>
     </emu-clause>
 
