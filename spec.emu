@@ -698,13 +698,9 @@ contributors: Google, Ecma International
       <dl class="header">
         <dt>description</dt>
         <dd>
-          It returns the number of days in the _calendar_-specific _arithmeticYear_ and _ordinalMonth_.
+          The returned value represents the number of days in the _calendar_-specific _arithmeticYear_ and _ordinalMonth_.
         </dd>
       </dl>
-      <p>It performs the following steps when called:</p>
-      <emu-alg>
-        1. Return the number of days in the month of _calendar_ corresponding to _arithmeticYear_ and _ordinalMonth_.
-      </emu-alg>
     </emu-clause>
 
     <emu-clause id="sec-temporal-calendardateera" type="abstract operation">
@@ -1041,13 +1037,8 @@ contributors: Google, Ecma International
       <dl class="header">
         <dt>description</dt>
         <dd>
-          It interprets _arithmeticYear_ as a year in the given calendar in the same way as CalendarDateArithmeticYear, and returns the number of months in that year.
-        </dd>
+          It interprets _arithmeticYear_ as a year in the given calendar in the same way as CalendarDateArithmeticYear. The returned value represents the number of months in that year.        </dd>
       </dl>
-      <p>It performs the following steps when called:</p>
-      <emu-alg>
-        1. Return the number of months in arithmetic year _arithmeticYear_ of calendar _calendar_.
-      </emu-alg>
     </emu-clause>
 
     <emu-clause id="sec-temporal-balancenonisodate" type="abstract operation">
