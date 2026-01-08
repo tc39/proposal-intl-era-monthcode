@@ -672,7 +672,7 @@ contributors: Google, Ecma International
         1. If the "Leap to Common Month Tranformation" column of _r_ is empty, then
           1. Return ! ParseMonthCode(_monthCode_).[[MonthNumber]].
         1. Assert: The "Additional Month Codes" column of _r_ does not contain *"M00L"* or *"M13"*.
-        1. Assert: The following loop will terminate.
+        1. Assert: This algorithm will return before the following loop terminates by failing its condition.
         1. Repeat, while _number_ &le; 12,
           1. Let _currentMonthCode_ be CreateMonthCode(_number_, _isLeap_).
           1. If YearContainsMonthCode(_calendar_, _arithmeticYear_, _currentMonthCode_), then
