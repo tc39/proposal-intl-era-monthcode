@@ -758,7 +758,7 @@ contributors: Google, Ecma International
         1. Let _epochYear_ be the value given in the "Epoch ISO Year" column of _r_.
         1. Let _epochDate_ be the first day of the calendar year starting in ISO year _epochYear_ in the calendar represented by _calendar_, according to implementation-defined processing.
         1. Let _newYear_ be the first day of the calendar year of _date_ in the calendar represented by _calendar_, according to implementation-defined processing.
-        1. Let _arithmeticYear_ be the number of whole years between _epochDate_ and _newYear_ in the calendar represented by _calendar_, according to implementation-defined processing.
+        1. Let _arithmeticYear_ be the signed number of whole years between _epochDate_ and _newYear_ in the calendar represented by _calendar_, according to implementation-defined processing.
         1. Return _arithmeticYear_.
       </emu-alg>
 
