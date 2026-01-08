@@ -101,7 +101,7 @@ contributors: Google, Ecma International
           </tr>
           <tr>
             <td>*"islamic-umalqura"*</td>
-            <td>Hijri calendar, Umm al-Qura. Lunar calendar using KACST-calculated months from the start of 1300 AH to the end of 1600 AH, falling back to *"islamic-civil"* outside that range.</td>
+            <td>Hijri calendar, Umm al-Qura. Lunar calendar using months calculated by King Abdulaziz City for Science and Technology (KACST) months from the start of 1300 AH to the end of 1600 AH, falling back to *"islamic-civil"* outside that range.</td>
           </tr>
           <tr>
             <td>*"islamicc"*</td>
