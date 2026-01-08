@@ -53,27 +53,27 @@ contributors: Google, Ecma International
           </thead>
           <tr>
             <td>*"buddhist"*</td>
-            <td>Thai Buddhist calendar, proleptic. Month numbers, month codes, and days are identical to ISO 8601, but the epoch year differs. All years are treated as having 12 months. For compatibility with other systems, dates prior to ISO year 1941 (2484 BE) are defined but may not correspond to historically accurate values due to the calendar reforms of 1940 and earlier. There is one era.</td>
+            <td>Thai Buddhist calendar. Month numbers, month codes, and days are identical to ISO 8601, but the epoch year differs. All years are treated as having 12 months. For compatibility with other systems, dates prior to ISO year 1941 (2484 BE) are defined but may not correspond to historically accurate values due to the calendar reforms of 1940 and earlier. There is one era.</td>
           </tr>
           <tr>
             <td>*"chinese"*</td>
-            <td>Traditional Chinese calendar, proleptic. Lunisolar calendar used in China based on data published by the Purple Mountain Observatory between 1900 and 2100 (which complies with <a href="https://openstd.samr.gov.cn/bzgk/gb/newGbInfo?hcno=E107EA4DE9725EDF819F33C60A44B296">GB/T 33661-2017, Calculation and Promulgation of the Chinese Calendar</a> between 1912 and 2100), falling back to an implementation-defined approximation outside that range. The arithmetic year is identical to *"gregory"*, and there are no eras.</td>
+            <td>Traditional Chinese calendar. Lunisolar calendar used in China based on data published by the Purple Mountain Observatory between 1900 and 2100 (which complies with <a href="https://openstd.samr.gov.cn/bzgk/gb/newGbInfo?hcno=E107EA4DE9725EDF819F33C60A44B296">GB/T 33661-2017, Calculation and Promulgation of the Chinese Calendar</a> between 1912 and 2100), falling back to an implementation-defined approximation outside that range. The arithmetic year is identical to *"gregory"*, and there are no eras.</td>
           </tr>
           <tr>
             <td>*"coptic"*</td>
-            <td>Coptic calendar, proleptic. Similar solar algorithm to *"ethioaa"* and *"ethiopic"*, with one era and a different epoch year.</td>
+            <td>Coptic calendar. Similar solar algorithm to *"ethioaa"* and *"ethiopic"*, with one era and a different epoch year.</td>
           </tr>
           <tr>
             <td>*"dangi"*</td>
-            <td>Traditional Korean calendar, proleptic. Lunisolar calendar using months published by the Korea Astronomy and Space Science Institute (KASI) between 1900 and 2050, falling back to an implementation-defined approximation outside that range. The arithmetic year is identical to *"gregory"*, and there are no eras.</td>
+            <td>Traditional Korean calendar. Lunisolar calendar using months published by the Korea Astronomy and Space Science Institute (KASI) between 1900 and 2050, falling back to an implementation-defined approximation outside that range. The arithmetic year is identical to *"gregory"*, and there are no eras.</td>
           </tr>
           <tr>
             <td>*"ethioaa"*</td>
-            <td>Ethiopic calendar, Amete Alem, proleptic. Similar solar algorithm to *"coptic"* and *"ethiopic"*, with one era and a different epoch year.</td>
+            <td>Ethiopic calendar, Amete Alem. Similar solar algorithm to *"coptic"* and *"ethiopic"*, with one era and a different epoch year.</td>
           </tr>
           <tr>
             <td>*"ethiopic"*</td>
-            <td>Ethiopic calendar, Amete Mihret, proleptic. Similar solar algorithm to *"coptic"* and *"ethioaa"*, with two eras and a different epoch year.</td>
+            <td>Ethiopic calendar, Amete Mihret. Similar solar algorithm to *"coptic"* and *"ethioaa"*, with two eras and a different epoch year.</td>
           </tr>
           <tr>
             <td>*"ethiopic-amete-alem"*</td>
@@ -81,27 +81,27 @@ contributors: Google, Ecma International
           </tr>
           <tr>
             <td>*"gregory"*</td>
-            <td>Gregorian calendar, proleptic. Solar calendar almost identical to the ISO 8601 calendar, except that it does not define week numbering and it contains two eras, one before the epoch year.</td>
+            <td>Gregorian calendar. Solar calendar almost identical to the ISO 8601 calendar, except that it does not define week numbering and it contains two eras, one before the epoch year.</td>
           </tr>
           <tr>
             <td>*"hebrew"*</td>
-            <td>Hebrew calendar, proleptic. Civil calendar with Tishrei as the first month of the year. Lunisolar calendar with one leap month inserted after month 5. There is one era.</td>
+            <td>Hebrew calendar. Civil calendar with Tishrei as the first month of the year. Lunisolar calendar with one leap month inserted after month 5. There is one era.</td>
           </tr>
           <tr>
             <td>*"indian"*</td>
-            <td>Indian national (or Śaka) calendar, proleptic. Solar calendar with one era.</td>
+            <td>Indian national (or Śaka) calendar. Solar calendar with one era.</td>
           </tr>
           <tr>
             <td>*"islamic-civil"*</td>
-            <td>Hijri calendar, proleptic, tabular/rule-based with leap years 2, 5, 7, 10, 13, 16, 18, 21, 24, 26, 29 in the 30-year cycle, and civil epoch (Friday July 16, 622 Julian / 0622-07-19 ISO)</td>
+            <td>Hijri calendar, tabular/rule-based with leap years 2, 5, 7, 10, 13, 16, 18, 21, 24, 26, 29 in the 30-year cycle, and civil epoch (Friday July 16, 622 Julian / 0622-07-19 ISO)</td>
           </tr>
           <tr>
             <td>*"islamic-tbla"*</td>
-            <td>Hijri calendar, proleptic, tabular/rule-based with leap years 2, 5, 7, 10, 13, 16, 18, 21, 24, 26, 29 in the 30-year cycle, and astronomical epoch (Thursday July 15, 622 Julian / 0622-07-18 ISO)</td>
+            <td>Hijri calendar, tabular/rule-based with leap years 2, 5, 7, 10, 13, 16, 18, 21, 24, 26, 29 in the 30-year cycle, and astronomical epoch (Thursday July 15, 622 Julian / 0622-07-18 ISO)</td>
           </tr>
           <tr>
             <td>*"islamic-umalqura"*</td>
-            <td>Hijri calendar, proleptic, Umm al-Qura. Lunar calendar using KACST-calculated months from the start of 1300 AH to the end of 1600 AH, falling back to *"islamic-civil"* outside that range.</td>
+            <td>Hijri calendar, Umm al-Qura. Lunar calendar using KACST-calculated months from the start of 1300 AH to the end of 1600 AH, falling back to *"islamic-civil"* outside that range.</td>
           </tr>
           <tr>
             <td>*"islamicc"*</td>
@@ -117,11 +117,11 @@ contributors: Google, Ecma International
           </tr>
           <tr>
             <td>*"persian"*</td>
-            <td>Persian (or Solar Hijri) calendar, proleptic. There is one era.</td>
+            <td>Persian (or Solar Hijri) calendar. There is one era.</td>
           </tr>
           <tr>
             <td>*"roc"*</td>
-            <td>Republic of China (or Minguo) calendar, proleptic. Month numbers, month codes, and days are the same as in the ISO 8601 calendar, but the epoch year is different. There are two eras, one before the epoch year and one after.</td>
+            <td>Republic of China (or Minguo) calendar. Month numbers, month codes, and days are the same as in the ISO 8601 calendar, but the epoch year is different. There are two eras, one before the epoch year and one after.</td>
           </tr>
         </table>
       </emu-table>
