@@ -53,27 +53,27 @@ contributors: Google, Ecma International
           </thead>
           <tr>
             <td>*"buddhist"*</td>
-            <td>Thai Buddhist calendar. Month numbers, month codes, and days are the same as in the ISO 8601 calendar, but the epoch year is different. There is one era.</td>
+            <td>Thai Buddhist calendar. Month numbers, month codes, and days are the same as in the ISO 8601 calendar, with one era and an epoch year differing from the epoch year in *"gregory"*.</td>
           </tr>
           <tr>
             <td>*"chinese"*</td>
-            <td>Traditional Chinese calendar. Lunisolar calendar used in China based on data published by the Purple Mountain Observatory between 1900 and 2100 (which complies with <a href="https://openstd.samr.gov.cn/bzgk/gb/newGbInfo?hcno=E107EA4DE9725EDF819F33C60A44B296">GB/T 33661-2017, Calculation and Promulgation of the Chinese Calendar</a> between 1912 and 2100), falling back to an implementation-defined approximation outside that range. The arithmetic year is identical to *"gregory"*, and there are no eras.</td>
+            <td>Traditional Chinese calendar. Lunisolar calendar, based on <a href="https://www.pmo.cas.cn/xwdt2019/kpdt2019/202203/P020241223526694003756.pdf">data published by the Purple Mountain Observatory</a> for dates between 1912 and 2100 (which complies with <a href="https://openstd.samr.gov.cn/bzgk/gb/newGbInfo?hcno=E107EA4DE9725EDF819F33C60A44B296">GB/T 33661-2017, Calculation and Promulgation of the Chinese Calendar</a>), falling back to an implementation-defined approximation outside that range. The arithmetic year is as in *"gregory"*, and there are no eras.</td>
           </tr>
           <tr>
             <td>*"coptic"*</td>
-            <td>Coptic calendar. Similar solar algorithm to *"ethioaa"* and *"ethiopic"*, with one era and a different epoch year.</td>
+            <td>Coptic calendar. Similar solar algorithm to *"ethioaa"* and *"ethiopic"* with one era and an epoch year differing from the epoch year in *"gregory"*.</td>
           </tr>
           <tr>
             <td>*"dangi"*</td>
-            <td>Traditional Korean calendar. Lunisolar calendar using months published by the Korea Astronomy and Space Science Institute (KASI) between 1900 and 2050, falling back to an implementation-defined approximation outside that range. The arithmetic year is identical to *"gregory"*, and there are no eras.</td>
+            <td>Traditional Korean calendar. Lunisolar calendar, based on <a href="https://astro.kasi.re.kr/life/post/calendardata">based on data published by the Korea Astronomy and Space Science Institute (KASI)</a> for dates between 1900 and 2050, falling back to an implementation-defined approximation outside that range. The arithmetic year is as in *"gregory"*, and there are no eras.</td>
           </tr>
           <tr>
             <td>*"ethioaa"*</td>
-            <td>Ethiopic calendar, Amete Alem. Similar solar algorithm to *"coptic"* and *"ethiopic"*, with one era and a different epoch year.</td>
+            <td>Ethiopic calendar, Amete Alem. Similar solar algorithm to *"coptic"* and *"ethiopic"*, with one era and a epoch year differing from the epoch year in *"gregory"*.</td>
           </tr>
           <tr>
             <td>*"ethiopic"*</td>
-            <td>Ethiopic calendar, Amete Mihret. Similar solar algorithm to *"coptic"* and *"ethioaa"*, with two eras and a different epoch year.</td>
+            <td>Ethiopic calendar, Amete Mihret. Similar solar algorithm to *"coptic"* and *"ethioaa"*, with two eras and an epoch year differing from the epoch year in *"gregory"*.</td>
           </tr>
           <tr>
             <td>*"ethiopic-amete-alem"*</td>
@@ -81,15 +81,15 @@ contributors: Google, Ecma International
           </tr>
           <tr>
             <td>*"gregory"*</td>
-            <td>Gregorian calendar. Solar calendar almost identical to the ISO 8601 calendar, except that it does not define week numbering and it contains two eras, one before the epoch year.</td>
+            <td>Gregorian calendar. Solar calendar almost identical to the ISO 8601 calendar, except that it does not define week numbering and it contains two eras, one before the epoch year and one after.</td>
           </tr>
           <tr>
             <td>*"hebrew"*</td>
-            <td>Hebrew calendar. Civil calendar with Tishrei as the first month of the year. Lunisolar calendar with one leap month inserted after month 5. There is one era.</td>
+            <td>Hebrew calendar. Civil calendar with Tishrei as the first month of the year. Lunisolar calendar with one leap month inserted after month 5. There is one era and an epoch year differing from the epoch year in *"gregory"*.</td>
           </tr>
           <tr>
             <td>*"indian"*</td>
-            <td>Indian national (or Śaka) calendar. Solar calendar with one era.</td>
+            <td>Indian national (or Śaka) calendar. Solar calendar with one era and an epoch year differing from the epoch year in *"gregory"*.</td>
           </tr>
           <tr>
             <td>*"islamic-civil"*</td>
@@ -101,7 +101,7 @@ contributors: Google, Ecma International
           </tr>
           <tr>
             <td>*"islamic-umalqura"*</td>
-            <td>Hijri calendar, Umm al-Qura. Lunar calendar using months calculated by King Abdulaziz City for Science and Technology (KACST) months from the start of 1300 AH to the end of 1600 AH, falling back to *"islamic-civil"* outside that range.</td>
+            <td>Hijri calendar, Umm al-Qura. Lunar calendar using months calculated by King Abdulaziz City for Science and Technology (KACST) for dates from the start of 1300 AH to the end of 1600 AH, falling back to *"islamic-civil"* outside that range.</td>
           </tr>
           <tr>
             <td>*"islamicc"*</td>
@@ -113,7 +113,7 @@ contributors: Google, Ecma International
           </tr>
           <tr>
             <td>*"japanese"*</td>
-            <td>Japanese Imperial calendar, era system hybridised with *"gregory"*. Month numbers, month codes, and days are the same as in the ISO 8601 calendar, extended proleptically before their introduction in ISO year 1873. Imperial era names only extend as far back as the Meiji period (starting in ISO year 1868) during which calendar reforms took place. All era ranges are defined by the Japanese government. The arithmetic year, and the years and eras before ISO year 1868, are identical to *"gregory"*.</td>
+            <td>Japanese Imperial calendar, era system hybridised with the era system used in *"gregory"*. Month numbers, month codes, and days are the same as in the ISO 8601 calendar, extended proleptically before their introduction in ISO year 1873. Imperial era names only extend as far back as the Meiji period (starting in ISO year 1868) during which calendar reforms took place. All era ranges are defined by the Japanese government. The arithmetic year, and the years and eras before ISO year 1868, are identical to *"gregory"*.</td>
           </tr>
           <tr>
             <td>*"persian"*</td>
@@ -121,7 +121,7 @@ contributors: Google, Ecma International
           </tr>
           <tr>
             <td>*"roc"*</td>
-            <td>Republic of China (or Minguo) calendar. Month numbers, month codes, and days are the same as in the ISO 8601 calendar, but the epoch year is different. There are two eras, one before the epoch year and one after.</td>
+            <td>Republic of China (or Minguo) calendar. Month numbers, month codes, and days are the same as in the ISO 8601 calendar, with two eras and an epoch year differing from the epoch year in *"gregory"*.</td>
           </tr>
         </table>
       </emu-table>
