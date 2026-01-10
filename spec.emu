@@ -1302,7 +1302,7 @@ contributors: Google, Ecma International
       </emu-alg>
     </emu-clause>
 
-    <emu-clause id="sup-temporal-nonisofieldkeystoignore" type="abstract operation">
+    <emu-clause id="sup-temporal-nonisofieldkeystoignore" type="implementation-defined abstract operation">
       <h1>
         NonISOFieldKeysToIgnore (
           _calendar_: a calendar type that is not *"iso8601"*,
