@@ -594,7 +594,7 @@ contributors: Google, Ecma International
       </emu-table>
     </emu-clause>
 
-    <emu-clause id="sec-temporal-yearcontainsmonthcode" type="implementation-defined abstract operation">
+    <emu-clause id="sec-temporal-yearcontainsmonthcode" type="abstract operation">
       <h1>
         YearContainsMonthCode (
           _calendar_: a calendar type that is not *"iso8601"*,
@@ -688,7 +688,7 @@ contributors: Google, Ecma International
       </emu-alg>
     </emu-clause>
 
-    <emu-clause id="sec-temporal-calendardaysinmonth" type="implementation-defined abstract operation">
+    <emu-clause id="sec-temporal-calendardaysinmonth" type="abstract operation">
       <h1>
         CalendarDaysInMonth (
           _calendar_: a calendar type that is not *"iso8601"*,
@@ -867,7 +867,7 @@ contributors: Google, Ecma International
       </emu-alg>
     </emu-clause>
 
-    <emu-clause id="sec-temporal-calendarintegerstoiso" type="implementation-defined abstract operation">
+    <emu-clause id="sec-temporal-calendarintegerstoiso" type="abstract operation">
       <h1>
         CalendarIntegersToISO (
           _calendar_: a calendar type that is not *"iso8601"*,
@@ -1032,7 +1032,7 @@ contributors: Google, Ecma International
       </emu-table>
     </emu-clause>
 
-    <emu-clause id="sec-temporal-calendarmonthsinyear" type="implementation-defined abstract operation">
+    <emu-clause id="sec-temporal-calendarmonthsinyear" type="abstract operation">
       <h1>
         CalendarMonthsInYear (
           _calendar_: a calendar type that is not *"iso8601"*,
@@ -1051,7 +1051,7 @@ contributors: Google, Ecma International
       </emu-alg>
     </emu-clause>
 
-    <emu-clause id="sec-temporal-balancenonisodate" type="implementation-defined abstract operation">
+    <emu-clause id="sec-temporal-balancenonisodate" type="abstract operation">
       <h1>
         BalanceNonISODate (
           _calendar_: a calendar type that is not *"iso8601"*,
@@ -1102,7 +1102,7 @@ contributors: Google, Ecma International
       </emu-alg>
     </emu-clause>
 
-    <emu-clause id="sec-temporal-nonisodatesurpasses" type="implementation-defined abstract operation">
+    <emu-clause id="sec-temporal-nonisodatesurpasses" type="abstract operation">
       <h1>
         NonISODateSurpasses (
           _calendar_: a calendar type that is not *"iso8601"*,
@@ -1154,7 +1154,7 @@ contributors: Google, Ecma International
       </emu-alg>
     </emu-clause>
 
-    <emu-clause id="sup-temporal-nonisodateadd" type="implementation-defined abstract operation">
+    <emu-clause id="sup-temporal-nonisodateadd" type="abstract operation">
       <h1>
         NonISODateAdd (
           _calendar_: a calendar type that is not *"iso8601"*,
@@ -1166,7 +1166,7 @@ contributors: Google, Ecma International
       <dl class="header">
         <dt>description</dt>
         <dd>
-          The operation performs implementation-defined processing to add _duration_ to _date_ in the context of the calendar represented by _calendar_ and returns the corresponding day, month and year of the result in the ISO 8601 calendar values as an ISO Date Record.
+          The operation performs processing to add _duration_ to _date_ in the context of the calendar represented by _calendar_ and returns the corresponding day, month and year of the result in the ISO 8601 calendar values as an ISO Date Record.
           It may throw a *RangeError* exception if _overflow_ is ~reject~ and the resulting month or day would need to be clamped in order to form a valid date in _calendar_.
         </dd>
       </dl>
@@ -1191,7 +1191,7 @@ contributors: Google, Ecma International
       </emu-alg>
     </emu-clause>
 
-    <emu-clause id="sup-temporal-nonisodateuntil" type="implementation-defined abstract operation">
+    <emu-clause id="sup-temporal-nonisodateuntil" type="abstract operation">
       <h1>
         NonISODateUntil (
           _calendar_: a calendar type that is not *"iso8601"*,
@@ -1203,7 +1203,7 @@ contributors: Google, Ecma International
       <dl class="header">
         <dt>description</dt>
         <dd>
-          It performs implementation-defined processing to determine the difference between the dates _one_ and _two_ using the years, months, and weeks reckoning of _calendar_.
+          It determines the difference between the dates _one_ and _two_ using the years, months, and weeks reckoning of _calendar_.
           No fields larger than _largestUnit_ will be non-zero in the resulting Date Duration Record.
         </dd>
       </dl>
@@ -1240,7 +1240,7 @@ contributors: Google, Ecma International
       </emu-alg>
     </emu-clause>
 
-    <emu-clause id="sup-temporal-nonisocalendardatetoiso" type="implementation-defined abstract operation">
+    <emu-clause id="sup-temporal-nonisocalendardatetoiso" type="abstract operation">
       <h1>
         NonISOCalendarDateToISO (
           _calendar_: a calendar type that is not *"iso8601"*,
@@ -1251,7 +1251,7 @@ contributors: Google, Ecma International
       <dl class="header">
         <dt>description</dt>
         <dd>
-          It performs implementation-defined processing to convert _fields_, which represents either a date or a year and month in the built-in calendar identified by _calendar_, to a corresponding representative date in the ISO 8601 calendar, subject to overflow correction specified by _overflow_.
+          It converts _fields_, which represents either a date or a year and month in the built-in calendar identified by _calendar_, to a corresponding representative date in the ISO 8601 calendar, subject to overflow correction specified by _overflow_.
           For ~reject~, values that do not form a valid date cause an exception to be thrown, as described below.
           For ~constrain~, values that do not form a valid date are clamped to their respective valid range.
         </dd>
