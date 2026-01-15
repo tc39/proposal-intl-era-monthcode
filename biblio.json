@@ -43,6 +43,11 @@
                 "id": "sec-temporal-calendarisotodate"
             },
             {
+                "type": "op",
+                "aoid": "CalendarMonthDayToISOReferenceDate",
+                "id": "sec-temporal-calendarmonthdaytoisoreferencedate"
+            },
+            {
                 "type": "term",
                 "term": "calendar type",
                 "id": "sec-calendar-types"
@@ -82,10 +87,15 @@
                 "number": "Temporal, 12.2.8",
                 "id": "sec-temporal-nonisodateuntil"
             },
-                        {
+            {
                 "type": "clause",
                 "number": "Temporal, 12.2.28",
                 "id": "sec-temporal-nonisofieldkeystoignore"
+            },
+            {
+                "type": "clause",
+                "number": "Temporal, 12.3.30",
+                "id": "sec-temporal-nonisoresolvefields"
             },
             {
                 "type": "op",
