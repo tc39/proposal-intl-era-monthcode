@@ -676,7 +676,7 @@ contributors: Google, Ecma International
         1. Assert: The following loop will terminate.
         1. Repeat, while _number_ &le; 12,
           1. Let _currentMonthCode_ be CreateMonthCode(_number_, _isLeap_).
-          1. If YearContainsMonthCode(_calendar_, _arithmeticYear_, _currentMonthCode_), then
+          1. If IsValidMonthCodeForCalendar(_calendar_, _currentMonthCode_) is *true* and YearContainsMonthCode(_calendar_, _arithmeticYear_, _currentMonthCode_) is *true*, then
             1. Set _monthsBefore_ to _monthsBefore_ + 1.
           1. If _currentMonthCode_ is _monthCode_, then
             1. Return _monthsBefore_.
