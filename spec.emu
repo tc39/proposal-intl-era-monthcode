@@ -1130,7 +1130,7 @@ contributors: Google, Ecma International
         1. Let _endOfMonth_ be BalanceNonISODate(_calendar_, _y0_, _m0_ + _months_ + 1, 0).
         1. Let _baseDay_ be _parts_.[[Day]].
         1. If _weeks_ is not 0 or _days_ is not 0, then
-          1. If _baseDay_ &lt; _endOfMonth_.[[Day]], then
+          1. If _baseDay_ &le; _endOfMonth_.[[Day]], then
             1. Let _regulatedDay_ be _baseDay_.
           1. Else,
             1. Let _regulatedDay_ be _endOfMonth_.[[Day]].
