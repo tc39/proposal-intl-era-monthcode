@@ -113,7 +113,7 @@ contributors: Google, Ecma International
           </tr>
           <tr>
             <td>*"japanese"*</td>
-            <td>Japanese Imperial calendar, era system hybridised with the era system used in *"gregory"*. Month numbers, month codes, and days are the same as in the ISO 8601 calendar. For dates up to and including 1872-12-31, years and eras identical to *"gregory"* are used. For later dates, the solar Japanese eras defined by the Japanese government are used. The arithmetic year is identical to *"gregory"*.</td>
+            <td>Japanese Imperial calendar, era system hybridised with the era system used in *"gregory"*. Month numbers, month codes, and days are the same as in the ISO 8601 calendar. For dates up to and including 1872-12-31, years and eras identical to *"gregory"* are used. For later dates, the eras and ranges defined by the Japanese government are used. Note that ISO year 1873 is the 6th year of the Meiji period, starting on ISO date 1868-10-23, during which calendar reforms took place. The arithmetic year is identical to *"gregory"*.</td>
           </tr>
           <tr>
             <td>*"persian"*</td>
@@ -431,17 +431,17 @@ contributors: Google, Ecma International
             <td>*"japanese"*</td>
             <td>*"meiji"*</td>
             <td></td>
-            <td>1</td>
+            <td>6</td>
             <td>45</td>
             <td>~offset~</td>
-            <td>1868</td>
+            <td>1873</td>
           </tr>
           <tr>
             <td>*"japanese"*</td>
             <td>*"ce"*</td>
             <td>*"ad"*</td>
             <td>1</td>
-            <td>1868</td>
+            <td>1872</td>
             <td>~epoch~</td>
             <td></td>
           </tr>
