@@ -78,6 +78,11 @@
                 "id": "sec-temporal-nonisocalendardatetoiso"
             },
             {
+                "type": "op",
+                "aoid": "NonISOCalendarISOToDate",
+                "id": "sec-temporal-nonisocalendarisotodate"
+            },
+            {
                 "type": "clause",
                 "number": "Temporal, 12.2.6",
                 "id": "sec-temporal-nonisodateadd"
@@ -91,6 +96,11 @@
                 "type": "clause",
                 "number": "Temporal, 12.2.28",
                 "id": "sec-temporal-nonisofieldkeystoignore"
+            },
+            {
+                "type": "clause",
+                "number": "Temporal, 12.3.23",
+                "id": "sec-temporal-nonisomonthdaytoisoreferencedate"
             },
             {
                 "type": "clause",
