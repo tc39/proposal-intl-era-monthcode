@@ -117,7 +117,7 @@ contributors: Google, Ecma International
           </tr>
           <tr>
             <td>*"persian"*</td>
-            <td><a href="https://en.wikipedia.org/wiki/Solar_Hijri_calendar">Persian (or Solar Hijri) calendar</a>. There is one era.</td>
+            <td><a href="https://en.wikipedia.org/wiki/Solar_Hijri_calendar">Persian (or Solar Hijri) calendar</a>. There is one era. Solar calendar using leap years as <a href="https://calendar.ut.ac.ir/documents/2139738/7092644/Kabise+Shamsi+1206-1498.pdf">published by the Iranian calendar authority</a> for dates between 1206 AP and 1498 AP, falling back to an implementation-defined approximation outside that range.</td>
           </tr>
           <tr>
             <td>*"roc"*</td>
