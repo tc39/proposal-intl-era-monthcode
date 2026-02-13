@@ -31,17 +31,17 @@ contributors: Google, Ecma International
         ECMA-262 describes calendar types, of which *"iso8601"* is required to be supported.
         This specification additionally requires ECMAScript implementations to support calendar types corresponding with those of the <a href="https://cldr.unicode.org/">Unicode Common Locale Data Repository (CLDR)</a>.
       </p>
-    </ins>
 
-    <emu-clause id="sup-availablecalendars" oldids="sec-availablecalendars sec-availablecanonicalcalendars" type="abstract operation">
-      <h1>AvailableCalendars ( ): a List of calendar types</h1>
-      <dl class="header">
-        <dt>description</dt>
-        <dd>The returned List is sorted according to lexicographic code unit order, and contains unique calendar types in canonical form (<emu-xref href="#sec-calendar-types"></emu-xref>) identifying the calendars for which the implementation provides the functionality of Intl.DateTimeFormat objects, including their aliases (e.g., <del>either</del> both <del>or neither of</del> *"islamicc"* and *"islamic-civil"*). The List must consist of <del>*"iso8601"*</del><ins>the "Calendar Type" value of every row of <emu-xref href="#table-calendar-types"></emu-xref>, except the header row</ins>.</dd>
-      </dl>
-    </emu-clause>
+      <p>
+        The following table lists the calendar types described in CLDR, along with implementation notes and sources where necessary.
+        All calendar types must use a <dfn>proleptic</dfn> reckoning, meaning that the current rules for calendrical calculations are extended indefinitely into the past, ignoring dates when historical calendar reforms happened.
+      </p>
 
-    <ins class="block">
+      <p>
+        For example, at various points from the 16th to the 20th century, various locales in Europe changed from the Julian to the Gregorian calendar, skipping some dates in the process.
+        Since the *"gregory"* calendar is proleptic, no dates are skipped; all dates are in the "new system," even if it wasn't used at the time.
+      </p>
+
       <emu-table id="table-calendar-types">
         <emu-caption>Calendar types described in CLDR</emu-caption>
         <table class="real-table">
@@ -126,6 +126,14 @@ contributors: Google, Ecma International
         </table>
       </emu-table>
     </ins>
+
+    <emu-clause id="sup-availablecalendars" oldids="sec-availablecalendars sec-availablecanonicalcalendars" type="abstract operation">
+      <h1>AvailableCalendars ( ): a List of calendar types</h1>
+      <dl class="header">
+        <dt>description</dt>
+        <dd>The returned List is sorted according to lexicographic code unit order, and contains unique calendar types in canonical form (<emu-xref href="#sec-calendar-types"></emu-xref>) identifying the calendars for which the implementation provides the functionality of Intl.DateTimeFormat objects, including their aliases (e.g., <del>either</del> both <del>or neither of</del> *"islamicc"* and *"islamic-civil"*). The List must consist of <del>*"iso8601"*</del><ins>the "Calendar Type" value of every row of <emu-xref href="#table-calendar-types"></emu-xref>, except the header row</ins>.</dd>
+      </dl>
+    </emu-clause>
   </emu-clause>
 </emu-clause>
 
