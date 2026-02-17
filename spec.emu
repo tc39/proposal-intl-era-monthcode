@@ -690,7 +690,7 @@ contributors: Google, Ecma International
           _calendar_: a calendar type that is not *"iso8601"*,
           _arithmeticYear_: an integer,
           _ordinalMonth_: a positive integer,
-        ): an integer
+        ): a positive integer
       </h1>
       <dl class="header">
         <dt>description</dt>
