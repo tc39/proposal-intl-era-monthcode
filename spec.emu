@@ -1040,8 +1040,14 @@ contributors: Google, Ecma International
       <dl class="header">
         <dt>description</dt>
         <dd>
-          It interprets _arithmeticYear_ as a year in the given calendar in the same way as CalendarDateArithmeticYear. The returned value represents the number of months in that year.        </dd>
+          The returned value represents the number of months in the _calendar_-specific _arithmeticYear_.
+        </dd>
       </dl>
+      <p>It performs the following steps when called:</p>
+      <emu-alg>
+        1. Let _isoDate_ be ! CalendarIntegersToISO(_calendar_, _arithmeticYear_, 1, 1).
+        1. Return CalendarISOToDate(_calendar_, _isoDate_).[[MonthsInYear]].
+      </emu-alg>
     </emu-clause>
 
     <emu-clause id="sec-temporal-balancenonisodate" type="abstract operation">
