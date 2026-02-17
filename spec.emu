@@ -698,6 +698,11 @@ contributors: Google, Ecma International
           The returned value represents the number of days in the _calendar_-specific _arithmeticYear_ and _ordinalMonth_.
         </dd>
       </dl>
+      <p>It performs the following steps when called:</p>
+      <emu-alg>
+        1. Let _isoDate_ be ! CalendarIntegersToISO(_calendar_, _arithmeticYear_, _ordinalMonth_, 1).
+        1. Return CalendarISOToDate(_calendar_, _isoDate_).[[DaysInMonth]].
+      </emu-alg>
     </emu-clause>
 
     <emu-clause id="sec-temporal-calendardateera" type="abstract operation">
