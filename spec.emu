@@ -690,7 +690,7 @@ contributors: Google, Ecma International
           _calendar_: a calendar type that is not *"iso8601"*,
           _arithmeticYear_: an integer,
           _ordinalMonth_: a positive integer,
-        ): an integer
+        ): a positive integer
       </h1>
       <dl class="header">
         <dt>description</dt>
@@ -698,6 +698,11 @@ contributors: Google, Ecma International
           The returned value represents the number of days in the _calendar_-specific _arithmeticYear_ and _ordinalMonth_.
         </dd>
       </dl>
+      <p>It performs the following steps when called:</p>
+      <emu-alg>
+        1. Let _isoDate_ be ! CalendarIntegersToISO(_calendar_, _arithmeticYear_, _ordinalMonth_, 1).
+        1. Return CalendarISOToDate(_calendar_, _isoDate_).[[DaysInMonth]].
+      </emu-alg>
     </emu-clause>
 
     <emu-clause id="sec-temporal-calendardateera" type="abstract operation">
@@ -1035,8 +1040,14 @@ contributors: Google, Ecma International
       <dl class="header">
         <dt>description</dt>
         <dd>
-          It interprets _arithmeticYear_ as a year in the given calendar in the same way as CalendarDateArithmeticYear. The returned value represents the number of months in that year.        </dd>
+          The returned value represents the number of months in the _calendar_-specific _arithmeticYear_.
+        </dd>
       </dl>
+      <p>It performs the following steps when called:</p>
+      <emu-alg>
+        1. Let _isoDate_ be ! CalendarIntegersToISO(_calendar_, _arithmeticYear_, 1, 1).
+        1. Return CalendarISOToDate(_calendar_, _isoDate_).[[MonthsInYear]].
+      </emu-alg>
     </emu-clause>
 
     <emu-clause id="sec-temporal-balancenonisodate" type="abstract operation">
