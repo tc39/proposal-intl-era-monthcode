@@ -1544,6 +1544,9 @@ contributors: Google, Ecma International
         1. If _type_ is ~date~ or _type_ is ~year-month~, set _needsYear_ to *true*.
         1. If _fields_.[[MonthCode]] is ~unset~, set _needsYear_ to *true*.
         1. If _fields_.[[Month]] is not ~unset~, set _needsYear_ to *true*.
+        1. Let _needsOrdinalMonth_ be *false*.
+        1. If _fields_.[[Year]] is not ~unset~, set _needsOrdinalMonth_ to *true*.
+        1. If _fields_.[[EraYear]] is not ~unset~, set _needsOrdinalMonth_ to *true*.
         1. Let _needsDay_ be *false*.
         1. If _type_ is ~date~ or _type_ is ~month-day~, set _needsDay_ to *true*.
         1. If _needsYear_ is *true*, then
@@ -1574,7 +1577,7 @@ contributors: Google, Ecma International
             1. NOTE: _fields_.[[MonthCode]] is intentionally not overwritten with _constrainedMonthCode_. Pending the "overflow" parameter in CalendarDateToISO or CalendarMonthDayToISOReferenceDate, a month code not occurring in _fields_.[[Year]] may cause that operation to throw. However, if _fields_.[[Month]] is present, it must agree with the constrained month code.
         1. Assert: _fields_.[[Era]] and _fields_.[[EraYear]] are ~unset~.
         1. Assert: If _needsYear_ is *true*, _fields_.[[Year]] is not ~unset~.
-        1. Assert: _fields_.[[Month]] is not ~unset~.
+        1. Assert: If _needsOrdinalMonth_ is *true*, _fields_.[[Month]] is not ~unset~.
         1. Assert: If _needsDay_ is *true*, _fields_.[[Day]] is not ~unset~.
         1. Return ~unused~.
       </emu-alg>
