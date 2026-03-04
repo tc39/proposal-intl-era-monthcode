@@ -1325,6 +1325,8 @@ contributors: Google, Ecma International
             1. If _monthCode_ is ~unset~, then
               1. Let _fieldsISODate_ be ! CalendarIntegersToISO(_calendar_, _fields_.[[Year]], _month_, _day_).
               1. Set _monthCode_ to NonISOCalendarISOToDate(_calendar_, _fieldsISODate_).[[MonthCode]].
+            1. Else,
+              1. Set _monthCode_ to ? ConstrainMonthCode(_calendar_, _fields_.[[Year]], _monthCode_, _overflow_).
           1. Let _row_ be the row in <emu-xref href="#chinese-dangi-iso-reference-years"></emu-xref> with a value in the "Month Code" column matching _monthCode_.
           1. If the "Reference Year (Days 1-29)" column of _row_ is "—", or _day_ = 30 and the "Reference Year (<emu-not-ref>Day</emu-not-ref> 30)" column of _row_ is "—", then
             1. If _overflow_ is ~reject~, throw a *RangeError* exception.
