@@ -1301,7 +1301,8 @@ contributors: Google, Ecma International
       <p>This definition supersedes the definition provided in <emu-xref href="#sec-temporal-nonisomonthdaytoisoreferencedate"></emu-xref>.</p>
       <p>It performs the following steps when called:</p>
       <emu-alg>
-        1. Assert: _fields_.[[Month]] and _fields_.[[Day]] are not ~unset~.
+        1. Assert: _fields_.[[Day]] is not ~unset~.
+        1. Assert: If _fields_.[[Year]] is not ~unset~, _fields_.[[Month]] is not ~unset~.
         1. Assert: If _fields_.[[MonthCode]] is ~unset~, _fields_.[[Year]] is not ~unset~.
         1. Let _monthCode_ be _fields_.[[MonthCode]].
         1. If _calendar_ is *"chinese"* or *"dangi"*, then
