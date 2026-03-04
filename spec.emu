@@ -1323,7 +1323,7 @@ contributors: Google, Ecma International
             1. Else,
               1. Let _month_ be _fields_.[[Month]].
             1. If _monthCode_ is ~unset~, then
-              1. Let _fieldsISODate_ be ! CalendarIntegersToISO(_calendar_, _fields_.[[Year]], _month_, _day_).
+              1. Let _fieldsISODate_ be ! CalendarIntegersToISO(_calendar_, _fields_.[[Year]], _month_, 1).
               1. Set _monthCode_ to NonISOCalendarISOToDate(_calendar_, _fieldsISODate_).[[MonthCode]].
             1. Else,
               1. Set _monthCode_ to ? ConstrainMonthCode(_calendar_, _fields_.[[Year]], _monthCode_, _overflow_).
@@ -1352,7 +1352,7 @@ contributors: Google, Ecma International
           1. Else,
             1. Let _day_ be _fields_.[[Day]].
           1. If _monthCode_ is ~unset~, then
-            1. Let _fieldsISODate_ be ! CalendarIntegersToISO(_calendar_, _fields_.[[Year]], _month_, _day_).
+            1. Let _fieldsISODate_ be ! CalendarIntegersToISO(_calendar_, _fields_.[[Year]], _month_, 1).
             1. Set _monthCode_ to NonISOCalendarISOToDate(_calendar_, _fieldsISODate_).[[MonthCode]].
         1. Let _referenceYear_ be the ISO reference year for _monthCode_ and _day_ as described above. If _calendar_ is *"chinese"* or *"dangi"*, the reference years in <emu-xref href="#chinese-dangi-iso-reference-years"></emu-xref> are to be used.
         1. Return the latest possible ISO Date Record _isoDate_ such that _isoDate_.[[Year]] = _referenceYear_ and NonISOCalendarISOToDate(_calendar_, _isoDate_) returns a Calendar Date Record whose [[MonthCode]] and [[Day]] field values respectively equal _monthCode_ and _day_.
