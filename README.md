@@ -3,9 +3,17 @@
 
 To specify necessary details about era, eraYear and monthCode usage with Temporal in internationalization setting (for calendars other than "iso8601").
 
-## Stage - Stage 2
-This proposal is advanced to Stage 2 for ECMA402 during the TC39 meeting, Feb 1 2023. (Link to be added after the meeting notes is approved by TC39 in March)
-This proposal is [advanced to Stage 1 for ECMA402 during the TC39 meeting, Dec 1 2022](https://github.com/tc39/notes/blob/main/meetings/2022-11/dec-01.md#intl-era-and-monthcode-proposal-for-stage-1).
+## Stage - Stage 4
+
+* This proposal is advanced to Stage 4 for ECMA402 during the TC39 meeting, March 10 2026. (Link to be added after the meeting notes is approved by TC39 in May).
+
+* This proposal is advanced to Stage 3 for ECMA402 during the TC39 meeting, Jan 20 2026. (Link to be added after the meeting notes is approved by TC39 in March).
+
+* This proposal is [advanced to Stage 2.7 for ECMA402 during the TC39 meeting, July 30 2025](https://github.com/tc39/notes/blob/main/meetings/2025-07/july-30.md#intl-era-and-month-code)
+
+* This proposal is [advanced to Stage 2 for ECMA402 during the TC39 meeting, Feb 1 2023](https://github.com/tc39/notes/blob/main/meetings/2023-01/feb-01.md#intl-era-and-monthcode-for-stage-2). 
+
+* This proposal is [advanced to Stage 1 for ECMA402 during the TC39 meeting, Dec 1 2022](https://github.com/tc39/notes/blob/main/meetings/2022-11/dec-01.md#intl-era-and-monthcode-proposal-for-stage-1).
 
 ## Stage 3 Reviwers
 During the Feb 1 2023 TC39 meeting, the following members agree to serve as the Stage 3 Reviewers of this proposal:
@@ -16,6 +24,8 @@ During the Feb 1 2023 TC39 meeting, the following members agree to serve as the 
 * [Intl era and monthCode proposal for Stage 1, TC39 Nov 2022 Meeting, Nov 29-Dec 1, 2022](https://docs.google.com/presentation/d/1hoQUYL_mfdLXMHRsNcG27aJirukuDGsVbqntd_tcR0A)
 * [Intl era and monthCode proposal for Stage 2, TC39 Jan 2023 Meeting, Jan 23-Jan 26, 2023](https://docs.google.com/presentation/d/1TlhwLfCBsH9MjJTZYpQxfGs4jVnsMX0U8X0hi8WSoxc)
 * [Intl era and monthCode proposal for Stage 2.7, TC39 July 2025 Meeting, Jul 28-Jul 31](https://docs.google.com/presentation/d/1dAbacNvhPL_iUJKZNPDbQVyfg8a6-OHUuh2OiftMu1A/edit?slide=id.p#slide=id.p)
+* [Intl era and monthCode proposal for Stage 3, TC39 January 2026 Meeting, Jan 20-21](https://notes.igalia.com/p/era-monthcode-stage-3-111th-plenary#/)
+* [Intl era and monthCode proposal for Stage 4, TC39 March 2026 Meeting, March 10-12](https://notes.igalia.com/p/era-monthcode-stage-4#/)
 ## References:
 * [Draft Spec](https://tc39.es/proposal-intl-era-monthcode/)
 * [Study of modles of year and era in ICU Calendar](https://docs.google.com/presentation/d/1WFRajsWR2Nh_SPQPzEe7yXpjj-EDvUweUrikNV_jzI4/edit#slide=id.g153d52938b6_0_619)
